@@ -1,0 +1,44 @@
+[
+  {
+    "name": "blog",
+    "path": "/blog",
+    "component": "/Users/marleynicolson/Desktop/onqor/Mwek/frontend/pages/blog/index.vue",
+    "chunkName": "pages/blog/index"
+  },
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "/Users/marleynicolson/Desktop/onqor/Mwek/frontend/pages/inspire.vue",
+    "chunkName": "pages/inspire"
+  },
+  {
+    "name": "blog-cat",
+    "path": "/blog/:cat",
+    "component": "/Users/marleynicolson/Desktop/onqor/Mwek/frontend/pages/blog/_cat/index.vue",
+    "chunkName": "pages/blog/_cat/index"
+  },
+  {
+    "name": "blog-page",
+    "path": "/blog/:page",
+    "component": "/Users/marleynicolson/Desktop/onqor/Mwek/frontend/pages/blog/_page.vue",
+    "chunkName": "pages/blog/_page"
+  },
+  {
+    "name": "blog-cat-page",
+    "path": "/blog/:cat/:page",
+    "component": "/Users/marleynicolson/Desktop/onqor/Mwek/frontend/pages/blog/_cat/_page.vue",
+    "chunkName": "pages/blog/_cat/_page"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/marleynicolson/Desktop/onqor/Mwek/frontend/pages/index.vue",
+    "chunkName": "pages/index"
+  },
+  {
+    "name": "page",
+    "path": "/:page",
+    "component": "/Users/marleynicolson/Desktop/onqor/Mwek/frontend/pages/_page.vue",
+    "chunkName": "pages/_page"
+  }
+]

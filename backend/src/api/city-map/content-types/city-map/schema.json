@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "city_maps",
+  "info": {
+    "singularName": "city-map",
+    "pluralName": "city-maps",
+    "displayName": "city map"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "theCityMapButtons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "buttons.map-buttons"
+    }
+  }
+}

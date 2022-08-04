@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blogs_blog_cards_with_filters",
+  "info": {
+    "displayName": "blogCardsWithFilter",
+    "icon": "grip-vertical"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.blog-card{
+    width: 321px;
+    height: 451px;
+    background-color: #fff;
+    box-shadow: 5px 10px 20px 2px #888888;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 15px;
+    cursor: pointer;
+    &__image{
+        height: 319px;
+        width: 100%;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+    }
+    &__info{
+        max-width: 275px;
+        width: 100%;
+        margin: 0  auto;
+        margin-top: 21px;
+    }
+    h4{
+        color:#F79386;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+    p{
+        font-size: 16px;
+        margin-top: 21px;
+    }
+    // &:hover{
+    //     box-shadow: 2.5px 5px 5px 1px #888888;
+    //    transform: translateY(20px) !important;
+    //    transition-delay: 0s !important;
+    //    transition: 0.35s transform ease;
+    // }
+}

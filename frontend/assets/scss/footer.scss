@@ -1,0 +1,35 @@
+.footer{
+    width: 100%;
+    height: 250px;
+    background-color: #07134D;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    &__container{
+        display: flex;
+        flex-direction: row;
+    }
+    &__coloumn{
+        margin: 0px 62px;
+    }
+    &__image{
+        width: 180px;
+        img{
+            width: 109px;
+            height: auto;
+            margin-bottom: 17px;
+        }
+    }
+    h5{
+        color: #F79386;
+        font-size: 14px;
+        margin-bottom: 17px;
+    }
+    a,p{
+        color:#fff;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

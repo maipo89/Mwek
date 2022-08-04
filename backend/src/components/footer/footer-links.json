@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_footer_footer_links",
+  "info": {
+    "displayName": "footerLinks",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "linkText": {
+      "type": "string"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page"
+    },
+    "customLink": {
+      "type": "string"
+    }
+  }
+}

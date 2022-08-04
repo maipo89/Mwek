@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_buttons_map_buttons",
+  "info": {
+    "displayName": "mapButtons",
+    "icon": "grip-horizontal",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "buttonImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "backgroundColour": {
+      "type": "string"
+    },
+    "orientation": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ]
+    },
+    "positionLeft": {
+      "type": "string"
+    },
+    "positionTop": {
+      "type": "string"
+    },
+    "buttonText": {
+      "type": "string"
+    }
+  }
+}

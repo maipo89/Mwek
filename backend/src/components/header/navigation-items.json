@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_header_navigation_items",
+  "info": {
+    "displayName": "navigationItems",
+    "icon": "list"
+  },
+  "options": {},
+  "attributes": {
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "customLink": {
+      "type": "string"
+    },
+    "customText": {
+      "type": "string"
+    }
+  }
+}

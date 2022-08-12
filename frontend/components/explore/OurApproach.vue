@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div> -->
-        <OurApproachSection v-for="(item, index) in this.blockData.approachSectionsRepeater" :secondColour="colours[index]" :sectionData="item" :key="index" />
+        <OurApproachSection v-for="(item, index) in this.blockData.approachSectionsRepeater" :secondColour="colours[index]"  :sectionIndex="index" :sectionData="item" :key="index" />
     </div>
 </template>
 

@@ -3,49 +3,42 @@
     "name": "blog",
     "path": "/blog",
     "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/index.vue",
-    "chunkName": "pages/blog/index",
-    "_name": "_d7e4678e"
+    "chunkName": "pages/blog/index"
   },
   {
     "name": "inspire",
     "path": "/inspire",
     "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/inspire.vue",
-    "chunkName": "pages/inspire",
-    "_name": "_5cbd9c14"
+    "chunkName": "pages/inspire"
   },
   {
     "name": "blog-cat",
     "path": "/blog/:cat",
     "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_cat/index.vue",
-    "chunkName": "pages/blog/_cat/index",
-    "_name": "_7da1f5fa"
+    "chunkName": "pages/blog/_cat/index"
   },
   {
     "name": "blog-page",
     "path": "/blog/:page",
     "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_page.vue",
-    "chunkName": "pages/blog/_page",
-    "_name": "_0661de56"
+    "chunkName": "pages/blog/_page"
   },
   {
     "name": "blog-cat-page",
     "path": "/blog/:cat/:page",
     "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_cat/_page.vue",
-    "chunkName": "pages/blog/_cat/_page",
-    "_name": "_29f0499f"
+    "chunkName": "pages/blog/_cat/_page"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_3ab0bcee"
+    "chunkName": "pages/index"
   },
   {
     "name": "page",
     "path": "/:page",
     "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/_page.vue",
-    "chunkName": "pages/_page",
-    "_name": "_b91bfcec"
+    "chunkName": "pages/_page"
   }
 ]

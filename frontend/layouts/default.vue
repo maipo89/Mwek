@@ -4,16 +4,16 @@
       <v-container>
         <!-- <SiteIntro /> -->
         <Header v-on:page-open="headerAction()"/>
+        
         <div :class="this.pageState">
           <div class="drag-map" > 
             <div class="drag-map__city-absolute">
               <div class="drag-map__city" ref="dragMapCity">
                 <div class="drag-map__container" ref="dragMap__container" id="drag">
-                  <CityMapSVG />
-                  <!-- <img src="/images/LightCity.jpg" /> -->
-                  <!-- <div class="drag-map__buttons"> -->
+                  <!-- <CityMapSVG /> -->
+
                     <CityMapCards v-for="(item, index) in this.mapButton" :key="index" :cardData="item" />
-                  <!-- </div> -->
+             
                 </div>
               </div>
             </div>
@@ -31,6 +31,7 @@
             </div>
           </div>
         </div>
+
         <Footer />
       </v-container>
     </v-main>
@@ -65,10 +66,14 @@ export default {
     backToMap(){
       this.pageState = 'map-open';
       this.$router.push('/'); 
-    }
+    },
+  },
+  beforeMount(){
+    // this.gpuFunc();
   },
   mounted(){
     this.getMapButtons();
+    
 
     this.draggable = new Draggable(this.$refs.dragMap__container, {
       bounds: this.$refs.dragMapCity,
@@ -76,6 +81,7 @@ export default {
       callbackScope: this,
       allowEventDefault: true
     });
+
     /* 
     Setup: wrap your content <div> in another <div> that will serve as the viewport.
     Call this function FIRST (before you create your ScrollTriggers); it sets the 

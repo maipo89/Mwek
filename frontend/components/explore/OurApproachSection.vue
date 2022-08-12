@@ -18,19 +18,23 @@
             <div  class="line" :style="{ background: 'linear-gradient(90deg, ' + this.sectionData.colour + ' 0%, ' + this.secondColour + ' 100%)' }">
                 <div :style="{ backgroundImage: 'url(/images/Line.png)'}">  </div>
             </div>
+            <div class="our-approach__line-cover" ref="ourApproachCover">
+
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 
-    // import gsap from "gsap"
+    import gsap from "gsap"
 
     export default {
         name: 'OurApproachSection',
         props: {
             sectionData: Object,
-            secondColour: String
+            secondColour: String,
+            sectionIndex: Number
         },
         data(){
             return {
@@ -43,36 +47,64 @@
         },
         methods: {
             rotate(){
-                this.$gsap.to('.svgRotate', {
-                    scrollTrigger: {
-                        trigger: '.our-approach__section',
-                        markers: true,
-                        scrub: 1
-                    },
-                    rotation: 90,
-                    autoAlpha: 1,
-                    ease: 'none',
-                })
-            }
+
+                if(this.sectionIndex % 2 === 0){
+                    this.$gsap.to(this.svgItem, {
+                        scrollTrigger: {
+                            trigger: this.svgContainer,
+                            // markers: true,
+                            scrub: 1
+                        },
+                        rotation: '-90deg',
+                        autoAlpha: 1,
+                        ease: 'none',
+                    })
+                }else{
+                    this.$gsap.to( this.svgItem, {
+                        scrollTrigger: {
+                            trigger: this.svgContainer,
+                            // markers: true,
+                            scrub: 1
+                        },
+                        rotation: '90deg',
+                        autoAlpha: 1,
+                        ease: 'none',
+                    })
+                }
+            },
         },
         mounted(){
             this.svgItem = this.$refs.svgRotate
             this.svgContainer = this.$refs.ourApproach__section 
             // this.rotate();   
             
-            
+            this.rotate()
 
-            function throttle(fn, wait) {
-                var time = Date.now();
-                return function() {
-                    if ((time + wait - Date.now()) < 0) {
-                    fn();
-                    time = Date.now();
-                    }
-                }
-            }
+            this.$gsap.to(".line div", 30, {
+                backgroundPosition: "200px 0px",
+                scrollTrigger: {
+                    trigger: '.our-approach',
+                    // markers: true,
+                    scrub: 1
+                },
+                //autoRound:false,
+                ease: Linear.easeNone
+            });
 
-            window.addEventListener('scroll', throttle(this.rotate(), 10));
+            this.$gsap.to(this.$refs.ourApproachCover, 30, {
+                width: "-60%",
+                scrollTrigger: {
+                    trigger: this.svgContainer,
+                    start: 'top-=100 center',
+                    scrub: 1
+                },
+                //autoRound:false,
+                ease: Linear.easeNone
+            });
+
+
+
+            // window.addEventListener('scroll', throttle(this.rotate(), 10));
         },
     }
 </script>

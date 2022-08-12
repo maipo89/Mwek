@@ -24,6 +24,7 @@ body{
 html,body{
     overflow-anchor: none;
     scroll-behavior: smooth;
+    overscroll-behavior-x: none;
 }
 
 p,a,li{
@@ -113,7 +114,7 @@ h1.h2,h3,h4,h5{
         z-index: 2000;
     }
     .page-modal{
-        transform: translateY(0%);
+        transform: translateY(0%) translate3d(10px, 10px, 10px);
         transition: transform 0.7s;
         
     }

@@ -2,7 +2,7 @@
   <v-app dark>
     <v-main>
       <v-container>
-        <!-- <SiteIntro /> -->
+        <SiteIntro />
         <Header v-on:page-open="headerAction()"/>
         
         <div :class="this.pageState">
@@ -10,7 +10,7 @@
             <div class="drag-map__city-absolute">
               <div class="drag-map__city" ref="dragMapCity">
                 <div class="drag-map__container" ref="dragMap__container" id="drag">
-                  <!-- <CityMapSVG /> -->
+                    <CityMapSVG v-if="this.renderMap" />
 
                     <CityMapCards v-for="(item, index) in this.mapButton" :key="index" :cardData="item" />
              
@@ -45,7 +45,8 @@ export default {
   data () {
     return {
       mapButton: '',
-      pageState: 'map-open'
+      pageState: 'map-open',
+      renderMap: true 
     }
   },
   methods: {
@@ -61,11 +62,16 @@ export default {
     },
     headerAction(){
       console.log('helo helo hleo helo');
-      this.pageState = 'page-open'
+      this.pageState = 'page-open';
+      setTimeout(function () {
+        this.renderMap = false;
+      }.bind(this), 2100)
+      
     },
     backToMap(){
       this.pageState = 'map-open';
       this.$router.push('/'); 
+      this.renderMap = true;
     },
   },
   beforeMount(){
@@ -81,6 +87,15 @@ export default {
       callbackScope: this,
       allowEventDefault: true
     });
+
+    console.log('this.$route.params.page',this.$route.params.page);
+
+    if(this.$route.params.page){
+      this.pageState = 'page-open';
+      this.renderMap = false;
+    }else{
+      this.renderMap = true;
+    }
 
     /* 
     Setup: wrap your content <div> in another <div> that will serve as the viewport.

@@ -136,11 +136,12 @@
 
 .page-open{
     .drag-map__container{
-        img{
-            filter: blur(8px);
+        .city-map-svg{
+            filter: blur(20px);
             -webkit-filter: blur(8px);
             transform: scale(1.2); /*70%*/
-            transition: filter 0.7s ease-in-out, transform 1s ease-in-out;
+            opacity: 0.0;
+            transition: filter 0.7s ease-in-out, transform 1s ease-in-out, opacity 2s ease-in-out;
         }
     }
 }

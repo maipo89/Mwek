@@ -1,5 +1,5 @@
 <template>
-  <BlockBuilder :ID="this.pageID" />
+  <BlockBuilder v-if="this.renderPage" :ID="this.pageID" />
 </template>
 
 <script>
@@ -8,7 +8,8 @@ export default {
   data(){
     return {
       page: this.$route.params.page,
-      pageID:''
+      pageID:'',
+      renderPage: false
     }
   },
   methods: {

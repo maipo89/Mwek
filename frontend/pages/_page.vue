@@ -1,5 +1,5 @@
 <template>
-  <div class="page-content">
+  <div class="page-content" v-if="this.renderPage">
     <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
   </div>
 </template>
@@ -14,7 +14,8 @@ export default {
     return {
       page: this.$route.params.page,
       pageID:'',
-      blocks: ''
+      blocks: '',
+      renderPage: false,
     }
   },
   methods: {
@@ -55,6 +56,12 @@ export default {
     //     thumbMinSize: 0,
     //   }
     // );
+
+    if(this.page.length > 1){
+      setTimeout(function () {  
+        this.renderPage = true;
+      }.bind(this), 1000)
+    }
 
     // this.smoother = ScrollSmoother.create({ 
     //   wrapper: 'body', 

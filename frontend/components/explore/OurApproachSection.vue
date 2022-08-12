@@ -48,8 +48,11 @@
         methods: {
             rotate(){
 
+                this.svgItem = this.$refs.svgRotate
+                this.svgContainer = this.$refs.ourApproach__section 
+
                 if(this.sectionIndex % 2 === 0){
-                    this.$gsap.to(this.svgItem, {
+                    gsap.to(this.svgItem, {
                         scrollTrigger: {
                             trigger: this.svgContainer,
                             // markers: true,
@@ -60,7 +63,7 @@
                         ease: 'none',
                     })
                 }else{
-                    this.$gsap.to( this.svgItem, {
+                    gsap.to( this.svgItem, {
                         scrollTrigger: {
                             trigger: this.svgContainer,
                             // markers: true,
@@ -71,37 +74,43 @@
                         ease: 'none',
                     })
                 }
+
+
+                gsap.to(".line div", 30, {
+                    backgroundPosition: "200px 0px",
+                    scrollTrigger: {
+                        trigger: '.our-approach',
+                        // markers: true,
+                        scrub: 1
+                    },
+                    //autoRound:false,
+                    ease: Linear.easeNone
+                });
+
+                gsap.to(this.$refs.ourApproachCover, 30, {
+                    width: "-60%",
+                    scrollTrigger: {
+                        trigger: this.svgContainer,
+                        start: 'top-=100 center',
+                        scrub: 1
+                    },
+                    //autoRound:false,
+                    ease: Linear.easeNone
+                });
             },
         },
         mounted(){
-            this.svgItem = this.$refs.svgRotate
-            this.svgContainer = this.$refs.ourApproach__section 
+
             // this.rotate();   
             
-            this.rotate()
 
-            this.$gsap.to(".line div", 30, {
-                backgroundPosition: "200px 0px",
-                scrollTrigger: {
-                    trigger: '.our-approach',
-                    // markers: true,
-                    scrub: 1
-                },
-                //autoRound:false,
-                ease: Linear.easeNone
-            });
 
-            this.$gsap.to(this.$refs.ourApproachCover, 30, {
-                width: "-60%",
-                scrollTrigger: {
-                    trigger: this.svgContainer,
-                    start: 'top-=100 center',
-                    scrub: 1
-                },
-                //autoRound:false,
-                ease: Linear.easeNone
-            });
 
+      
+                this.rotate()
+
+
+      
 
 
             // window.addEventListener('scroll', throttle(this.rotate(), 10));

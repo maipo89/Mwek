@@ -21,6 +21,11 @@ body{
 //     width: 100vw;
 // }
 
+html,body{
+    overflow-anchor: none;
+    scroll-behavior: smooth;
+}
+
 p,a,li{
     font-family: montserrat, sans-serif;
     font-weight: 400;

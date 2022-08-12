@@ -24,7 +24,7 @@
 
 <script>
 
-    import gsap from "gsap"
+    // import gsap from "gsap"
 
     export default {
         name: 'OurApproachSection',
@@ -41,69 +41,38 @@
                 svgContainer: null,
             }
         },
+        methods: {
+            rotate(){
+                this.$gsap.to('.svgRotate', {
+                    scrollTrigger: {
+                        trigger: '.our-approach__section',
+                        markers: true,
+                        scrub: 1
+                    },
+                    rotation: 90,
+                    autoAlpha: 1,
+                    ease: 'none',
+                })
+            }
+        },
         mounted(){
-
+            this.svgItem = this.$refs.svgRotate
+            this.svgContainer = this.$refs.ourApproach__section 
+            // this.rotate();   
+            
             
 
-
-            this.svgItem = this.$refs.svgRotate
-            this.svgContainer = this.$refs.ourApproach__section
-
-            // const scroll = gsap.set(this.svgItem, {xPercent:-50});
-            this.scrollMe = gsap.timeline({
-                scrollTrigger:{
-                    trigger: this.$refs.ourApproach__section,
-                    scrub: true,
-                    start: 'top top',
-                    end:'bottom bottom',
-                    markers: true,
+            function throttle(fn, wait) {
+                var time = Date.now();
+                return function() {
+                    if ((time + wait - Date.now()) < 0) {
+                    fn();
+                    time = Date.now();
+                    }
                 }
-            })
-            .to(this.$refs.svgRotate, {
-                rotation:90*1,
-                duration:1, 
-                ease:'none',
-            })
- 
-
-
-   
-            // gsap.to(this.svgItem, {
-            //     scrollTrigger: {
-            //         trigger: this.svgContainer,
-            //         scrub: 0.9,
-            //         start: 'top-=500 top',
-            //         end:'bottom+=1000 bottom',
-            //         markers: true,
-
-            //     },
-            //     rotation: 140,
-            //     duration: 3,
-            //     ease: "none",
-            // });
-     
-
-            // function changeNumber() {
-            //     this.rotateMe = (num.var).toFixed();
-            //     // console.log(this.rotateMe);
-            //     this.changeNumber(num);
-            // }
-
-            // changeNumber(function() {
-            //     this.changeNumber(num);
-            // }).bind(this)                    
-
-        },
-        methods: {
-            changeNumber(num){
-                 this.rotateMe = (num.var).toFixed();
             }
+
+            window.addEventListener('scroll', throttle(this.rotate(), 10));
         },
-        watch: {
-            rotateMe: function(value) {
-                // If "pageData" ever changes, then we will console log its new value.
-                console.log(value);
-            }
-        }
     }
 </script>

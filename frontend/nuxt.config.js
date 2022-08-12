@@ -28,16 +28,11 @@ export default {
             src: 'js/gsap/minified/gsap.min.js',
             body: true
         },
-        {
-            type: 'text/javascript',
-            src: 'js/gsap/minified/Draggable.min.js',
-            body: true
-        },
-        {
-            type: 'text/javascript',
-            src: 'js/citymap.js',
-            body: true
-        }
+        // {
+        //     type: 'text/javascript',
+        //     src: 'js/gsap/minified/Draggable.min.js',
+        //     body: true
+        // },
     ]
   },
 
@@ -68,7 +63,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    'nuxt-gsap-module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

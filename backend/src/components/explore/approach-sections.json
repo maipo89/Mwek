@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_explore_approach_sections",
+  "info": {
+    "displayName": "approachSections",
+    "icon": "exchange-alt"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "colour": {
+      "type": "string"
+    }
+  }
+}

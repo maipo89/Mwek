@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_explore_our_approaches",
+  "info": {
+    "displayName": "ourApproach",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "approachSectionsRepeater": {
+      "type": "component",
+      "repeatable": true,
+      "component": "explore.approach-sections"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

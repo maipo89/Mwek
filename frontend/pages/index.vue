@@ -35,7 +35,7 @@ export default {
         return res.json();
       });
 
-      console.log('thePageData', thePageData);
+      // console.log('thePageData 0000', thePageData);
       if(thePageData.data.attributes.dynamic_content){
         this.blocks = thePageData.data.attributes.dynamic_content
       }

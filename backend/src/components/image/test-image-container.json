@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_image_test_image_containers",
+  "info": {
+    "displayName": "testImageContainer",
+    "icon": "arrow-alt-circle-right"
+  },
+  "options": {},
+  "attributes": {
+    "imAbigTitle": {
+      "type": "string"
+    },
+    "repeatme": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image.test-image"
+    }
+  }
+}

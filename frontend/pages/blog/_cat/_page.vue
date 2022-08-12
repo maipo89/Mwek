@@ -33,7 +33,7 @@ export default {
         return res.json();
       });
 
-      console.log('thePageData', thePageData);
+      console.log('thePageDataaaaaaaaa', thePageData);
       // console.log(this.$router.params);
     }
   },

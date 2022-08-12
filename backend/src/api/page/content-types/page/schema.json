@@ -22,9 +22,11 @@
     "dynamic_content": {
       "type": "dynamiczone",
       "components": [
+        "blogs.blog-cards-with-filter",
         "image.hero-section",
+        "image.test-image-container",
         "text-content.text-section",
-        "blogs.blog-cards-with-filter"
+        "explore.our-approach"
       ]
     },
     "isHome": {

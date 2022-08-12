@@ -114,6 +114,10 @@ h1.h2,h3,h4,h5{
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .map-open{
     width: 100vw;
     height: 100vh;
@@ -127,7 +131,6 @@ h1.h2,h3,h4,h5{
         transform: translateY(100%);
         transition: transform 0.7s;
         transform-style: preserve-3d;
-        
     }
 }
 
@@ -137,5 +140,12 @@ h1.h2,h3,h4,h5{
 
 @import "./scss/blog.scss";
 @import "./scss/blogcard.scss";
+@import "./scss/intro.scss";
 
 @import "./scss/dropdown.scss";
+@import "./scss/UI/onqor-button.scss";
+@import "./scss/circle-icon.scss";
+
+@import "./scss/explore/our-approach.scss";
+
+

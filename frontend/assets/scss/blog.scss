@@ -30,6 +30,12 @@
             transition-delay: 0.4s;
         }
     }
+    .circle-back{
+        width: 202px;
+        height: 202px;
+        border-radius: 100px;
+        border: solid 2px dashed;
+    }
     &.active{
         .blog-card.active{
             opacity: 1;

@@ -1,0 +1,185 @@
+.intro{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0px;
+    left:0px;
+    z-index: 3000;
+    overflow: hidden;
+    &__panel{
+        width: 100%;
+        height: 100%;
+    }
+    .v-progress-circular__underlay {
+        stroke: rgb(158 158 158 / 0%);
+        z-index: 1;
+    }
+    &__logo-bg{
+        position: absolute;
+        top:0px;
+        height: 0px;
+        left: 0px;
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(72.44deg, #00CCD6 0%, #9E00FC 100%);
+        z-index: 0;
+        transition: width 1s;
+        transition-delay: 5s;
+    }
+    &__logo{
+        height: 100%;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        position: relative;
+        z-index: 2;
+        svg{
+            z-index: 1;
+            transform: translateY(0px);
+        }
+    }
+    &__side-panal{
+        width: 30%;
+        height: 100%;
+        right: 0px;
+        position: absolute;
+        top: 0px;
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0px 100px;
+        text-align: center;
+        h2{
+            font-family: orbitron, sans-serif !important;
+            font-weight: 500;
+            font-style: normal;
+            color:#07134D;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+    }   
+    &__side-panel-content{
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        pointer-events: none;
+        opacity: 0;
+        .buttons{
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            vertical-align: middle;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            opacity: 0.0;
+            transform: translateY(45px);
+        }
+        &.active{
+            height: auto;
+            overflow: initial;
+            pointer-events: all;
+            opacity: 1;
+            .buttons{
+                opacity: 1;
+                transform: translateY(0px);
+                transition: all 0.7s;
+                transition-delay:2s;
+            }
+        }
+    }
+    .step-one{
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+    }
+    .loading-bar{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        left:0px
+    }
+
+    &__logo-content{
+        position: absolute;
+        bottom: 0px;
+        opacity: 0;
+        p{
+            color:#fff;
+        }
+        .loading{
+            font-size: 32px;
+            color:#fff;
+            font-family: Orbitron;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .clouds{
+        width: 100vw;
+        height: 300vh;
+        // background-color: #fff;
+        position: absolute;
+        bottom: -300%;
+        left: 0px;
+        z-index: 10;
+        background: rgb(255,255,255);
+        background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 31%, rgba(255,255,255,1) 68%, rgba(254,255,255,0) 100%);
+    }
+    .step-one{
+        transform: translateY(0px);
+    }
+    
+    &.step-1{
+        .intro__logo-bg{
+            width: 100%;
+            transition: width 1s;
+        }
+    }
+    &.step-2{
+        .intro__logo-bg{
+            width: 100%;
+            transition: width 2s;
+        }
+        .intro__logo{
+            width: 100%;
+            transition: width 2s;
+            transition-delay: 2s;
+        }
+        .intro__logo-content{
+            opacity: 1.0;
+        }
+    }
+    &.step-clouds{
+        transform: translateY(-200%);
+        transition: transform 2s;
+        transition-delay: 1.6s;
+        overflow: inherit;
+        .clouds{
+            transition: bottom 2s;
+            bottom: -100%;
+        }
+        .step-one .intro__logo svg, .step-one .intro__logo.loading-bar{
+            transform: translateY(100px);
+            transition: transform 1s;
+        }
+        .step-one{
+            opacity: 0.0;
+            transition: opacity 0.5s;
+            transition-delay: 1.6s;
+        }
+    }
+}
+

@@ -5,11 +5,47 @@
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },
+  "SiteIntro": {
+    "description": "Auto imported from components/SiteIntro.vue"
+  },
   "Tutorial": {
     "description": "Auto imported from components/Tutorial.vue"
   },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
+  },
+  "BlogCard": {
+    "description": "Auto imported from components/UI/BlogCard.vue"
+  },
+  "DropDown": {
+    "description": "Auto imported from components/UI/DropDown.vue"
+  },
+  "Icon": {
+    "description": "Auto imported from components/UI/Icon.vue"
+  },
+  "OnqorButton": {
+    "description": "Auto imported from components/UI/OnqorButton.vue"
+  },
+  "OnqorCircleIcon": {
+    "description": "Auto imported from components/UI/OnqorCircleIcon.vue"
+  },
+  "TypeText": {
+    "description": "Auto imported from components/UI/TypeText.vue"
+  },
+  "CardsWithFilter": {
+    "description": "Auto imported from components/archives/CardsWithFilter.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/global/Footer.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/global/Header.vue"
+  },
+  "OurApproach": {
+    "description": "Auto imported from components/explore/OurApproach.vue"
+  },
+  "OurApproachSection": {
+    "description": "Auto imported from components/explore/OurApproachSection.vue"
   },
   "CityBuilding": {
     "description": "Auto imported from components/citymap/CityBuilding.vue"
@@ -37,23 +73,5 @@
   },
   "TextSection": {
     "description": "Auto imported from components/text-content/TextSection.vue"
-  },
-  "BlogCard": {
-    "description": "Auto imported from components/UI/BlogCard.vue"
-  },
-  "DropDown": {
-    "description": "Auto imported from components/UI/DropDown.vue"
-  },
-  "Icon": {
-    "description": "Auto imported from components/UI/Icon.vue"
-  },
-  "CardsWithFilter": {
-    "description": "Auto imported from components/archives/CardsWithFilter.vue"
-  },
-  "Footer": {
-    "description": "Auto imported from components/global/Footer.vue"
-  },
-  "Header": {
-    "description": "Auto imported from components/global/Header.vue"
   }
 }

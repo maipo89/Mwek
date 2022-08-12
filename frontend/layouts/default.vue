@@ -2,9 +2,7 @@
   <v-app dark>
     <v-main>
       <v-container>
-        <div class="intro">
-
-        </div>
+        <!-- <SiteIntro /> -->
         <Header v-on:page-open="headerAction()"/>
         <div :class="this.pageState">
           <div class="drag-map" > 
@@ -78,16 +76,15 @@ export default {
       callbackScope: this,
       allowEventDefault: true
     });
+    /* 
+    Setup: wrap your content <div> in another <div> that will serve as the viewport.
+    Call this function FIRST (before you create your ScrollTriggers); it sets the 
+    default "scroller" for you (otherwise it'd be the window/body, but it should be 
+    the content <div>) 
+    */
+    // smoothScroll("html");
 
-    // gsap.to(".page-modal", {
-    //   scrollTrigger: {
-    //     trigger: '.page_scroller',
-    //     strat: 'bottom top',
-    //     end: 'bottom bottom',
-    //     markers: true,
-    //     scroller: '.page-modal',
-    //   },
-    // });
+    // smoother.scrollTo("html", true, "center center");
   }
 }
 </script>

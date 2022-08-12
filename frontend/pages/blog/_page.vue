@@ -26,13 +26,13 @@ export default {
       console.log('pageID', pageID);
 
       const thePageData = await fetch(
-          'http://localhost:1337/api/pages/' + pageID + '?populate[dynamic_content][populate]=*'
+          'http://localhost:1337/api/pages/' + pageID + '?populate=deep,5'
         ).then((res) => {
         // can set up 404 redirection here
         return res.json();
       });
 
-      console.log('thePageData', thePageData);
+      console.log('thePageDatasssssss', thePageData);
       // console.log(this.$router.params);
     }
   },

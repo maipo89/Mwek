@@ -8,6 +8,7 @@
             <p>{{ this.cardData.attributes.content.substring(0, 50) }}</p>
         </div>
     </div>
+    
 </template>
 
 <script>

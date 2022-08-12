@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_image_test_images",
+  "info": {
+    "displayName": "testImage",
+    "icon": "angle-up"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "testImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

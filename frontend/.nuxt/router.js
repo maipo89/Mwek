@@ -4,13 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _157d6813 = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
-const _6418b45c = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
-const _7f6e7d2e = () => interopDefault(import('../pages/blog/_cat/index.vue' /* webpackChunkName: "pages/blog/_cat/index" */))
-const _7e3eacaf = () => interopDefault(import('../pages/blog/_page.vue' /* webpackChunkName: "pages/blog/_page" */))
-const _290a0605 = () => interopDefault(import('../pages/blog/_cat/_page.vue' /* webpackChunkName: "pages/blog/_cat/_page" */))
-const _11d1a0d4 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _7a92e570 = () => interopDefault(import('../pages/_page.vue' /* webpackChunkName: "pages/_page" */))
+const _d7e4678e = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
+const _5cbd9c14 = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
+const _7da1f5fa = () => interopDefault(import('../pages/blog/_cat/index.vue' /* webpackChunkName: "pages/blog/_cat/index" */))
+const _0661de56 = () => interopDefault(import('../pages/blog/_page.vue' /* webpackChunkName: "pages/blog/_page" */))
+const _29f0499f = () => interopDefault(import('../pages/blog/_cat/_page.vue' /* webpackChunkName: "pages/blog/_cat/_page" */))
+const _3ab0bcee = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _b91bfcec = () => interopDefault(import('../pages/_page.vue' /* webpackChunkName: "pages/_page" */))
 
 const emptyFn = () => {}
 
@@ -25,31 +25,31 @@ export const routerOptions = {
 
   routes: [{
     path: "/blog",
-    component: _157d6813,
+    component: _d7e4678e,
     name: "blog"
   }, {
     path: "/inspire",
-    component: _6418b45c,
+    component: _5cbd9c14,
     name: "inspire"
   }, {
     path: "/blog/:cat",
-    component: _7f6e7d2e,
+    component: _7da1f5fa,
     name: "blog-cat"
   }, {
     path: "/blog/:page",
-    component: _7e3eacaf,
+    component: _0661de56,
     name: "blog-page"
   }, {
     path: "/blog/:cat/:page",
-    component: _290a0605,
+    component: _29f0499f,
     name: "blog-cat-page"
   }, {
     path: "/",
-    component: _11d1a0d4,
+    component: _3ab0bcee,
     name: "index"
   }, {
     path: "/:page",
-    component: _7a92e570,
+    component: _b91bfcec,
     name: "page"
   }],
 

@@ -2,7 +2,7 @@
   <v-app dark>
     <v-main>
       <v-container>
-        <SiteIntro />
+        <!-- <SiteIntro /> -->
         <Header v-on:page-open="headerAction()"/>
         
         <div :class="this.pageState">
@@ -46,7 +46,8 @@ export default {
     return {
       mapButton: '',
       pageState: 'map-open',
-      renderMap: true 
+      renderMap: true ,
+      pinMe: ''
     }
   },
   methods: {
@@ -106,6 +107,21 @@ export default {
     // smoothScroll("html");
 
     // smoother.scrollTo("html", true, "center center");
+    this.pinMe = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.drag-map',
+        start: "top top",
+        end: 'bottom 234234234',
+        pin: true,
+        scrub: true,
+        markers: true
+      }
+    });
+  },
+  watch: {
+    pageState(){
+      this.pinMe.ScrollTrigger.refresh()
+    }
   }
 }
 </script>

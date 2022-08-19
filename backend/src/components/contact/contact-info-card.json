@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_contact_contact_info_cards",
+  "info": {
+    "displayName": "contactInfoCard",
+    "icon": "dice-one",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titile": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "Linkedin": {
+      "type": "string"
+    },
+    "Instagram": {
+      "type": "string"
+    }
+  }
+}

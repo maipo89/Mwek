@@ -7,9 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "titile": {
-      "type": "string"
-    },
     "content": {
       "type": "richtext"
     },
@@ -23,6 +20,9 @@
       "type": "string"
     },
     "Instagram": {
+      "type": "string"
+    },
+    "title": {
       "type": "string"
     }
   }

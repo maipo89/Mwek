@@ -1,6 +1,7 @@
 <template>
   <div class="page-content" v-if="this.renderPage">
     <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
+    <ContactFooter :contactItems="this.contactDetails"/>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ export default {
       pageID:'',
       blocks: '',
       renderPage: false,
+      contactDetails: null,
     }
   },
   methods: {
@@ -42,12 +44,28 @@ export default {
       if(thePageData.data.attributes.dynamic_content){
         this.blocks = thePageData.data.attributes.dynamic_content
       }
+
       // console.log(this.$router.params);
-    }
+      const contactData = await fetch(
+          'http://localhost:1337/api/contact?populate=*'
+          ).then((res) => {
+          // can set up 404 redirection here
+          return res.json();
+      });
+
+      if(contactData.data.attributes.ContactInfo){
+        // console.log(contactData);
+        this.contactDetails = contactData
+      }
+      
+    },
+  },
+  beforeMount(){
+     this.asyncData();
   },
 
   mounted(){
-    this.asyncData();
+   
     console.log('this.$route.params.page', this.page);
 
     // Scrollbar.init(document.querySelector('body'), 

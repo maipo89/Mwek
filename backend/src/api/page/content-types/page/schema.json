@@ -23,10 +23,13 @@
       "type": "dynamiczone",
       "components": [
         "blogs.blog-cards-with-filter",
+        "contact.services-repeater",
+        "explore.meet-the-team",
+        "explore.our-approach",
         "image.hero-section",
         "image.test-image-container",
         "text-content.text-section",
-        "explore.our-approach"
+        "test-charts.donut-and-bar-chart"
       ]
     },
     "isHome": {
@@ -43,6 +46,11 @@
         "videos",
         "audios"
       ]
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
     }
   }
 }

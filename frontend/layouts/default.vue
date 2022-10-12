@@ -5,14 +5,14 @@
         <!-- <SiteIntro /> -->
         <Header v-on:page-open="headerAction()"/>
         
-        <div :class="this.pageState">
+        <div :class="[this.pageState, this.thePageClass]">
           <div class="drag-map" > 
             <div class="drag-map__city-absolute">
               <div class="drag-map__city" ref="dragMapCity">
                 <div class="drag-map__container" ref="dragMap__container" id="drag">
                     <CityMapSVG v-if="this.renderMap" />
 
-                    <CityMapCards v-for="(item, index) in this.mapButton" :key="index" :cardData="item" />
+       <!--             <CityMapCards v-for="(item, index) in this.mapButton" :key="index" :cardData="item" /> -->
              
                 </div>
               </div>
@@ -24,6 +24,13 @@
                 <div class="inside">
                   <Icon icon="arrowLeft" /> <p>MWEK City</p>
                 </div>
+              </div>
+              <div class="page-modal__back-to-map page-modal__back-to-map--blog">
+                <NuxtLink to='/blog'>
+                  <div class="inside">
+                    <Icon icon="arrowLeft" /> <p>Blog</p>
+                  </div>
+                </NuxtLink>
               </div>
               <div class="page_scroller">
                 <Nuxt />
@@ -45,9 +52,13 @@ export default {
   data () {
     return {
       mapButton: '',
-      pageState: 'map-open',
-      renderMap: true ,
-      pinMe: ''
+      //pageState: 'map-open',
+      pageState: 'page-open',
+      // renderMap: true ,
+      renderMap: false ,
+      pinMe: '',
+      thePageClass: ''
+
     }
   },
   methods: {
@@ -74,20 +85,24 @@ export default {
       this.$router.push('/'); 
       this.renderMap = true;
     },
+    pageClass(){
+        const firstPath = location.pathname.split('/')[1];
+        console.log('siteUrl',location);
+        this.thePageClass = firstPath + '-page-' + location.pathname.replace(/[^/]/g, "").length;
+    }
   },
-  beforeMount(){
-    // this.gpuFunc();
-  },
+
   mounted(){
     this.getMapButtons();
     
-
-    this.draggable = new Draggable(this.$refs.dragMap__container, {
-      bounds: this.$refs.dragMapCity,
-      throwProps: true,      
-      callbackScope: this,
-      allowEventDefault: true
-    });
+    if(this.renderMap){
+      this.draggable = new Draggable(this.$refs.dragMap__container, {
+        bounds: this.$refs.dragMapCity,
+        throwProps: true,      
+        callbackScope: this,
+        allowEventDefault: true
+      });
+    }
 
     console.log('this.$route.params.page',this.$route.params.page);
 
@@ -98,29 +113,12 @@ export default {
       this.renderMap = true;
     }
 
-    /* 
-    Setup: wrap your content <div> in another <div> that will serve as the viewport.
-    Call this function FIRST (before you create your ScrollTriggers); it sets the 
-    default "scroller" for you (otherwise it'd be the window/body, but it should be 
-    the content <div>) 
-    */
-    // smoothScroll("html");
-
-    // smoother.scrollTo("html", true, "center center");
-    this.pinMe = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.drag-map',
-        start: "top top",
-        end: 'bottom 234234234',
-        pin: true,
-        scrub: true,
-        markers: true
-      }
-    });
+    this.pageClass();
+    
   },
   watch: {
-    pageState(){
-      this.pinMe.ScrollTrigger.refresh()
+    $route (to, from){
+        this.pageClass()
     }
   }
 }

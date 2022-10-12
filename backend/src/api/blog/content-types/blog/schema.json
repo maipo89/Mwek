@@ -13,10 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "slug": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "featured_image": {
       "type": "media",
@@ -38,6 +40,24 @@
     },
     "description": {
       "type": "text"
+    },
+    "dynamic_content": {
+      "type": "dynamiczone",
+      "components": [
+        "text-content-blocks.content-block",
+        "text-content-blocks.content-with-image"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categorie.categorie"
+    },
+    "PrimaryCategory": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blogs.primary-category",
+      "required": true
     }
   }
 }

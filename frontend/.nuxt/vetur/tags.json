@@ -29,11 +29,20 @@
   "OnqorCircleIcon": {
     "description": "Auto imported from components/UI/OnqorCircleIcon.vue"
   },
+  "OnqorInput": {
+    "description": "Auto imported from components/UI/OnqorInput.vue"
+  },
   "TypeText": {
     "description": "Auto imported from components/UI/TypeText.vue"
   },
   "CardsWithFilter": {
     "description": "Auto imported from components/archives/CardsWithFilter.vue"
+  },
+  "BlogPage": {
+    "description": "Auto imported from components/blog/BlogPage.vue"
+  },
+  "SubscriptionSection": {
+    "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
   "CityBuilding": {
     "description": "Auto imported from components/citymap/CityBuilding.vue"
@@ -65,13 +74,28 @@
   "HeroSection": {
     "description": "Auto imported from components/image/HeroSection.vue"
   },
+  "ContentColumns": {
+    "description": "Auto imported from components/text-content/ContentColumns.vue"
+  },
+  "ContentWithImage": {
+    "description": "Auto imported from components/text-content/ContentWithImage.vue"
+  },
   "TextSection": {
     "description": "Auto imported from components/text-content/TextSection.vue"
+  },
+  "MeetTheTeam": {
+    "description": "Auto imported from components/explore/MeetTheTeam.vue"
   },
   "OurApproach": {
     "description": "Auto imported from components/explore/OurApproach.vue"
   },
   "OurApproachSection": {
     "description": "Auto imported from components/explore/OurApproachSection.vue"
+  },
+  "TeamCube": {
+    "description": "Auto imported from components/explore/TeamCube.vue"
+  },
+  "ContactFooter": {
+    "description": "Auto imported from components/contact/ContactFooter.vue"
   }
 }

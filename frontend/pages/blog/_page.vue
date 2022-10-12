@@ -15,7 +15,7 @@ export default {
   methods: {
     async asyncData() {
       const thePageID = await fetch(
-          'http://localhost:1337/api/pages?filters[slug]=' + this.page
+          'http://localhost:1337/api/blogs?filters[slug]=' + this.page 
           // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
       ).then((res) => {
         // can set up 404 redirection here
@@ -27,7 +27,7 @@ export default {
       console.log('pageID', pageID);
 
       const thePageData = await fetch(
-          'http://localhost:1337/api/pages/' + pageID + '?populate=deep,5'
+          'http://localhost:1337/api/blogs/' + pageID + '?populate=deep,5'
         ).then((res) => {
         // can set up 404 redirection here
         return res.json();

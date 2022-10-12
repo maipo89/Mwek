@@ -1,12 +1,14 @@
 <template>
     <div class="blog-card" :class="this.isActive" ref="blogCard">
-        <div class="blog-card__image" :style="{ backgroundImage: `url(${this.$store.state.apiroute.url + this.cardData.attributes.featured_image.data.attributes.url})`}">
-            <!-- <img :src="this.$store.state.apiroute.url + this.cardData.attributes.featured_image.data.attributes.url" /> -->
-        </div>
-        <div class="blog-card__info">
-            <h4>{{ this.cardData.attributes.Title }}</h4>
-            <p>{{ this.cardData.attributes.content.substring(0, 50) }}</p>
-        </div>
+        <NuxtLink :to='this.cardUrl'>
+            <div class="blog-card__image" :style="{ backgroundImage: `url(${this.$store.state.apiroute.url + this.cardData.attributes.featured_image.data.attributes.url})`}">
+                <!-- <img :src="this.$store.state.apiroute.url + this.cardData.attributes.featured_image.data.attributes.url" /> -->
+            </div>
+            <div class="blog-card__info">
+                <h4>{{ this.cardData.attributes.Title }}</h4>
+                <p>{{ this.cardData.attributes.content.substring(0, 50) }}</p>
+            </div>
+        </NuxtLink>
     </div>
     
 </template>
@@ -26,6 +28,7 @@ export default {
         return {
             formattedArray: [],
             isActive: '',
+            cardUrl: ''
         }
     },
 
@@ -45,10 +48,18 @@ export default {
                     scrub: true,
                     toggleClass: "active",
                     // addName: 'active',
-                    markers: true
                 },
             });
-        }.bind(this), 2000)
+        }.bind(this), 2000);
+
+
+        console.log('this.cardData', this.cardData);
+
+        if(this.cardData.attributes.PrimaryCategory.category.data){
+            this.cardUrl = "/blog/" + this.cardData.attributes.PrimaryCategory.category.data.attributes.slug + "/" + this.cardData.attributes.slug
+        }else{
+            this.cardUrl = "/blog/" + this.cardData.attributes.slug
+        }
         
     }
 }

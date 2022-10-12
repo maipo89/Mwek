@@ -1,5 +1,14 @@
 <template>
-  <BlockBuilder :ID="this.pageID" />
+    <div class="page-content" v-if="this.renderPage">
+      <div class="post-hero">
+        <h1>{{ this.post.Title }}</h1>
+        <div class="post-hero__featured-img">
+          <img :alt="this.post.featured_image.data.attributes.alternativeText" :src="this.$store.state.apiroute.url + this.post.featured_image.data.attributes.formats.medium.url " />
+        </div>
+      </div>
+      <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
+      <!-- <ContactFooter :contactItems="this.contactDetails"/> -->
+    </div>
 </template>
 
 <script>
@@ -7,40 +16,61 @@ export default {
     
   data(){
     return {
-      page: this.$route.params.cat.page,
-      cat: this.$route.cat,
-      postTypeSlug: 'blogs'
+      page: this.$route.params.page,
+      pageID:'',
+      renderPage: false,
+      blocks: '',
+      contactDetails: '',
+      post:'',
     }
   },
   methods: {
-    // http://localhost:1337/api/blogs?filter[slug]=great-news this will get iq by slug
-    // http://localhost:1337/api/blogs/1?categories?filters[slug]=news
     async asyncData() {
       const thePageID = await fetch(
-          'http://localhost:1337/api/' + this.postTypeSlug + '?filter[slug]=' + this.page
+          'http://localhost:1337/api/blogs?filters[slug]=' + this.page 
           // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
       ).then((res) => {
         // can set up 404 redirection here
-        return res.json();
+      return res.json();
       });
-      
       var pageID = thePageID.data[0].id;
 
-      const thePostDataCat = await fetch(
-          'http://localhost:1337/api/' + this.postTypeSlug +  '/' + pageID + '?categories?filters[slug]=' + cat 
+      
+      console.log('pageID', pageID);
+
+      const thePageData = await fetch(
+          'http://localhost:1337/api/blogs/' + pageID + '?populate=deep,5'
         ).then((res) => {
         // can set up 404 redirection here
         return res.json();
       });
 
-      console.log('thePageDataaaaaaaaa', thePageData);
+      console.log('thePageDatasssssss', thePageData);
+
+      this.blocks = thePageData.data.attributes.dynamic_content
+      this.post = thePageData.data.attributes
+
+      // if(thePageData.data.attributes.dynamic_content){
+      //   this.blocks = thePageData.data.attributes.dynamic_content
+      // }
       // console.log(this.$router.params);
+      const contactData = await fetch(
+          'http://localhost:1337/api/contact?populate=*'
+          ).then((res) => {
+          // can set up 404 redirection here
+          return res.json();
+      });
+
+      if(contactData.data.attributes.ContactInfo){
+        // console.log(contactData);
+        this.contactDetails = contactData
+      }
+      this.renderPage = true;
     }
   },
 
   mounted(){
     this.asyncData();
-  }
-  
+  }, 
 }
 </script>

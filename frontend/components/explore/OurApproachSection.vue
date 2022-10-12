@@ -14,9 +14,10 @@
                 {{ this.sectionData.content }}
             </div>
         </div>
+        
         <div class="our-approach__line-container">
             <div  class="line" :style="{ background: 'linear-gradient(90deg, ' + this.sectionData.colour + ' 0%, ' + this.secondColour + ' 100%)' }">
-                <div :style="{ backgroundImage: 'url(/images/Line.png)'}">  </div>
+                <div :style="{backgroundImage: 'url(/images/Line.png)'}" ></div>
             </div>
             <div class="our-approach__line-cover" ref="ourApproachCover">
 
@@ -84,7 +85,7 @@
                         scrub: 1
                     },
                     //autoRound:false,
-                    ease: Linear.easeNone
+                     ease: 'ease-in'
                 });
 
                 gsap.to(this.$refs.ourApproachCover, 30, {
@@ -95,7 +96,7 @@
                         scrub: 1
                     },
                     //autoRound:false,
-                    ease: Linear.easeNone
+                    ease: 'ease-in'
                 });
             },
         },

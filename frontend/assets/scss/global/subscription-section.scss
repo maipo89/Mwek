@@ -1,0 +1,31 @@
+.subscription{
+    max-width: 941px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 75px;
+    &__row{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 44px;
+        input{
+            margin-right: 28px;
+        }
+    }
+    &__sub{
+        text-align: center;
+        margin-bottom: 44px;
+        p{
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #07134D;
+        }
+    }
+    p{
+        text-align: center;
+    }
+}

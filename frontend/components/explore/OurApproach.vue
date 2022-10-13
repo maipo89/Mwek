@@ -1,6 +1,6 @@
 <template>
     <div class="our-approach">
-        <h2>{{ this.blockData.title }}</h2>
+        <!-- <h2>{{ this.blockData.title }}</h2> -->
         <!-- <div v-for="(item, index) in this.blockData.approachSectionsRepeater" :class="'our-approach__section-' + index " class="our-approach__section"  :key="index">
             <div class="our-approach__content">
                 <div class='our-approach__icon'>

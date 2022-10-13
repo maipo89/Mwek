@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_text_content_blocks_contents",
+  "info": {
+    "displayName": "content",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

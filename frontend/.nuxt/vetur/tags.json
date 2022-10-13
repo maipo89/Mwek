@@ -38,6 +38,9 @@
   "CardsWithFilter": {
     "description": "Auto imported from components/archives/CardsWithFilter.vue"
   },
+  "ContactFooter": {
+    "description": "Auto imported from components/contact/ContactFooter.vue"
+  },
   "BlogPage": {
     "description": "Auto imported from components/blog/BlogPage.vue"
   },
@@ -65,24 +68,6 @@
   "CityTurbines": {
     "description": "Auto imported from components/citymap/CityTurbines.vue"
   },
-  "Footer": {
-    "description": "Auto imported from components/global/Footer.vue"
-  },
-  "Header": {
-    "description": "Auto imported from components/global/Header.vue"
-  },
-  "HeroSection": {
-    "description": "Auto imported from components/image/HeroSection.vue"
-  },
-  "ContentColumns": {
-    "description": "Auto imported from components/text-content/ContentColumns.vue"
-  },
-  "ContentWithImage": {
-    "description": "Auto imported from components/text-content/ContentWithImage.vue"
-  },
-  "TextSection": {
-    "description": "Auto imported from components/text-content/TextSection.vue"
-  },
   "MeetTheTeam": {
     "description": "Auto imported from components/explore/MeetTheTeam.vue"
   },
@@ -95,7 +80,22 @@
   "TeamCube": {
     "description": "Auto imported from components/explore/TeamCube.vue"
   },
-  "ContactFooter": {
-    "description": "Auto imported from components/contact/ContactFooter.vue"
+  "HeroSection": {
+    "description": "Auto imported from components/image/HeroSection.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/global/Footer.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/global/Header.vue"
+  },
+  "ContentColumns": {
+    "description": "Auto imported from components/text-content/ContentColumns.vue"
+  },
+  "ContentWithImage": {
+    "description": "Auto imported from components/text-content/ContentWithImage.vue"
+  },
+  "TextSection": {
+    "description": "Auto imported from components/text-content/TextSection.vue"
   }
 }

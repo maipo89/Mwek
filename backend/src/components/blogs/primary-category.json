@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blogs_primary_categories",
+  "info": {
+    "displayName": "PrimaryCategory",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categorie.categorie"
+    }
+  }
+}

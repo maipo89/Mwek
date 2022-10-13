@@ -232,6 +232,19 @@ html {
 	}
 }
 
+.page-content__title{
+    font-family: 'Orbitron';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 131px;
+    display: flex;
+    align-items: center;
+    color: rgba(27, 5, 242, 0.4);
+    text-shadow: -5px 5px 16px rgba(0, 0, 0, 0.04);
+    max-width: 969px;
+    width: 95%;
+    margin: 140px auto;
+}
 
 
 

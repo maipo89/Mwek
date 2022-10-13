@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_explore_team_cubes",
+  "info": {
+    "displayName": "teamCube",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "teamAvatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "linkedIn": {
+      "type": "string"
+    },
+    "jobTitle": {
+      "type": "string"
+    }
+  }
+}

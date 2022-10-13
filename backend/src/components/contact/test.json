@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contact_tests",
+  "info": {
+    "displayName": "test",
+    "icon": "ambulance"
+  },
+  "options": {},
+  "attributes": {
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    }
+  }
+}

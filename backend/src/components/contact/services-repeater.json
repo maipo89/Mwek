@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contact_services_repeaters",
+  "info": {
+    "displayName": "servicesRepeater",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "testtest": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.test"
+    }
+  }
+}

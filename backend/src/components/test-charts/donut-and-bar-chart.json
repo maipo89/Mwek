@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_test_charts_donut_and_bar_charts",
+  "info": {
+    "displayName": "donutAndBarChart",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "secondtitle": {
+      "type": "string"
+    },
+    "secondContent": {
+      "type": "text"
+    },
+    "BarChartData": {
+      "type": "component",
+      "repeatable": true,
+      "component": "test-charts.barchart-stats"
+    },
+    "donutData": {
+      "type": "string"
+    }
+  }
+}

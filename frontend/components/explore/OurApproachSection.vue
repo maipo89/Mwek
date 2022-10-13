@@ -3,13 +3,15 @@
         <div class="our-approach__content">
             <div class='our-approach__icon'>
                 <OnqorCircleIcon />
-                
+                <div class='our-approach__icon-img' >
+                    <img v-if="this.sectionData.icon.data" :src="this.$store.state.apiroute.url + this.sectionData.icon.data.attributes.url" />
+                </div>
                 <svg  ref="svgRotate" class="svgRotate" :style="{ transform: 'rotate('+ rotateMe+'turn)'}" xmlns="http://www.w3.org/2000/svg" width="209" height="209" viewBox="0 0 209 209" fill="none">
                     <circle cx="104.5" cy="104.5" r="102.5" :stroke="this.sectionData.colour" stroke-width="4" stroke-miterlimit="1" stroke-linecap="round" stroke-dasharray="3 19"/>
                 </svg>
 
             </div>
-            <div class="content">
+            <div class="content" ref="content">
                 <h3 :style="{ color: this.sectionData.colour  }">{{ this.sectionData.title }}</h3>
                 {{ this.sectionData.content }}
             </div>
@@ -98,6 +100,18 @@
                     //autoRound:false,
                     ease: 'ease-in'
                 });
+
+                gsap.to(this.$refs.content,{
+                    scrollTrigger: {
+                        trigger: this.$refs.content,
+                        start: "top center+=145",
+                        end: "bottom top",
+                        scrub: true,
+                        toggleClass: "active"
+                        // addName: 'active',
+                    },
+                });
+
             },
         },
         mounted(){
@@ -110,6 +124,7 @@
       
                 this.rotate()
 
+                console.log('this.sectionData.icon', this.sectionData.icon);
 
       
 

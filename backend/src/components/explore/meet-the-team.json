@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_explore_meet_the_teams",
+  "info": {
+    "displayName": "MeetTheTeam",
+    "icon": "user-friends",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TeamCubesSlider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "explore.team-cube"
+    }
+  }
+}

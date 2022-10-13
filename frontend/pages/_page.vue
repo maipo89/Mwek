@@ -1,5 +1,6 @@
 <template>
   <div class="page-content" v-if="this.renderPage">
+    <h1 class="page-content__title">{{ this.pageContent.title }}</h1>
     <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
     <ContactFooter :contactItems="this.contactDetails"/>
   </div>
@@ -16,6 +17,7 @@ export default {
       page: this.$route.params.page,
       pageID:'',
       blocks: '',
+      pageContent: '',
       renderPage: false,
       contactDetails: null,
     }
@@ -40,7 +42,7 @@ export default {
       });
 
       console.log('thePageData 888', thePageData);
-
+      this.pageContent = thePageData.data.attributes;
       if(thePageData.data.attributes.dynamic_content){
         this.blocks = thePageData.data.attributes.dynamic_content
       }

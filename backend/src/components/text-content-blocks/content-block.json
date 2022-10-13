@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_text_content_blocks_content_blocks",
+  "info": {
+    "displayName": "contentBlock",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content_and_columns": {
+      "displayName": "content",
+      "type": "component",
+      "repeatable": true,
+      "component": "text-content-blocks.content"
+    },
+    "column_number": {
+      "type": "string"
+    }
+  }
+}

@@ -28,8 +28,15 @@
         "explore.our-approach",
         "image.hero-section",
         "image.test-image-container",
+        "onqro-tabed-content.tabbed-content-container",
+        "text-content-blocks.3-d-object-and-content",
+        "text-content-blocks.content",
+        "text-content-blocks.content-block",
+        "text-content-blocks.content-with-image",
+        "text-content-blocks.quote",
         "text-content.text-section",
-        "test-charts.donut-and-bar-chart"
+        "the-page-links.service-links-repeater",
+        "text-content-blocks.tick-list"
       ]
     },
     "isHome": {

@@ -1,14 +1,16 @@
 <template>
     <div class="blog-card" :class="this.isActive" ref="blogCard">
+        <div class="blog-card__content">
         <NuxtLink :to='this.cardUrl'>
             <div class="blog-card__image" :style="{ backgroundImage: `url(${this.$store.state.apiroute.url + this.cardData.attributes.featured_image.data.attributes.url})`}">
                 <!-- <img :src="this.$store.state.apiroute.url + this.cardData.attributes.featured_image.data.attributes.url" /> -->
             </div>
             <div class="blog-card__info">
                 <h4>{{ this.cardData.attributes.Title }}</h4>
-                <p>{{ this.cardData.attributes.content.substring(0, 50) }}</p>
+                <p v-if="this.cardData.attributes.content">{{ this.cardData.attributes.content.substring(0, 50) }}</p>
             </div>
         </NuxtLink>
+        </div>
     </div>
     
 </template>

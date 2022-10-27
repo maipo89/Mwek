@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_text_content_blocks_tick_lists",
+  "info": {
+    "displayName": "tickList",
+    "icon": "list-ul"
+  },
+  "options": {},
+  "attributes": {
+    "listItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "text-content-blocks.tick-list-item"
+    }
+  }
+}

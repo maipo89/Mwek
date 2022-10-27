@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_stats_stat_tabs",
+  "info": {
+    "displayName": "statTab",
+    "icon": "digital-tachograph",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "statImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "statTitle": {
+      "type": "string"
+    },
+    "statContent": {
+      "type": "text"
+    }
+  }
+}

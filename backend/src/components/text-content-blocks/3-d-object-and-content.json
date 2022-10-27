@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_text_content_blocks_3_d_object_and_contents",
+  "info": {
+    "displayName": "3DObjectAndContent",
+    "icon": "dice-d20",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "paragraphContent": {
+      "type": "richtext"
+    },
+    "objectMedia": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

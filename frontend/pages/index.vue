@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import gsap from 'gsap';
 
 export default {
@@ -20,7 +20,7 @@ export default {
   methods: {
     async asyncData() {
       const thePageID = await fetch(
-          'http://localhost:1337/api/pages?filters[isHome]=true'
+          this.$store.state.apiroute.url + '/api/pages?filters[isHome]=true'
           // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
       ).then((res) => {
         // can set up 404 redirection here
@@ -29,7 +29,7 @@ export default {
       var pageID = thePageID.data[0].id;
 
       const thePageData = await fetch(
-          'http://localhost:1337/api/pages/' + pageID + '?populate[dynamic_content][populate]=*'
+          this.$store.state.apiroute.url + '/api/pages/' + pageID + '?populate[dynamic_content][populate]=*'
         ).then((res) => {
         // can set up 404 redirection here
         return res.json();
@@ -44,7 +44,7 @@ export default {
 
     async getMapButtons() {
       const mapButton = await fetch(
-          'http://localhost:1337/api/city-map?populate=*'
+          this.$store.state.apiroute.url + '/api/city-map?populate=*'
           // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
       ).then((res) => {
         // can set up 404 redirection here

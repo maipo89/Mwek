@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_text_content_blocks_tick_list_items",
+  "info": {
+    "displayName": "tickListItem",
+    "icon": "list-ul"
+  },
+  "options": {},
+  "attributes": {
+    "TickListItemText": {
+      "type": "string"
+    }
+  }
+}

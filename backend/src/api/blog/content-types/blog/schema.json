@@ -58,6 +58,9 @@
       "repeatable": false,
       "component": "blogs.primary-category",
       "required": true
+    },
+    "subTitle": {
+      "type": "string"
     }
   }
 }

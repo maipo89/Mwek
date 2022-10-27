@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_text_content_blocks_quotes",
+  "info": {
+    "displayName": "quote",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "quoteText": {
+      "type": "text"
+    }
+  }
+}

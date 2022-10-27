@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_the_page_links_the_service_links",
+  "info": {
+    "displayName": "theServiceLink",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "serviceLink": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service.service"
+    },
+    "serviceIcon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "serviceTitle": {
+      "type": "string"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 .contact-footer{
     max-width: 943px;
     height: auto;
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
     h2{
         font-family: 'Orbitron';
@@ -90,4 +90,16 @@
     // @media only screen and (max-width: 900px) {
 
 	// }
+}
+
+@media only screen and (max-width: 900px){
+    .contact-footer__container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-footer__form{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -58,6 +58,7 @@ h1.h2,h3,h4,h5{
     width: 95%;
     top: 0px;
     min-height: 100vh;
+    overflow: hidden;
     height: auto;
     transform: translateY(100%);
     border-radius: 20px 20px;
@@ -188,12 +189,12 @@ html {
 
 .post-hero{
     max-width: 943px;
-    width: 95%;
+    width: calc(100% - 40px);
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     align-items: center;
-    margin-bottom: 85px;
+    margin-bottom: 100px;
     h1{
         font-size: 38px;
         font-family: 'Orbitron';
@@ -204,18 +205,20 @@ html {
         margin-top: 100px;
     }
     &__featured-img{
-        max-width: 943px;
         height: 452px;
+        width: 100%;
         position: relative;
-        width: 95%;
         overflow: hidden;
         box-shadow: -3px 4px 5px -1px rgba(0, 0, 0, 0.16), -25px 25px 32px 5px rgba(0, 0, 0, 0.15), inset 0px 0px 200px rgba(0, 0, 0, 0.05), inset -35px 35px 48px rgba(0, 0, 0, 0.02);
         border-radius: 15px;
+        
         img{
             width: 100%;
+            -o-object-fit: cover;
             object-fit: cover;
             position: absolute;
-            top:-25%;
+            /* top: -25%; */
+            height: 100%;
         }
     }
     @media only screen and (max-width: 900px) {
@@ -232,6 +235,22 @@ html {
 	}
 }
 
+
+.blog-post{
+    .content-columns{
+        margin-bottom: 50px !important;
+    }
+    .content-columns__title{
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+}
+.service-page{
+    .page-content__title{
+        margin: 90px auto 60px auto;
+    }
+}
+
 .page-content__title{
     font-family: 'Orbitron';
     font-style: normal;
@@ -243,8 +262,13 @@ html {
     text-shadow: -5px 5px 16px rgba(0, 0, 0, 0.04);
     max-width: 969px;
     width: 95%;
-    margin: 140px auto;
+    margin: 140px auto 90px auto;
 }
 
+@media only screen and (max-width: 900px){
+    .page-content__title{
+        font-size: 60px;
+    }
+}
 
 

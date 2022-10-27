@@ -18,7 +18,7 @@ export default {
         async asyncData() {
 
             const cats = await fetch(
-                'http://localhost:1337/api/categories'
+                this.$store.state.apiroute.url + '/api/categories'
             ).then((res) => {
                 // can set up 404 redirection here
                 return res.json();

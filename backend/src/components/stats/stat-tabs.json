@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_stats_stat_tabs",
+  "info": {
+    "displayName": "statTabs",
+    "icon": "table"
+  },
+  "options": {},
+  "attributes": {
+    "statTabsRepeater": {
+      "type": "component",
+      "repeatable": true,
+      "component": "stats.stat-tab"
+    }
+  }
+}

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import gsap from 'gsap';
 export default {
   name: 'blog', 

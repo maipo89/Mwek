@@ -4,7 +4,7 @@
             <vue-markdown :source="this.blockData.content" />
         </div>
         <div class="content-image__image">
-            <img :src="this.$store.state.apiroute.url +  this.blockData.image.data.attributes.formats.medium.url" />
+            <img :src="this.$store.state.apiroute.url +  this.blockData.image.data.attributes.url" />
         </div>
     </div>
 </template>

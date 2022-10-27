@@ -25,7 +25,7 @@ export default {
   methods: {
     async asyncData() {
       const thePageID = await fetch(
-          'http://localhost:1337/api/pages?filters[slug]=' + this.page
+          this.$store.state.apiroute.url + '/api/pages?filters[slug]=' + this.page
           // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
       ).then((res) => {
         // can set up 404 redirection here
@@ -35,7 +35,7 @@ export default {
       var pageID = thePageID.data[0].id;
 
       const thePageData = await fetch(
-          'http://localhost:1337/api/pages/' + pageID + '?populate=deep'
+          this.$store.state.apiroute.url + '/api/pages/' + pageID + '?populate=deep'
         ).then((res) => {
         // can set up 404 redirection here
         return res.json();
@@ -49,7 +49,7 @@ export default {
 
       // console.log(this.$router.params);
       const contactData = await fetch(
-          'http://localhost:1337/api/contact?populate=*'
+          this.$store.state.apiroute.url + '/api/contact?populate=*'
           ).then((res) => {
           // can set up 404 redirection here
           return res.json();

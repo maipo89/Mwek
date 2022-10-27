@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);

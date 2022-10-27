@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_the_page_links_service_links_repeaters",
+  "info": {
+    "displayName": "serviceLinksRepeater",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "theServiceLinkRepeater": {
+      "type": "component",
+      "repeatable": true,
+      "component": "the-page-links.the-service-link"
+    },
+    "serviceSectionTitle": {
+      "type": "string"
+    }
+  }
+}

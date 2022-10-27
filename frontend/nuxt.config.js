@@ -1,5 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  // server: {
+  //   host: '0.0.0.0', // default: localhost
+  //   port: 8001,
+  // },
   head: {
     titleTemplate: '%s - frontend',
     title: 'frontend',
@@ -68,7 +72,6 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
   ],
-
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   // vuetify: {
   //   // customVariables: ['~/assets/variables.scss'],
@@ -87,10 +90,10 @@ export default {
   //     }
   //   }
   // },
-
   // // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['gsap']
+    transpile: ['gsap'],
+    // standalone: true
   }
 }
 

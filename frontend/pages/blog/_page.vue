@@ -9,13 +9,14 @@ export default {
     return {
       page: this.$route.params.page,
       pageID:'',
-      renderPage: false
+      renderPage: false,
+      contactDetails: false
     }
   },
   methods: {
     async asyncData() {
       const thePageID = await fetch(
-          'http://localhost:1337/api/blogs?filters[slug]=' + this.page 
+          this.$store.state.apiroute.url + '/api/blogs?filters[slug]=' + this.page 
           // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
       ).then((res) => {
         // can set up 404 redirection here
@@ -27,7 +28,7 @@ export default {
       console.log('pageID', pageID);
 
       const thePageData = await fetch(
-          'http://localhost:1337/api/blogs/' + pageID + '?populate=deep,5'
+          this.$store.state.apiroute.url + '/api/blogs/' + pageID + '?populate=deep,5'
         ).then((res) => {
         // can set up 404 redirection here
         return res.json();
@@ -35,6 +36,19 @@ export default {
 
       console.log('thePageDatasssssss', thePageData);
       // console.log(this.$router.params);
+
+      const contactData = await fetch(
+          this.$store.state.apiroute.url + '/api/contact?populate=*'
+          ).then((res) => {
+          // can set up 404 redirection here
+          return res.json();
+      });
+
+      if(contactData.data.attributes.ContactInfo){
+        // console.log(contactData);
+        this.contactDetails = contactData
+      }
+
     }
   },
 

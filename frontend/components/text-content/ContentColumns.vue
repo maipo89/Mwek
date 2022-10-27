@@ -1,8 +1,12 @@
 <template>
-    <div class="content-columns">
-        <div class="content-columns__block" v-for="(item, index) in this.blockData.content_and_columns" :key="index">
-            <vue-markdown :source="item.content" />
-            <!-- {{ item.content }} -->
+    <div>
+        <h2 v-if="this.blockData.title" class="content-columns__title">{{ this.blockData.title }}</h2>
+        <div class="content-columns">
+            <div class="content-columns__block" v-for="(item, index) in this.blockData.content_and_columns" :key="index" :class="[{ contentImage: item.image.data }, item.columnWidth]" >   
+                <vue-markdown v-if="item.image.data === null" :source="item.content" />
+                <img v-if="item.image.data" :src="$store.state.apiroute.url + item.image.data.attributes.url" :class="{ 'image-bleed': item.imageWidth }" :style="{width: item.imageWidth + '%'}" />
+                <!-- {{ item.content }} -->
+            </div>
         </div>
     </div>
 </template>

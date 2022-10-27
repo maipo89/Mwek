@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     align-items: center;
-    margin: 100px 0px;
+    margin-bottom: 100px;
     .slick-slider{
         margin-top: 100px;
     }
@@ -49,8 +49,11 @@
         }
         .meet-the-team__info{
             opacity: 1;
-            transition: all 0.7s;
+            transition: all 0.7s 0.7s;
         }
+    }
+    .slick-cloned{
+        opacity: 0.0;
     }
     .goingRight{
         margin: 0px 0px 0px 65px;
@@ -59,6 +62,9 @@
     .goingLeft{
         margin: 0px 65px 0px 0px;
         transition: all 1s;
+    }
+    .slick-track{
+        padding-top: 13px;
     }
     &__cube-holder{
         width: 230px !important;
@@ -95,12 +101,14 @@
             border: 2px solid #847FFA;
             border-radius: 100px;
             width: 30px;
+            transition: background-color 0.3s;
             height: 30px;
             cursor: pointer;
             svg{
                 width: 17px;
                 path{
                     fill: #847FFA;
+                    transition: fill 0.3s;
                 }
             }
             .icon{
@@ -113,6 +121,18 @@
                     transform: rotate(180deg);
                     top: -6px;
                     left: 4px;
+                }
+            }
+            &:hover{
+                background-color:#847FFA;
+                transition: background-color 0.3s;
+                svg{
+                    width: 17px;
+                    transition: background-color 0.3s;
+                    path{
+                        fill: #fff;
+                        transition: fill 0.3s;
+                    }
                 }
             }
         }

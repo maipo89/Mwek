@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_onqro_tabed_content_tabbed_content_container_s",
+  "info": {
+    "displayName": "tabbedContentContainer ",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tabbedContent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "onqro-tabed-content.tab-content"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
+      "type": "string"
+    }
+  }
+}

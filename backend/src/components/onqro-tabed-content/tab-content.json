@@ -1,0 +1,100 @@
+{
+  "collectionName": "components_onqro_tabed_content_tab_contents",
+  "info": {
+    "displayName": "tabContent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "tabTitle": {
+      "type": "string"
+    },
+    "tabHexColour": {
+      "type": "string"
+    },
+    "iconOne": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "iconTextOne": {
+      "type": "string"
+    },
+    "iconTwo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "iconTextTwo": {
+      "type": "string"
+    },
+    "iconThree": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "iconTextThree": {
+      "type": "string"
+    },
+    "iconFour": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "iconTextFour": {
+      "type": "string"
+    },
+    "iconFive": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "iconTextFive": {
+      "type": "string"
+    },
+    "iconSix": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "iconTextSix": {
+      "type": "string"
+    }
+  }
+}

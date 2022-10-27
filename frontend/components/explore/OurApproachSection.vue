@@ -13,7 +13,7 @@
             </div>
             <div class="content" ref="content">
                 <h3 :style="{ color: this.sectionData.colour  }">{{ this.sectionData.title }}</h3>
-                {{ this.sectionData.content }}
+                <p>{{ this.sectionData.content }}</p>
             </div>
         </div>
         

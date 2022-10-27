@@ -1,7 +1,8 @@
 <template>
-    <div class="page-content" v-if="this.renderPage">
+    <div class="page-content blog-post" v-if="this.renderPage">
       <div class="post-hero">
         <h1>{{ this.post.Title }}</h1>
+        <!-- <p>{{ this.post.subTitle }}</p> -->
         <div class="post-hero__featured-img">
           <img :alt="this.post.featured_image.data.attributes.alternativeText" :src="this.$store.state.apiroute.url + this.post.featured_image.data.attributes.formats.medium.url " />
         </div>
@@ -27,7 +28,7 @@ export default {
   methods: {
     async asyncData() {
       const thePageID = await fetch(
-          'http://localhost:1337/api/blogs?filters[slug]=' + this.page 
+          this.$store.state.apiroute.url + '/api/blogs?filters[slug]=' + this.page 
           // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
       ).then((res) => {
         // can set up 404 redirection here
@@ -39,7 +40,7 @@ export default {
       console.log('pageID', pageID);
 
       const thePageData = await fetch(
-          'http://localhost:1337/api/blogs/' + pageID + '?populate=deep,5'
+          this.$store.state.apiroute.url + '/api/blogs/' + pageID + '?populate=deep,5'
         ).then((res) => {
         // can set up 404 redirection here
         return res.json();
@@ -55,7 +56,7 @@ export default {
       // }
       // console.log(this.$router.params);
       const contactData = await fetch(
-          'http://localhost:1337/api/contact?populate=*'
+          this.$store.state.apiroute.url + '/api/contact?populate=*'
           ).then((res) => {
           // can set up 404 redirection here
           return res.json();

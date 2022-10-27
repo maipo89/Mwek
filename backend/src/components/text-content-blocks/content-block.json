@@ -13,7 +13,10 @@
       "repeatable": true,
       "component": "text-content-blocks.content"
     },
-    "column_number": {
+    "title": {
+      "type": "string"
+    },
+    "subTitle": {
       "type": "string"
     }
   }

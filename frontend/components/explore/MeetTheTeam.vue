@@ -1,15 +1,12 @@
 <template>
     <div class="meet-the-team">
         <div class="meet-the-team__container">
-
             <h2>MEET THE TEAM</h2>
-
-            <VueSlickCarousel @beforeChange="currentSlide" :infinite="true" :speed="1000" :initialSlide="this.blockData.TeamCubesSlider.length / 2" :arrows="false" :dots="this.doWeHaveDots" :centerMode="true" centerPadding="0px" :slidesToShow="5" :slidesToScroll="1" :focusOnSelect="true" ref="carousel">
+            <VueSlickCarousel @beforeChange="currentSlide" :infinite="true" :speed="1000" :initialSlide="this.blockData.TeamCubesSlider.length / 2" :arrows="false" :dots="this.doWeHaveDots" :centerMode="true" centerPadding="0px" :slidesToShow="this.slideNumber" :slidesToScroll="1" :focusOnSelect="true" ref="carousel">
                 <div v-for="(item, index) in this.blockData.TeamCubesSlider" :key="index" class="meet-the-team__slide">
                     <TeamCube :teamInfo="item" :activeCube="currentIndex" :teamIndex="index" :totalTeam="blockData.TeamCubesSlider.length"/>
                 </div>
             </VueSlickCarousel>
-
             <div class="meet-the-team__buttons">
                 <div class="button button--prev" v-on:click="prevItem()">
                     <Icon icon="chevronLeft"/>
@@ -18,7 +15,6 @@
                     <Icon icon="chevronRight"/>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -42,15 +38,20 @@
         data(){
             return {
                 currentIndex: this.blockData.TeamCubesSlider.length / 2,
-                doWeHaveDots: false
+                doWeHaveDots: false,
+                slideNumber: 5
             }
         },
         methods: {
             nextItem(){
-                this.$refs.carousel.next()
+                if(this.currentIndex < this.blockData.TeamCubesSlider.length - 1){
+                    this.$refs.carousel.next();
+                }
             },
             prevItem(){
-                this.$refs.carousel.prev()
+                if(this.currentIndex > 0){
+                    this.$refs.carousel.prev();
+                }
             },
             currentSlide(slideIndex,nextIndex){
                 console.log('slideIndex',slideIndex);
@@ -60,6 +61,13 @@
         },
         beforeMount(){
             require('@/assets/scss/explore/meet-the-team.scss');
+        },
+        mounted(){
+            console.log(window.innerWidth)
+            if(window.innerWidth < 900){
+                this.slideNumber = 3;
+                this.doWeHaveDots = true;
+            }
         }
     }
 </script>

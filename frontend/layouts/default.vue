@@ -4,16 +4,23 @@
       <v-container>
         <!-- <SiteIntro /> -->
         <Header v-on:page-open="headerAction()"/>
-        
         <div :class="[this.pageState, this.thePageClass]">
           <div class="drag-map" > 
             <div class="drag-map__city-absolute">
               <div class="drag-map__city" ref="dragMapCity">
                 <div class="drag-map__container" ref="dragMap__container" id="drag">
-                    <CityMapSVG v-if="this.renderMap" />
+                  <CityMapSVG v-if="this.renderMap" />
+                  <div class="drag-map__button drag-map__button--one">
+                    <div class="light-one">
+                      <div class="curved-corner-topright" style="/* background-color: red; */"></div>
+                    </div>
+                    <div class="light-one"></div>
+                    <div class="light-two"></div>
+                    <div class="light-three"></div>
+                    <div class="button-light">
 
-       <!--             <CityMapCards v-for="(item, index) in this.mapButton" :key="index" :cardData="item" /> -->
-             
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -38,7 +45,6 @@
             </div>
           </div>
         </div>
-
         <Footer />
       </v-container>
     </v-main>
@@ -89,13 +95,8 @@ export default {
         const firstPath = location.pathname.split('/')[1];
         console.log('siteUrl',location);
         this.thePageClass = firstPath + '-page-' + location.pathname.replace(/[^/]/g, "").length;
-    }
-  },
-
-  mounted(){
-    this.getMapButtons();
-    
-    if(this.renderMap){
+    },
+    draggableMapFunction(){
       this.draggable = new Draggable(this.$refs.dragMap__container, {
         bounds: this.$refs.dragMapCity,
         throwProps: true,      
@@ -103,6 +104,11 @@ export default {
         allowEventDefault: true
       });
     }
+  },
+
+  mounted(){
+    this.getMapButtons();
+    
 
     console.log('this.$route.params.page',this.$route.params.page);
 
@@ -111,14 +117,21 @@ export default {
       this.renderMap = false;
     }else{
       this.renderMap = true;
+
     }
 
     this.pageClass();
+
+    if(this.renderMap){
+      this.draggableMapFunction()
+    }
     
   },
   watch: {
     $route (to, from){
         this.pageClass()
+
+        console.log('i am the to', to);
     }
   }
 }

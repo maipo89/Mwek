@@ -5,9 +5,9 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _d7e4678e = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
-const _5cbd9c14 = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
 const _7da1f5fa = () => interopDefault(import('../pages/blog/_cat/index.vue' /* webpackChunkName: "pages/blog/_cat/index" */))
 const _0661de56 = () => interopDefault(import('../pages/blog/_page.vue' /* webpackChunkName: "pages/blog/_page" */))
+const _258cd891 = () => interopDefault(import('../pages/services/_page.vue' /* webpackChunkName: "pages/services/_page" */))
 const _29f0499f = () => interopDefault(import('../pages/blog/_cat/_page.vue' /* webpackChunkName: "pages/blog/_cat/_page" */))
 const _3ab0bcee = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 const _b91bfcec = () => interopDefault(import('../pages/_page.vue' /* webpackChunkName: "pages/_page" */))
@@ -28,10 +28,6 @@ export const routerOptions = {
     component: _d7e4678e,
     name: "blog"
   }, {
-    path: "/inspire",
-    component: _5cbd9c14,
-    name: "inspire"
-  }, {
     path: "/blog/:cat",
     component: _7da1f5fa,
     name: "blog-cat"
@@ -39,6 +35,10 @@ export const routerOptions = {
     path: "/blog/:page",
     component: _0661de56,
     name: "blog-page"
+  }, {
+    path: "/services/:page?",
+    component: _258cd891,
+    name: "services-page"
   }, {
     path: "/blog/:cat/:page",
     component: _29f0499f,

@@ -5,7 +5,8 @@
         <!-- <SiteIntro /> -->
         <Header v-on:page-open="headerAction()"/>
         <div :class="[this.pageState, this.thePageClass]">
-          <div class="drag-map" > 
+          <CityMapSVG />
+          <!-- <div class="drag-map" > 
             <div class="drag-map__city-absolute">
               <div class="drag-map__city" ref="dragMapCity">
                 <div class="drag-map__container" ref="dragMap__container" id="drag">
@@ -24,7 +25,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="page-modal__container" >
             <div class="page-modal">
               <div class="page-modal__back-to-map" v-on:click="backToMap()">
@@ -97,12 +98,12 @@ export default {
         this.thePageClass = firstPath + '-page-' + location.pathname.replace(/[^/]/g, "").length;
     },
     draggableMapFunction(){
-      this.draggable = new Draggable(this.$refs.dragMap__container, {
-        bounds: this.$refs.dragMapCity,
-        throwProps: true,      
-        callbackScope: this,
-        allowEventDefault: true
-      });
+      // this.draggable = new Draggable(this.$refs.dragMap__container, {
+      //   bounds: this.$refs.dragMapCity,
+      //   throwProps: true,      
+      //   callbackScope: this,
+      //   allowEventDefault: true
+      // });
     }
   },
 

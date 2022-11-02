@@ -52,8 +52,11 @@
 
             app.animationUpdateXright = function(delta) {
                 // console.log('mapCont.x', mapCont.x )
-                
-                mapCont.x = mapCont.x - 1;
+                var checkCords = mapCont.getBounds();
+                if(checkCords.x > 0){
+                     mapCont.x = mapCont.x - 15;
+                }
+               
                 // console.log(mapCont.x);
             }
 
@@ -63,21 +66,30 @@
                 var checkCords = mapCont.getBounds();
                 var rightCheck = 0 - ( mapCont._boundsRect.width / 2);
                 if(checkCords.x < rightCheck){
-                    mapCont.x = mapCont.x + 5;
+                    mapCont.x = mapCont.x + 15;
                 }
                 // for(i = 0; i < )
             }
 
 
             app.animationUpdateYtop = function(delta) {
-                console.log('mapCont.x', mapCont.x )
-                mapCont.y -= 0.1 * 10;
+                // console.log('mapCont.x', mapCont.x )
+                var checkCords = mapCont.getBounds();
+                if(checkCords.y > 0){
+                    mapCont.y = mapCont.y - 15;
+                }
+                
             }
 
             
             app.animationUpdateYbottom = function(delta) {
-                console.log('mapCont.x', mapCont.x )
-                mapCont.y += 0.1 * 10;
+                // console.log('mapCont.x', mapCont.x )
+                // mapCont.y += 0.1 * 10;
+                var checkCords = mapCont.getBounds();
+                var bottomCheck = 0 - ( mapCont._boundsRect.height / 2);
+                if(checkCords.y < bottomCheck){
+                    mapCont.y = mapCont.y + 15;
+                }
             }
 
             console.log('app',app.renderer.width);
@@ -119,11 +131,12 @@
 
                 console.log('checkCords.x ', checkCords );
                 
-                console.log('mapCont', mapCont._boundsRect.width / 2);
+                console.log('mapCont', mapCont._boundsRect.height / 2);
 
                 if(checkCords.x > 0){
-                    
+                    app.ticker.add(app.animationUpdateXright);
                 }
+                
 
 
                 var rightCheck = 0 - ( mapCont._boundsRect.width / 2);
@@ -131,6 +144,17 @@
                 if(checkCords.x < rightCheck){
                     app.ticker.add(app.animationUpdateXleft);
 
+                    
+                    // app.ticker.remove(app.animationUpdateXleft);
+                }
+
+                if(checkCords.y > 0){
+                    app.ticker.add(app.animationUpdateYtop);
+                }
+
+                var bottomCheck = 0 - ( mapCont._boundsRect.height / 2);
+                if(checkCords.y < bottomCheck){
+                    app.ticker.add(app.animationUpdateYbottom);
                     
                     // app.ticker.remove(app.animationUpdateXleft);
                 }

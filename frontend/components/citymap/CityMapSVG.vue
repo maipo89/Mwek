@@ -17,27 +17,162 @@
         name: 'CityMapSVG',
         async mounted(){
             const PIXI = await import('pixi.js');
-            const app = new PIXI.Application({ width: window.innerWidth, height: window.innerHeight });
+            const app = new PIXI.Application({transparent: true,  width: window.innerWidth, height: window.innerHeight });
             this.$refs.cityMap.appendChild(app.view);
             
             var mapCont = new PIXI.Container();
-            var map = new PIXI.Sprite.from('/images/LightCity.jpg');
+            var map = new PIXI.Sprite.from('/images/LightCity.png');
 
             mapCont.addChild(map);
             app.stage.addChild(mapCont);
 
             mapCont.interactive = true;
             mapCont.buttonMode = true;
-
-            map.anchor.set(0.5);
-
-            // move the sprite to the center of the screen
+            map.anchor.set(0.5,0.5);
             mapCont.x = app.screen.width / 2;
             mapCont.y = app.screen.height / 2;
 
             var xStore = []
             var xCount = 0; 
 
+
+            function createGradTexture() {
+                // adjust it if somehow you need better quality for very very big images
+                const quality = 256;
+                const canvas = document.createElement('canvas');
+                canvas.width = quality;
+                canvas.height = 1;
+
+                const ctx = canvas.getContext('2d');
+
+                // use canvas2d API to create gradient
+                const grd = ctx.createLinearGradient(100, 100, quality, 100);
+                grd.addColorStop(0, 'rgba(255, 255, 255, 0.0)');
+                grd.addColorStop(0.3, '#F0F0F330');
+                grd.addColorStop(0.7, '#00CCD669');
+                grd.addColorStop(1, '#9E00FC');
+
+                ctx.fillStyle = grd;
+                ctx.fillRect(0, 0, quality, 1);
+
+                return PIXI.Texture.from(canvas);
+            }
+
+            const gradTexture = createGradTexture();
+
+            const graphics = new PIXI.Graphics();
+            // graphics.beginFill(0xDE3249);
+            // // graphics.beginTextureFill(gradTexture);
+            // graphics.drawRect(50, 50, 100, 100, 30);
+            // graphics.endFill();
+
+
+            // just a little scriipt to find X Y while positioning things
+            // var pixiCanva = app;
+
+            // // app.addEventListener("click", onClick);
+
+            // function onClick () {
+            //     var target = this;
+            //     alert(target.x);
+            //     alert(target.y);
+            // }
+
+
+
+            // graphics.lineStyle(2, 0xFF00FF, 1);
+            // graphics.beginFill(0x650A5A, 0.2);
+            // graphics.drawRoundedRect(-652, 57, 20, 20, 1);
+            // graphics.endFill();
+
+            graphics.alpha = 0.3
+            graphics.lineStyle(1, 0xffd900, 1);
+
+            // the three towers mask
+
+            graphics.beginFill(0xFF3300);
+            graphics.moveTo(-656, 59);
+            graphics.lineTo(-656, 59);
+            graphics.lineTo(-639, 68);
+            graphics.lineTo(-622, 60);
+            graphics.lineTo(-614, -49);
+            graphics.lineTo(-669, -47);
+            graphics.closePath();
+            graphics.endFill();
+
+            graphics.beginFill(0xFF3300);
+            graphics.moveTo(-723, 84);
+            graphics.lineTo(-723, 84);
+            graphics.lineTo(-709, 93);
+            // -708.7968139648438/91.99664306640625
+            graphics.lineTo(-693, 85);
+            // -673.2498779296875/-47.036376953125
+            graphics.lineTo(-673, -47);
+            // -739.8705444335938/-39.6455078125
+            graphics.lineTo(-739, -39);
+            graphics.closePath();
+            graphics.endFill();
+
+            // end of three tower masks
+
+            // Mwek building mask
+
+            graphics.beginFill(0xFF3300);
+            graphics.moveTo(-149, -157);
+            graphics.lineTo(-149, -157);
+            // -149.56100463867188/-157.09686279296875
+            graphics.lineTo(-89, -123);
+            // -89.15414428710938/-123.04501342773438
+            // // -708.7968139648438/91.99664306640625
+            graphics.lineTo(-55, -144);
+            // -55.0130615234375/-144.388671875
+            // // -673.2498779296875/-47.036376953125
+            graphics.lineTo(-43, -237);
+            // // -739.8705444335938/-39.6455078125
+            graphics.lineTo(-151, -243);
+            // -151.88214111328125/-243.8634033203125
+            // -43.7164306640625/-237.19659423828125
+            graphics.closePath();
+            graphics.endFill();
+            
+
+            // tall building    
+            graphics.beginFill(0xFF3300);
+            graphics.moveTo(207.36065673828125, 50.336517333984375);
+            graphics.lineTo(207.36065673828125, 50.336517333984375);
+            graphics.lineTo(246.3184814453125, 75.02749633789062);
+            graphics.lineTo(286.273681640625, 49.90716552734375);
+            graphics.lineTo(319.703369140625, -94.63394165039062);
+            graphics.lineTo(182.6978759765625,-83.2994384765625)
+
+            graphics.closePath();
+            graphics.endFill();
+
+
+            // train tower
+
+            graphics.beginFill(0xFF3300);
+            graphics.moveTo(755.0716552734375, 124.14593505859375);
+            graphics.lineTo(755.0716552734375, 124.14593505859375);
+            graphics.lineTo(781.2767333984375, 141.64190673828125);
+            graphics.lineTo(807.5801391601562, 125.35064697265625);
+            graphics.lineTo(827.7238922119141, 40.118499755859375);
+            graphics.lineTo(736.787841796875, 45.898223876953125)
+
+            graphics.closePath();
+            graphics.endFill();
+
+
+            // 204.36065673828125/50.336517333984375
+
+            var buttonOneCont = new PIXI.Container()
+   
+
+            // buttonOneCont.addChild(graphics);
+            mapCont.addChild(graphics);
+
+
+            // my shity map drag boundry check
             var xCanMoveRight = true;
             var xCanMoveLeft = true;
             var yCanMoveTop = true;
@@ -110,6 +245,7 @@
 
                 //store this variable for convenience           
                 let position = this.data.getLocalPosition(this);
+                console.log(position.x + '/' + position.y);
                 // Set the pivot point to the new position
                 this.pivot.set(position.x, position.y)
                 // update the new position of the sprite to the position obtained through 
@@ -136,8 +272,6 @@
                 if(checkCords.x > 0){
                     app.ticker.add(app.animationUpdateXright);
                 }
-                
-
 
                 var rightCheck = 0 - ( mapCont._boundsRect.width / 2);
                 console.log(rightCheck);

@@ -5,8 +5,8 @@
     left: 0px;
     top:0px;
     overflow: hidden;
-    background: rgb(168,169,249);
-    background: linear-gradient(90deg, rgba(168,169,249,1) 14%, rgba(159,225,241,1) 66%);
+    background: rgb(168,169,249);   
+    // background: linear-gradient(90deg, rgba(168,169,249,1) 14%, rgba(159,225,241,1) 66%);
     &__container{
         // position: relative;
         left: 0px;
@@ -108,7 +108,54 @@
             left: 0px;
         }
     }
+    &__background{
+        position: absolute;
+        transform-origin: center;
+        width: 220vw;
+        height: 220vh;
+        left: -60%;
+        top:-50%;
+        z-index: -1;
+        -webkit-animation: rotating 5s linear infinite;
+        -moz-animation: rotating 5s linear infinite;
+        -ms-animation: rotating 5s linear infinite;
+        -o-animation: rotating 5s linear infinite;
+        animation: rotating 5s linear infinite;
+        background: linear-gradient(90deg, rgba(168,169,249,1) 14%, rgba(159,225,241,1) 66%);
+    }
 }
+
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+
 
 
 .city-map-cards{

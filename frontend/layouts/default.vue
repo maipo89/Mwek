@@ -5,27 +5,10 @@
         <!-- <SiteIntro /> -->
         <Header v-on:page-open="headerAction()"/>
         <div :class="[this.pageState, this.thePageClass]">
-          <CityMapSVG />
-          <!-- <div class="drag-map" > 
-            <div class="drag-map__city-absolute">
-              <div class="drag-map__city" ref="dragMapCity">
-                <div class="drag-map__container" ref="dragMap__container" id="drag">
-                  <CityMapSVG v-if="this.renderMap" />
-                  <div class="drag-map__button drag-map__button--one">
-                    <div class="light-one">
-                      <div class="curved-corner-topright" style="/* background-color: red; */"></div>
-                    </div>
-                    <div class="light-one"></div>
-                    <div class="light-two"></div>
-                    <div class="light-three"></div>
-                    <div class="button-light">
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
+          <div class="drag-map" > 
+            <div class="drag-map__background"></div>
+            <CityMapSVG />
+          </div>
           <div class="page-modal__container" >
             <div class="page-modal">
               <div class="page-modal__back-to-map" v-on:click="backToMap()">

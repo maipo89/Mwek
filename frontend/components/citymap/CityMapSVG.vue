@@ -24,7 +24,6 @@
             var map = new PIXI.Sprite.from('/images/LightCity.png');
 
             mapCont.addChild(map);
-            app.stage.addChild(mapCont);
 
             mapCont.interactive = true;
             mapCont.buttonMode = true;
@@ -127,14 +126,246 @@
             graphics.lineTo(-55, -144);
             // -55.0130615234375/-144.388671875
             // // -673.2498779296875/-47.036376953125
-            graphics.lineTo(-43, -237);
+            graphics.lineTo(-43, -537);
             // // -739.8705444335938/-39.6455078125
-            graphics.lineTo(-151, -243);
+            graphics.lineTo(-151, -543);
             // -151.88214111328125/-243.8634033203125
             // -43.7164306640625/-237.19659423828125
             graphics.closePath();
             graphics.endFill();
+
+
+            // ############ mwek building light sprites  #############
+
+            var HQcont = new PIXI.Container();
+            var HQmiddle = new PIXI.Sprite.from('/images/light/HQ-middle.png');
+            var HQouter = new PIXI.Sprite.from('/images/light/HQ-outer.png');
+            // var HQcentre = new PIXI.Sprite.from('/images/light/HQ-centre.png');
+
+
+            var HQDotscont = new PIXI.Container();
+
+            var d1 = new PIXI.Sprite.from('/images/light/d1.png');
+            var d2 = new PIXI.Sprite.from('/images/light/d2.png');
+            var d3 = new PIXI.Sprite.from('/images/light/d3.png');
+            var d4 = new PIXI.Sprite.from('/images/light/d4.png');
+            var d5 = new PIXI.Sprite.from('/images/light/d5.png');
+
+            d1.y = 0;
+            d2.y = 10;
+            d3.y = 20;
+            d4.y = 30;
+            d5.y = 40;
+
+            HQDotscont.addChild(d1,d2,d3,d4,d5);
+
+
+            var d1Count = 0;
+            var d1up = true;
+            var d2Count = 0;
+            var d2up = true;
+            var d3Count = 0;
+            var d3up = true;
+            var d4Count = 0;
+            var d4up = true;
+            var d5Count = 0;
+            var d5up = true;
+
+
+            var HQDotspeed = 0.2;
+            var HQDotSpread = [-5,5]
+
+            app.HQdotAnimation = function(delta) {
+
+                if (d1up){
+                    d1Count = d1Count + HQDotspeed;
+                    if (d1Count >= HQDotSpread[1]){
+                        d1up = false;
+                    }
+                    d1.y = d1Count;
+                }
+                else{
+                    d1Count = d1Count - HQDotspeed;
+                    if (d1Count <= HQDotSpread[0]){
+                        d1up = true;
+                    }
+                    d1.y = d1Count;
+                }
+               
+                setTimeout(() => {
+
+                    if (d2up){
+                        d2Count = d2Count + HQDotspeed;
+                        if (d2Count >= HQDotSpread[1]){
+                            d2up = false;
+                        }
+                        d2.y = d2.y + HQDotspeed;
+                    }
+                    else{
+                        d2Count = d2Count - HQDotspeed;
+                        if (d2Count <= HQDotSpread[0]){
+                            d2up = true;
+                        }
+                        d2.y = d2.y - HQDotspeed;
+                    }
+
+                }, 120);
+
+
+                setTimeout(() => {
+
+                    if (d3up){
+                        d3Count = d3Count + HQDotspeed;
+                        if (d3Count >= HQDotSpread[1]){
+                            d3up = false;
+                        }
+                        d3.y = d3.y + HQDotspeed;
+                    }
+                    else{
+                        d3Count = d3Count - HQDotspeed;
+                        if (d3Count <= HQDotSpread[0]){
+                            d3up = true;
+                        }
+                        d3.y = d3.y - HQDotspeed;
+                    }
+
+                }, 140);
+
+                setTimeout(() => {
+
+                    if (d4up){
+                        d4Count = d4Count + HQDotspeed;
+                        if (d4Count >= HQDotSpread[1]){
+                            d4up = false;
+                        }
+                        d4.y = d4.y + HQDotspeed;
+                    }
+                    else{
+                        d4Count = d4Count - HQDotspeed;
+                        if (d4Count <= HQDotSpread[0]){
+                            d4up = true;
+                        }
+                        d4.y = d4.y - HQDotspeed;
+                    }
+
+                }, 200);
+
+                setTimeout(() => {
+
+                    if (d5up){
+                        d5Count = d5Count + HQDotspeed;
+                        if (d5Count >= HQDotSpread[1]){
+                            d5up = false;
+                        }
+                        d5.y = d5.y + HQDotspeed;
+                    }
+                    else{
+                        d5Count = d5Count - HQDotspeed;
+                        if (d5Count <= HQDotSpread[0]){
+                            d5up = true;
+                        }
+                        d5.y = d5.y - HQDotspeed;
+                    }
+
+                }, 240);
+                
+
+            }
+
+            app.ticker.add(app.HQdotAnimation);
+
+            HQDotscont.x = 60;
+            HQDotscont.y = 40;
+
+            const upDots = new PIXI.Graphics();
+            HQcont.addChild(HQmiddle,HQouter, HQDotscont);
+
+            // upDots.beginFill(0xFFFFFF);
+            // upDots.moveTo(0, 0);
+            // upDots.drawRect(10, 15, 10, 10);
+            // upDots.endFill();
+
+            HQcont.mask = graphics
+
+            //  mapCont
+            // -148.49615478515625/-158.59686279296875
+
+            HQmiddle.y = 0;
+
+            HQcont.x = -153.20849609375;
+            HQcont.y = -298.59686279296875;
             
+            // HQcont.width = 105;
+            
+            // const outlineFilterBlue = new PIXI.filters.OutlineFilter(2, 0x99ff99);
+            // const outlineFilterRed = new PIXI.filters.GlowFilter(15, 2, 1, 0xff9999, 0.5);
+            // HQouter.filters = [outlineFilterBlue];
+
+
+            mapCont.addChild(HQcont);
+
+
+            HQmiddle.shadowColor = "red";
+            HQmiddle.shadowBlur = 15;
+            
+            // HQouter.y = 5;
+
+            var HQspeed = 0.3;
+            
+            var frameCount = 0;
+            let counttx = 0, 
+            countup = true;
+            
+            let HQouterCount = 0,
+            HQouterUp = true
+
+
+
+            app.HQcontAnimation = function(delta) {
+
+                if (countup){
+                    counttx = counttx + HQspeed;
+                    if (counttx >= 10){
+                        countup = false;
+                    }
+                    HQmiddle.y = counttx;
+                }
+                else{
+                    counttx = counttx - HQspeed;
+                    if (counttx <= -10){
+                        countup = true;
+                    }
+                    HQmiddle.y = counttx;
+                }
+
+
+
+                setTimeout(() => {
+                    if (HQouterUp){
+                        HQouterCount = HQouterCount + HQspeed;
+                        if (HQouterCount >= 10){
+                            HQouterUp = false;
+                        }
+                        HQouter.y = HQouterCount;
+                    }
+                    else{
+                        HQouterCount = HQouterCount - HQspeed;
+                        if (HQouterCount <= -10){
+                            HQouterUp = true;
+                        }
+                        HQouter.y = HQouterCount;
+                    }   
+                }, 240);
+                
+                
+                console.log(counttx);
+            }
+
+            app.ticker.add(app.HQcontAnimation);
+
+        
+
+            // HQcont.height = 80;
 
             // tall building    
             graphics.beginFill(0xFF3300);
@@ -169,7 +400,9 @@
    
 
             // buttonOneCont.addChild(graphics);
+            app.stage.addChild(mapCont);
             mapCont.addChild(graphics);
+
 
 
             // my shity map drag boundry check
@@ -228,6 +461,7 @@
             }
 
             console.log('app',app.renderer.width);
+            
             // var checkCordsStart = mapCont.getBounds();
             // console.log('checkCords.x ', checkCordsStart.x );
 
@@ -346,6 +580,7 @@
                     //     }, 400);
                     // }
                     this.x = newPosition.x;
+
                     // if(xCanMoveLeft){
                     //     this.x = newPosition.x;
                     //     this.dragging = true

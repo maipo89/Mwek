@@ -84,31 +84,42 @@
             // graphics.drawRoundedRect(-652, 57, 20, 20, 1);
             // graphics.endFill();
 
-            graphics.alpha = 0.3
+            graphics.alpha = 0.1;
             graphics.lineStyle(1, 0xffd900, 1);
 
             // the three towers mask
 
             graphics.beginFill(0xFF3300);
-            graphics.moveTo(-656, 59);
-            graphics.lineTo(-656, 59);
-            graphics.lineTo(-639, 68);
-            graphics.lineTo(-622, 60);
-            graphics.lineTo(-614, -49);
-            graphics.lineTo(-669, -47);
+            graphics.moveTo(-901.0654907226562, 17.634735107421875);
+            graphics.lineTo(-901.0654907226562, 17.634735107421875);
+            graphics.lineTo(-883.7482299804688, 25.636749267578125);
+            graphics.lineTo(-866.5794982910156, 18.238006591796875);
+            graphics.lineTo(-857.0682678222656,-58.2410888671875);
+            graphics.lineTo(-921.0972900390625, -63.70501708984375);
             graphics.closePath();
             graphics.endFill();
 
             graphics.beginFill(0xFF3300);
-            graphics.moveTo(-723, 84);
-            graphics.lineTo(-723, 84);
-            graphics.lineTo(-709, 93);
+            graphics.moveTo(-818.852294921875,-13.5172119140625);
+            graphics.lineTo(-818.852294921875, -13.5172119140625);
+            graphics.lineTo(-798.6113586425781, -4.33544921875);
             // -708.7968139648438/91.99664306640625
-            graphics.lineTo(-693, 85);
+            graphics.lineTo(-778.0056762695312,-13.44464111328125);
             // -673.2498779296875/-47.036376953125
-            graphics.lineTo(-673, -47);
+            graphics.lineTo(-757.4789733886719, -77.37225341796875);
             // -739.8705444335938/-39.6455078125
-            graphics.lineTo(-739, -39);
+            graphics.lineTo(-837.8247375488281, -72.1600341796875);
+            graphics.closePath();
+            graphics.endFill();
+
+
+            graphics.beginFill(0xFF3300);
+            graphics.moveTo(-859.4706420898438, 95.49444580078125);
+            graphics.lineTo(-859.4706420898438, 95.49444580078125);
+            graphics.lineTo(-843.6643676757812,103.6751708984375);
+            graphics.lineTo(-825.5806274414062, 95.97381591796875);
+            graphics.lineTo(-826.341064453125, -75.01119995117188);
+            graphics.lineTo(-861.411865234375,-57.37744140625);
             graphics.closePath();
             graphics.endFill();
 
@@ -117,29 +128,51 @@
             // Mwek building mask
 
             graphics.beginFill(0xFF3300);
-            graphics.moveTo(-149, -157);
-            graphics.lineTo(-149, -157);
+            graphics.moveTo(-198.42529296875, -280.08184814453125);
+            // -198.42529296875/-280.08184814453125
+            graphics.lineTo(-198.42529296875, -280.08184814453125);
             // -149.56100463867188/-157.09686279296875
-            graphics.lineTo(-89, -123);
+            graphics.lineTo(-121.98626708984375, -238.74819946289062);
             // -89.15414428710938/-123.04501342773438
             // // -708.7968139648438/91.99664306640625
-            graphics.lineTo(-55, -144);
+            graphics.lineTo(-81.17926025390625, -264.27484130859375);
             // -55.0130615234375/-144.388671875
             // // -673.2498779296875/-47.036376953125
-            graphics.lineTo(-43, -537);
+            graphics.lineTo(-50.717041015625, -418.14398193359375);
             // // -739.8705444335938/-39.6455078125
-            graphics.lineTo(-151, -543);
+            graphics.lineTo(-225.43182373046875,-415.35113525390625);
             // -151.88214111328125/-243.8634033203125
             // -43.7164306640625/-237.19659423828125
             graphics.closePath();
             graphics.endFill();
 
+            // tall building    
+            graphics.beginFill(0xFF3300);
+            graphics.moveTo(240.510009765625, -25.5338134765625);
+            graphics.lineTo(240.510009765625, -25.5338134765625);
+            graphics.lineTo(288.7976379394531, 3.424713134765625);
+            graphics.lineTo(339.2602844238281, -26.407440185546875);
+            graphics.lineTo(373.34613037109375, -219.58816528320312);
+            graphics.lineTo(217.60488891601562, -191.28219604492188)
+            graphics.closePath();
+            graphics.endFill();
+
+
+            // train tower
+
+            graphics.beginFill(0xFF3300);
+            graphics.moveTo(916.7170257568359, 67.98184204101562);
+            graphics.lineTo(916.7170257568359, 67.98184204101562);
+            graphics.lineTo(945.3286743164062, 83.95205688476562);
+            graphics.lineTo(977.8931274414062, 66.36502075195312);
+            graphics.lineTo(1017.8069458007812,-83.65408325195312);
+            graphics.lineTo(886.3629760742188,-87.04708862304688)
+
+            graphics.closePath();
+            graphics.endFill();
 
             // ############ mwek building light sprites  #############
 
-            var HQcont = new PIXI.Container();
-            var HQmiddle = new PIXI.Sprite.from('/images/light/HQ-middle.png');
-            var HQouter = new PIXI.Sprite.from('/images/light/HQ-outer.png');
             // var HQcentre = new PIXI.Sprite.from('/images/light/HQ-centre.png');
 
 
@@ -175,7 +208,7 @@
             var HQDotspeed = 0.2;
             var HQDotSpread = [-5,5]
 
-            app.HQdotAnimation = function(delta) {
+            app.HQdotAnimation = function(delta){
 
                 if (d1up){
                     d1Count = d1Count + HQDotspeed;
@@ -271,6 +304,10 @@
                 
 
             }
+            var HQcont = new PIXI.Container();
+            var HQmiddle = new PIXI.Sprite.from('/images/light/HQ-middle.png');
+            var HQouter = new PIXI.Sprite.from('/images/light/HQ-outer.png');
+            var HQhover = new PIXI.Sprite.from('/images/light/hover.png');
 
             app.ticker.add(app.HQdotAnimation);
 
@@ -279,21 +316,31 @@
 
             const upDots = new PIXI.Graphics();
             HQcont.addChild(HQmiddle,HQouter, HQDotscont);
+            mapCont.addChild(HQhover)
+            
+            HQhover.anchor.set(0.5,0.5);
+
+            HQhover.x = -141.1739501953125
+            HQhover.y = -122.635498046875
 
             // upDots.beginFill(0xFFFFFF);
             // upDots.moveTo(0, 0);
             // upDots.drawRect(10, 15, 10, 10);
             // upDots.endFill();
-
+            HQhover.mask = graphics
             HQcont.mask = graphics
 
             //  mapCont
             // -148.49615478515625/-158.59686279296875
 
-            HQmiddle.y = 0;
+            HQmiddle.y = 10;
+            HQmiddle.x = 16;
+            HQDotscont.x = 50;
 
-            HQcont.x = -153.20849609375;
-            HQcont.y = -298.59686279296875;
+            HQouter.y = 10;
+
+            HQcont.x = -197;
+            HQcont.y = -400.6499938964844;
             
             // HQcont.width = 105;
             
@@ -319,79 +366,146 @@
             let HQouterCount = 0,
             HQouterUp = true
 
-
-
             app.HQcontAnimation = function(delta) {
 
                 if (countup){
-                    counttx = counttx + HQspeed;
-                    if (counttx >= 10){
+                    HQmiddle.y = HQmiddle.y + HQspeed;
+                    if (HQmiddle.y >= 10){
                         countup = false;
                     }
-                    HQmiddle.y = counttx;
                 }
                 else{
-                    counttx = counttx - HQspeed;
-                    if (counttx <= -10){
+                    HQmiddle.y = HQmiddle.y - HQspeed;
+                    if (HQmiddle.y <= -10){
                         countup = true;
                     }
-                    HQmiddle.y = counttx;
+                    // HQmiddle.y = counttx;
                 }
-
-
 
                 setTimeout(() => {
                     if (HQouterUp){
-                        HQouterCount = HQouterCount + HQspeed;
-                        if (HQouterCount >= 10){
+                        HQouter.y = HQouter.y + HQspeed;
+                        if (HQouter.y >= 10){
                             HQouterUp = false;
                         }
-                        HQouter.y = HQouterCount;
+                        // HQouter.y = HQouterCount;
                     }
                     else{
-                        HQouterCount = HQouterCount - HQspeed;
-                        if (HQouterCount <= -10){
+                        HQouter.y = HQouter.y - HQspeed;
+                        if (HQouter.y <= -10){
                             HQouterUp = true;
                         }
-                        HQouter.y = HQouterCount;
+                        // HQouter.y = HQouterCount;
                     }   
                 }, 240);
                 
                 
-                console.log(counttx);
+                // console.log(counttx);
             }
 
+
+
+
+            
+
+
+
+            const HQhoverZone = new PIXI.Graphics();
+            HQhoverZone.interactive = true;
+            HQhoverZone.cursor = 'pointer';
+
+            HQhoverZone.beginFill(0xFF3300);
+            HQhoverZone.moveTo(-244.0823211669922,-75.0487060546875);
+            HQhoverZone.lineTo(-244.0823211669922,-75.0487060546875);
+            HQhoverZone.lineTo(-50.7080078125,-76.31976318359375);
+            HQhoverZone.lineTo(-26.36285400390625, -472.98016357421875);
+            HQhoverZone.lineTo(-249.0260009765625, -473.0483093261719);
+            // HQhoverZone.lineTo(217.60488891601562, -191.28219604492188)
+            HQhoverZone.closePath();
+            HQhoverZone.endFill();
+            HQhoverZone.alpha = 0;
+
+            mapCont.addChild(HQhoverZone);
+
+
+            HQhoverZone.on('pointerover', HqHover)
+            .on('pointerout', HqLeave);
+
+            var hoverSpeed = 5;
+
+            app.HQhoverAnimation = function(delta) {                
+                if(HQcont.y < -300){
+                    HQcont.y = HQcont.y + hoverSpeed
+                }
+                if( HQhover.y > -360.635498046875){
+                     HQhover.y = HQhover.y - hoverSpeed;
+                }
+                if(HQhover.y <= -310.635498046875){
+                    if(HQExploreButton.alpha < 1.1){
+                        HQExploreButton.alpha = HQExploreButton.alpha + 0.03;
+                    }
+                }
+            }
+
+            app.HQhoverAnimationLeave = function(delta) {                
+                if(HQcont.y > -400){
+                    HQcont.y = HQcont.y - hoverSpeed
+                }
+                if( HQhover.y < -100.635498046875){
+                     HQhover.y =  HQhover.y + hoverSpeed + 4;
+                }
+                if(HQExploreButton.alpha > 0){
+                    HQExploreButton.alpha = HQExploreButton.alpha - 0.03;
+                }
+            }
+
+            function HqHover(state){
+                console.log('hover', HQcont.y );
+                app.ticker.remove(app.HQhoverAnimationLeave);
+                app.ticker.add(app.HQhoverAnimation);
+            }
+
+            function HqLeave(state){
+                console.log('leave');
+                app.ticker.remove(app.HQhoverAnimation);
+                app.ticker.add(app.HQhoverAnimationLeave);
+            }
+
+            var HQExploreButton = new PIXI.Sprite.from('/images/buttons/Explore-Defualt.png');
+            mapCont.addChild(HQExploreButton);
+            HQExploreButton.alpha = 0;
+            HQExploreButton.x = -141.10516357421875;
+            HQExploreButton.y = -426.4768981933594;
+            HQExploreButton.anchor.set(0.5,0.5);
+            var HQExploreButtonUp = true
+
+            app.HQbuttonBounce = function(){
+                // HQExploreButton.y = HQExploreButton.y + 1;
+                if (HQExploreButtonUp){
+                    HQExploreButton.y = HQExploreButton.y + 0.15;
+                    if (HQExploreButton.y >= -400.4768981933594){
+                        HQExploreButtonUp = false;
+                    }
+                    // HQouter.y = HQouterCount;
+                }
+                else{
+                    HQExploreButton.y = HQExploreButton.y - 0.15;
+                    if (HQExploreButton.y <= -406.4768981933594){
+                        HQExploreButtonUp = true;
+                    }
+                    // HQouter.y = HQouterCount;
+                }  
+            }
+
+
             app.ticker.add(app.HQcontAnimation);
+            app.ticker.add(app.HQbuttonBounce);
+
+
 
         
 
             // HQcont.height = 80;
-
-            // tall building    
-            graphics.beginFill(0xFF3300);
-            graphics.moveTo(207.36065673828125, 50.336517333984375);
-            graphics.lineTo(207.36065673828125, 50.336517333984375);
-            graphics.lineTo(246.3184814453125, 75.02749633789062);
-            graphics.lineTo(286.273681640625, 49.90716552734375);
-            graphics.lineTo(319.703369140625, -94.63394165039062);
-            graphics.lineTo(182.6978759765625,-83.2994384765625)
-
-            graphics.closePath();
-            graphics.endFill();
-
-
-            // train tower
-
-            graphics.beginFill(0xFF3300);
-            graphics.moveTo(755.0716552734375, 124.14593505859375);
-            graphics.lineTo(755.0716552734375, 124.14593505859375);
-            graphics.lineTo(781.2767333984375, 141.64190673828125);
-            graphics.lineTo(807.5801391601562, 125.35064697265625);
-            graphics.lineTo(827.7238922119141, 40.118499755859375);
-            graphics.lineTo(736.787841796875, 45.898223876953125)
-
-            graphics.closePath();
-            graphics.endFill();
 
 
             // 204.36065673828125/50.336517333984375
@@ -499,16 +613,16 @@
 
                 var checkCords = mapCont.getBounds();
 
-                console.log('checkCords.x ', checkCords );
+                //console.log('checkCords.x ', checkCords );
                 
-                console.log('mapCont', mapCont._boundsRect.height / 2);
+                // console.log('mapCont', mapCont._boundsRect.height / 2);
 
                 if(checkCords.x > 0){
                     app.ticker.add(app.animationUpdateXright);
                 }
 
                 var rightCheck = 0 - ( mapCont._boundsRect.width / 2);
-                console.log(rightCheck);
+                //console.log(rightCheck);
                 if(checkCords.x < rightCheck){
                     app.ticker.add(app.animationUpdateXleft);
 

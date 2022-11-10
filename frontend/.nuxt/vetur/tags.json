@@ -38,6 +38,12 @@
   "CardsWithFilter": {
     "description": "Auto imported from components/archives/CardsWithFilter.vue"
   },
+  "BlogPage": {
+    "description": "Auto imported from components/blog/BlogPage.vue"
+  },
+  "SubscriptionSection": {
+    "description": "Auto imported from components/blog/SubscriptionSection.vue"
+  },
   "CityBuilding": {
     "description": "Auto imported from components/citymap/CityBuilding.vue"
   },
@@ -61,12 +67,6 @@
   },
   "CityTurbines": {
     "description": "Auto imported from components/citymap/CityTurbines.vue"
-  },
-  "BlogPage": {
-    "description": "Auto imported from components/blog/BlogPage.vue"
-  },
-  "SubscriptionSection": {
-    "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
   "MeetTheTeam": {
     "description": "Auto imported from components/explore/MeetTheTeam.vue"
@@ -98,9 +98,6 @@
   "StatTabs": {
     "description": "Auto imported from components/stats/StatTabs.vue"
   },
-  "TabbedContent": {
-    "description": "Auto imported from components/tabs/TabbedContent.vue"
-  },
   "ContentColumns": {
     "description": "Auto imported from components/text-content/ContentColumns.vue"
   },
@@ -121,5 +118,8 @@
   },
   "TickList": {
     "description": "Auto imported from components/text-content/TickList.vue"
+  },
+  "TabbedContent": {
+    "description": "Auto imported from components/tabs/TabbedContent.vue"
   }
 }

@@ -23,10 +23,17 @@
             var mapCont = new PIXI.Container();
             var map = new PIXI.Sprite.from('/images/LightCity.png');
 
+
+            var road = new PIXI.Sprite.from('/images/Road.png');
+            mapCont.addChild(road);
+
             mapCont.addChild(map);
             var ServiceButtonHover = new PIXI.Sprite.from('/images/light/hover.png');
 
             mapCont.addChild(ServiceButtonHover);
+
+
+            road.anchor.set(0.5,0.5);
 
             mapCont.interactive = true;
             mapCont.buttonMode = true;
@@ -188,7 +195,7 @@
 
             // var HQcentre = new PIXI.Sprite.from('/images/light/HQ-centre.png');
 
-
+        
             var HQDotscont = new PIXI.Container();
 
             var d1 = new PIXI.Sprite.from('/images/light/d1.png');
@@ -204,7 +211,6 @@
             d5.y = 40;
 
             HQDotscont.addChild(d1,d2,d3,d4,d5);
-
 
             var d1Count = 0;
             var d1up = true;
@@ -317,6 +323,10 @@
                 
 
             }
+            app.ticker.add(app.HQdotAnimation);
+
+
+
             var HQcont = new PIXI.Container();
             var HQmiddle = new PIXI.Sprite.from('/images/light/HQ-middle.png');
             var HQouter = new PIXI.Sprite.from('/images/light/HQ-outer.png');
@@ -444,7 +454,7 @@
 
             mapCont.addChild(HQhoverZone);
 
-
+            
             HQhoverZone.on('pointerover', HqHover)
             .on('pointerout', HqLeave);
 
@@ -697,6 +707,317 @@
                 app.ticker.add(app.ServiceHoverAnimationLeave);
                 app.ticker.remove(app.ServiceHoverAnimation);
             }
+
+
+            // ####### end of service antimiaons
+
+
+
+
+            // ##### start of blog / single tower animations
+
+
+            var singleTower = new PIXI.Container();
+            
+            var singleTowerCenter = new PIXI.Sprite.from('/images/light/city_Single-middle.png');
+            var singleTowerOuter = new PIXI.Sprite.from('/images/light/city_Single-outer.png');
+            singleTowerCenter.anchor.set(0.5, 0.5);
+            singleTowerOuter.anchor.set(0.5, 0.5);
+            // serviceDotscont.x 
+            // serviceDotscont.y 
+
+            singleTower.x = 288.0107421875;
+            singleTower.y = -40.917449951171875;
+
+            var serviceDotscont = new PIXI.Container();
+
+            var e1 = new PIXI.Sprite.from('/images/light/d1.png');
+            var e2 = new PIXI.Sprite.from('/images/light/d2.png');
+            var e3 = new PIXI.Sprite.from('/images/light/d3.png');
+            var e4 = new PIXI.Sprite.from('/images/light/d4.png');
+            var e5 = new PIXI.Sprite.from('/images/light/d5.png');
+
+            e1.y = 0;
+            e2.y = 10;
+            e3.y = 20;
+            e4.y = 30;
+            e5.y = 40;
+
+            serviceDotscont.addChild(e1,e2,e3,e4,e5);
+
+            serviceDotscont.x = -5;
+            serviceDotscont.y = -40;
+
+            var e1Count = 0;
+            var e1up = true;
+            var e2Count = 0;
+            var e2up = true;
+            var e3Count = 0;
+            var e3up = true;
+            var e4Count = 0;
+            var e4up = true;
+            var e5Count = 0;
+            var e5up = true;
+
+
+            var HQDotspeed = 0.2;
+            var HQDotSpread = [-5,5]
+
+            app.ServicedotAnimation = function(delta){
+
+                if (e1up){
+                    e1Count = e1Count + HQDotspeed;
+                    if (e1Count >= HQDotSpread[1]){
+                        e1up = false;
+                    }
+                    e1.y = e1Count;
+                }
+                else{
+                    e1Count = e1Count - HQDotspeed;
+                    if (e1Count <= HQDotSpread[0]){
+                        e1up = true;
+                    }
+                    e1.y = e1Count;
+                }
+               
+                setTimeout(() => {
+
+                    if (e2up){
+                        e2Count = e2Count + HQDotspeed;
+                        if (e2Count >= HQDotSpread[1]){
+                            e2up = false;
+                        }
+                        e2.y = e2.y + HQDotspeed;
+                    }
+                    else{
+                        e2Count = e2Count - HQDotspeed;
+                        if (e2Count <= HQDotSpread[0]){
+                            e2up = true;
+                        }
+                        e2.y = e2.y - HQDotspeed;
+                    }
+
+                }, 120);
+
+
+                setTimeout(() => {
+
+                    if (e3up){
+                        e3Count = e3Count + HQDotspeed;
+                        if (e3Count >= HQDotSpread[1]){
+                            e3up = false;
+                        }
+                        e3.y = e3.y + HQDotspeed;
+                    }
+                    else{
+                        e3Count = e3Count - HQDotspeed;
+                        if (e3Count <= HQDotSpread[0]){
+                            e3up = true;
+                        }
+                        e3.y = e3.y - HQDotspeed;
+                    }
+
+                }, 140);
+
+                setTimeout(() => {
+
+                    if (e4up){
+                        e4Count = e4Count + HQDotspeed;
+                        if (e4Count >= HQDotSpread[1]){
+                            e4up = false;
+                        }
+                        e4.y = e4.y + HQDotspeed;
+                    }
+                    else{
+                        e4Count = e4Count - HQDotspeed;
+                        if (e4Count <= HQDotSpread[0]){
+                            e4up = true;
+                        }
+                        e4.y = e4.y - HQDotspeed;
+                    }
+
+                }, 200);
+
+                setTimeout(() => {
+
+                    if (e5up){
+                        e5Count = e5Count + HQDotspeed;
+                        if (e5Count >= HQDotSpread[1]){
+                            e5up = false;
+                        }
+                        e5.y = e5.y + HQDotspeed;
+                    }
+                    else{
+                        e5Count = e5Count - HQDotspeed;
+                        if (e5Count <= HQDotSpread[0]){
+                            e5up = true;
+                        }
+                        e5.y = e5.y - HQDotspeed;
+                    }
+
+                }, 240);
+                
+
+            }
+            
+            app.ticker.add(app.ServicedotAnimation);
+
+
+            singleTower.addChild(singleTowerCenter,singleTowerOuter, serviceDotscont);
+            mapCont.addChild(singleTower);
+            singleTower.mask = graphics;
+
+            var singleTowerUp = [true, true]
+
+            var singleTowerLightSpeed = 0.5;
+
+            app.singleTowerLightAnimate = function(){
+                
+                if(singleTowerUp[0]){
+                    singleTowerCenter.y = singleTowerCenter.y - singleTowerLightSpeed;
+                    if(singleTowerCenter.y < -30){
+                        singleTowerUp[0] = false;
+                    }
+                }else{
+                    singleTowerCenter.y = singleTowerCenter.y + singleTowerLightSpeed;
+                    if(singleTowerCenter.y > 0){
+                         singleTowerUp[0] = true;
+                    }   
+                }
+
+                setTimeout(() => {
+                    if(singleTowerUp[1]){
+                        singleTowerOuter.y = singleTowerOuter.y - singleTowerLightSpeed;
+                        if(singleTowerOuter.y < -30){
+                            singleTowerUp[1] = false;
+                        }
+                    }else{
+                        singleTowerOuter.y = singleTowerOuter.y + singleTowerLightSpeed;
+                        if(singleTowerOuter.y > 0){
+                            singleTowerUp[1] = true;
+                        }   
+                    }
+                }, "1000")
+
+                // console.log(singleTowerCenter.y);
+            }
+            var singleHover = new PIXI.Sprite.from('/images/light/hover.png');
+            mapCont.addChild(singleHover);
+            singleHover.anchor.set(0.5,0.5);
+            singleHover.x = 289.40130615234375;
+            singleHover.y = 150.8531494140625;
+
+            var singleButton = new PIXI.Sprite.from('/images/buttons/Blog-Defualt.png')
+            mapCont.addChild(singleButton);
+            singleButton.anchor.set(0.5,0.5);
+            singleButton.alpha = 0;
+
+            singleButton.x = 286.7672119140625;
+            singleButton.y = -181.85617065429688;
+
+            var singleButtonUp = true;
+
+            
+            app.singleButtonBounce = function(){
+                if(singleButtonUp){
+                    if(singleButton.y < -191){
+                        singleButtonUp = false;
+                    }
+                    singleButton.y = singleButton.y - 0.3
+                }else{
+                    if(singleButton.y > -181){
+                        singleButtonUp = true;
+                    }
+                    singleButton.y = singleButton.y + 0.3
+                }
+                // console.log('singleButton.y', singleButton.y);
+            }
+
+            
+            const singleHoverZone = new PIXI.Graphics();  
+            //const HQhoverZone = new PIXI.Graphics();
+
+            singleHoverZone.beginFill(0xFF3300);
+            singleHoverZone.moveTo(212.02577209472656, 295.3148193359375);
+            singleHoverZone.lineTo(212.02577209472656, 295.3148193359375);
+            singleHoverZone.lineTo(288.91249084472656, 337.62994384765625);
+            singleHoverZone.lineTo(367.18592834472656, 293.7650146484375);
+            singleHoverZone.lineTo(389.3240966796875, -145.05490112304688);
+            singleHoverZone.lineTo(395.88494873046875, -154.4964599609375);
+            singleHoverZone.lineTo(392.7216796875, -226.95614624023438);
+            singleHoverZone.lineTo(184.932861328125, -224.72042846679688);
+            singleHoverZone.lineTo(186.8106689453125, -145.65829467773438);
+            singleHoverZone.lineTo(212.09690856933594, -28.52362060546875)
+            singleHoverZone.closePath();
+            singleHoverZone.endFill();
+
+            mapCont.addChild(singleHoverZone);
+            singleHoverZone.alpha = 0;
+
+
+            singleHoverZone.interactive = true;
+            singleHoverZone.cursor = 'pointer';
+            singleHoverZone.on('pointerover', signleHover)
+            .on('pointerout', singleLeave);
+
+
+
+            singleHover.mask = graphics;
+
+            app.singleHoverAnim = function(){
+                if(singleTower.y < 40 ){
+                    singleTower.y = singleTower.y + 3.5;
+                }
+                if(singleHover.y > -100){
+                    singleHover.y = singleHover.y - 3.5;
+                }
+                setTimeout(() => {
+                    if(singleButton.alpha < 1){
+                        singleButton.alpha = singleButton.alpha + 0.3;
+                    }
+                }, 700);
+                // singleTower.y = singleTower.y + 1;
+            }
+
+            app.singleLeaveAnim = function(){
+                
+                    if(singleTower.y > -20 ){
+                        singleTower.y = singleTower.y - 3.5;
+                    }
+                    if(singleHover.y < 150){
+                        singleHover.y = singleHover.y + 3.5;
+                    }
+                setTimeout(() => {
+                    if(singleButton.alpha > 0){
+                        singleButton.alpha = singleButton.alpha - 0.3;
+                    }
+                }, 500 );
+            }
+
+            function singleLeave(){
+                app.ticker.add(app.singleLeaveAnim);
+                app.ticker.remove(app.singleHoverAnim);
+                
+            }
+            function signleHover(){
+                app.ticker.add(app.singleHoverAnim);
+                app.ticker.remove(app.singleLeaveAnim);
+            }
+   
+            app.ticker.add(app.singleButtonBounce);
+
+            app.ticker.add(app.singleTowerLightAnimate);
+
+             
+
+            // singlhoverZone.beginFill(0xFF3300);
+            // singlhoverZone.moveTo(-244.0823211669922,-75.0487060546875);
+            // singlhoverZone.lineTo(-244.0823211669922,-75.0487060546875);
+
+            // // HQhoverZone.lineTo(217.60488891601562, -191.28219604492188)
+            // singlhoverZone.closePath();
+            // singlhoverZone.endFill();
+
 
             // -883.4754333496094/25.12579345703125
             // HQcont.height = 80;

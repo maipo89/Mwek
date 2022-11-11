@@ -24,6 +24,9 @@
             var map = new PIXI.Sprite.from('/images/LightCity.png');
 
             mapCont.addChild(map);
+            var ServiceButtonHover = new PIXI.Sprite.from('/images/light/hover.png');
+
+            mapCont.addChild(ServiceButtonHover);
 
             mapCont.interactive = true;
             mapCont.buttonMode = true;
@@ -94,10 +97,11 @@
             graphics.lineTo(-901.0654907226562, 17.634735107421875);
             graphics.lineTo(-883.7482299804688, 25.636749267578125);
             graphics.lineTo(-866.5794982910156, 18.238006591796875);
-            graphics.lineTo(-857.0682678222656,-58.2410888671875);
-            graphics.lineTo(-921.0972900390625, -63.70501708984375);
+            graphics.lineTo(-855.6791381835938, -81.5133056640625);
+            graphics.lineTo(-960.2760314941406, -80.58369445800781);
             graphics.closePath();
             graphics.endFill();
+
 
             graphics.beginFill(0xFF3300);
             graphics.moveTo(-818.852294921875,-13.5172119140625);
@@ -106,9 +110,9 @@
             // -708.7968139648438/91.99664306640625
             graphics.lineTo(-778.0056762695312,-13.44464111328125);
             // -673.2498779296875/-47.036376953125
-            graphics.lineTo(-757.4789733886719, -77.37225341796875);
+            graphics.lineTo(-735.6103515625, -83.43841552734375);
             // -739.8705444335938/-39.6455078125
-            graphics.lineTo(-837.8247375488281, -72.1600341796875);
+            graphics.lineTo(-832.3991546630859, -82.42477416992188);
             graphics.closePath();
             graphics.endFill();
 
@@ -116,10 +120,19 @@
             graphics.beginFill(0xFF3300);
             graphics.moveTo(-859.4706420898438, 95.49444580078125);
             graphics.lineTo(-859.4706420898438, 95.49444580078125);
-            graphics.lineTo(-843.6643676757812,103.6751708984375);
-            graphics.lineTo(-825.5806274414062, 95.97381591796875);
-            graphics.lineTo(-826.341064453125, -75.01119995117188);
-            graphics.lineTo(-861.411865234375,-57.37744140625);
+            graphics.lineTo(-839.7219543457031, 107.5313720703125);
+            graphics.lineTo(-822.0023803710938, 98.55548095703125);
+            // graphics.lineTo(-829.491455078125, -130.9113006591797);
+
+            graphics.lineTo(-827.9432983398438, -62.67083740234375);
+            graphics.lineTo(-742.4766235351562, -144.693359375);
+
+            graphics.lineTo(-951.465087890625, -150.07177734375);
+            
+            graphics.lineTo(-858.4744415283203, -56.679443359375);
+
+            graphics.lineTo(-863.1481018066406, -129.455078125);
+
             graphics.closePath();
             graphics.endFill();
 
@@ -327,6 +340,10 @@
             // upDots.moveTo(0, 0);
             // upDots.drawRect(10, 15, 10, 10);
             // upDots.endFill();
+
+
+            // #### masks ####
+
             HQhover.mask = graphics
             HQcont.mask = graphics
 
@@ -502,9 +519,186 @@
             app.ticker.add(app.HQbuttonBounce);
 
 
+            // #### three tower sprites and animations ####
 
-        
+            var ThreeTowersCont = new PIXI.Container();
+            
+            var ThreeTowerOne = new PIXI.Sprite.from('/images/light/Triple-left.png');
+            var ThreeTowerTwo = new PIXI.Sprite.from('/images/light/Triple-middle.png');
+            var ThreeTowerThree = new PIXI.Sprite.from('/images/light/Triple-right.png');
 
+            ThreeTowersCont.addChild(ThreeTowerOne,ThreeTowerTwo,ThreeTowerThree);
+            mapCont.addChild(ThreeTowersCont);
+
+            ThreeTowerOne.anchor.set(0.5, 0.5);
+            ThreeTowerTwo.anchor.set(0.5, 0.5);
+            ThreeTowerThree.anchor.set(0.5, 0.5);
+
+            ThreeTowerOne.x = -883.4754333496094;
+            ThreeTowerOne.y = 25.12579345703125;
+
+            ThreeTowerTwo.x = -839.5823669433594;
+            ThreeTowerTwo.y = 106.00119018554688;
+
+            ThreeTowerThree.x = -798.8314208984375;
+            ThreeTowerThree.y = -3.14556884765625;
+    
+            var threeTowersUp = [ true, true, true ];
+            var threeTowersSpeed = 0.45;
+            
+            app.ThreeTowerAnimations = function(){
+                if(threeTowersUp[0]){
+                    if(ThreeTowerOne.y < -5){
+                        threeTowersUp[0] = false;
+                    }
+                    ThreeTowerOne.y = ThreeTowerOne.y - threeTowersSpeed;
+                }else{
+                    if(ThreeTowerOne.y > 20){
+                        threeTowersUp[0] = true;
+                    }
+                    ThreeTowerOne.y = ThreeTowerOne.y + threeTowersSpeed;
+                }
+
+                if(threeTowersUp[1]){
+                    if(ThreeTowerTwo.y < 90){
+                        threeTowersUp[1] = false;
+                    }
+                    ThreeTowerTwo.y = ThreeTowerTwo.y - threeTowersSpeed;
+                }else{
+                    if(ThreeTowerTwo.y > 120){
+                        threeTowersUp[1] = true;
+                    }
+                    ThreeTowerTwo.y = ThreeTowerTwo.y + threeTowersSpeed;
+                }
+
+                if(threeTowersUp[2]){
+                    if(ThreeTowerThree.y < -15){
+                        threeTowersUp[2] = false;
+                    }
+                    ThreeTowerThree.y = ThreeTowerThree.y - threeTowersSpeed;
+                }else{
+                    if(ThreeTowerThree.y > 10){
+                        threeTowersUp[2] = true;
+                    }
+                    ThreeTowerThree.y = ThreeTowerThree.y + threeTowersSpeed;
+                }
+            }
+
+
+            app.ticker.add(app.ThreeTowerAnimations);
+
+
+            const threeTowerHoverZone = new PIXI.Graphics();
+
+            threeTowerHoverZone.interactive = true;
+            threeTowerHoverZone.cursor = 'pointer';
+
+
+            var ServiceButton = new PIXI.Sprite.from('/images/buttons/OurServices-Hover.png');
+            mapCont.addChild(ServiceButton); 
+            // ServiceButton.alpha = 0;
+            ServiceButton.x = -846.4503479003906;
+            ServiceButton.y = -121.50445556640625;
+            ServiceButton.anchor.set(0.5,0.5);
+            ServiceButton.zOrder = -10;
+            var ServiceButtonUp = true;
+
+            app.ServicebuttonBounce = function(){
+                // HQExploreButton.y = HQExploreButton.y + 1;
+                if (ServiceButtonUp){
+                    ServiceButton.y = ServiceButton.y + 0.15;
+                    if (ServiceButton.y >= -121.4768981933594){
+                        ServiceButtonUp = false;
+                    }
+                    // HQouter.y = HQouterCount;
+                }
+                else{
+                    ServiceButton.y = ServiceButton.y - 0.15;
+                    if (ServiceButton.y <= -130.4768981933594){
+                        ServiceButtonUp = true;
+                    }
+                    // HQouter.y = HQouterCount;
+                }  
+            }
+
+
+            
+
+            app.ticker.add(app.ServicebuttonBounce);
+
+
+            threeTowerHoverZone.beginFill(0xFF3300);
+            threeTowerHoverZone.moveTo(-920.7710571289062, 316.0430908203125);
+            threeTowerHoverZone.lineTo(-920.7710571289062, 316.0430908203125);
+            threeTowerHoverZone.lineTo(-748.5176391601562, 316.0595703125);
+            threeTowerHoverZone.lineTo(-743.8262939453125, -10.00506591796875);
+            threeTowerHoverZone.lineTo(-703.9773559570312, -58.11492919921875);
+            threeTowerHoverZone.lineTo(-715.6692504882812, -205.08328247070312);
+            threeTowerHoverZone.lineTo(-969.3775024414062, -204.85272216796875);
+            threeTowerHoverZone.lineTo(-968.5872192382812, -52.297607421875);
+            threeTowerHoverZone.lineTo(-924.619384765625, 19.45867919921875);
+            threeTowerHoverZone.closePath();
+            threeTowerHoverZone.endFill();
+            threeTowerHoverZone.alpha = 0;
+
+
+            mapCont.addChild(threeTowerHoverZone);
+
+
+
+            ServiceButtonHover.anchor.set(0.5,0.5);
+            ServiceButtonHover.x = -842.4466857910156;
+            ServiceButtonHover.y = 235.40478515625;
+            ServiceButton.alpha = 0;
+
+            ThreeTowersCont.mask = graphics;
+            ServiceButtonHover.mask = graphics;
+
+
+            threeTowerHoverZone.on('pointerover', ServiceHover)
+            .on('pointerout', ServiceLeave);
+
+            var serviceHoverSpeed = 5;
+
+            app.ServiceHoverAnimation = function(delta) {                
+                if(ThreeTowersCont.y < 100){
+                    ThreeTowersCont.y = ThreeTowersCont.y + serviceHoverSpeed;
+                }
+                if(ServiceButtonHover.y > 0){
+                    ServiceButtonHover.y = ServiceButtonHover.y - serviceHoverSpeed;
+                }
+                
+                setTimeout(() => {
+                    if(ServiceButton.alpha < 1){
+                        ServiceButton.alpha = ServiceButton.alpha + 0.05;
+                    }
+                }, 500)
+            }
+
+            app.ServiceHoverAnimationLeave = function(delta) {                
+                if(ThreeTowersCont.y > -10){
+                    ThreeTowersCont.y = ThreeTowersCont.y - serviceHoverSpeed;
+                }
+                if(ServiceButtonHover.y < 235){
+                    ServiceButtonHover.y = ServiceButtonHover.y + serviceHoverSpeed;
+                }
+                if(ServiceButton.alpha > 0){
+                    ServiceButton.alpha = ServiceButton.alpha - 0.05;
+                }
+                // console.log(ThreeTowersCont.y);
+            }
+
+            function ServiceHover(state){
+                app.ticker.remove(app.ServiceHoverAnimationLeave);
+                app.ticker.add(app.ServiceHoverAnimation);
+            }
+
+            function ServiceLeave(state){
+                app.ticker.add(app.ServiceHoverAnimationLeave);
+                app.ticker.remove(app.ServiceHoverAnimation);
+            }
+
+            // -883.4754333496094/25.12579345703125
             // HQcont.height = 80;
 
 
@@ -512,12 +706,13 @@
 
             var buttonOneCont = new PIXI.Container()
    
+            
 
             // buttonOneCont.addChild(graphics);
             app.stage.addChild(mapCont);
             mapCont.addChild(graphics);
 
-
+            
 
             // my shity map drag boundry check
             var xCanMoveRight = true;
@@ -573,7 +768,7 @@
                     mapCont.y = mapCont.y + 15;
                 }
             }
-
+            
             console.log('app',app.renderer.width);
             
             // var checkCordsStart = mapCont.getBounds();
@@ -668,7 +863,7 @@
                 // }
 
 
-
+                
 
 
                 if (this.dragging) {

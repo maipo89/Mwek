@@ -16,7 +16,7 @@ import { createStore } from './store.js'
 import nuxt_plugin_plugin_67ddceda from 'nuxt_plugin_plugin_67ddceda' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_plugin_c5f51958 from 'nuxt_plugin_plugin_c5f51958' // Source: ./vuetify/plugin.js (mode: 'all')
 import nuxt_plugin_gsapModule_0a7bb261 from 'nuxt_plugin_gsapModule_0a7bb261' // Source: ./gsapModule.js (mode: 'all')
-import nuxt_plugin_gsap_6a80fe91 from 'nuxt_plugin_gsap_6a80fe91' // Source: ../plugins/gsap (mode: 'client')
+import nuxt_plugin_gsap_6a80fe91 from 'nuxt_plugin_gsap_6a80fe91' // Source: ../plugins/gsap (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -84,7 +84,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"titleTemplate":"%s - frontend","title":"frontend","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"script":[{"type":"text\u002Fjavascript","src":"js\u002FJquery.js","body":true},{"type":"text\u002Fjavascript","src":"js\u002Fgsap\u002Fminified\u002Fgsap.min.js","body":true}],"style":[]},
+    head: {"titleTemplate":"%s - frontend","title":"frontend","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"script":[{"type":"text\u002Fjavascript","src":"js\u002FJquery.js","body":true},{"type":"text\u002Fjavascript","src":"js\u002Fgsap\u002Fminified\u002Fgsap.min.js","body":true}],"style":[]},
 
     store,
     router,
@@ -225,7 +225,7 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_gsapModule_0a7bb261(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_gsap_6a80fe91 === 'function') {
+  if (typeof nuxt_plugin_gsap_6a80fe91 === 'function') {
     await nuxt_plugin_gsap_6a80fe91(app.context, inject)
   }
 

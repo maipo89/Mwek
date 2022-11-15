@@ -24,10 +24,4 @@ Vue.directive('gsap', (el, binding) => {
 
 export default ({ app }, inject) => {
   inject('gsap', gsap)
-
-      if (process.client) {
-          const { Draggable } = require('gsap/Draggable')
-          inject('Draggable', Draggable)
-          gsap.registerPlugin(Draggable)
-      }
 }

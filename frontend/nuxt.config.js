@@ -42,15 +42,9 @@ export default {
     scss: ['./assets/scss/*.scss']
   },
 
-  gsap: {
-    extraPlugins: {
-      draggable: true
-    }
-  },
-
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: "~/plugins/gsap", ssr: false}
+    { src: "~/plugins/gsap", ssr: true}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -66,7 +60,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    'nuxt-gsap-module'
+    'nuxt-gsap-module',
+    '@nuxtjs/google-fonts'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

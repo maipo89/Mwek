@@ -6,7 +6,7 @@
 
 <script>
 // import axios from 'axios';
-import gsap from 'gsap';
+// import gsap from 'gsap';
 
 export default {
   name: 'HomePage', 
@@ -53,17 +53,17 @@ export default {
       console.log('mapButton', mapButton);
     },
     
-    dragFunc(){
-          const {
-        dragMap__container
-      } = this.$refs
-      this.$Draggable.create(this.$refs.dragMap__container, {type:"x,y", edgeResistance:0.65, inertia:true});
+    // dragFunc(){
+    //       const {
+    //     dragMap__container
+    //   } = this.$refs
+    //   this.$Draggable.create(this.$refs.dragMap__container, {type:"x,y", edgeResistance:0.65, inertia:true});
 
-    }
+    // }
   },
 
   mounted(){
-    console.log('this.dragElm', this.$refs.dragMap__container);
+    // console.log('this.dragElm', this.$refs.dragMap__container);
 
     // window.addEventListener('load', () => {
     //    this.dragFunc();

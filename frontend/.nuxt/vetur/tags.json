@@ -44,6 +44,9 @@
   "SubscriptionSection": {
     "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
+  "ContactFooter": {
+    "description": "Auto imported from components/contact/ContactFooter.vue"
+  },
   "CityBuilding": {
     "description": "Auto imported from components/citymap/CityBuilding.vue"
   },
@@ -80,9 +83,6 @@
   "TeamCube": {
     "description": "Auto imported from components/explore/TeamCube.vue"
   },
-  "ContactFooter": {
-    "description": "Auto imported from components/contact/ContactFooter.vue"
-  },
   "Footer": {
     "description": "Auto imported from components/global/Footer.vue"
   },
@@ -97,6 +97,9 @@
   },
   "StatTabs": {
     "description": "Auto imported from components/stats/StatTabs.vue"
+  },
+  "TabbedContent": {
+    "description": "Auto imported from components/tabs/TabbedContent.vue"
   },
   "ContentColumns": {
     "description": "Auto imported from components/text-content/ContentColumns.vue"
@@ -118,8 +121,5 @@
   },
   "TickList": {
     "description": "Auto imported from components/text-content/TickList.vue"
-  },
-  "TabbedContent": {
-    "description": "Auto imported from components/tabs/TabbedContent.vue"
   }
 }

@@ -83,14 +83,14 @@
   "TeamCube": {
     "description": "Auto imported from components/explore/TeamCube.vue"
   },
+  "HeroSection": {
+    "description": "Auto imported from components/image/HeroSection.vue"
+  },
   "Footer": {
     "description": "Auto imported from components/global/Footer.vue"
   },
   "Header": {
     "description": "Auto imported from components/global/Header.vue"
-  },
-  "HeroSection": {
-    "description": "Auto imported from components/image/HeroSection.vue"
   },
   "ServicePageLinks": {
     "description": "Auto imported from components/services/ServicePageLinks.vue"

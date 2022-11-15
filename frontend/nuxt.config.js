@@ -44,7 +44,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: "~/plugins/gsap", ssr: true}
+    { src: "~/plugins/gsap", ssr: false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -60,7 +60,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    'nuxt-gsap-module',
+    // 'nuxt-gsap-module',
     '@nuxtjs/google-fonts'
   ],
 

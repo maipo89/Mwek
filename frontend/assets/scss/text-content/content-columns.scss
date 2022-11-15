@@ -52,17 +52,24 @@
     .contentImage{
         padding: 0px;
         object-fit: contain;
-        img{
+        &.center-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
             width: 100%;
-            @keyframes spin {
-                from {
-                    transform:rotate(0deg);
+            &.anim-spin {
+                @keyframes spin {
+                    from {
+                        transform:rotate(0deg);
+                    }
+                    to {
+                        transform:rotate(360deg);
+                    }
                 }
-                to {
-                    transform:rotate(360deg);
-                }
+                animation: spin 30000ms infinite linear;
             }
-            animation: spin 30000ms infinite linear;
         }
     }
     .column-1-1{

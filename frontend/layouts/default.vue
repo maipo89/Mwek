@@ -2,7 +2,7 @@
   <v-app dark>
     <v-main>
       <v-container>
-        <SiteIntro />
+       <!-- <SiteIntro /> -->
         <Header v-on:page-open="headerAction()"/>
         <div :class="[this.pageState, this.thePageClass]">
           <div class="drag-map" > 

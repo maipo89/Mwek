@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
+    padding-top: 35px;
     h2{
         font-family: 'Orbitron';
         font-style: normal;
@@ -66,6 +67,10 @@
             opacity: 0.0;
             transition: all 0.7s;
             transform: scale(1.05);
+            h3 {
+                text-transform: uppercase;
+                font-weight: 600;
+            }
             p{
                 font-family: 'Montserrat';
                 font-style: normal;

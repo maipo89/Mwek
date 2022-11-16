@@ -12,7 +12,8 @@
 </template>
 
 <script>
-    // import * as PIXI  from 'pixi.js'
+    // import { Sprite } from 'three';
+    // import * as PIXI from 'pixi.js'
     export default {
         name: 'CityMapSVG',
         async mounted(){
@@ -181,8 +182,8 @@
             // train tower
 
             graphics.beginFill(0xFF3300);
-            graphics.moveTo(916.7170257568359, 67.98184204101562);
-            graphics.lineTo(916.7170257568359, 67.98184204101562);
+            graphics.moveTo(911.36083984375, 63.25616455078125);
+            graphics.lineTo(911.36083984375, 63.25616455078125);
             graphics.lineTo(945.3286743164062, 83.95205688476562);
             graphics.lineTo(977.8931274414062, 66.36502075195312);
             graphics.lineTo(1017.8069458007812,-83.65408325195312);
@@ -632,8 +633,7 @@
             }
 
 
-            
-
+        
             app.ticker.add(app.ServicebuttonBounce);
 
 
@@ -961,7 +961,6 @@
             .on('pointerout', singleLeave);
 
 
-
             singleHover.mask = graphics;
 
             app.singleHoverAnim = function(){
@@ -1027,6 +1026,269 @@
 
             var buttonOneCont = new PIXI.Container()
    
+
+
+            // train building animations 
+
+            var trainTower = new PIXI.Container();
+
+            trainTower.mask = graphics;
+            
+            var trainTowerCenter = new PIXI.Sprite.from('/images/light/Trainlight-middle.png');
+            var trainTowerOuter = new PIXI.Sprite.from('/images/light/Trainlight-outside.png');
+            trainTowerCenter.anchor.set(0.5, 0.5);
+            trainTowerOuter.anchor.set(0.5, 0.5);
+
+            trainTower.addChild(trainTowerCenter, trainTowerOuter);
+
+            
+
+            mapCont.addChild(trainTower);
+
+            trainTower.x = 942.7185668945312;
+            trainTower.y = 50.19964599609375;
+
+            var trainTowerUp = [true, true];
+
+            var trainTowerLightSpeed = 0.2;
+
+            app.trainTowerLightAnimate = function(){
+                
+                if(trainTowerUp[0]){
+                    trainTowerCenter.y = trainTowerCenter.y - trainTowerLightSpeed;
+                    if(trainTowerCenter.y < -30){
+                        trainTowerUp[0] = false;
+                    }
+                }else{
+                    trainTowerCenter.y = trainTowerCenter.y + trainTowerLightSpeed;
+                    if(singleTowerCenter.y > 0){
+                        trainTowerUp[0] = true;
+                    }   
+                }
+
+                setTimeout(() => {
+                    if(trainTowerUp[1]){
+                        trainTowerOuter.y = trainTowerOuter.y - trainTowerLightSpeed;
+                        if(trainTowerOuter.y < -30){
+                            trainTowerUp[1] = false;
+                        }
+                    }else{
+                        trainTowerOuter.y = trainTowerOuter.y + trainTowerLightSpeed;
+                        if(trainTowerOuter.y > 0){
+                            trainTowerUp[1] = true;
+                        }   
+                    }
+                }, "1000");
+                // console.log(singleTowerCenter.y);
+            }
+
+
+            app.ticker.add(app.trainTowerLightAnimate);
+
+            var trainDotscont = new PIXI.Container();
+
+            trainTower.addChild(trainDotscont);
+
+            var f1 = new PIXI.Sprite.from('/images/light/d1.png');
+            var f2 = new PIXI.Sprite.from('/images/light/d2.png');
+            var f3 = new PIXI.Sprite.from('/images/light/d3.png');
+            var f4 = new PIXI.Sprite.from('/images/light/d4.png');
+            var f5 = new PIXI.Sprite.from('/images/light/d5.png');
+
+            f1.y = 0;
+            f2.y = 10;
+            f3.y = 20;
+            f4.y = 30;
+            f5.y = 40;
+
+            trainDotscont.addChild(f1,f2,f3,f4,f5);
+
+            trainDotscont.x = -5;
+            trainDotscont.y = -40;
+
+            var f1Count = 0;
+            var f1up = true;
+            var f2Count = 0;
+            var f2up = true;
+            var f3Count = 0;
+            var f3up = true;
+            var f4Count = 0;
+            var f4up = true;
+            var f5Count = 0;
+            var f5up = true;
+
+            app.trainDotAnimation = function(delta){
+
+                if (f1up){
+                    f1Count = f1Count + HQDotspeed;
+                    if (f1Count >= HQDotSpread[1]){
+                        f1up = false;
+                    }
+                    f1.y = f1Count;
+                }
+                else{
+                    f1Count = f1Count - HQDotspeed;
+                    if (f1Count <= HQDotSpread[0]){
+                        f1up = true;
+                    }
+                    f1.y = f1Count;
+                }
+               
+                setTimeout(() => {
+
+                    if (f2up){
+                        f2Count = f2Count + HQDotspeed;
+                        if (f2Count >= HQDotSpread[1]){
+                            f2up = false;
+                        }
+                        f2.y = f2.y + HQDotspeed;
+                    }
+                    else{
+                        f2Count = f2Count - HQDotspeed;
+                        if (f2Count <= HQDotSpread[0]){
+                            f2up = true;
+                        }
+                        f2.y = f2.y - HQDotspeed;
+                    }
+
+                }, 120);
+
+
+                setTimeout(() => {
+
+                    if (f3up){
+                        f3Count = f3Count + HQDotspeed;
+                        if (f3Count >= HQDotSpread[1]){
+                            f3up = false;
+                        }
+                        f3.y = f3.y + HQDotspeed;
+                    }
+                    else{
+                        f3Count = f3Count - HQDotspeed;
+                        if (f3Count <= HQDotSpread[0]){
+                            f3up = true;
+                        }
+                        f3.y = f3.y - HQDotspeed;
+                    }
+
+                }, 140);
+
+                setTimeout(() => {
+
+                    if (f4up){
+                        f4Count = f4Count + HQDotspeed;
+                        if (f4Count >= HQDotSpread[1]){
+                            f4up = false;
+                        }
+                        f4.y = f4.y + HQDotspeed;
+                    }
+                    else{
+                        f4Count = f4Count - HQDotspeed;
+                        if (f4Count <= HQDotSpread[0]){
+                            f4up = true;
+                        }
+                        f4.y = f4.y - HQDotspeed;
+                    }
+
+                }, 200);
+
+                setTimeout(() => {
+
+                    if (f5up){
+                        f5Count = f5Count + HQDotspeed;
+                        if (f5Count >= HQDotSpread[1]){
+                            f5up = false;
+                        }
+                        f5.y = f5.y + HQDotspeed;
+                    }
+                    else{
+                        f5Count = f5Count - HQDotspeed;
+                        if (f5Count <= HQDotSpread[0]){
+                            f5up = true;
+                        }
+                        f5.y = f5.y - HQDotspeed;
+                    }
+
+                }, 240);
+                
+
+            }
+
+            var trainButton = new PIXI.Sprite.from('/images/buttons/Contact-Defualt.png');
+            mapCont.addChild(trainButton);
+
+            trainButton.anchor.set(0.5,0.5);
+
+            trainButton.x = 942.2290649414062;
+            trainButton.y = -83.26358032226562;
+
+            app.ticker.add(app.trainDotAnimation);
+
+            const trainHoverZone = new PIXI.Graphics(); 
+
+            trainHoverZone.beginFill(0xFF3300);
+            trainHoverZone.moveTo(894.1466064453125, 319.28851318359375);
+            trainHoverZone.lineTo(894.3207397460938, 317.66571044921875);
+            trainHoverZone.lineTo(943.9647216796875, 346.8712158203125);
+            trainHoverZone.lineTo(994.672607421875, 312.52545166015625);
+            trainHoverZone.lineTo(994.0299072265625, 59.062744140625);
+            trainHoverZone.lineTo(1048.1794738769531, -44.58514404296875);
+            trainHoverZone.lineTo(1045.38818359375, -123.99935913085938);
+            trainHoverZone.lineTo(843.4215393066406, -122.94973754882812);
+            trainHoverZone.lineTo(843.9025268554688, -44.1617431640625);
+            trainHoverZone.closePath();
+            trainHoverZone.endFill();
+            trainHoverZone.alpha = 0.0;
+
+            trainHoverZone.interactive = true;
+            trainHoverZone.cursor = 'pointer';
+  
+            mapCont.addChild(trainHoverZone);
+
+            // trainHover.mask = graphics;
+
+            trainHoverZone.on('pointerover', addTrainHover)
+            .on('pointerout', removeTrainHover);
+
+            app.trainHover = function(){
+                console.log('trainHover.y', trainHover.y);
+                if(trainTower.y < 150){
+                    trainTower.y = trainTower.y + 5;
+                }
+                if(trainHover.y > -50){
+                    trainHover.y = trainHover.y - 5;
+                }
+            }
+
+            app.trainLeave = function(){
+                if(trainTower.y > 50){
+                    trainTower.y = trainTower.y - 5;
+                }
+                if(trainHover.y < 225){
+                    trainHover.y = trainHover.y + 5;
+                }
+            }
+
+            function addTrainHover(){
+                app.ticker.add(app.trainHover);
+                app.ticker.remove(app.trainLeave);
+            }
+
+            function removeTrainHover(){
+                app.ticker.remove(app.trainHover);
+                app.ticker.add(app.trainLeave);
+            }
+
+            var trainHover = new PIXI.Sprite.from('/images/light/hover.png'); 
+
+            mapCont.addChild(trainHover);
+            trainHover.mask = graphics;
+
+            trainHover.x = 942.3785400390625;
+            trainHover.y = 225.63531494140625;
+
+            trainHover.anchor.set(0.5,0.5);
+
             
 
             // buttonOneCont.addChild(graphics);
@@ -1040,6 +1302,7 @@
             var xCanMoveLeft = true;
             var yCanMoveTop = true;
             var yCanMoveDown = true;
+
 
             // this.app.stage.addChild(mapCont);
 

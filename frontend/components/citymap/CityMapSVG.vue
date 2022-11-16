@@ -16,7 +16,15 @@
     // import * as PIXI from 'pixi.js'
     export default {
         name: 'CityMapSVG',
+
+        data(){ 
+            return {
+                clickPosition: '',
+            }
+        },  
+
         async mounted(){
+            var thisContext = this;
             const PIXI = await import('pixi.js');
             const app = new PIXI.Application({transparent: true,  width: window.innerWidth, height: window.innerHeight });
             this.$refs.cityMap.appendChild(app.view);
@@ -32,6 +40,10 @@
             var ServiceButtonHover = new PIXI.Sprite.from('/images/light/hover.png');
 
             mapCont.addChild(ServiceButtonHover);
+
+            var trainHover = new PIXI.Sprite.from('/images/light/hover.png'); 
+            mapCont.addChild(trainHover);
+           
 
 
             road.anchor.set(0.5,0.5);
@@ -95,7 +107,7 @@
             // graphics.drawRoundedRect(-652, 57, 20, 20, 1);
             // graphics.endFill();
 
-            graphics.alpha = 0.1;
+            graphics.alpha = 0;
             graphics.lineStyle(1, 0xffd900, 1);
 
             // the three towers mask
@@ -446,12 +458,13 @@
             HQhoverZone.moveTo(-244.0823211669922,-75.0487060546875);
             HQhoverZone.lineTo(-244.0823211669922,-75.0487060546875);
             HQhoverZone.lineTo(-50.7080078125,-76.31976318359375);
-            HQhoverZone.lineTo(-26.36285400390625, -472.98016357421875);
-            HQhoverZone.lineTo(-249.0260009765625, -473.0483093261719);
-            // HQhoverZone.lineTo(217.60488891601562, -191.28219604492188)
+            HQhoverZone.lineTo(-34.20086669921875, -451.389404296875);
+            HQhoverZone.lineTo(-244.2462158203125, -452.06732177734375);
             HQhoverZone.closePath();
             HQhoverZone.endFill();
             HQhoverZone.alpha = 0;
+
+            
 
             mapCont.addChild(HQhoverZone);
 
@@ -505,7 +518,10 @@
             HQExploreButton.x = -141.10516357421875;
             HQExploreButton.y = -426.4768981933594;
             HQExploreButton.anchor.set(0.5,0.5);
-            var HQExploreButtonUp = true
+            var HQExploreButtonUp = true;
+
+            HQhoverZone.on('pointerover', HqHover)
+            .on('pointerout', HqLeave);
 
             app.HQbuttonBounce = function(){
                 // HQExploreButton.y = HQExploreButton.y + 1;
@@ -602,7 +618,7 @@
             const threeTowerHoverZone = new PIXI.Graphics();
 
             threeTowerHoverZone.interactive = true;
-            threeTowerHoverZone.cursor = 'pointer';
+            // threeTowerHoverZone.cursor = 'pointer';
 
 
             var ServiceButton = new PIXI.Sprite.from('/images/buttons/OurServices-Hover.png');
@@ -1222,6 +1238,30 @@
             trainButton.x = 942.2290649414062;
             trainButton.y = -83.26358032226562;
 
+  
+
+            var trainButtonUp = true;
+            app.trainBounce = function(){
+                // HQExploreButton.y = HQExploreButton.y + 1;
+                if (trainButtonUp){
+                    trainButton.y = trainButton.y + 0.15;
+                    if (trainButton.y >= -80.4768981933594){
+                        trainButtonUp = false;
+                    }
+                    // HQouter.y = HQouterCount;
+                }
+                else{
+                    trainButton.y = trainButton.y - 0.15;
+                    if (trainButton.y < -90.263580322265624){
+                        trainButtonUp = true;
+                    }
+                    // HQouter.y = HQouterCount;
+                }  
+            }
+
+            app.ticker.add(app.trainBounce);
+            app.ticker.add(app.HQcontAnimation);
+
             app.ticker.add(app.trainDotAnimation);
 
             const trainHoverZone = new PIXI.Graphics(); 
@@ -1245,6 +1285,8 @@
   
             mapCont.addChild(trainHoverZone);
 
+            trainButton.alpha = 0;
+
             // trainHover.mask = graphics;
 
             trainHoverZone.on('pointerover', addTrainHover)
@@ -1258,20 +1300,36 @@
                 if(trainHover.y > -50){
                     trainHover.y = trainHover.y - 5;
                 }
-            }
 
+                setTimeout(function(){
+                    //code goes here
+                    if(trainButton.alpha < 1){
+                        trainButton.alpha = trainButton.alpha + 0.09;
+                    }
+                }, 800); //Time before execution
+
+            }
+            
             app.trainLeave = function(){
-                if(trainTower.y > 50){
-                    trainTower.y = trainTower.y - 5;
+                setTimeout(function(){
+                    if(trainTower.y > 50){
+                        trainTower.y = trainTower.y - 5;
+                    }
+                    if(trainHover.y < 225){
+                        trainHover.y = trainHover.y + 5;
+                    }
+                }, 800); //Time before execution
+
+                if(trainButton.alpha > 0){
+                    trainButton.alpha = trainButton.alpha - 0.09;
                 }
-                if(trainHover.y < 225){
-                    trainHover.y = trainHover.y + 5;
-                }
+
             }
 
             function addTrainHover(){
-                app.ticker.add(app.trainHover);
                 app.ticker.remove(app.trainLeave);
+                app.ticker.add(app.trainHover);
+
             }
 
             function removeTrainHover(){
@@ -1279,9 +1337,7 @@
                 app.ticker.add(app.trainLeave);
             }
 
-            var trainHover = new PIXI.Sprite.from('/images/light/hover.png'); 
 
-            mapCont.addChild(trainHover);
             trainHover.mask = graphics;
 
             trainHover.x = 942.3785400390625;
@@ -1374,12 +1430,42 @@
                 let position = this.data.getLocalPosition(this);
                 console.log(position.x + '/' + position.y);
                 // Set the pivot point to the new position
+                thisContext.clickPosition = position
                 this.pivot.set(position.x, position.y)
                 // update the new position of the sprite to the position obtained through 
                 // the global data. This ensures the position lines up with the location of 
                 // the mouse on the screen. I'm not certain why, but this is necessary. 
                 this.position.set(this.data.global.x, this.data.global.y)
                 this.dragging = true;
+
+
+                // explore click
+                if(thisContext.clickPosition.y < -361.56805419921875 && thisContext.clickPosition.y > -448.3217468261719 && thisContext.clickPosition.x > -239.74478149414062 && thisContext.clickPosition.x < -40.293060302734375 ){
+                    thisContext.$emit('explore');
+                    thisContext.clickPosition = 0;
+                }
+
+
+                // service click
+                if(thisContext.clickPosition.y < -51.0474853515625 && thisContext.clickPosition.y > -114.27386474609375 && thisContext.clickPosition.x > -965.5708618164062 && thisContext.clickPosition.x < -851.8754272460938 ){
+                    thisContext.$emit('clientService');
+                    thisContext.clickPosition = 0;
+                }else if(thisContext.clickPosition.y < -51.0474853515625 && thisContext.clickPosition.y > -114.27386474609375 && thisContext.clickPosition.x > -840.2058715820312 && thisContext.clickPosition.x < -723.2125244140625){
+                    thisContext.$emit('candidateService');
+                    thisContext.clickPosition = 0;
+                }
+
+                // blog click
+                if(thisContext.clickPosition.y > -286.0414733886719 && thisContext.clickPosition.y < -145.14675903320312 && thisContext.clickPosition.x > 186.5819091796875 && thisContext.clickPosition.x < 389.105712890625){
+                  thisContext.$emit('blog');
+                  thisContext.clickPosition = 0;
+                }
+
+                // contact click
+                if(thisContext.clickPosition.y < -44.99481201171875 && thisContext.clickPosition.y > -122.63543701171875 && thisContext.clickPosition.x > 843.1767578125 && thisContext.clickPosition.x < 1042.0689697265625){
+                    thisContext.$emit('contact');
+                    thisContext.clickPosition = 0;
+                }
 
 
             }
@@ -1389,6 +1475,11 @@
                 this.dragging = false;
                 // set the interaction data to null
                 this.data = null;
+
+                // let position = this.data.getLocalPosition(this);
+                // console.log(position.x + '/' + position.y);
+                // // Set the pivot point to the new position
+                // thisContext.clickPosition = position
 
                 var checkCords = mapCont.getBounds();
 
@@ -1500,7 +1591,46 @@
 
            // let app = new PIXI.Application({ width: 640, height: 360 });
             // document.body.appendChild(app.view);
+            /// button click space
+            // HQhoverZone.hitArea = new PIXI.Polygon([])
 
+            // threeTowerHoverZone.on('mousedown', goToClientService);
+            // threeTowerHoverZone.on('touchstart', goToClientService);
+
+            // function goToClientService(){
+
+            //     if(thisContext.clickPosition.y < -51.0474853515625 && thisContext.clickPosition.y > -114.27386474609375 && thisContext.clickPosition.x > -965.5708618164062 && thisContext.clickPosition.x < -851.8754272460938 ){
+            //         thisContext.$emit('clientService');
+            //     }else if(thisContext.clickPosition.y < -51.0474853515625 && thisContext.clickPosition.y > -114.27386474609375 && thisContext.clickPosition.x > -840.2058715820312 && thisContext.clickPosition.x < -80.27774047851562){
+            //         thisContext.$emit('candidateService')
+            //     }
+            // }
+
+            // HQhoverZone.on('mousedown', goToPage);
+            // HQhoverZone.on('touchstart', goToPage);
+
+            // function goToPage(whichOne){
+            //     console.log('looooga');
+            //     // this.$router.push({path: '/explore' });
+            //     // router.push('/users/eduardo')
+            //     // let clickPosition = mapCont.data.getLocalPosition(this);
+            //     console.log('mousePosition', thisContext.clickPosition);
+            //     if(thisContext.clickPosition.y < -361.56805419921875 && thisContext.clickPosition.y > -448.3217468261719 && thisContext.clickPosition.x > -239.74478149414062 && thisContext.clickPosition.x < -40.293060302734375 ){
+            //         thisContext.$emit('explore');
+            //     }
+            // }
+
+            // singleHoverZone.on('mousedown', goToBlog);
+            // singleHoverZone.on('mousedown', goToBlog);
+
+            // function goToBlog(){
+            //     // if(thisContext.clickPosition.y < 286.0414733886719 && thisContext.clickPosition.y > -145.14675903320312 && thisContext.clickPosition.x > 187.8106689453125 && thisContext.clickPosition.x < 389.60595703125){
+            //     //     thisContext.$emit('blog');
+            //     // }
+            //     if(thisContext.clickPosition.y < 286.0414733886719 && thisContext.clickPosition.y > -145.14675903320312 && thisContext.clickPosition.x > 187.8106689453125 && thisContext.clickPosition.x < 389.60595703125){
+            //         thisContext.$emit('blog');
+            //     }
+            // }
         }
     }
 </script>

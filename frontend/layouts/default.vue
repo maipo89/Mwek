@@ -7,7 +7,7 @@
         <div :class="[this.pageState, this.thePageClass]">
           <div class="drag-map" > 
             <div class="drag-map__background"></div>
-            <CityMapSVG />
+            <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" />
           </div>
           <div class="page-modal__container" >
             <div class="page-modal">
@@ -75,19 +75,47 @@ export default {
       this.$router.push('/'); 
       this.renderMap = true;
     },
+
     pageClass(){
         const firstPath = location.pathname.split('/')[1];
         console.log('siteUrl',location);
         this.thePageClass = firstPath + '-page-' + location.pathname.replace(/[^/]/g, "").length;
     },
-    draggableMapFunction(){
-      // this.draggable = new Draggable(this.$refs.dragMap__container, {
-      //   bounds: this.$refs.dragMapCity,
-      //   throwProps: true,      
-      //   callbackScope: this,
-      //   allowEventDefault: true
-      // });
+
+    mapRouts(theRoute){
+      this.headerAction();
+      //this.$router.push('/explore');
+
+      switch (theRoute) {
+
+        case 'explore':
+          this.$router.push('/explore');
+          break;
+
+        case 'clientService':
+          this.$router.push('/client-services');
+          break;
+
+        case 'candidateService':
+          this.$router.push('/our-services');
+          break;
+
+        case 'blog':
+         // this.$router.push('/our-services')
+          this.$router.push('/blog');
+          break;
+
+        case 'contact':
+         // this.$router.push('/our-services')
+          this.$router.push('/contact');
+          break;
+      
+        default:
+          break;
+      }
+      
     }
+
   },
 
   mounted(){

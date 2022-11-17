@@ -493,7 +493,7 @@
                     HQcont.y = HQcont.y - hoverSpeed
                 }
                 if( HQhover.y < -100.635498046875){
-                     HQhover.y =  HQhover.y + hoverSpeed + 4;
+                     HQhover.y =  HQhover.y + hoverSpeed;
                 }
                 if(HQExploreButton.alpha > 0){
                     HQExploreButton.alpha = HQExploreButton.alpha - 0.03;
@@ -981,10 +981,10 @@
 
             app.singleHoverAnim = function(){
                 if(singleTower.y < 40 ){
-                    singleTower.y = singleTower.y + 3.5;
+                    singleTower.y = singleTower.y + 5;
                 }
                 if(singleHover.y > -100){
-                    singleHover.y = singleHover.y - 3.5;
+                    singleHover.y = singleHover.y - 5;
                 }
                 setTimeout(() => {
                     if(singleButton.alpha < 1){
@@ -997,10 +997,10 @@
             app.singleLeaveAnim = function(){
                 
                     if(singleTower.y > -20 ){
-                        singleTower.y = singleTower.y - 3.5;
+                        singleTower.y = singleTower.y - 5;
                     }
                     if(singleHover.y < 150){
-                        singleHover.y = singleHover.y + 3.5;
+                        singleHover.y = singleHover.y + 5;
                     }
                 setTimeout(() => {
                     if(singleButton.alpha > 0){
@@ -1631,6 +1631,86 @@
             //         thisContext.$emit('blog');
             //     }
             // }
+
+
+            // moving objects
+
+            const trainMask = new PIXI.Graphics();
+
+            trainMask.beginFill(0xFF3300);
+            trainMask.moveTo(1041.9301147460938, 348.603515625);
+            trainMask.lineTo(1041.9301147460938, 348.603515625);
+            trainMask.lineTo(1193.2863311767578, 258.0082092285156);
+            trainMask.lineTo(1494.5260009765625, 180.7884521484375);
+            trainMask.lineTo(1469.4453125, 9.372222900390625);
+            trainMask.lineTo(1043.1401977539062, 100.7746276855469);
+            trainMask.lineTo(995.4673767089844, 204.41146850585938)
+            trainMask.closePath();
+            trainMask.endFill();
+
+            trainMask.beginFill(0xFF3300);
+            trainMask.moveTo(134.24456787109375, 1071.3886413574219);
+            trainMask.lineTo(134.24456787109375, 1071.3886413574219);
+            trainMask.lineTo(280.99806213378906, 1010.4525299072266)
+            trainMask.lineTo(993.0479278564453, 373.51312255859375);
+            trainMask.lineTo(991.4929809570312, 342.40447998046875);
+            trainMask.lineTo(978.2534790039062, 301.3697509765625);
+            trainMask.lineTo(945.3621215820312, 283.33074951171875);
+            trainMask.lineTo(849.2991790771484, 112.42414855957031)
+            trainMask.lineTo(-456.03240966796875, 892.0516967773438);
+            trainMask.closePath();
+            trainMask.endFill();
+
+            var trainSprite = new PIXI.Sprite.from('/images/travel/Train.png'); 
+            mapCont.addChild(trainMask);
+            mapCont.addChild(trainSprite);
+
+            trainSprite.anchor.set(0.5,0.5);
+            trainSprite.x = 1866.4095458984375;
+            trainSprite.y = -140.7301025390625;
+            trainSprite.mask = trainMask;
+
+
+            app.trainMove = function(){
+                // if(trainSprite.y < 873.3090438842773){
+                //     trainSprite.y = trainSprite.y + (0.56 * 5);
+                // }else{
+                //     trainSprite.y = -80.7301025390625;
+                // }
+
+                // if(trainSprite.x > -238.94564819335938){
+                //     trainSprite.x = trainSprite.x - (1 * 5);
+                // }else{
+                //     trainSprite.x = 1866.4095458984375;
+                // }
+                if(trainSprite.x > -500){
+                    trainSprite.x = trainSprite.x - (1 * 5);
+                    trainSprite.alpha = 1;
+                }
+                if(trainSprite.y < 1200){
+                    trainSprite.y = trainSprite.y + (0.57 * 5);
+                }
+
+                if(trainSprite.y > 1200 & trainSprite.x < -500){
+                    trainSprite.alpha = 0;
+
+                    setTimeout(function(){
+                        //code goes here
+                        trainSprite.x = 1866.4095458984375;
+                        trainSprite.y = -140.7301025390625;
+                    }, 1000); 
+                }
+                
+            
+
+                //console.log('choo choo', trainSprite.x + '/' + trainSprite.y );
+                
+                
+            }
+
+            app.ticker.add(app.trainMove);
+
+
         }
     }
 </script>

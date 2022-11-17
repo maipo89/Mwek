@@ -175,7 +175,7 @@
         width: 200px;
         height: 200px;
         perspective: 500px;
-        margin: 100px;
+        margin: 100px; 
     }
     
     .cube {
@@ -183,12 +183,20 @@
         width: 200px;
         height: 200px;
         transform-style: preserve-3d;
+        @keyframes mover {
+            0% { transform: translateY(0) rotate3d(-59, 100, -23, 52deg) translateZ(20px); }
+            20% { transform: translateY(0) rotate3d(0, 0, 0, 0); }
+            100% { transform: translateY(-20px) rotate3d(1, 1, 0, 360deg); }
+        }
         // animation: turn 5s linear infinite;
+        &:hover {
+            animation: mover 10s infinite alternate linear;
+        }
         transform: rotate3d(-59, 100, -23, 52deg) translateZ(20px);
         img{
             transform: rotate3d(-59, 100, -23, -52deg);
             z-index: 3;
-        }
+        } 
     }
     
     .face {

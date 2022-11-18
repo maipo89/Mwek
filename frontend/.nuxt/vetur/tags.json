@@ -38,17 +38,14 @@
   "TypeText": {
     "description": "Auto imported from components/UI/TypeText.vue"
   },
-  "CardsWithFilter": {
-    "description": "Auto imported from components/archives/CardsWithFilter.vue"
-  },
   "BlogPage": {
     "description": "Auto imported from components/blog/BlogPage.vue"
   },
   "SubscriptionSection": {
     "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
-  "ContactFooter": {
-    "description": "Auto imported from components/contact/ContactFooter.vue"
+  "CardsWithFilter": {
+    "description": "Auto imported from components/archives/CardsWithFilter.vue"
   },
   "CityLights": {
     "description": "Auto imported from components/citymap/CityLights.vue"
@@ -70,6 +67,9 @@
   },
   "CityTurbines": {
     "description": "Auto imported from components/citymap/CityTurbines.vue"
+  },
+  "ContactFooter": {
+    "description": "Auto imported from components/contact/ContactFooter.vue"
   },
   "MeetTheTeam": {
     "description": "Auto imported from components/explore/MeetTheTeam.vue"

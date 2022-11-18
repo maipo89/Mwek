@@ -190,7 +190,7 @@
         }
         // animation: turn 5s linear infinite;
         &:hover {
-            animation: mover 10s infinite alternate linear;
+           // animation: mover 10s infinite alternate linear;
         }
         transform: rotate3d(-59, 100, -23, 52deg) translateZ(20px);
         img{

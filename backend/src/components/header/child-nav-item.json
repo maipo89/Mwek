@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_header_child_nav_items",
+  "info": {
+    "displayName": "childNavItem",
+    "icon": "align-left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service.service"
+    },
+    "customText": {
+      "type": "string"
+    }
+  }
+}

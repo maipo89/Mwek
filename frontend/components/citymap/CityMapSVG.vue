@@ -882,7 +882,6 @@
             singleTower.addChild(singleTowerCenter,singleTowerOuter, serviceDotscont);
             mapCont.addChild(singleTower);
             singleTower.mask = graphics;
-
             var singleTowerUp = [true, true]
 
             var singleTowerLightSpeed = 0.5;
@@ -1287,7 +1286,7 @@
 
             trainButton.alpha = 0;
 
-            // trainHover.mask = graphics;
+            trainHover.mask = graphics;
 
             trainHoverZone.on('pointerover', addTrainHover)
             .on('pointerout', removeTrainHover);

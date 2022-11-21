@@ -3,49 +3,42 @@
     "name": "blog",
     "path": "/blog",
     "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/blog/index.vue",
-    "chunkName": "pages/blog/index",
-    "_name": "_839e00d0"
+    "chunkName": "pages/blog/index"
   },
   {
     "name": "blog-cat",
     "path": "/blog/:cat",
     "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/blog/_cat/index.vue",
-    "chunkName": "pages/blog/_cat/index",
-    "_name": "_1e301504"
+    "chunkName": "pages/blog/_cat/index"
   },
   {
     "name": "blog-page",
     "path": "/blog/:page",
     "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/blog/_page.vue",
-    "chunkName": "pages/blog/_page",
-    "_name": "_26f24434"
+    "chunkName": "pages/blog/_page"
   },
   {
     "name": "services-page",
     "path": "/services/:page?",
     "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/services/_page.vue",
-    "chunkName": "pages/services/_page",
-    "_name": "_5a194470"
+    "chunkName": "pages/services/_page"
   },
   {
     "name": "blog-cat-page",
     "path": "/blog/:cat/:page",
     "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/blog/_cat/_page.vue",
-    "chunkName": "pages/blog/_cat/_page",
-    "_name": "_f21d4cc0"
+    "chunkName": "pages/blog/_cat/_page"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_9836aba2"
+    "chunkName": "pages/index"
   },
   {
     "name": "page",
     "path": "/:page",
     "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/_page.vue",
-    "chunkName": "pages/_page",
-    "_name": "_1ca5eecb"
+    "chunkName": "pages/_page"
   }
 ]

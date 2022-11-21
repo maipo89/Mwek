@@ -14,7 +14,10 @@
         max-width: 944px;
         width: 95%;
         margin: 0 auto;
-        margin-bottom: 0;
+        margin-bottom: 0px;
+        @media (max-width: 960px) {
+            margin: 10px auto 30px;
+        }
     }
     p{
         font-family: Montserrat;

@@ -1,18 +1,38 @@
 .footer{
     width: 100%;
-    height: 250px;
+    min-height: 250px;
+    height: fit-content;
+    padding: 20px 0;
     background-color: #07134D;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+    &__image {
+        @media (max-width: 550px) {
+            margin: 0 auto;
+        }
+    }
     &__container{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+    }
+    &__links {
+        @media (max-width: 550px) {
+            margin-top: 20px;            
+        }
     }
     &__coloumn{
         margin: 0px 62px;
+        @media (max-width: 960px) {
+            margin: 0px 20px;
+        }
+        @media (max-width: 550px) {
+            width: 100%;         
+            text-align: center;   
+        }
     }
     &__image{
         width: 180px;

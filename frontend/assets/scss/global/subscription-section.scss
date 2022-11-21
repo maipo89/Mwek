@@ -1,15 +1,42 @@
 .subscription{
-    max-width: 941px;
+    max-width: 941px; 
     width: 95%;
     margin: 0 auto;
     margin-top: 75px;
     &__row{
         display: flex;
         flex-direction: row;
-        justify-content: center;
-        margin-top: 44px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 44px auto 0;
+        width: fit-content;
+        @media (min-width: 960px){
+            min-width: 700px;
+        }
+        @media (max-width: 960px){
+            justify-content: center;
+        }
+        div {
+            width: 75%;
+            @media (max-width: 960px){
+                width: 100%;
+            }
+        }
         input{
             margin-right: 28px;
+        }
+        .onqor-input {
+            width: 100%;
+            @media (max-width: 960px){
+                width: 100%;
+            }
+        }
+        .onqor-button {
+            width: 20%;
+            @media (max-width: 960px){
+                width: 35%;
+                margin-top: 20px;
+            }
         }
     }
     &__sub{

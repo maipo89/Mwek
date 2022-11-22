@@ -22,7 +22,6 @@ export default {
         valueKey: String,
         optionKey: String 
     },
-    
     data(){
         return {
             activeOption: '',
@@ -32,7 +31,6 @@ export default {
             active: false
         }
     },
-
     methods: {
         dropDownClick(){
             if(this.active === false){

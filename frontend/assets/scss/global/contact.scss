@@ -3,6 +3,28 @@
     height: auto;
     width: 95%;
     margin: 0 auto;
+    &__form-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // padding: 0 10px;
+        @media (max-width: 900px) {
+            width: 100%;
+        }
+        button {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: -3px 4px 5px -1px rgb(0 0 0 / 16%), -10px 10px 12px 5px rgb(0 0 0 / 10%), inset -35px 35px 48px rgb(0 0 0 / 2%);
+            @media (max-width: 900px) {
+                width: 100%;
+            }
+        }
+    }
     h2{
         font-family: 'Orbitron';
         font-size: 38px;
@@ -47,6 +69,12 @@
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
+        a {
+            text-decoration: none;
+        }
+        @media (max-width: 550px) {
+            box-shadow: none;
+        }
         h4{
             position: absolute;
             top:29px;
@@ -57,11 +85,8 @@
             font-size: 16px;
             line-height: 20px;
             text-align: center;
-
             /* Dark Blue */
-
             color: #07134D;
-
         }
         .social-item{
             width: 50%;
@@ -70,6 +95,17 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            @media (max-width: 550px) {
+                width: 100%;
+                height: fit-content;
+                margin-bottom: 25px;
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                &__icon {
+                    margin: 0 20px 0 0;
+                } 
+            }
             &:hover {
                 cursor: pointer;
             }
@@ -88,8 +124,11 @@
                 vertical-align: middle;
                 box-shadow: -3px 4px 5px -1px rgba(0, 0, 0, 0.05), -7px 7px 12px 5px rgba(0, 0, 0, 0.04), inset -35px 35px 48px rgba(0, 0, 0, 0.02);
                 border-radius: 16px;
-                margin-bottom: 10px;
+                margin: 0 auto 10px auto;
                 transition: box-shadow 0.3s, transform 0.3s;
+                @media (max-width: 550px) {
+                    margin: 0 20px 15px 0;
+                }
             }
             p{
                 color:#07134D;
@@ -105,13 +144,8 @@
         vertical-align: middle;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 250px;
         margin-top: 75px;
-
     }
-    // @media only screen and (max-width: 900px) {
-
-	// }
 }
 
 @media only screen and (max-width: 900px){

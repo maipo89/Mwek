@@ -68,8 +68,32 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    
+    '@nuxtjs/axios',
+    ['nuxt-mail', {
+      message: {
+        to: 'phil.longhurst@onqor.co.uk',
+      },
+      smtp: {
+        host: 'smtp.gmail.com',
+        port: 465,
+        auth: {
+          user: 'phil.longhurst@onqor.co.uk',
+          pass: 'gppddnykogzcdbya'
+        },
+      },
+    }],
   ],
+  // or use the top-level option:
+  mail: {
+    message: {
+      to: 'foo@bar.de',
+    },
+    smtp: {
+      host: "smtp.example.com",
+      port: 587,
+    },
+  },
+
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   // vuetify: {
   //   // customVariables: ['~/assets/variables.scss'],

@@ -17,7 +17,9 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: "https://use.typekit.net/vls5puz.css" },
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Orbitron&display=swap" }
     ],
     script: [
         {
@@ -25,11 +27,11 @@ export default {
             src: 'js/Jquery.js',
             body: true
         },
-        {
-            type: 'text/javascript',
-            src: 'js/gsap/minified/gsap.min.js',
-            body: true
-        },
+        // {
+        //     type: 'text/javascript',
+        //     src: 'js/gsap/minified/gsap.min.js',
+        //     body: true
+        // },
         // {
         //     type: 'text/javascript',
         //     src: 'js/gsap/minified/Draggable.min.js',

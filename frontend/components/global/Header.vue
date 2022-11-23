@@ -6,21 +6,28 @@
             <div class="header__nav-container">
                 <div v-for="(item, index) in this.navItems" :key="index" :class="{ 'active' : index == activeItem }" class="header__item">
                     <div v-on:click="navClick(index)">
-                        <NuxtLink v-if="item.slug" :to="'/' + item.slug"  >
+                        <NuxtLink  style="position: absolute; opacity: 0.0; pointer-events: none;" v-if="item.slug" :to="'/' + item.slug"  >
                             {{ item.title }} 
                         </NuxtLink>
+                        <a v-if="item.slug" v-on:click="customClick('/' + item.slug)">{{ item.title }} </a>
                     </div>
                     <a v-if="item.slug == null ">
                         {{ item.title }} 
                     </a>
                     <div v-if="item.subItems" class="header__item-dropdown">
                         <div v-for="(subItem, subIndex) in item.subItems" v-on:click="navClick(index)"  :key="subIndex" class="header__sub-item">
-                            <NuxtLink v-on:click="navClick(index)" v-if="subItem.customText" :to="'/' + subItem.page.data.attributes.slug"  >
+                            <NuxtLink style="position: absolute; opacity: 0.0; pointer-events: none;" v-on:click="navClick(index)" v-if="subItem.customText" :to="'/' + subItem.page.data.attributes.slug"  >
                                 {{ subItem.customText }} 
                             </NuxtLink>
-                            <NuxtLink v-on:click="navClick(index)" v-else :to="'/' + subItem.page.data.attributes.slug"  >
+                            <NuxtLink style="position: absolute; opacity: 0.0; pointer-events: none;" v-on:click="navClick(index)" v-else :to="'/' + subItem.page.data.attributes.slug"  >
                                 {{ subItem.page.data.attributes.title }} 
                             </NuxtLink>
+                            <a v-if="subItem.customText" v-on:click="customClick('/' + subItem.page.data.attributes.slug), navClick(index)" >
+                                {{ subItem.customText }}
+                            </a>
+                            <a v-else v-on:click="customClick('/' + subItem.page.data.attributes.slug), navClick(index)">
+                                {{ subItem.page.data.attributes.title }} 
+                            </a>
                         </div>
                     </div>
                     <div class="header__underline"></div>
@@ -139,6 +146,10 @@ export default {
             }else{
                 this.openMobileNav = 'mobileNavOpen'
             }
+        },
+        customClick(link){
+            console.log('link', link);
+            this.$emit('customLink', link);
         }
     },  
     mounted(){

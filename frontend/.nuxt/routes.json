@@ -2,43 +2,50 @@
   {
     "name": "blog",
     "path": "/blog",
-    "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/blog/index.vue",
-    "chunkName": "pages/blog/index"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/index.vue",
+    "chunkName": "pages/blog/index",
+    "_name": "_d7e4678e"
   },
   {
     "name": "blog-cat",
     "path": "/blog/:cat",
-    "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/blog/_cat/index.vue",
-    "chunkName": "pages/blog/_cat/index"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_cat/index.vue",
+    "chunkName": "pages/blog/_cat/index",
+    "_name": "_7da1f5fa"
   },
   {
     "name": "blog-page",
     "path": "/blog/:page",
-    "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/blog/_page.vue",
-    "chunkName": "pages/blog/_page"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_page.vue",
+    "chunkName": "pages/blog/_page",
+    "_name": "_0661de56"
   },
   {
     "name": "services-page",
     "path": "/services/:page?",
-    "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/services/_page.vue",
-    "chunkName": "pages/services/_page"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/services/_page.vue",
+    "chunkName": "pages/services/_page",
+    "_name": "_258cd891"
   },
   {
     "name": "blog-cat-page",
     "path": "/blog/:cat/:page",
-    "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/blog/_cat/_page.vue",
-    "chunkName": "pages/blog/_cat/_page"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_cat/_page.vue",
+    "chunkName": "pages/blog/_cat/_page",
+    "_name": "_29f0499f"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/index.vue",
-    "chunkName": "pages/index"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_3ab0bcee"
   },
   {
     "name": "page",
     "path": "/:page",
-    "component": "/Users/philiplonghurst/MyPC/Clients/Mwekv3/Mwek/frontend/pages/_page.vue",
-    "chunkName": "pages/_page"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/_page.vue",
+    "chunkName": "pages/_page",
+    "_name": "_b91bfcec"
   }
 ]

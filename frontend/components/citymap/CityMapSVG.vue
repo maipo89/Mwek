@@ -31,12 +31,35 @@
             
             var mapCont = new PIXI.Container();
             var map = new PIXI.Sprite.from('/images/LightCity.png');
+            var carOne = new PIXI.Sprite.from('/images/travel/Car.png');
+            var carTwo = new PIXI.Sprite.from('/images/travel/CarRight.png');
 
+            
 
+            var grid = new PIXI.Sprite.from('/images/grid.png');
             var road = new PIXI.Sprite.from('/images/Road.png');
-            mapCont.addChild(road);
+            
 
+            carOne.width = 50;
+            carOne.height = 50;
+            carOne.anchor.set(0.5,0.5);
+            carOne.x = 948.6671447753906;
+            carOne.y = -534.2612762451172;
+
+
+            carTwo.x = -1453.7776641845703;
+            carTwo.y = 259.0702209472656
+            carTwo.anchor.set(0.5,0.5);
+            carTwo.width = 50;
+            carTwo.height = 50;
+
+            mapCont.addChild(grid);
+            mapCont.addChild(road);
+            mapCont.addChild(carOne);
+            mapCont.addChild(carTwo);
             mapCont.addChild(map);
+
+
             var ServiceButtonHover = new PIXI.Sprite.from('/images/light/hover.png');
 
             mapCont.addChild(ServiceButtonHover);
@@ -45,7 +68,7 @@
             mapCont.addChild(trainHover);
            
 
-
+            grid.anchor.set(0.5,0.5);
             road.anchor.set(0.5,0.5);
 
             mapCont.interactive = true;
@@ -475,39 +498,39 @@
             var hoverSpeed = 5;
 
             app.HQhoverAnimation = function(delta) {                
-                if(HQcont.y < -300){
-                    HQcont.y = HQcont.y + hoverSpeed
-                }
-                if( HQhover.y > -360.635498046875){
-                     HQhover.y = HQhover.y - hoverSpeed;
-                }
-                if(HQhover.y <= -310.635498046875){
+                // if(HQcont.y < -300){
+                //     HQcont.y = HQcont.y + hoverSpeed
+                // }
+                // if( HQhover.y > -360.635498046875){
+                //      HQhover.y = HQhover.y - hoverSpeed;
+                // }
+                // if(HQhover.y <= -310.635498046875){
                     if(HQExploreButton.alpha < 1.1){
                         HQExploreButton.alpha = HQExploreButton.alpha + 0.03;
                     }
-                }
+                //}
             }
 
             app.HQhoverAnimationLeave = function(delta) {                
-                if(HQcont.y > -400){
-                    HQcont.y = HQcont.y - hoverSpeed
-                }
-                if( HQhover.y < -100.635498046875){
-                     HQhover.y =  HQhover.y + hoverSpeed;
-                }
+                // if(HQcont.y > -400){
+                //     HQcont.y = HQcont.y - hoverSpeed
+                // }
+                // if( HQhover.y < -100.635498046875){
+                //      HQhover.y =  HQhover.y + hoverSpeed;
+                // }
                 if(HQExploreButton.alpha > 0){
                     HQExploreButton.alpha = HQExploreButton.alpha - 0.03;
                 }
             }
 
             function HqHover(state){
-                console.log('hover', HQcont.y );
+               // console.log('hover', HQcont.y );
                 app.ticker.remove(app.HQhoverAnimationLeave);
                 app.ticker.add(app.HQhoverAnimation);
             }
 
             function HqLeave(state){
-                console.log('leave');
+                // console.log('leave');
                 app.ticker.remove(app.HQhoverAnimation);
                 app.ticker.add(app.HQhoverAnimationLeave);
             }
@@ -687,27 +710,27 @@
             var serviceHoverSpeed = 5;
 
             app.ServiceHoverAnimation = function(delta) {                
-                if(ThreeTowersCont.y < 100){
-                    ThreeTowersCont.y = ThreeTowersCont.y + serviceHoverSpeed;
-                }
-                if(ServiceButtonHover.y > 0){
-                    ServiceButtonHover.y = ServiceButtonHover.y - serviceHoverSpeed;
-                }
+                // if(ThreeTowersCont.y < 100){
+                //     ThreeTowersCont.y = ThreeTowersCont.y + serviceHoverSpeed;
+                // }
+                // if(ServiceButtonHover.y > 0){
+                //     ServiceButtonHover.y = ServiceButtonHover.y - serviceHoverSpeed;
+                // }
                 
-                setTimeout(() => {
+                // setTimeout(() => {
                     if(ServiceButton.alpha < 1){
                         ServiceButton.alpha = ServiceButton.alpha + 0.05;
                     }
-                }, 500)
+                // }, 500)
             }
 
             app.ServiceHoverAnimationLeave = function(delta) {                
-                if(ThreeTowersCont.y > -10){
-                    ThreeTowersCont.y = ThreeTowersCont.y - serviceHoverSpeed;
-                }
-                if(ServiceButtonHover.y < 235){
-                    ServiceButtonHover.y = ServiceButtonHover.y + serviceHoverSpeed;
-                }
+                // if(ThreeTowersCont.y > -10){
+                //     ThreeTowersCont.y = ThreeTowersCont.y - serviceHoverSpeed;
+                // }
+                // if(ServiceButtonHover.y < 235){
+                //     ServiceButtonHover.y = ServiceButtonHover.y + serviceHoverSpeed;
+                // }
                 if(ServiceButton.alpha > 0){
                     ServiceButton.alpha = ServiceButton.alpha - 0.05;
                 }
@@ -979,33 +1002,33 @@
             singleHover.mask = graphics;
 
             app.singleHoverAnim = function(){
-                if(singleTower.y < 40 ){
-                    singleTower.y = singleTower.y + 5;
-                }
-                if(singleHover.y > -100){
-                    singleHover.y = singleHover.y - 5;
-                }
-                setTimeout(() => {
+                // if(singleTower.y < 40 ){
+                //     singleTower.y = singleTower.y + 5;
+                // }
+                // if(singleHover.y > -100){
+                //     singleHover.y = singleHover.y - 5;
+                // }
+                // setTimeout(() => {
                     if(singleButton.alpha < 1){
                         singleButton.alpha = singleButton.alpha + 0.3;
                     }
-                }, 700);
+                // }, 700);
                 // singleTower.y = singleTower.y + 1;
             }
 
             app.singleLeaveAnim = function(){
                 
-                    if(singleTower.y > -20 ){
-                        singleTower.y = singleTower.y - 5;
-                    }
-                    if(singleHover.y < 150){
-                        singleHover.y = singleHover.y + 5;
-                    }
-                setTimeout(() => {
+                    // if(singleTower.y > -20 ){
+                    //     singleTower.y = singleTower.y - 5;
+                    // }
+                    // if(singleHover.y < 150){
+                    //     singleHover.y = singleHover.y + 5;
+                    // }
+                // setTimeout(() => {
                     if(singleButton.alpha > 0){
                         singleButton.alpha = singleButton.alpha - 0.3;
                     }
-                }, 500 );
+                // }, 500 );
             }
 
             function singleLeave(){
@@ -1292,32 +1315,33 @@
             .on('pointerout', removeTrainHover);
 
             app.trainHover = function(){
-                console.log('trainHover.y', trainHover.y);
-                if(trainTower.y < 150){
-                    trainTower.y = trainTower.y + 5;
-                }
-                if(trainHover.y > -50){
-                    trainHover.y = trainHover.y - 5;
-                }
+                //console.log('trainHover.y', trainHover.y);
 
-                setTimeout(function(){
+                // if(trainTower.y < 150){
+                //     trainTower.y = trainTower.y + 5;
+                // }
+                // if(trainHover.y > -50){
+                //     trainHover.y = trainHover.y - 5;
+                // }
+
+                // setTimeout(function(){
                     //code goes here
                     if(trainButton.alpha < 1){
                         trainButton.alpha = trainButton.alpha + 0.09;
                     }
-                }, 800); //Time before execution
+                // }, 800); //Time before execution
 
             }
             
             app.trainLeave = function(){
-                setTimeout(function(){
+                // setTimeout(function(){
                     if(trainTower.y > 50){
                         trainTower.y = trainTower.y - 5;
                     }
                     if(trainHover.y < 225){
                         trainHover.y = trainHover.y + 5;
                     }
-                }, 800); //Time before execution
+                // }, 800); //Time before execution
 
                 if(trainButton.alpha > 0){
                     trainButton.alpha = trainButton.alpha - 0.09;
@@ -1475,16 +1499,10 @@
                 // set the interaction data to null
                 this.data = null;
 
-                // let position = this.data.getLocalPosition(this);
-                // console.log(position.x + '/' + position.y);
-                // // Set the pivot point to the new position
-                // thisContext.clickPosition = position
 
                 var checkCords = mapCont.getBounds();
 
-                //console.log('checkCords.x ', checkCords );
-                
-                // console.log('mapCont', mapCont._boundsRect.height / 2);
+
 
                 if(checkCords.x > 0){
                     app.ticker.add(app.animationUpdateXright);
@@ -1637,26 +1655,45 @@
             const trainMask = new PIXI.Graphics();
 
             trainMask.beginFill(0xFF3300);
-            trainMask.moveTo(1041.9301147460938, 348.603515625);
-            trainMask.lineTo(1041.9301147460938, 348.603515625);
-            trainMask.lineTo(1193.2863311767578, 258.0082092285156);
-            trainMask.lineTo(1494.5260009765625, 180.7884521484375);
-            trainMask.lineTo(1469.4453125, 9.372222900390625);
-            trainMask.lineTo(1043.1401977539062, 100.7746276855469);
-            trainMask.lineTo(995.4673767089844, 204.41146850585938)
+            trainMask.moveTo(1046.7266540527344, 346.1871337890625);
+            trainMask.lineTo(1046.7266540527344, 346.1871337890625);
+            trainMask.lineTo(1049.8683776855469, 431.642578125);
+            trainMask.lineTo(1391.0827331542969,233.0439453125);
+            trainMask.lineTo(1380.5284118652344,150.95303344726562);
+            trainMask.lineTo(1379.2408142089844, 103.72048950195312);
+            trainMask.lineTo(1375.15380859375, 91.28890991210938);
+            trainMask.lineTo(1369.415771484375, 81.84686279296875);
+            trainMask.lineTo(1354.9913330078125, 70.374267578125);
+            trainMask.lineTo(1346.06396484375, 68.22171020507812);
+            trainMask.lineTo(1339.8720092773438, 68.5697021484375);
+            trainMask.lineTo(994.5461883544922, 146.2039794921875);
+            trainMask.lineTo(995.2911682128906, 205.07476806640625);
+            trainMask.lineTo(1004.5848388671875, 227.98284912109375);
+            trainMask.lineTo(1022.6422729492188, 247.77532958984375);
+            trainMask.lineTo(1043.3096923828125, 261.4684600830078)
             trainMask.closePath();
             trainMask.endFill();
+            trainMask.alpha = 0.5;
 
             trainMask.beginFill(0xFF3300);
-            trainMask.moveTo(134.24456787109375, 1071.3886413574219);
-            trainMask.lineTo(134.24456787109375, 1071.3886413574219);
-            trainMask.lineTo(280.99806213378906, 1010.4525299072266)
-            trainMask.lineTo(993.0479278564453, 373.51312255859375);
-            trainMask.lineTo(991.4929809570312, 342.40447998046875);
-            trainMask.lineTo(978.2534790039062, 301.3697509765625);
-            trainMask.lineTo(945.3621215820312, 283.33074951171875);
-            trainMask.lineTo(849.2991790771484, 112.42414855957031)
-            trainMask.lineTo(-456.03240966796875, 892.0516967773438);
+            trainMask.moveTo(293.5160827636719, 776.6109008789062);
+            trainMask.lineTo(293.5160827636719, 776.6109008789062);
+            trainMask.lineTo(305.20233154296875, 862.6501159667969);
+            trainMask.lineTo(997.68017578125, 463.7853088378906);
+            trainMask.lineTo(992.8050689697266, 375.1382598876953);
+            trainMask.lineTo(990.1568756103516, 343.4243927001953);
+            trainMask.lineTo(986.4432830810547, 320.0071716308594);
+            trainMask.lineTo(979.4887084960938, 303.15948486328125);
+            trainMask.lineTo(973.2255859375, 294.0299377441406);
+            trainMask.lineTo(963.3096313476562, 285.29217529296875);
+            trainMask.lineTo(945.2364349365234, 283.92271423339844);
+            trainMask.lineTo(896.7702026367188, 152.20428466796875);
+            trainMask.lineTo(234.44256591796875, 481.84521484375);
+            trainMask.lineTo(249.781494140625, 693.6345520019531);
+            trainMask.lineTo(260.9775390625, 693.7068481445312);
+            trainMask.lineTo(270.8173828125, 697.9822387695312);
+            trainMask.lineTo(280.01849365234375,705.011474609375);
+            trainMask.lineTo(289.058349609375, 717.2817993164062)
             trainMask.closePath();
             trainMask.endFill();
 
@@ -1671,23 +1708,13 @@
 
 
             app.trainMove = function(){
-                // if(trainSprite.y < 873.3090438842773){
-                //     trainSprite.y = trainSprite.y + (0.56 * 5);
-                // }else{
-                //     trainSprite.y = -80.7301025390625;
-                // }
 
-                // if(trainSprite.x > -238.94564819335938){
-                //     trainSprite.x = trainSprite.x - (1 * 5);
-                // }else{
-                //     trainSprite.x = 1866.4095458984375;
-                // }
                 if(trainSprite.x > -500){
-                    trainSprite.x = trainSprite.x - (1 * 5);
+                    trainSprite.x = trainSprite.x - (1 * 6);
                     trainSprite.alpha = 1;
                 }
                 if(trainSprite.y < 1200){
-                    trainSprite.y = trainSprite.y + (0.57 * 5);
+                    trainSprite.y = trainSprite.y + (0.57 * 6);
                 }
 
                 if(trainSprite.y > 1200 & trainSprite.x < -500){
@@ -1699,15 +1726,125 @@
                         trainSprite.y = -140.7301025390625;
                     }, 1000); 
                 }
-                
-            
-
-                //console.log('choo choo', trainSprite.x + '/' + trainSprite.y );
-                
-                
             }
 
             app.ticker.add(app.trainMove);
+
+
+            /// long road middle 
+
+            const longRoadMiddle = new PIXI.Graphics();
+
+            longRoadMiddle.beginFill(0xFF3300);
+            longRoadMiddle.moveTo(-1360.8398742675781, 816.4187927246094);
+            longRoadMiddle.lineTo(-1360.8398742675781, 816.4187927246094);
+            longRoadMiddle.lineTo(-1344.4174041748047, 839.9462280273438);
+            longRoadMiddle.lineTo(869.0733642578125, -451.9035120010376)
+            longRoadMiddle.lineTo(876.2344970703125, -485.40118408203125);
+            longRoadMiddle.lineTo(853.3160095214844, -498.83363342285156);
+            longRoadMiddle.lineTo(820.48095703125, -501.2552490234375);
+            longRoadMiddle.lineTo(789.2232055664062, -517.4708938598633);
+            longRoadMiddle.lineTo(-1394.6335525512695, 751.6460266113281);
+            longRoadMiddle.lineTo(-1378.745834350586, 775.7689208984375);
+            longRoadMiddle.lineTo(-1372.6831512451172, 781.3613891601562);
+            longRoadMiddle.lineTo(-1366.2870635986328, 792.6642303466797)
+            longRoadMiddle.closePath();
+            longRoadMiddle.endFill();
+            longRoadMiddle.beginFill(0xDE3249);
+            longRoadMiddle.drawEllipse(849.2140808105469, -513.9751434326172, 37, 40);
+            longRoadMiddle.endFill();
+
+            longRoadMiddle.alpha = 0.5;
+
+            mapCont.addChild(longRoadMiddle);
+
+            carOne.mask = longRoadMiddle;
+
+            // carOne.x = 948.6671447753906;
+            // carOne.y = -574.2612762451172
+            
+            app.carOneMove = function(){
+                if(carOne.x > -1479.6444091796875){
+                    carOne.x = carOne.x - (1 * 3);
+                    carOne.alpha = 1;
+                }
+
+                if(carOne.y < 865.155029296875){
+                    carOne.y = carOne.y + (0.57 * 3);
+                }
+
+                if(carOne.y > 865.155029296875 & carOne.x < -1479.6444091796875){
+                    // carOne.alpha = 0;
+
+                    setTimeout(function(){
+                        //code goes here
+                        carOne.x = 948.6671447753906;
+                        carOne.y = -534.2612762451172
+                    }, 1000); 
+                }
+            }
+
+            app.ticker.add(app.carOneMove);
+
+
+            // road short bottom
+
+            const shortRoadBottom = new PIXI.Graphics();
+
+            shortRoadBottom.beginFill(0xFF3300);
+            shortRoadBottom.moveTo(-1376.8577270507812, 317.3817596435547);
+            shortRoadBottom.lineTo(-1376.8577270507812, 317.3817596435547);
+            shortRoadBottom.lineTo(-1394.302635192871, 359.9481964111328);
+            shortRoadBottom.lineTo(-1045.843635559082, 579.9631500244141);
+            shortRoadBottom.lineTo(-358.0672607421875, 961.3894653320312);
+            shortRoadBottom.lineTo(-330.32061767578125, 933.7210693359375);
+            shortRoadBottom.lineTo(-328.15240478515625, 922.892578125);
+            shortRoadBottom.lineTo(-324.99981689453125, 916.7632141113281);
+            shortRoadBottom.lineTo(-318.84393310546875, 908.7159423828125);
+            shortRoadBottom.lineTo(-308.822265625, 897.5801391601562);
+            shortRoadBottom.lineTo(-305.0225830078125, 893.5647277832031);
+            shortRoadBottom.lineTo(-280.1514892578125, 868.9535369873047);
+            shortRoadBottom.lineTo(-1272.419906616211, 273.8785095214844)
+            shortRoadBottom.closePath();
+            shortRoadBottom.endFill();
+
+            shortRoadBottom.alpha = 0.7;
+
+            shortRoadBottom.beginFill(0xDE3249);
+            shortRoadBottom.drawEllipse(-1350, 287.82464599609375, 37, 40);
+            shortRoadBottom.endFill();
+
+            mapCont.addChild(shortRoadBottom);
+
+            carTwo.mask = shortRoadBottom;
+
+
+            app.carTwoMove = function(){
+
+                if(carTwo.x < -214.26077270507812){
+                    carTwo.x = carTwo.x + (1 * 3);
+                    carTwo.alpha = 1;
+                }
+
+                if(carTwo.y < 989.0693359375){
+                    carTwo.y = carTwo.y + (0.57 * 3);
+                }
+                // -214.26077270507812/989.0693359375
+                if(carTwo.y > 989.0693359375 & carTwo.x > -214.26077270507812){
+                    // carOne.alpha = 0;
+
+                    setTimeout(function(){
+                        //code goes here
+                        carTwo.x = -1453.7776641845703;
+                        carTwo.y = 259.0702209472656
+                    }, 1000); 
+                }
+            }
+
+            app.ticker.add(app.carTwoMove);
+            // carTwo.x = -1453.7776641845703;
+            // carTwo.y = 259.0702209472656
+
 
 
         }

@@ -112,16 +112,17 @@
         position: absolute;
         transform-origin: center;
         width: 220vw;
-        height: 220vh;
-        left: -60%;
-        top:-50%;
+        height: 220vw;
         z-index: -1;
+        animation: rotating 5s linear infinite;
+        background: linear-gradient(90deg, #a8a9f9 14%, #9fe1f1 66%);
+        left: -50vw;
+        top: -50vw;
         -webkit-animation: rotating 5s linear infinite;
         -moz-animation: rotating 5s linear infinite;
         -ms-animation: rotating 5s linear infinite;
         -o-animation: rotating 5s linear infinite;
         animation: rotating 5s linear infinite;
-        background: linear-gradient(90deg, rgba(168,169,249,1) 14%, rgba(159,225,241,1) 66%);
     }
 }
 

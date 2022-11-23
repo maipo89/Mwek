@@ -18,6 +18,19 @@
         },
         mounted(){
             this.inputValue = this.inputPlaceHolder;
+        },
+        methods: {
+            send() {
+                this.$emit('send', "hello world")
+            },
+            getValue(value) {
+                console.log(value);
+            }
+        },
+        watch: {
+            inputValue(oldVal, newVal){
+                this.$emit('send', newVal);
+            }
         }
     }
 </script>

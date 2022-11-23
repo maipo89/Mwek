@@ -17,7 +17,9 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: "https://use.typekit.net/vls5puz.css" },
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Orbitron&display=swap" }
     ],
     script: [
         {
@@ -25,11 +27,11 @@ export default {
             src: 'js/Jquery.js',
             body: true
         },
-        {
-            type: 'text/javascript',
-            src: 'js/gsap/minified/gsap.min.js',
-            body: true
-        },
+        // {
+        //     type: 'text/javascript',
+        //     src: 'js/gsap/minified/gsap.min.js',
+        //     body: true
+        // },
         // {
         //     type: 'text/javascript',
         //     src: 'js/gsap/minified/Draggable.min.js',
@@ -66,8 +68,32 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    
+    '@nuxtjs/axios',
+    ['nuxt-mail', {
+      message: {
+        to: 'phil.longhurst@onqor.co.uk',
+      },
+      smtp: {
+        host: 'smtp.gmail.com',
+        port: 465,
+        auth: {
+          user: 'phil.longhurst@onqor.co.uk',
+          pass: 'gppddnykogzcdbya'
+        },
+      },
+    }],
   ],
+  // or use the top-level option:
+  mail: {
+    message: {
+      to: 'foo@bar.de',
+    },
+    smtp: {
+      host: "smtp.example.com",
+      port: 587,
+    },
+  },
+
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   // vuetify: {
   //   // customVariables: ['~/assets/variables.scss'],

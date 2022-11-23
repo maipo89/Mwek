@@ -14,7 +14,10 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 22px;
+        transition: ease 0.2s;
         &:hover {
+            transition: ease 0.2s;
             cursor: pointer;
+            background-color: #1B05F2;
         }
 }

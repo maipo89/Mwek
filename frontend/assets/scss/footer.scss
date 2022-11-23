@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+    border-radius: 15px 15px 0px 0px;;
     &__image {
         @media (max-width: 550px) {
             margin: 0 auto;
@@ -26,6 +27,14 @@
     }
     &__coloumn{
         margin: 0px 62px;
+        a {
+            transition: ease 0.2s;
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 5px;
+                transition: ease 0.2s;
+            }
+        }
         @media (max-width: 960px) {
             margin: 0px 20px;
         }

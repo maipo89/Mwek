@@ -19,7 +19,6 @@
         font-size: 14px;
         /* or 18px */
         /* Dark Blue */
-
         color: #07134D;
         margin-bottom: 60px !important;
     }
@@ -171,15 +170,15 @@
         background-color: #fff;
         border-radius: 15px;
         overflow: hidden;
-        box-shadow: -3px 4px 5px rgba(0, 0, 0, 0.16), -10px 10px 12px rgba(0, 0, 0, 0.1), inset -35px 35px 48px rgba(0, 0, 0, 0.02);
+        box-shadow: -3px 6px 5px rgba(0, 0, 0, 0.16), -10px 10px 12px rgba(0, 0, 0, 0.1), inset -35px 35px 48px rgba(0, 0, 0, 0.02);
     }
     &__content{
         height: 0%;
         overflow: hidden;
         width: 100%;
         position: absolute;
-        transition: height 1s 0.3s;
-        &.active{
+        transition: height 0.5s 0.3s;
+        &.active {
             height: 100%;
             top:0px;
             bottom:initial;
@@ -188,13 +187,13 @@
             //     transition: height 1s 0.3s;
             // }
         }
-        &.closed{
+        &.closed {
             bottom: 0px;
             height: 0%;
             top: initial;
             .tabbed-content__icons{
                 top: -279px;
-                transition: top 1s 0.3s;
+                transition: top 0.5s 0.3s;
             }
         }
     }
@@ -208,7 +207,7 @@
     }
     &__icons{
         width: 100%;
-        height: 279px;
+        height: 300px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

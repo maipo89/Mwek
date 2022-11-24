@@ -3,7 +3,7 @@
     <v-main>
       <v-container>
         <!-- <SiteIntro /> -->
-        <Header v-on:page-open="headerAction()" v-on:customLink="customRoute($event)" />
+        <Header   v-on:page-open="headerAction()" v-on:customLink="customRoute($event)" />
         <div :class="[this.pageState, this.thePageClass]">
           <div class="drag-map" > 
             <div class="drag-map__background"></div>

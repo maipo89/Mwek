@@ -3,4 +3,5 @@ frontend/node_modules
 backend/public
 frontend/dist
 frontend/.nuxt/dist
+frontend/.nuxt
 frontend/node_modules/*

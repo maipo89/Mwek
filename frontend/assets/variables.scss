@@ -69,6 +69,9 @@ h1.h2,h3,h4,h5{
     -moz-backface-visibility: visible;
     -ms-backface-visibility: visible;
     // transform-style: preserve-3d;
+    @media (max-width: 550px) {
+        padding: 50px 10px 100px;
+    }
     &__back-to-map{
         height: 54px;
         width: 169px;
@@ -270,6 +273,9 @@ html {
     .content-columns__title{
         font-size: 24px;
         margin-bottom: 0px;
+        @media only screen and (max-width: 520px) {
+            margin-bottom: 35px;
+        }
     }
 }
 .service-page{

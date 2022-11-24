@@ -88,7 +88,6 @@ export default {
         this.filterdBlogs = theBlogs.data
     },
     changeCat(value){
-
         this.blogClass = '';
         setTimeout(function () {    
             if(value === 'all'){

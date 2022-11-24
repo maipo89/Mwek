@@ -150,6 +150,11 @@ export default {
         customClick(link){
             console.log('link', link);
             this.$emit('customLink', link);
+            if(this.openMobileNav === 'mobileNavOpen'){
+                this.openMobileNav = ''
+            }else{
+                this.openMobileNav = 'mobileNavOpen'
+            }
         }
     },  
     mounted(){

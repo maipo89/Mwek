@@ -26,7 +26,7 @@
         async mounted(){
             var thisContext = this;
             const PIXI = await import('pixi.js');
-            const app = new PIXI.Application({transparent: true,  width: window.innerWidth, height: window.innerHeight });
+            const app = new PIXI.Application({transparent: true,  width: window.innerWidth, height: window.innerHeight, resizeTo: window });
             this.$refs.cityMap.appendChild(app.view);
             
             var mapCont = new PIXI.Container();

@@ -1,7 +1,7 @@
 .statTabs{
     display: flex;
     flex-direction: row;
-    width: 943px;
+    max-width: 943px;
     justify-content: space-between;
     margin: 0 auto;
     margin-bottom: 90px;
@@ -39,6 +39,17 @@
             &:nth-child(1){
                 font-weight: 500;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 850px){
+	.statTabs{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__item{
+            margin: 10px 0px;
         }
     }
 }

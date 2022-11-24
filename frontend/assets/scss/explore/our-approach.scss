@@ -151,4 +151,28 @@
             }
         }
     }
+    .our-approach {
+        width: calc(100% + 20px);
+        left: -10px;
+        position: relative;
+    }
+}
+@media only screen and (max-width: 700px){
+    .our-approach{
+        &__section{
+            max-width: 772px;
+            width: calc(95% + 101px );
+            /* left: -101px; */
+            margin-left: -101px;
+            .our-approach__icon{
+                margin-left: 35px;
+                transform: translateX(-45px);
+            }
+            &:nth-child(even) {  
+                .our-approach__icon{
+                    transform: translateX(18px);
+                }
+            }
+        }
+    }
 }

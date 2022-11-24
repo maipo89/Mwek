@@ -91,7 +91,8 @@
         }
     }
     &__buttons{
-        width: 367px;
+        max-width: 367px;
+        width: 90%;
         margin: 0 auto;
         display: flex;
         flex-direction: row;

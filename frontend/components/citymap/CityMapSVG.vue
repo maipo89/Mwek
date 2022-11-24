@@ -1404,7 +1404,7 @@
             app.animationUpdateXleft = function(delta) {
                 // console.log('mapCont.x', mapCont.x )
                 var checkCords = mapCont.getBounds();
-                var rightCheck = 0 - ( mapCont._boundsRect.width / 2);
+                var rightCheck = 0 - (mapCont._boundsRect.width - window.innerWidth )
                 if(checkCords.x < rightCheck){
                     mapCont.x = mapCont.x + 15;
                 }
@@ -1426,7 +1426,7 @@
                 // console.log('mapCont.x', mapCont.x )
                 // mapCont.y += 0.1 * 10;
                 var checkCords = mapCont.getBounds();
-                var bottomCheck = 0 - ( mapCont._boundsRect.height / 2);
+                var bottomCheck = 0 - ( mapCont._boundsRect.height - window.innerHeight);
                 if(checkCords.y < bottomCheck){
                     mapCont.y = mapCont.y + 15;
                 }
@@ -1503,25 +1503,26 @@
                 var checkCords = mapCont.getBounds();
 
 
-
+                // left
                 if(checkCords.x > 0){
                     app.ticker.add(app.animationUpdateXright);
                 }
 
-                var rightCheck = 0 - ( mapCont._boundsRect.width / 2);
-                //console.log(rightCheck);
+                // right
+                var rightCheck = 0 - (mapCont._boundsRect.width - window.innerWidth );
+                console.log(checkCords.x + ' --  ' + rightCheck);
                 if(checkCords.x < rightCheck){
                     app.ticker.add(app.animationUpdateXleft);
-
-                    
+                    //alert('hello');
                     // app.ticker.remove(app.animationUpdateXleft);
                 }
 
+                // top
                 if(checkCords.y > 0){
                     app.ticker.add(app.animationUpdateYtop);
                 }
-
-                var bottomCheck = 0 - ( mapCont._boundsRect.height / 2);
+                // bottom
+                var bottomCheck = 0 - ( mapCont._boundsRect.height - window.innerHeight);
                 if(checkCords.y < bottomCheck){
                     app.ticker.add(app.animationUpdateYbottom);
                     

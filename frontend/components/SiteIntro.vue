@@ -147,7 +147,7 @@
             setTimeout(function () { 
                 this.textStep = 2
                 this.welcome();
-            }.bind(this), 1000)
+            }.bind(this), 300)
         }
     }
 </script>

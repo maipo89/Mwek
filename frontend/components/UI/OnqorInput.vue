@@ -20,9 +20,6 @@
             this.inputValue = this.inputPlaceHolder;
         },
         methods: {
-            send() {
-                this.$emit('send', "hello world")
-            },
             getValue(value) {
                 console.log(value);
             }

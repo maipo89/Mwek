@@ -53,24 +53,18 @@
         // }
     }
     .contentImage{
-
         padding: 0px;
         object-fit: contain;
         // display: flex;
         // justify-content: center;
-
         &.center-img {
-
             display: flex;
             align-items: center;
             justify-content: center;
-
         }
-        
         img {
             width: 100%;
             // align-self: center;
-
             &.anim-spin {
                 @keyframes spin {
                     from {

@@ -1,7 +1,8 @@
 .blog{
     padding: 0px 18px;
     .drop-down {
-        width: 30%
+        width: 20%;
+        min-width: 150px;
     }
     &__container{
         display: flex;
@@ -103,7 +104,11 @@
             cursor: pointer;
         }
         .blog__container{
-            justify-content: center;
+            justify-content: space-between;
+            .blog-card {
+                width: 50%;
+                margin-right: 0;
+            }
         }
 	}
     @media only screen and (max-width: 702px) {
@@ -118,8 +123,11 @@
             cursor: pointer;
         }
         .blog__container{
-            justify-content: center;
+            justify-content: space-between;
             width: 100%;
+            .blog-card {
+                width: 100%;
+            }
         }
         h1{
             font-family: 'Orbitron';

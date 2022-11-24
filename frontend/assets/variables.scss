@@ -256,7 +256,10 @@ html {
 }
 .blog-post{
     .content-columns__block {
-        padding: 0 30px 50px 30px !important;
+        padding: 0 30px 50px 30px;
+        @media (max-width: 1222px) {
+            padding: 0px 0 50px 0 !important;
+        }
         div p {
             margin: 0 !important;
         }

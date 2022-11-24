@@ -4,13 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _839e00d0 = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
-const _1e301504 = () => interopDefault(import('../pages/blog/_cat/index.vue' /* webpackChunkName: "pages/blog/_cat/index" */))
-const _26f24434 = () => interopDefault(import('../pages/blog/_page.vue' /* webpackChunkName: "pages/blog/_page" */))
-const _5a194470 = () => interopDefault(import('../pages/services/_page.vue' /* webpackChunkName: "pages/services/_page" */))
-const _f21d4cc0 = () => interopDefault(import('../pages/blog/_cat/_page.vue' /* webpackChunkName: "pages/blog/_cat/_page" */))
-const _9836aba2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _1ca5eecb = () => interopDefault(import('../pages/_page.vue' /* webpackChunkName: "pages/_page" */))
+const _d7e4678e = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
+const _7da1f5fa = () => interopDefault(import('../pages/blog/_cat/index.vue' /* webpackChunkName: "pages/blog/_cat/index" */))
+const _0661de56 = () => interopDefault(import('../pages/blog/_page.vue' /* webpackChunkName: "pages/blog/_page" */))
+const _258cd891 = () => interopDefault(import('../pages/services/_page.vue' /* webpackChunkName: "pages/services/_page" */))
+const _29f0499f = () => interopDefault(import('../pages/blog/_cat/_page.vue' /* webpackChunkName: "pages/blog/_cat/_page" */))
+const _3ab0bcee = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _b91bfcec = () => interopDefault(import('../pages/_page.vue' /* webpackChunkName: "pages/_page" */))
 
 const emptyFn = () => {}
 
@@ -25,31 +25,31 @@ export const routerOptions = {
 
   routes: [{
     path: "/blog",
-    component: _839e00d0,
+    component: _d7e4678e,
     name: "blog"
   }, {
     path: "/blog/:cat",
-    component: _1e301504,
+    component: _7da1f5fa,
     name: "blog-cat"
   }, {
     path: "/blog/:page",
-    component: _26f24434,
+    component: _0661de56,
     name: "blog-page"
   }, {
     path: "/services/:page?",
-    component: _5a194470,
+    component: _258cd891,
     name: "services-page"
   }, {
     path: "/blog/:cat/:page",
-    component: _f21d4cc0,
+    component: _29f0499f,
     name: "blog-cat-page"
   }, {
     path: "/",
-    component: _9836aba2,
+    component: _3ab0bcee,
     name: "index"
   }, {
     path: "/:page",
-    component: _1ca5eecb,
+    component: _b91bfcec,
     name: "page"
   }],
 

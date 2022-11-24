@@ -34,48 +34,33 @@ export default {
 
   methods: {
     async asyncData() {
+      console.log('this.theBlogsId', this.theBlogsId);
+      const theBlogsID = await fetch(
+        this.$store.state.apiroute.url + '/api/blogs?filters[categories][slug]=' + this.theBlogsId
 
-        console.log('this.theBlogsId', this.theBlogsId);
-
-        const theBlogsID = await fetch(
-          this.$store.state.apiroute.url + '/api/blogs?filters[categories][slug]=' + this.theBlogsId
-
+      ).then((res) => {
+          // can set up 404 redirection here
+          return res.json();
+      });
+      theBlogsID.data.forEach(element => {
+          this.blogIDs.push(element.id);
+      });
+      console.log('theBlogsID', theBlogsID)
+      const theBlogs = await fetch(
+        this.$store.state.apiroute.url + '/api/blogs?populate=deep'
         ).then((res) => {
-            // can set up 404 redirection here
-            return res.json();
-        });
-       
+          // can set up 404 redirection here
+          console.log('theblogs', res);
+          return res.json();
+      });
 
-        theBlogsID.data.forEach(element => {
-            this.blogIDs.push(element.id);
-        });
-
-        console.log('theBlogsID', theBlogsID)
-
-    //   console.log('theBlogsssss', theBlogs);
-
-        const theBlogs = await fetch(
-          this.$store.state.apiroute.url + '/api/blogs?populate=deep'
-
-        ).then((res) => {
-            // can set up 404 redirection here
-            console.log('theblogs', res);
-            return res.json();
-
-        });
-
-        // console.log('theBlogs', theBlogs);
-
-        const idStore = this.blogIDs;
-        var filterdArray = theBlogs.data.filter(function(e){
-            return idStore.includes(e.id)
-        });
-
-        console.log('filterdArray', filterdArray);
-
-        this.filterdBlogs = filterdArray; 
-
-
+      const idStore = this.blogIDs;
+      
+      var filterdArray = theBlogs.data.filter(function(e){
+          return idStore.includes(e.id)
+      });
+      console.log('filterdArray', filterdArray);
+      this.filterdBlogs = filterdArray; 
     },
 
     async getCategories(){

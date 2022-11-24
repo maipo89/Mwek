@@ -9,7 +9,7 @@
                 <OnqorInput v-modal="email" @send="getValue($event, 'email')" class="input-spacing" inputPlaceHolder="Email" />
                 <OnqorInput v-modal="tel"  @send="getValue($event, 'tel')" class="input-spacing" inputPlaceHolder="Contact Number" />
                 <div class="contact-footer__form-row input-spacing">
-                    <DropDown :options="this.cats" />
+                    <DropDown v-modal="subject" @send="getValue($event, 'subject')" :options="this.cats" />
                     <button @click="go()">Send</button>
                 </div>
                 <!-- <DropDown :options="this.cats" /> -->
@@ -114,7 +114,7 @@
                     { option: 'X' , value: 'X' },
                     { option: 'X' , value: 'X' }
                 ],
-                formData: { name: 'def', email: 'def2', type: 'def3' }
+                formData: { name: 'def', email: 'def2', tel: '09', subject: 'def3', type: 'def3' }
             }
         },
         mounted(){
@@ -124,9 +124,9 @@
             go() {
                 console.log("sen email")
                 this.$mail.send({
-                    from: 'John Doe',
-                    subject: 'Incredible',
-                    text: 'This is an incredible test message',
+                    from: this.formData.email,
+                    subject: this.formData.subject,
+                    text: "Hi my name is " + this.formData.name + ", you can call me at:" + this.formData.tel,
                 })
             },
             getValue(event, type){
@@ -140,6 +140,9 @@
                         break;
                     case 'tel':
                             this.formData.tel = event
+                        break;
+                    case 'subject':
+                            this.formData.subject = event
                         break;
                     default:
                     // code block

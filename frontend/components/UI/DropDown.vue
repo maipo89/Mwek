@@ -45,7 +45,7 @@ export default {
             }
         },
         itemClick(item){
-            this.$emit('dropdownEvent', item);
+            this.$emit('send', item);
             this.active = false;
             this.dropDownHeight = 0;
             this.activeTop = 16;

@@ -3,7 +3,7 @@
     <v-main>
       <v-container>
         <!-- <SiteIntro /> -->
-        <Header v-on:page-open="headerAction()"/>
+        <Header v-on:page-open="headerAction()" v-on:customLink="customRoute($event)" />
         <div :class="[this.pageState, this.thePageClass]">
           <div class="drag-map" > 
             <div class="drag-map__background"></div>
@@ -23,7 +23,7 @@
                   </div>
                 </NuxtLink>
               </div>
-              <div class="page_scroller">
+              <div class="page_scroller"  :class="this.transitionClass">
                 <Nuxt />
               </div>
             </div>
@@ -47,11 +47,13 @@ export default {
       // renderMap: true ,
       renderMap: false ,
       pinMe: '',
-      thePageClass: ''
+      thePageClass: '',
+      transitionClass: '',
 
     }
   },
   methods: {
+
     async getMapButtons() {
       const mapButton = await fetch(
           this.$store.state.apiroute.url + '/api/city-map?[populate][theCityMapButtons][populate]=*'
@@ -62,14 +64,14 @@ export default {
       });
       this.mapButton = mapButton.data.attributes.theCityMapButtons;
     },
+
     headerAction(){
-      console.log('helo helo hleo helo');
       this.pageState = 'page-open';
       setTimeout(function () {
         this.renderMap = false;
       }.bind(this), 2100)
-      
     },
+
     backToMap(){
       this.pageState = 'map-open';
       this.$router.push('/'); 
@@ -78,7 +80,7 @@ export default {
 
     pageClass(){
         const firstPath = location.pathname.split('/')[1];
-        console.log('siteUrl',location);
+        console.log('siteUrl', location);
         this.thePageClass = firstPath + '-page-' + location.pathname.replace(/[^/]/g, "").length;
     },
 
@@ -113,26 +115,32 @@ export default {
         default:
           break;
       }
-      
+    },
+    customRoute(event){
+      this.transitionClass = 'page-change'
+      var thisContext = this;
+      setTimeout(function(){
+        thisContext.$router.push(event);
+      }, 1000); //Time before execution
     }
-
   },
 
   mounted(){
     this.getMapButtons();
     
+    console.log('this.$route.params.page', this.$route.params.page);
 
-    console.log('this.$route.params.page',this.$route.params.page);
+    this.pageClass();
 
-    if(this.$route.params.page){
+    if(this.$route.params.page || this.thePageClass == 'blog-page-1'){
       this.pageState = 'page-open';
       this.renderMap = false;
     }else{
       this.renderMap = true;
-
+      this.pageState = 'map-open';
     }
 
-    this.pageClass();
+   
 
     // if(this.renderMap){
     //   this.draggableMapFunction()
@@ -142,8 +150,11 @@ export default {
   watch: {
     $route (to, from){
         this.pageClass()
-
         console.log('i am the to', to);
+        var thisContext = this;
+      setTimeout(function(){
+        thisContext.transitionClass = '';
+      }, 1000); //Time before execution
     }
   }
 }

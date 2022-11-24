@@ -21,7 +21,10 @@
             width: 30%;
             box-shadow: -3px 4px 5px -1px rgb(0 0 0 / 16%), -10px 10px 12px 5px rgb(0 0 0 / 10%), inset -35px 35px 48px rgb(0 0 0 / 2%);
             @media (max-width: 900px) {
-                width: 100%;
+                width: 30%;
+                margin: 35px auto;
+                padding: 0 20px;
+                height: 48px;
             }
         }
     }

@@ -2,7 +2,7 @@
   <v-app dark>
     <v-main>
       <v-container>
-        <SiteIntro />
+        <!-- <SiteIntro /> -->
         <Header   v-on:page-open="headerAction()" v-on:customLink="customRoute($event)" />
         <div :class="[this.pageState, this.thePageClass]">
           <div class="drag-map" > 
@@ -20,6 +20,13 @@
                 <NuxtLink to='/blog'>
                   <div class="inside">
                     <Icon icon="arrowLeft" /> <p>Blog</p>
+                  </div>
+                </NuxtLink>
+              </div>
+              <div class="page-modal__back-to-map page-modal__back-to-map--services">
+                <NuxtLink to='/our-services'>
+                  <div class="inside">
+                    <Icon icon="arrowLeft" /> <p>Services</p>
                   </div>
                 </NuxtLink>
               </div>

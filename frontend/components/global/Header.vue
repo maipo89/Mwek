@@ -5,7 +5,7 @@
 
             <div class="header__nav-container">
                 <div v-for="(item, index) in this.navItems" :key="index" :class="{ 'active' : index == activeItem }" class="header__item">
-                    <div v-on:click="navClick(index)">
+                    <div class="header__click-zone" v-on:click="navClick(index), customClick('/' + item.slug)">
                         <NuxtLink  style="position: absolute; opacity: 0.0; pointer-events: none;" v-if="item.slug" :to="'/' + item.slug"  >
                             {{ item.title }} 
                         </NuxtLink>

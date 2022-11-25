@@ -2,7 +2,7 @@
     <div class="meet-the-team">
         <div class="meet-the-team__container">
             <h2>MEET THE TEAM</h2>
-            <VueSlickCarousel @beforeChange="currentSlide" :waitForAnimate="false" :infinite="true" :speed="1000" :initialSlide="this.blockData.TeamCubesSlider.length / 2" :arrows="false" :dots="this.doWeHaveDots" :centerMode="true" centerPadding="0px" :slidesToShow="this.slideNumber" :slidesToScroll="1" :focusOnSelect="true" ref="carousel">
+            <VueSlickCarousel @beforeChange="currentSlide" :waitForAnimate="true" :infinite="true" :speed="1000" :initialSlide="this.blockData.TeamCubesSlider.length / 2" :arrows="false" :dots="this.doWeHaveDots" :centerMode="true" centerPadding="0px" :slidesToShow="this.slideNumber" :slidesToScroll="1" :focusOnSelect="true" ref="carousel">
                 <div v-for="(item, index) in this.blockData.TeamCubesSlider" :key="index" class="meet-the-team__slide">
                     <TeamCube :teamInfo="item" :activeCube="currentIndex" :teamIndex="index" :totalTeam="blockData.TeamCubesSlider.length"/>
                 </div>
@@ -39,19 +39,39 @@
             return {
                 currentIndex: this.blockData.TeamCubesSlider.length / 2,
                 doWeHaveDots: false,
-                slideNumber: 5
+                slideNumber: 5,
+                canClick: true
             }
         },
         methods: {
             nextItem(){
                 if(this.currentIndex < this.blockData.TeamCubesSlider.length - 1){
-                    this.$refs.carousel.next();
+                    
+                    if(this.canClick == true ){
+                        this.$refs.carousel.next();
+                    }
+                    this.canClick = false;
                 }
+                var thisContext = this;
+                setTimeout(function(){
+                    //code goes here
+                    thisContext.canClick = true;
+                }, 2000);//Time before execution
             },
             prevItem(){
-                if(this.currentIndex > 0){
-                    this.$refs.carousel.prev();
+                if(this.currentIndex > 0 ){
+                    if(this.canClick == true ){
+                        this.$refs.carousel.prev();
+                    }
+                    this.canClick = false;
                 }
+
+                var thisContext = this;
+                
+                setTimeout(function(){
+                    //code goes here
+                    thisContext.canClick = true;
+                }, 2000); //Time before execution
             },
             currentSlide(slideIndex,nextIndex){
                 console.log('slideIndex',slideIndex);

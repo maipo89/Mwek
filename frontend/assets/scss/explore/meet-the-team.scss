@@ -8,6 +8,7 @@
     margin-bottom: 100px;
     .slick-slider{
         margin-top: 100px;
+        pointer-events: none;
     }
     &__container{
         height: 689px;
@@ -32,6 +33,7 @@
     &__slide{
         display: flex !important;
         justify-content: center;
+        pointer-events: none;
     }
     &__slider-rail{
         display: flex;
@@ -220,6 +222,7 @@
         margin-top: 30px;
         flex-direction: column;
         opacity: 0.0;
+        pointer-events: all;
         transition: all 0.7s;
         span{
             display: flex;

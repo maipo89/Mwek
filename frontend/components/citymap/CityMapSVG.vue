@@ -26,7 +26,7 @@
         async mounted(){
             var thisContext = this;
             const PIXI = await import('pixi.js');
-            const app = new PIXI.Application({transparent: true,  width: window.innerWidth, height: window.innerHeight, resizeTo: window });
+            const app = new PIXI.Application({transparent: true,  width: window.innerWidth, height: window.innerHeight });
             this.$refs.cityMap.appendChild(app.view);
             
             var mapCont = new PIXI.Container();
@@ -1846,8 +1846,32 @@
             // carTwo.x = -1453.7776641845703;
             // carTwo.y = 259.0702209472656
 
+            function resize() {
+                if (window.innerWidth / window.innerHeight >= ratio) {
+                    var w = window.innerHeight * ratio;
+                    var h = window.innerHeight;
+                } else {
+                    var w = window.innerWidth;
+                    var h = window.innerWidth / ratio;
+                }
+                app.width = w + 'px';
+                app.view.style.height = h + 'px';
+            }
 
 
+            window.addEventListener('resize', function(event) {
+                // alert('hello');
+                // resize()
+
+                // app.renderer.width = window.view.innerWidth;
+                // app.renderer.height = window.view.innerHeight;
+
+                // const app = new PIXI.Application({transparent: true,  width: window.innerWidth, height: window.innerHeight });
+
+            }, true);
+
+
+    
         }
     }
 </script>

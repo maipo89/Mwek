@@ -121,6 +121,16 @@ h1.h2,h3,h4,h5{
                 width: 105px;
             }
         }
+        &--services{
+            left:152px;
+            width: 138px;
+            pointer-events: none;
+            opacity: 0.0;
+            transition: ease .2s;
+            .inside{
+                width: 135px;
+            }
+        }
     }
 }
 
@@ -136,6 +146,27 @@ h1.h2,h3,h4,h5{
             background-color:#07134DCC;
         }
         &--blog{
+            pointer-events: all;
+            opacity: 1;
+            .inside{
+                background-color: #07134D;
+            }
+        }
+    } 
+}
+
+.services-page-2{
+    .page-modal {
+        padding-bottom: 100px;
+    }
+    a {
+        text-decoration: none;
+    }
+    .page-modal__back-to-map{
+        .inside{
+            background-color:#07134DCC;
+        }
+        &--services{
             pointer-events: all;
             opacity: 1;
             .inside{

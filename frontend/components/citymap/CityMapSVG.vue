@@ -1870,6 +1870,13 @@
 
             }, true);
 
+            console.log('window.innerHeight', window.innerWidth);
+            if(window.innerWidth < 845){
+                HQExploreButton.alpha = 1;
+                trainButton.alpha = 1;
+                ServiceButton.alpha = 1;
+                singleButton.alpha = 1;
+            }
 
     
         }

@@ -96,6 +96,9 @@ h1.h2,h3,h4,h5{
             height: 50px;
             width: 165px;
             border-radius: 15px 0px 15px 0px;
+            p {
+                padding-right: 5px;
+            }
         }
         p{
             color:#fff;

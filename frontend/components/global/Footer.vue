@@ -12,10 +12,11 @@
                     <div v-if="item.id" class="footer__links" >
                         <h5>{{ item.title }}</h5>
                         <div class="footer__links-item" v-for="(links, linkIndex) in item.theFooterLInks" :key="linkIndex" >
-                            <NuxtLink v-if="links.page.data" :to="'/' + links.page.data.attributes.slug">
-                            {{ links.linkText }}
-                            </NuxtLink> 
-
+                            <div v-if="links.page.data" v-on:click="footerClick()">
+                                <NuxtLink  :to="'/' + links.page.data.attributes.slug">
+                                    {{ links.linkText }}
+                                </NuxtLink> 
+                            </div>
                             <a v-else target="_blank" :href="links.customLink">
                             {{ links.linkText }}
                             </a> 
@@ -26,7 +27,7 @@
             </div>
         </div>
         <div class="footer__made-by">
-            <p>Designed and built by <a href="https://onqor.co.uk/" target="blank" >ONQOR.</a></p>
+            <p>Designed and built by <a href="https://onqor.co.uk/" target="blank" > ONQOR.</a></p>
         </div>
     </div>
 </template>
@@ -69,6 +70,9 @@ export default {
             });
             // console.log(this.$router.params);
         },
+        footerClick(){
+            this.$emit('footerClick');
+        }
     },  
     mounted(){
         this.asyncData();

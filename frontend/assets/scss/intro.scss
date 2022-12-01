@@ -132,7 +132,7 @@
         height: 300vh;
         // background-color: #fff;
         position: absolute;
-        bottom: -300%;
+        transform: translateY(100%);
         left: 0px;
         z-index: 10;
         background: rgb(255,255,255);
@@ -163,20 +163,21 @@
         }
     }
     &.step-clouds{
-        transform: translateY(-200%);
-        transition: transform 2s;
-        transition-delay: 1.6s;
+        transform: translateY(-400%);
+        transition: transform 5s;
+        transition-delay: 3s;
         overflow: inherit;
         .clouds{
-            transition: bottom 2s;
-            bottom: -100%;
+            transition-delay: 0.1s;
+            transition: transform 2s;
+            transform: translateY(-60%);
         }
         .step-one .intro__logo svg, .step-one .intro__logo.loading-bar{
-            transform: translateY(100px);
-            transition: transform 1s;
+            // transform: translateY(100px);
+            // transition: transform 1s;
         }
         .step-one{
-            opacity: 0.0;
+          //  opacity: 0.0;
             transition: opacity 0.5s;
             transition-delay: 1.6s;
         }

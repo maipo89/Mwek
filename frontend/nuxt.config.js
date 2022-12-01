@@ -4,6 +4,7 @@ export default {
   //   host: '0.0.0.0', // default: localhost
   //   port: 8001,
   // },
+  target: 'static',
   head: {
     titleTemplate: '%s - frontend',
     title: 'frontend',

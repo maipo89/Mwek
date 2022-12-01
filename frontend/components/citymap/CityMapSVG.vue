@@ -1,13 +1,17 @@
 <template>
     <div class="city-map-svg" ref="cityMap">
-        <!-- 
-        <CityParks />
-
-        <CityLights /> -->
-
-        <!-- <CityRoadOne /> -->
-
-        <!-- <CityBuilding /> -->
+        <div :class="this.mapPrompt" class="city-map-svg__prompt">
+            <img src="/images/mapPrompt.png" />
+            <p>
+                Welcome to MWEK city, use your mouse to take a look around. Many of our buildings and scenery are interactive. Enjoy!
+            </p>
+            <div class="city-map-svg__prompt-close" v-on:click="closePrompt()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <rect x="15.6521" width="3.32033" height="22.1355" rx="1.66016" transform="rotate(45 15.6521 0)" fill="#07134D"/>
+                <rect y="2.34766" width="3.32033" height="22.1355" rx="1.66016" transform="rotate(-45 0 2.34766)" fill="#07134D"/>
+                </svg>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -20,13 +24,18 @@
         data(){ 
             return {
                 clickPosition: '',
+                mapPrompt: 'open'
             }
         },  
-
+        methods: {
+            closePrompt(){
+                this.mapPrompt = 'closed';
+            }
+        },
         async mounted(){
             var thisContext = this;
             const PIXI = await import('pixi.js');
-            const app = new PIXI.Application({transparent: true,  width: window.innerWidth, height: window.innerHeight });
+            const app = new PIXI.Application({transparent: true, resizeTo: window, width: window.innerWidth, height: window.innerHeight });
             this.$refs.cityMap.appendChild(app.view);
             
             var mapCont = new PIXI.Container();
@@ -130,7 +139,7 @@
             // graphics.drawRoundedRect(-652, 57, 20, 20, 1);
             // graphics.endFill();
 
-            graphics.alpha = 0;
+            graphics.alpha = 1;
             graphics.lineStyle(1, 0xffd900, 1);
 
             // the three towers mask

@@ -1,5 +1,5 @@
 .header{
-    position: absolute;
+    position: fixed;
     // sticky nav
     // position: fixed;
     top:30px;
@@ -30,7 +30,8 @@
     &__underline{
         width: 50px;
         height: 2px;
-        background-color: #F79386;
+        // border: 2px solid;        
+        background: linear-gradient(72.44deg, #00CCD6 0%, #9E00FC 100%);
         position: absolute;
         margin-top: 3px;
         opacity: 0.0;
@@ -57,7 +58,7 @@
         text-align: center;
         a{
             font-size: 18px;
-            color:#07134D;
+            color:#07134D !important;
             text-decoration: none;
         }
         &:hover{
@@ -94,7 +95,7 @@
             font-size: 16px;
             height: 100%;
             width: 100%;
-            color: #000000;
+            color: #000000 !important;
             display: block;
         }
         &:hover{

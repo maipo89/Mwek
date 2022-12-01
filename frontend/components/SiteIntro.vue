@@ -9,7 +9,7 @@
                     </svg>
                     
                     <div class="loading-bar">
-                    <v-progress-circular 
+                        <v-progress-circular 
                             :rotate="270"
                             :size="500"
                             :width="4"
@@ -65,7 +65,6 @@
 
     export default {
         name: 'SiteIntro',
-        
         data(){
             return {
                 animationStep: '',
@@ -75,11 +74,10 @@
                 textStepClass: 1,
                 loadValue: 0,
                 loadComplete: false,
-                loadInProcess: false
-
+                loadInProcess: false,
+                loaded: false 
             }
         },
-
         methods: {
             welcome(){
                 this.textStep = 3
@@ -87,28 +85,53 @@
                 const clouds = setTimeout(function () { 
                     this.animationStep = 'step-2' 
                 }.bind(this), 1000, clearTimeout(clouds))
-
+                this.animationStep = 'step-2' 
                 const loader = setTimeout(function () { 
                     this.loadInProcess = true
                     this.loader();
-                }.bind(this), 6000, clearTimeout(loader))
+                }.bind(this), 2000, clearTimeout(loader))
             },
 
-            loader(){
-                this.loadValue = 100;
+            async loader(){
 
                 var counter = 0;
+                // window.addEventListener('load', function () {
+                //     loaded = true;
+                // })
 
-                var loadMe = setInterval(function () { 
-                    counter++
-                    this.loadValue = counter
-                    if(this.loadValue >= 100){
-                        clearInterval(loadMe);
-                        this.loadComplete = true;
-                        this.clouds();
-                    }
+                document.onreadystatechange = () => { 
+                    if (document.readyState == "complete") { 
+                        // run code here
+                        this.loaded = true;
+                    } 
+                }
 
-                }.bind(this), 30)
+
+                if(this.loaded){
+                    var loadMe = setInterval(function () { 
+                        counter = counter + 0.1
+                        this.loadValue = counter
+                        if(this.loadValue >= 100){
+                            clearInterval(loadMe);
+                          //  this.loadComplete = true;
+                            this.clouds();
+                        }
+
+                    }.bind(this), 30)
+                }else{
+                    var loadMe = setInterval(function () { 
+                        counter = counter + 0.9;
+                        this.loadValue = counter
+                        if(this.loadValue >= 100){
+                            clearInterval(loadMe);
+                            this.loadComplete = true;
+                            this.clouds();
+                        }
+
+                    }.bind(this), 30)
+                }
+                
+
             },
             clouds(){
              
@@ -120,30 +143,6 @@
         },
 
         mounted(){
-            
-            const firstStep = setTimeout(function () { 
-                this.animationStep = 'step-1' 
-            }.bind(this), 1000, clearTimeout(firstStep))
-            
-            
-
-            const firstTitle = setTimeout(function () { 
-                this.firstTitle = true;
-            }.bind(this), 1700, clearTimeout(firstTitle))
-            
-
-            // const firstText = setTimeout(function () { 
-            //     this.firstText = true;
-            // }.bind(this), 2300, clearTimeout(firstText));
-
-
-
-
-
-            const firstText = setTimeout(function () { 
-                this.firstText = true;
-            }.bind(this), 2300, clearTimeout(firstText));
-
             setTimeout(function () { 
                 this.textStep = 2
                 this.welcome();

@@ -50,6 +50,7 @@ export default {
             this.active = false;
             this.dropDownHeight = 0;
             this.activeTop = 16;
+            this.activeOption = item;
         }
     },
     mounted(){

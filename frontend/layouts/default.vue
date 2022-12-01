@@ -1,9 +1,9 @@
 <template>
   <v-app dark>
+    <!-- <SiteIntro /> -->
     <v-main>
       <v-container>
-        <SiteIntro />
-        <Header   v-on:page-open="headerAction()" v-on:customLink="customRoute($event)" />
+        <Header v-on:page-open="headerAction()" v-on:customLink="customRoute($event)" />
         <div :class="[this.pageState, this.thePageClass]">
           <div class="drag-map" > 
             <div class="drag-map__background"></div>
@@ -36,7 +36,7 @@
             </div>
           </div>
         </div>
-        <Footer />
+        <Footer v-on:footerClick="headerAction()" />
       </v-container>
     </v-main>
   </v-app>
@@ -56,6 +56,7 @@ export default {
       pinMe: '',
       thePageClass: '',
       transitionClass: '',
+      pageReady: false,
 
     }
   },
@@ -74,6 +75,7 @@ export default {
 
     headerAction(){
       this.pageState = 'page-open';
+      // alert('hello');
       setTimeout(function () {
         this.renderMap = false;
       }.bind(this), 2100)
@@ -134,6 +136,13 @@ export default {
 
   mounted(){
     this.getMapButtons();
+
+    
+    
+
+    setTimeout(function(){
+      this.pageReady = true;
+    }.bind(this), 1000); 
     
     console.log('this.$route.params.page', this.$route.params.page);
 

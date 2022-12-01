@@ -212,6 +212,46 @@
 .city-map-svg{
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    &__prompt{
+        position: absolute;
+        max-width: 668px;
+        min-height: 146px;
+        width: 98%;
+        background-color: #fff;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        p{
+            max-width: 482px;
+            padding: 0px;
+            margin: 0px;
+        }
+        &.open{
+            opacity: 1.0;
+            pointer-events: all;
+        }
+        &.closed{
+            opacity: 0.0;
+            pointer-events: none;
+            transition: all 0.5s;
+        }
+    }
+    &__prompt-close{
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 17px;
+        height: 20px;
+        cursor: pointer;
+    }
+    img{
+        transform: translate(-13px, 10px)
+    }
 }
 
 @keyframes mymove {
@@ -260,6 +300,49 @@
             -webkit-filter: blur(0px);
             transform: scale(1); /*70%*/
             transition: filter 0.7s ease-in-out, transform 1s ease-in-out;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .city-map-svg{
+        &__prompt{
+            position: absolute;
+            max-width: 668px;
+            min-height: 146px;
+            width: 98%;
+            background-color: #fff;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            p{
+                max-width: 482px;
+                padding: 0px;
+                margin: 0px;
+                width: 98%;
+                padding-bottom: 20px;
+            }
+            &.open{
+                opacity: 1.0;
+                pointer-events: all;
+            }
+            &.closed{
+                opacity: 0.0;
+                pointer-events: none;
+                transition: all 0.5s;
+            }
+        }
+        &__prompt-close{
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 17px;
+            height: 20px;
+            cursor: pointer;
+        }
+        img{
+            transform: translate(-13px, 10px)
         }
     }
 }

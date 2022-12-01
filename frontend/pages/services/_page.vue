@@ -34,7 +34,7 @@ export default {
         console.log('pageID', pageID);
 
         const thePageData = await fetch(
-          this.$store.state.apiroute.url + '/api/services/' + pageID + '?populate=deep,5'
+          this.$store.state.apiroute.url + '/api/services/' + pageID + '?populate=deep,4'
             ).then((res) => {
             // can set up 404 redirection here
             return res.json();

@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <!-- <SiteIntro /> -->
+    <SiteIntro />
     <v-main>
       <v-container>
         <Header v-on:page-open="headerAction()" v-on:customLink="customRoute($event)" />
@@ -138,7 +138,13 @@ export default {
     this.getMapButtons();
 
     
-    
+    if(this.$route.params.page){
+      // alert('hello ofkrh');
+      
+      setTimeout(function () {
+        this.headerAction();
+      }.bind(this), 2100)
+    }
 
     setTimeout(function(){
       this.pageReady = true;

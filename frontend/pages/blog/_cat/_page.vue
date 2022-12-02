@@ -9,6 +9,7 @@
       </div>
       <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
       <!-- <ContactFooter :contactItems="this.contactDetails"/> -->
+      <BackButton />
     </div>
 </template>
 

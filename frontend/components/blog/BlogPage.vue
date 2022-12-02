@@ -40,15 +40,17 @@ export default {
     async asyncData() {
       console.log('this.theBlogsId', this.theBlogsId);
       const theBlogsID = await fetch(
-        this.$store.state.apiroute.url + '/api/blogs?filters[categories][slug]=' + this.theBlogsId
+        this.$store.state.apiroute.url + '/api/blogs?filters[PrimaryCategory][category][slug]=' + this.theBlogsId
 
       ).then((res) => {
           // can set up 404 redirection here
           return res.json();
       });
+
       theBlogsID.data.forEach(element => {
           this.blogIDs.push(element.id);
       });
+
       console.log('theBlogsID', theBlogsID)
       const theBlogs = await fetch(
         this.$store.state.apiroute.url + '/api/blogs?populate=deep'
@@ -165,80 +167,80 @@ export default {
     setTimeout(function () { this.animateIn() }.bind(this), 500);
 
 
-    var allBlogs = async function(){
-        const theBlogs = await fetch(
-            apiStore + '/api/blogs?[populate][featured_image]?pagination[start]=0&pagination[limit]=6'
-        ).then((res) => {
-            // can set up 404 redirection here
-            return res.json();
-        });
+    // var allBlogs = async function(){
+    //     const theBlogs = await fetch(
+    //         apiStore + '/api/blogs?[populate][featured_image]?pagination[start]=0&pagination[limit]=6'
+    //     ).then((res) => {
+    //         // can set up 404 redirection here
+    //         return res.json();
+    //     });
 
-        console.log('theBlogs', theBlogs);
+    //     console.log('theBlogs', theBlogs);
 
-        theBlogs.data.forEach(element => {
-          console.log(element);
-          firstTimePosts(element.id);
-        });
-        //this.filterdBlogs = theBlogs.data
-    }
+    //     theBlogs.data.forEach(element => {
+    //       console.log(element);
+    //       firstTimePosts(element.id);
+    //     });
+    //     //this.filterdBlogs = theBlogs.data
+    // }
 
-    var firstTimePosts = async function(id){
-        const thePosts = await fetch(
-        apiStore + '/api/blogs/' + id + '?populate=deep,4'
-      ).then((res) => {
-          // can set up 404 redirection here
-        return res.json();
-      });
+    // var firstTimePosts = async function(id){
+    //     const thePosts = await fetch(
+    //     apiStore + '/api/blogs/' + id + '?populate=deep,4'
+    //   ).then((res) => {
+    //       // can set up 404 redirection here
+    //     return res.json();
+    //   });
 
-      console.log('thePosts', thePosts);
+    //   console.log('thePosts', thePosts);
 
-      thisContext.filterdBlogs.push(thePosts.data);
-    }
+    //   thisContext.filterdBlogs.push(thePosts.data);
+    // }
 
 
 
     // this loads posts by ID for the lazy load
-    var loadPosts = async function(id){
-      var theBlogPost = await fetch(
-        apiStore + '/api/blogs/' + id + '?populate=deep,4'
-      ).then((res) => {
-          // can set up 404 redirection here
-          return res.json();
-      });
-      console.log(theBlogPost);
-      thisContext.filterdBlogs.push(theBlogPost.data);
-    }
+    // var loadPosts = async function(id){
+    //   var theBlogPost = await fetch(
+    //     apiStore + '/api/blogs/' + id + '?populate=deep,4'
+    //   ).then((res) => {
+    //       // can set up 404 redirection here
+    //       return res.json();
+    //   });
+    //   console.log(theBlogPost);
+    //   thisContext.filterdBlogs.push(theBlogPost.data);
+    // }
 
-    var loadMore = async function(){
-      /// this.filterdBlogs
-      //       pagination: { bottom: 0, top: 6 },
-      // amountToPaginate: 6
+    // var loadMore = async function(){
+    //   /// this.filterdBlogs
+    //   //       pagination: { bottom: 0, top: 6 },
+    //   // amountToPaginate: 6
 
-      thisContext.pagination.bottom = thisContext.pagination.bottom + thisContext.amountToPaginate;
-      thisContext.pagination.top = thisContext.pagination.top + thisContext.amountToPaginate;
+    //   thisContext.pagination.bottom = thisContext.pagination.bottom + thisContext.amountToPaginate;
+    //   thisContext.pagination.top = thisContext.pagination.top + thisContext.amountToPaginate;
 
-      const theBlogs = await fetch(
-        apiStore + '/api/blogs?[populate][featured_image]?pagination[start]=' + thisContext.pagination.bottom + '&pagination[limit]=' + thisContext.pagination.top + ''
-      ).then((res) => {
-          // can set up 404 redirection here
-          return res.json();
-      });
+    //   const theBlogs = await fetch(
+    //     apiStore + '/api/blogs?[populate][featured_image]?pagination[start]=' + thisContext.pagination.bottom + '&pagination[limit]=' + thisContext.pagination.top + ''
+    //   ).then((res) => {
+    //       // can set up 404 redirection here
+    //       return res.json();
+    //   });
 
 
-      console.log('thisContext.pagination.bottom',thisContext.pagination.bottom + ' - '  + thisContext.pagination.top);
+    //   console.log('thisContext.pagination.bottom',thisContext.pagination.bottom + ' - '  + thisContext.pagination.top);
 
-      console.log('theBlogs', theBlogs);
-      // thisContext.filterdBlogs.push(theBlogs);
+    //   console.log('theBlogs', theBlogs);
+    //   // thisContext.filterdBlogs.push(theBlogs);
 
-      theBlogs.data.forEach(element => {
-        loadPosts(element.id);
-      });
+    //   theBlogs.data.forEach(element => {
+    //     loadPosts(element.id);
+    //   });
 
-      ScrollTrigger.refresh()
+    //   ScrollTrigger.refresh()
 
-      // alert('cubes');
+    //   // alert('cubes');
 
-    }
+    // }
 
     // const gooba = gsap.to(this.$refs.blogContainer,{
     //     scrollTrigger: {

@@ -104,6 +104,7 @@ h1.h2,h3,h4,h5{
             color:#fff;
             margin-bottom: 0px;
             font-size: 18px;
+            margin-bottom: 0px !important;
         }
         .icon{
             height: 20px;
@@ -297,9 +298,6 @@ html {
         @media (max-width: 1222px) {
             padding: 0px 0 50px 0 !important;
         }
-        div p {
-            margin: 0 !important;
-        }
     }
     .content-columns{
         padding-bottom: 0px !important;
@@ -307,6 +305,7 @@ html {
     .content-columns__title{
         font-size: 24px;
         margin-bottom: 0px;
+        padding: 0px 30px;
         @media only screen and (max-width: 520px) {
             margin-bottom: 35px;
         }
@@ -337,6 +336,11 @@ html {
     .page-content__title{
         font-size: 60px;
         line-height: 70px;
+    }
+    .blog-post .content-columns__title {
+        font-size: 24px;
+        margin-bottom: 0px;
+        padding: 0px 0px;
     }
 }
 

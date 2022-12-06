@@ -70,20 +70,26 @@ export default {
     },
 
     async getCategories(){
-        const theCats = await fetch(
-            this.$store.state.apiroute.url + '/api/categories'
+      const theCats = await fetch(
+          this.$store.state.apiroute.url + '/api/categories'
 
-        ).then((res) => {
-            // can set up 404 redirection here
-            return res.json();
-        });
+      ).then((res) => {
+          // can set up 404 redirection here
+          return res.json();
+      });
 
-        console.log('theCats', theCats);
-        theCats.data.forEach(element => {
-            this.cats.push( { option: element.attributes.name , value: element.attributes.slug } ) 
-        });;
+      console.log('theCats', theCats);
+
+      this.cats.push({ option: 'All posts', value: 'all' });
+
+      theCats.data.forEach(element => {
+          this.cats.push( { option: element.attributes.name , value: element.attributes.slug } ) 
+      });;
+
+     
+
     },
-    
+
     // async firstTimePosts(id){
     //   const thePosts = await fetch(
     //     this.$store.state.apiroute.url + '/api/blogs/' + id + '?populate=deep,4'

@@ -9,7 +9,7 @@
                 <OnqorInput v-modal="email" @send="getValue($event, 'email')" class="input-spacing" inputPlaceHolder="Email" />
                 <OnqorInput v-modal="tel"  @send="getValue($event, 'tel')" class="input-spacing" inputPlaceHolder="Contact Number" />
                 <div class="contact-footer__form-row input-spacing">
-                    <DropDown v-modal="subject" @send="getValue($event, 'subject')" :options="this.cats" />
+                    <DropDown placeHolder="Place holder" v-modal="subject" @send="getValue($event, 'subject')" :options="this.cats" />
                     <button @click="go()">Send</button>
                 </div>
                 <!-- <DropDown :options="this.cats" /> -->
@@ -111,9 +111,9 @@
             return {
                 contactItems: '',
                 cats: [  
-                    { option: 'X' , value: 'X' },
-                    { option: 'X' , value: 'X' },
-                    { option: 'X' , value: 'X' }
+                    { option: 'Candidate' , value: 'candidate' },
+                    { option: 'Client' , value: 'client' },
+                    { option: 'Work with Us' , value: 'work-with-us' }
                 ],
                 formData: { name: 'def', email: 'def2', tel: '09', subject: 'def3', type: 'def3' }
             }

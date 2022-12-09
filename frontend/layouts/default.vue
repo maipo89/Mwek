@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <!-- <SiteIntro /> -->
+    <SiteIntro />
     <v-main>
       <v-container>
         <Header v-on:page-open="headerAction()" v-on:customLink="customRoute($event)" />

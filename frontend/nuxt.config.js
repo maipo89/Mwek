@@ -72,7 +72,7 @@ export default {
     '@nuxtjs/axios',
     ['nuxt-mail', {
       message: {
-        to: 'phil.longhurst@onqor.co.uk',
+        to: 'talk2us@mwek.co.uk',
       },
       smtp: {
         host: 'smtp.gmail.com',

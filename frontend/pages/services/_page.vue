@@ -45,11 +45,13 @@ export default {
         // console.log(this.$router.params);
 
         const contactData = await fetch(
-          'http://localhost:1337/api/contact?populate=*'
+          this.$store.state.apiroute.url + '/api/contact?populate=*'
             ).then((res) => {
             // can set up 404 redirection here
             return res.json();
         });
+
+        console.log(contactData);
 
         if(contactData.data){
             // console.log(contactData);

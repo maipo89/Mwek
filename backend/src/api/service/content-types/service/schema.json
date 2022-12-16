@@ -28,6 +28,11 @@
         "text-content.text-section",
         "stats.stat-tabs"
       ]
+    },
+    "sectionSrollTo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "scroll-toos.scroll-to-button"
     }
   }
 }

@@ -90,6 +90,27 @@
                         <p>Instagram</p>
                         </a>
                     </div>
+
+                    <div class='social-item'>
+                            <a target="_blank" :href="this.contactItems.data.attributes.ContactInfo.Facebook"> 
+ 
+                        <div class="social-item__icon">
+                            <svg style="width: 35px;"  id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="5.54" y1="23.32" x2="25.71" y2="11.59" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00ccd6"/><stop offset="1" stop-color="#b800ff"/></linearGradient></defs><path class="cls-1" d="m23.15,17.92l.85-5.56h-5.33v-3.61c0-1.52.75-3,3.13-3h2.43V1.02s-2.2-.38-4.31-.38c-4.39,0-7.26,2.66-7.26,7.48v4.24h-4.88v5.56h4.88v13.44h6.01v-13.44h4.48Z"/></svg>
+                        </div>
+                        <p>Facebook</p>
+                        </a>
+                    </div>
+
+                    <div class='social-item'>
+                            <a target="_blank" :href="this.contactItems.data.attributes.ContactInfo.Twitter"> 
+ 
+                        <div class="social-item__icon">
+                            <svg style="width: 35px;" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><defs><style>.cls-1{fill:url(#linear-gradient);}</style><linearGradient id="linear-gradient" x1="-.89" y1="24.44" x2="28.79" y2="2.47" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00ccd6"/><stop offset="1" stop-color="#b800ff"/></linearGradient></defs><path class="cls-1" d="m31.62,6.15c-1,.45-2.11.73-3.18.91.51-.09,1.26-1.01,1.57-1.39.46-.57.84-1.22,1.06-1.93.03-.05.05-.12,0-.17-.07-.03-.11-.01-.17.01-1.2.65-2.45,1.11-3.78,1.44-.11.03-.19,0-.26-.07-.11-.12-.21-.24-.33-.34-.56-.47-1.15-.85-1.83-1.12-.89-.36-1.85-.51-2.81-.45-.93.06-1.84.32-2.66.75-.82.43-1.56,1.03-2.15,1.75-.61.75-1.05,1.63-1.28,2.57-.22.9-.2,1.8-.07,2.71.02.15,0,.17-.13.15-5.19-.77-9.48-2.63-12.97-6.6-.15-.17-.23-.17-.36.01-1.53,2.29-.79,5.97,1.12,7.77.25.24.52.48.8.7-.1.02-1.37-.12-2.5-.7-.15-.1-.23-.04-.24.13-.01.25,0,.47.04.74.29,2.32,1.9,4.47,4.1,5.3.26.11.55.21.83.25-.5.11-1.02.19-2.46.08-.18-.03-.25.06-.18.23,1.08,2.94,3.41,3.82,5.16,4.32.23.04.47.04.7.1-.01.02-.03.02-.04.04-.58.88-2.59,1.54-3.52,1.87-1.7.59-3.55.86-5.35.69-.29-.04-.35-.04-.43,0-.08.05-.01.12.08.19.36.24.74.45,1.11.66,1.14.61,2.33,1.09,3.58,1.43,6.43,1.78,13.67.47,18.5-4.32,3.79-3.77,5.12-8.96,5.12-14.16,0-.2.24-.32.38-.42.99-.74,1.78-1.63,2.52-2.62.16-.22.17-.42.17-.5v-.03c0-.08,0-.06-.13,0Z"/></svg>
+
+                        </div>
+                        <p>Twitter</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

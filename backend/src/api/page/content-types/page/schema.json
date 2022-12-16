@@ -36,7 +36,8 @@
         "text-content-blocks.quote",
         "text-content.text-section",
         "the-page-links.service-links-repeater",
-        "text-content-blocks.tick-list"
+        "text-content-blocks.tick-list",
+        "scroll-toos.scroll-to-anchor"
       ]
     },
     "isHome": {
@@ -58,6 +59,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::page.page"
+    },
+    "sectionSrollTo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "scroll-toos.scroll-to-buttons"
     }
   }
 }

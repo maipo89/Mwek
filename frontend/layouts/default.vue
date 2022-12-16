@@ -3,7 +3,7 @@
     <SiteIntro />
     <v-main>
       <v-container>
-        <Header v-on:page-open="headerAction()" v-on:customLink="customRoute($event)" />
+        <Header v-on:page-open="headerAction()" :theActiveHeader="this.activeHeader" v-on:goMap="backToMap()" v-on:customLink="customRoute($event)" />
         <div :class="[this.pageState, this.thePageClass]">
           <div class="drag-map" > 
             <div class="drag-map__background"></div>
@@ -23,12 +23,17 @@
                   </div>
                 </NuxtLink>
               </div>
-              <div class="page-modal__back-to-map page-modal__back-to-map--services">
+              <!-- <div class="page-modal__back-to-map page-modal__back-to-map--services">
                 <NuxtLink to='/our-services'>
                   <div class="inside">
                     <Icon icon="arrowLeft" /> <p>Services</p>
                   </div>
                 </NuxtLink>
+              </div> -->
+              <div v-if="this.scrolltos" class="scroll-toos">
+                <div v-for="(item, index) in this.scrolltos" class="scroll-toos__button" :key="index">
+                  <p v-on:click='scrollTo(item.target)'>{{ item.label }}</p>
+                </div>
               </div>
               <div class="page_scroller"  :class="this.transitionClass">
                 <Nuxt />
@@ -36,7 +41,7 @@
             </div>
           </div>
         </div>
-        <Footer v-on:footerClick="headerAction()" />
+        <Footer v-on:footerClick="headerAction($event)" />
       </v-container>
     </v-main>
   </v-app>
@@ -57,6 +62,8 @@ export default {
       thePageClass: '',
       transitionClass: '',
       pageReady: false,
+      scrolltos: '',
+      activeHeader: 5
 
     }
   },
@@ -70,12 +77,51 @@ export default {
         // can set up 404 redirection here
       return res.json();
       });
+
       this.mapButton = mapButton.data.attributes.theCityMapButtons;
+
     },
 
-    headerAction(){
+    async scrollButton(){
+      const thePageID = await fetch(
+          this.$store.state.apiroute.url + '/api/pages?filters[slug]=' + this.$route.params.page
+          // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
+      ).then((res) => {
+        // can set up 404 redirection here
+      return res.json();
+      });
+      
+
+      if(thePageID.data[0]){
+        var pageID = thePageID.data[0].id;
+
+        const theScrollTo = await fetch(
+            this.$store.state.apiroute.url + '/api/pages/' + pageID + '?populate=sectionSrollTo'
+          ).then((res) => {
+          // can set up 404 redirection here
+          return res.json();
+        });
+       // console.log('theScrollTo', theScrollTo);
+        this.scrolltos = theScrollTo.data.attributes.sectionSrollTo;
+      }else{
+        this.scrolltos = false;
+      }
+    },
+
+    scrollTo(scrollId){
+      document.getElementById(scrollId).scrollIntoView();
+    },
+
+    headerAction(index){
       this.pageState = 'page-open';
-      // alert('hello');
+      //  alert('hello');
+    //  console.log('event', index);
+      // alert(index);
+      if(index){
+        this.activeHeader = index;
+      }else if(index === 0){
+        this.activeHeader = index;
+      }
       setTimeout(function () {
         this.renderMap = false;
       }.bind(this), 2100)
@@ -101,24 +147,29 @@ export default {
 
         case 'explore':
           this.$router.push('/explore');
+          this.activeHeader = 1;
           break;
 
         case 'clientService':
           this.$router.push('/client-services');
+          this.activeHeader = 0;
           break;
 
         case 'candidateService':
           this.$router.push('/our-services');
+          this.activeHeader = 0;
           break;
 
         case 'blog':
          // this.$router.push('/our-services')
           this.$router.push('/blog');
+          this.activeHeader = 2;
           break;
 
         case 'contact':
          // this.$router.push('/our-services')
           this.$router.push('/contact');
+          this.activeHeader = 3
           break;
       
         default:
@@ -131,12 +182,46 @@ export default {
       setTimeout(function(){
         thisContext.$router.push(event);
       }, 1000); //Time before execution
+    },
+    firstActive(){
+
+      console.log('this.$route.query', this.$route, this.$route.path);    
+
+      switch (this.$route.path) {
+
+        case '/explore':
+          this.activeHeader = 1;
+          break;
+
+        case '/our-services':
+          this.activeHeader = 0;
+          break;
+
+        case '/client-services':
+          this.activeHeader = 0;
+          break;
+
+        case '/blog':
+          this.activeHeader = 2;
+          break;
+
+        case '/contact':
+          this.activeHeader = 3;
+          console.log('this.activeHeader', this.activeHeader);
+          // alert('contact');
+
+          break;
+      
+        default:
+          break;
+      }
     }
   },
 
   mounted(){
     this.getMapButtons();
-
+    this.scrollButton();
+    this.firstActive();
     
     if(this.$route.params.page){
       // alert('hello ofkrh');
@@ -149,8 +234,7 @@ export default {
     setTimeout(function(){
       this.pageReady = true;
     }.bind(this), 1000); 
-    
-    console.log('this.$route.params.page', this.$route.params.page);
+  
 
     this.pageClass();
 
@@ -162,8 +246,6 @@ export default {
       this.pageState = 'map-open';
     }
 
-   
-
     // if(this.renderMap){
     //   this.draggableMapFunction()
     // }
@@ -171,8 +253,9 @@ export default {
   },
   watch: {
     $route (to, from){
-        this.pageClass()
-        console.log('i am the to', to);
+        this.pageClass();
+        this.scrollButton();
+     //   console.log('i am the to', to);
         var thisContext = this;
       setTimeout(function(){
         thisContext.transitionClass = '';

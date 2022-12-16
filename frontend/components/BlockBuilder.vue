@@ -13,6 +13,7 @@
         <ServicePageLinks v-if="this.blockComponent.__component ==  'the-page-links.service-links-repeater'" :blockData="this.blockComponent" />
         <ThreeDObjectContent v-if="this.blockComponent.__component == 'text-content-blocks.3-d-object-and-content'" :blockData="this.blockComponent" />
         <TickList v-if="this.blockComponent.__component == 'text-content-blocks.tick-list'" :blockData="this.blockComponent" />
+        <div v-if="this.blockComponent.__component == 'scroll-toos.scroll-to-anchor'" class="anchor" :id="this.blockComponent.AnchorText" ></div>
     </div>
 </template>
 

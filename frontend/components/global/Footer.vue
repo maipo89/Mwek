@@ -12,7 +12,7 @@
                     <div v-if="item.id" class="footer__links" >
                         <h5>{{ item.title }}</h5>
                         <div class="footer__links-item" v-for="(links, linkIndex) in item.theFooterLInks" :key="linkIndex" >
-                            <div v-if="links.page.data" v-on:click="footerClick()">
+                            <div v-if="links.page.data" v-on:click="footerClick(linkIndex)">
                                 <NuxtLink  :to="'/' + links.page.data.attributes.slug">
                                     {{ links.linkText }}
                                 </NuxtLink> 
@@ -26,11 +26,10 @@
                 </div>
             </div>
         </div>
+        <p class="footer__reg">The M-Wek Company ® registered as a Company in England. Company Number: 09863183, Vat Number 234592794, Registered Address: Greathouse Farm, Lynwick Street, Rudgwick, England RH12 3DJ.</p>
         <div class="footer__made-by">
             <p>Designed and built by <a href="https://onqor.co.uk/" target="blank" ><p>ONQOR.</p></a></p>
         </div>
-        <p class="footer__reg">The M-Wek Company ® registered as a Company in England. Company Number: 09863183, Vat Number 234592794, Registered Address: Greathouse Farm, Lynwick Street, Rudgwick, England RH12 3DJ.
- </p>
     </div>
 </template>
 
@@ -72,8 +71,9 @@ export default {
             });
             // console.log(this.$router.params);
         },
-        footerClick(){
-            this.$emit('footerClick');
+        footerClick(index){
+            // alert('click dsdf');
+            this.$emit('footerClick', index);
         }
     },  
     mounted(){

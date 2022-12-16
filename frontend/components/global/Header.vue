@@ -1,7 +1,7 @@
 <template>
     <div class="header" :class="this.openMobileNav">
         <div class="header__container">
-            <img :src="this.theHeaderLogo" />
+            <img v-on:click="retrunToMap()" :src="this.theHeaderLogo" />
 
             <div class="header__nav-container">
                 <div v-for="(item, index) in this.navItems" :key="index" :class="{ 'active' : index == activeItem }" class="header__item">
@@ -49,6 +49,9 @@
 
 export default {
     name: 'Header',
+    props: {
+        theActiveHeader: Number
+    },
     data(){
         return {
             theHeaderLogo: '',
@@ -140,6 +143,9 @@ export default {
             this.$emit('page-open');
             this.activeItem = count
         },
+        retrunToMap(){
+            this.$emit('goMap');
+        },
         mobileNav(){
             if(this.openMobileNav === 'mobileNavOpen'){
                 this.openMobileNav = ''
@@ -159,7 +165,12 @@ export default {
     },  
     mounted(){
         this.asyncData();
-        
+        this.activeItem = this.theActiveHeader;
+    },
+    watch: {
+        theActiveHeader(val, oldVal){
+            this.activeItem = val;
+        }
     }
 }
 </script>

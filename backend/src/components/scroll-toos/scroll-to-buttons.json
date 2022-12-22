@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_scroll_toos_scroll_to_buttons",
+  "info": {
+    "displayName": "ScrollToButtons",
+    "icon": "arrow-down",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "target": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    }
+  }
+}

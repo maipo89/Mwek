@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_scroll_toos_scroll_to_anchors",
+  "info": {
+    "displayName": "scrollToAnchor",
+    "icon": "anchor"
+  },
+  "options": {},
+  "attributes": {
+    "AnchorText": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_scroll_toos_scroll_to_buttons",
+  "info": {
+    "displayName": "ScrollToButton",
+    "icon": "arrow-down",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "AnchorTarget": {
+      "type": "string"
+    },
+    "AnchorDisplayText": {
+      "type": "string"
+    }
+  }
+}

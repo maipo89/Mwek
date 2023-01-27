@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <p class="footer__reg">The M-Wek Company ® registered as a Company in England. Company Number: 09863183, Vat Number 234592794, Registered Address: Greathouse Farm, Lynwick Street, Rudgwick, England RH12 3DJ.</p>
+        <p class="footer__reg">The M-Wek Company ® registered as a Company in England. Company Number: 09863183, Vat Number 234592794, Registered Address: Unit 015, Metal Box Factory, 30 Great Guildford Street, London SE1 0HS.</p>
         <div class="footer__made-by">
             <p>Designed and built by <a href="https://onqor.co.uk/" target="blank" ><p>ONQOR.</p></a></p>
         </div>

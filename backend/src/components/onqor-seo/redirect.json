@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_onqor_seo_redirects",
+  "info": {
+    "displayName": "redirect",
+    "icon": "arrows-alt-h"
+  },
+  "options": {},
+  "attributes": {
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "statusCode": {
+      "type": "string"
+    }
+  }
+}

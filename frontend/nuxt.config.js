@@ -6,15 +6,14 @@ export default {
   // },
   target: 'static',
   head: {
-    titleTemplate: '%s - frontend',
-    title: 'frontend',
+    titleTemplate: 'MwekSolutions',
+    title: 'MwekSolutions',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -40,7 +39,7 @@ export default {
         // },
     ]
   },
-
+  middleware: ['redirects'],
   styleResources: {
     scss: ['./assets/scss/*.scss']
   },

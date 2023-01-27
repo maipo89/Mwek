@@ -142,6 +142,11 @@ export default {
             console.log('0 0 0 0 0 0 0 ');
             this.$emit('page-open');
             this.activeItem = count
+            if(this.openMobileNav === 'mobileNavOpen'){
+                this.openMobileNav = ''
+            }else{
+                this.openMobileNav = 'mobileNavOpen'
+            }
         },
         retrunToMap(){
             this.$emit('goMap');

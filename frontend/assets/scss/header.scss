@@ -136,7 +136,9 @@
                 stroke-width: 6;
             }
         }
-        &.open .line {
+    }
+    &.mobileNavOpen{
+        #hamburger .line {
             &1 {
                 stroke-dasharray: 90 207;
                 stroke-dashoffset: -134;

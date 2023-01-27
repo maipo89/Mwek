@@ -64,6 +64,11 @@
     },
     "publishDate": {
       "type": "date"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

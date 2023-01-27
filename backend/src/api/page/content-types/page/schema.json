@@ -64,6 +64,11 @@
       "type": "component",
       "repeatable": true,
       "component": "scroll-toos.scroll-to-buttons"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

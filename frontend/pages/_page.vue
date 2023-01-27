@@ -4,6 +4,7 @@
     <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
     <ContactFooter :contactItems="this.contactDetails"/>
     <BackButton />
+    <OnqorSEO :seoData="this.pageContent.seo" />
   </div>
 </template>
 
@@ -88,7 +89,6 @@ export default {
     //   wrapper: 'body', 
     //   content: '.page-content' 
     // })
-
   },
 
 }

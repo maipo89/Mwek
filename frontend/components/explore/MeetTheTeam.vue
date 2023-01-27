@@ -85,6 +85,11 @@
             if(window.innerWidth < 900){
                 this.slideNumber = 3;
                 this.doWeHaveDots = true;
+              
+                setTimeout(function(){
+                    this.prevItem();
+                    this.nextItem();
+                }.bind(this), 1000);
             }
         }
     }

@@ -17,6 +17,19 @@ export default {
       blocks: ''
     }
   },
+  head() {
+    return {
+      title: 'HomePage',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Mwek Homepage city map'
+        },
+        { hid: 'og-title', property: 'og:title', content: 'MwekCity' }
+      ]
+    }
+  },
   methods: {
     async asyncData() {
       const thePageID = await fetch(

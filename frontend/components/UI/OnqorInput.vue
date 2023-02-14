@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input class="onqor-input" type="text" v-model="inputValue">
+        <input class="onqor-input" :placeholder="inputPlaceHolder" type="text" v-model="inputValue">
     </div>
 </template>
 
@@ -10,14 +10,14 @@
 
         data(){
             return {
-                inputValue: 'Place holder',
+                inputValue: '',
             }
         },
         props: {
             inputPlaceHolder: String,
         },
         mounted(){
-            this.inputValue = this.inputPlaceHolder;
+            // this.inputValue = this.inputPlaceHolder;
         },
         methods: {
             getValue(value) {

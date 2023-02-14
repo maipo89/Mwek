@@ -1,0 +1,23 @@
+#mc_embed_signup {
+    .brandingLogo, .indicates-required, h2, label, .helper_text {
+        display: none !important;
+    }
+    input {
+        height: 48px !important;
+        max-width: 378px;
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: -3px 4px 5px -1px rgb(0 0 0 / 16%), -10px 10px 12px 5px rgb(0 0 0 / 10%), inset -35px 35px 48px rgb(0 0 0 / 2%);
+        border-radius: 10px !important;
+        border: none !important;
+        margin: 0 10px 35px 10px !important;
+        padding: auto 20px auto 20px !important;
+        box-sizing: border-box;
+        font-weight: 400;
+        font-size: 16px;
+        font-family: "Montserrat";
+        font-style: normal;
+        transition: box-shadow 0.3s, transform 0.3s;
+        line-height: 20px;
+    }
+}

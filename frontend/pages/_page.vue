@@ -4,7 +4,7 @@
     <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
     <ContactFooter :contactItems="this.contactDetails"/>
     <BackButton />
-    <OnqorSEO :seoData="this.pageContent.seo" />
+    <!-- <OnqorSEO :seoData="this.pageContent.seo" /> -->
   </div>
 </template>
 

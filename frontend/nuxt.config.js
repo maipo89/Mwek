@@ -1,10 +1,10 @@
 export default {
   telemetry: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
-  // server: {
+  server: {
      host: '0.0.0.0', // default: localhost
      port: 3000,
-  // },
+  },
   target: 'static',
   head: {
     titleTemplate: 'Mwek',

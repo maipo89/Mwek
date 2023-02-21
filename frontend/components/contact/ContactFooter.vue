@@ -4,7 +4,7 @@
         <!-- <p> {{ this.contactItems.data.attributes.ContactInfo.content }} </p> -->
         <vue-markdown> {{ this.contactItems.data.attributes.ContactInfo.content }} </vue-markdown>
         <div class="contact-footer__container">
-            <div class='contact-footer__form'>
+            <!-- <div class='contact-footer__form'>
                 <OnqorInput v-modal="name" @send="getValue($event, 'name')" class="input-spacing" inputPlaceHolder="Name" />
                 <OnqorInput v-modal="email" @send="getValue($event, 'email')" class="input-spacing" inputPlaceHolder="Email" />
                 <OnqorInput v-modal="tel"  @send="getValue($event, 'tel')" class="input-spacing" inputPlaceHolder="Contact Number" />
@@ -12,10 +12,55 @@
                     <DropDown placeHolder="Subject" v-modal="subject" @dropdownEvent="getValue($event, 'subject')" :options="this.cats" />
                     <button @click="go()">Send</button>
                 </div>
-                <!-- <DropDown :options="this.cats" /> -->
-            </div>
-            <!-- Begin Mailchimp Signup Form -->
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='PHONE';ftypes[4]='phone';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                <DropDown :options="this.cats" />
+            </div> -->
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:600px;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+    <form action="https://mwek.us7.list-manage.com/subscribe/post?u=3e8952cdbfd254ece0219f7f1&amp;id=3ba2eb2185&amp;f_id=00b0f8e3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<input placeholder="Email" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+	<span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+</div>
+<div class="mc-field-group">
+	<input placeholder="Name" type="text" value="" name="FNAME" class="" id="mce-FNAME">
+	<span id="mce-FNAME-HELPERTEXT" class="helper_text"></span>
+</div>
+<div class="mc-field-group">
+	<input placeholder="Number" type="text" name="PHONE" class="" value="" id="mce-PHONE">
+	<span id="mce-PHONE-HELPERTEXT" class="helper_text"></span>
+	
+</div>
+<div class="mc-field-group mail-chimp__select">
+	<select name="MMERGE3" class="" id="mce-MMERGE3">
+        <option disabled hidden>Subject</option>
+        <option value="Candidate">Candidate</option>
+        <option value="Client">Client</option>
+        <option value="Work With Us">Work With Us</option>
+	</select>
+	<span id="mce-MMERGE3-HELPERTEXT" class="helper_text"></span>
+</div>
+	<!-- <div id="mce-responses" class="clear foot">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3e8952cdbfd254ece0219f7f1_3ba2eb2185" tabindex="-1" value=""></div>
+            <!-- <div class="clear foot"> -->
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                <p class="brandingLogo"><a href="http://eepurl.com/ifahbH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+            <!-- </div> -->
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='PHONE';ftypes[4]='phone';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='text';fnames[3]='MMERGE3';ftypes[3]='dropdown';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
 
             <div class="contact-footer__social">
                 <h4>Alternitively contact us through:</h4>
@@ -23,7 +68,8 @@
 
                     <!-- number -->
                     <div class='social-item'>
-                        <a :href="'tel:' + this.contactItems.data.attributes.ContactInfo.phoneNumber">
+                        <!-- :href="'tel:' + this.contactItems.data.attributes.ContactInfo.phoneNumber" -->
+                        <a >
                         <div class="social-item__icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="27" height="26" viewBox="0 0 27 26" fill="none">
                             <path d="M23.9998 26H23.8298C4.17976 24.87 1.38976 8.29 0.999759 3.23C0.968334 2.83658 1.01485 2.44082 1.13663 2.06541C1.25842 1.69 1.45309 1.3423 1.70948 1.04225C1.96587 0.7422 2.27894 0.495688 2.63077 0.316839C2.98259 0.137991 3.36625 0.0303218 3.75976 9.37591e-07H9.26976C9.67032 -0.000386826 10.0618 0.119511 10.3934 0.344163C10.725 0.568815 10.9816 0.88787 11.1298 1.26L12.6498 5C12.7961 5.36355 12.8324 5.76208 12.7542 6.14609C12.676 6.5301 12.4867 6.88267 12.2098 7.16L10.0798 9.31C10.4125 11.2007 11.3179 12.9437 12.6737 14.303C14.0294 15.6622 15.7699 16.5723 17.6598 16.91L19.8298 14.76C20.1113 14.4862 20.4671 14.3013 20.853 14.2283C21.2389 14.1554 21.6378 14.1977 21.9998 14.35L25.7698 15.86C26.1363 16.0129 26.449 16.2714 26.668 16.6027C26.8871 16.9339 27.0026 17.3229 26.9998 17.72V23C26.9998 23.7956 26.6837 24.5587 26.1211 25.1213C25.5585 25.6839 24.7954 26 23.9998 26ZM3.99976 2C3.73454 2 3.48019 2.10536 3.29265 2.29289C3.10512 2.48043 2.99976 2.73478 2.99976 3V3.08C3.45976 9 6.40976 23 23.9398 24C24.0711 24.0081 24.2028 23.9902 24.3273 23.9473C24.4517 23.9045 24.5665 23.8374 24.6649 23.7501C24.7634 23.6628 24.8437 23.5568 24.9011 23.4384C24.9586 23.32 24.9921 23.1914 24.9998 23.06V17.72L21.2298 16.21L18.3598 19.06L17.8798 19C9.17976 17.91 7.99976 9.21 7.99976 9.12L7.93976 8.64L10.7798 5.77L9.27976 2H3.99976Z" fill="url(#paint0_linear_592_1593)"/>

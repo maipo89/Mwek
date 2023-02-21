@@ -1,13 +1,14 @@
 export default {
+  telemetry: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   // server: {
-  //   host: '0.0.0.0', // default: localhost
-  //   port: 8001,
+     host: '0.0.0.0', // default: localhost
+     port: 3000,
   // },
   target: 'static',
   head: {
-    titleTemplate: 'MwekSolutions',
-    title: 'MwekSolutions',
+    titleTemplate: 'Mwek',
+    title: 'Mwek',
     htmlAttrs: {
       lang: 'en'
     },

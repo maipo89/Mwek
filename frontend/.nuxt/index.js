@@ -13,11 +13,11 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_67ddceda from 'nuxt_plugin_plugin_67ddceda' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_plugin_c5f51958 from 'nuxt_plugin_plugin_c5f51958' // Source: ./vuetify/plugin.js (mode: 'all')
-import nuxt_plugin_axios_5cebf0f0 from 'nuxt_plugin_axios_5cebf0f0' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_plugin_5b4e58fb from 'nuxt_plugin_plugin_5b4e58fb' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_plugin_36d904d3 from 'nuxt_plugin_plugin_36d904d3' // Source: ./vuetify/plugin.js (mode: 'all')
+import nuxt_plugin_axios_1449e491 from 'nuxt_plugin_axios_1449e491' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_gsap_6a80fe91 from 'nuxt_plugin_gsap_6a80fe91' // Source: ../plugins/gsap (mode: 'client')
-import nuxt_plugin_distplugin71ae783d_02203d76 from 'nuxt_plugin_distplugin71ae783d_02203d76' // Source: ./dist.plugin.71ae783d.js (mode: 'all')
+import nuxt_plugin_distplugin8d6c0108_5e138292 from 'nuxt_plugin_distplugin8d6c0108_5e138292' // Source: ./dist.plugin.8d6c0108.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -85,7 +85,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"titleTemplate":"MwekSolutions","title":"MwekSolutions","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Fuse.typekit.net\u002Fvls5puz.css"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"script":[{"type":"text\u002Fjavascript","src":"js\u002FJquery.js","body":true}],"style":[]},
+    head: {"titleTemplate":"Mwek","title":"Mwek","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Fuse.typekit.net\u002Fvls5puz.css"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"script":[{"type":"text\u002Fjavascript","src":"js\u002FJquery.js","body":true}],"style":[]},
 
     store,
     router,
@@ -214,24 +214,24 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_67ddceda === 'function') {
-    await nuxt_plugin_plugin_67ddceda(app.context, inject)
+  if (typeof nuxt_plugin_plugin_5b4e58fb === 'function') {
+    await nuxt_plugin_plugin_5b4e58fb(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_c5f51958 === 'function') {
-    await nuxt_plugin_plugin_c5f51958(app.context, inject)
+  if (typeof nuxt_plugin_plugin_36d904d3 === 'function') {
+    await nuxt_plugin_plugin_36d904d3(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_5cebf0f0 === 'function') {
-    await nuxt_plugin_axios_5cebf0f0(app.context, inject)
+  if (typeof nuxt_plugin_axios_1449e491 === 'function') {
+    await nuxt_plugin_axios_1449e491(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_gsap_6a80fe91 === 'function') {
     await nuxt_plugin_gsap_6a80fe91(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_distplugin71ae783d_02203d76 === 'function') {
-    await nuxt_plugin_distplugin71ae783d_02203d76(app.context, inject)
+  if (typeof nuxt_plugin_distplugin8d6c0108_5e138292 === 'function') {
+    await nuxt_plugin_distplugin8d6c0108_5e138292(app.context, inject)
   }
 
   // Lock enablePreview in context

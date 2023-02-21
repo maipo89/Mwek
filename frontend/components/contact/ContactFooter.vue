@@ -45,6 +45,7 @@
         <option value="Client">Client</option>
         <option value="Work With Us">Work With Us</option>
 	</select>
+    <span class="chevron"></span>
 	<span id="mce-MMERGE3-HELPERTEXT" class="helper_text"></span>
 </div>
 	<!-- <div id="mce-responses" class="clear foot">

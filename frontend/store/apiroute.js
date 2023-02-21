@@ -1,4 +1,4 @@
 export const state = () => ({
-    url: 'http://localhost:1337'
+    url: 'https://api.mwek.com'
     // url: 'http://mwek.onqor.group:1338'
 })

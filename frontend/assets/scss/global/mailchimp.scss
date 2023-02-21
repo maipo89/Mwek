@@ -26,6 +26,16 @@
         }
         .mail-chimp__select {
             width: 60% !important;
+            .chevron {
+                position: absolute;
+                right: 20px;
+                top: 17px;
+                width: 10px; 
+                height: 10px; 
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                transform: rotate(45deg);
+            }
         }
         #mc-embedded-subscribe {
             padding: 10px auto !important;
@@ -41,7 +51,9 @@
         }
         select {
             padding: 5px 10px;
+            position: relative;
         }
+        
         input, select {
             outline: none !important;
             &:hover, &:focus {

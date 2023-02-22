@@ -2,50 +2,50 @@
   {
     "name": "blog",
     "path": "/blog",
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/index.vue",
+    "component": "/root/Mwek/frontend/pages/blog/index.vue",
     "chunkName": "pages/blog/index",
-    "_name": "_d7e4678e"
+    "_name": "_60b4c31a"
   },
   {
     "name": "blog-cat",
     "path": "/blog/:cat",
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_cat/index.vue",
+    "component": "/root/Mwek/frontend/pages/blog/_cat/index.vue",
     "chunkName": "pages/blog/_cat/index",
-    "_name": "_7da1f5fa"
+    "_name": "_346432c2"
   },
   {
     "name": "blog-page",
     "path": "/blog/:page",
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_page.vue",
+    "component": "/root/Mwek/frontend/pages/blog/_page.vue",
     "chunkName": "pages/blog/_page",
-    "_name": "_0661de56"
+    "_name": "_6d13f094"
   },
   {
     "name": "services-page",
     "path": "/services/:page?",
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/services/_page.vue",
+    "component": "/root/Mwek/frontend/pages/services/_page.vue",
     "chunkName": "pages/services/_page",
-    "_name": "_258cd891"
+    "_name": "_73a9121c"
   },
   {
     "name": "blog-cat-page",
     "path": "/blog/:cat/:page",
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_cat/_page.vue",
+    "component": "/root/Mwek/frontend/pages/blog/_cat/_page.vue",
     "chunkName": "pages/blog/_cat/_page",
-    "_name": "_29f0499f"
+    "_name": "_c5b51144"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/index.vue",
+    "component": "/root/Mwek/frontend/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_3ab0bcee"
+    "_name": "_6f113d6d"
   },
   {
     "name": "page",
     "path": "/:page",
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/_page.vue",
+    "component": "/root/Mwek/frontend/pages/_page.vue",
     "chunkName": "pages/_page",
-    "_name": "_b91bfcec"
+    "_name": "_505afbee"
   }
 ]

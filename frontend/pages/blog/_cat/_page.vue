@@ -4,7 +4,7 @@
         <h1>{{ this.post.Title }}</h1>
         <!-- <p>{{ this.post.subTitle }}</p> -->
         <div class="post-hero__featured-img">
-          <img :alt="this.post.featured_image.data.attributes.alternativeText" :src="this.$store.state.apiroute.url + this.post.featured_image.data.attributes.formats.medium.url " />
+          <img :alt="this.post.featured_image.data.attributes.alternativeText" :src="this.$store.state.apiroute.url + this.post.featured_image.data.attributes.url " />
         </div>
       </div>
       <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />

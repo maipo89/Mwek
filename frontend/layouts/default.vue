@@ -32,7 +32,7 @@
               </div> -->
               <div v-if="this.scrolltos" class="scroll-toos">
                 <div v-for="(item, index) in this.scrolltos" class="scroll-toos__button" :key="index">
-                  <p v-on:click='scrollTo(item.target)'>{{ item.label }}</p>
+                  <p v-on:click='scrollTo("team")'>Our team</p>
                 </div>
               </div>
               <div class="page_scroller"  :class="this.transitionClass">
@@ -109,7 +109,7 @@ export default {
     },
 
     scrollTo(scrollId){
-      document.getElementById(scrollId).scrollIntoView();
+      document.getElementById('team').scrollIntoView();
     },
 
     headerAction(index){

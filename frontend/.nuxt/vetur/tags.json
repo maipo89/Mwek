@@ -14,12 +14,9 @@
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
   },
-<<<<<<< HEAD
   "OnqorSEO": {
     "description": "Auto imported from components/SEO/OnqorSEO.vue"
   },
-=======
->>>>>>> 8ec138ba717ee83ebff99fc51827da6dd119912e
   "BackButton": {
     "description": "Auto imported from components/UI/BackButton.vue"
   },
@@ -44,7 +41,6 @@
   "TypeText": {
     "description": "Auto imported from components/UI/TypeText.vue"
   },
-<<<<<<< HEAD
   "CardsWithFilter": {
     "description": "Auto imported from components/archives/CardsWithFilter.vue"
   },
@@ -54,14 +50,6 @@
   "SubscriptionSection": {
     "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
-=======
-  "OnqorSEO": {
-    "description": "Auto imported from components/SEO/OnqorSEO.vue"
-  },
-  "CardsWithFilter": {
-    "description": "Auto imported from components/archives/CardsWithFilter.vue"
-  },
->>>>>>> 8ec138ba717ee83ebff99fc51827da6dd119912e
   "CityLights": {
     "description": "Auto imported from components/citymap/CityLights.vue"
   },
@@ -85,18 +73,6 @@
   },
   "ContactFooter": {
     "description": "Auto imported from components/contact/ContactFooter.vue"
-<<<<<<< HEAD
-=======
-  },
-  "Footer": {
-    "description": "Auto imported from components/global/Footer.vue"
-  },
-  "Header": {
-    "description": "Auto imported from components/global/Header.vue"
-  },
-  "HeroSection": {
-    "description": "Auto imported from components/image/HeroSection.vue"
->>>>>>> 8ec138ba717ee83ebff99fc51827da6dd119912e
   },
   "MeetTheTeam": {
     "description": "Auto imported from components/explore/MeetTheTeam.vue"
@@ -110,7 +86,6 @@
   "TeamCube": {
     "description": "Auto imported from components/explore/TeamCube.vue"
   },
-<<<<<<< HEAD
   "Footer": {
     "description": "Auto imported from components/global/Footer.vue"
   },
@@ -120,19 +95,14 @@
   "HeroSection": {
     "description": "Auto imported from components/image/HeroSection.vue"
   },
-=======
->>>>>>> 8ec138ba717ee83ebff99fc51827da6dd119912e
   "ServicePageLinks": {
     "description": "Auto imported from components/services/ServicePageLinks.vue"
   },
   "StatTabs": {
     "description": "Auto imported from components/stats/StatTabs.vue"
   },
-  "BlogPage": {
-    "description": "Auto imported from components/blog/BlogPage.vue"
-  },
-  "SubscriptionSection": {
-    "description": "Auto imported from components/blog/SubscriptionSection.vue"
+  "TabbedContent": {
+    "description": "Auto imported from components/tabs/TabbedContent.vue"
   },
   "ContentColumns": {
     "description": "Auto imported from components/text-content/ContentColumns.vue"
@@ -154,8 +124,5 @@
   },
   "TickList": {
     "description": "Auto imported from components/text-content/TickList.vue"
-  },
-  "TabbedContent": {
-    "description": "Auto imported from components/tabs/TabbedContent.vue"
   }
 }

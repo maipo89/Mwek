@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <p class="footer__reg">The M-Wek Company ® registered as a Company in England. Company Number: 09863183, Vat Number 234592794, Registered Address: <a target="blank" style="color: #fff;" href="https://www.google.com/maps/place/Keith+Willis+Associates/@52.9526318,-1.144278,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c3d6686860b9:0x4c73f857f70611b7!8m2!3d52.9526318!4d-1.1420893" > C/O Keith Willis Associates, Barker Gate, Nottingham, England, NG1 1JU.</a></p>
+        <p class="footer__reg">The M-Wek Company ® registered as a Company in England. Company Number: 09863183, Vat Number 234592794, <a style="color:#fff" target="blank" href="https://www.google.com/maps/place/Barker+Gate,+Nottingham+NG1+1JU/@52.9524624,-1.1436665,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c3d66f59f54d:0x5118aff82ab3f4b9!8m2!3d52.9524624!4d-1.1414778" > Registered Address </a></p>
         <div class="footer__made-by">
             <p>Designed and built by <a href="https://onqor.co.uk/" target="blank" ><p>ONQOR.</p></a></p>
         </div>

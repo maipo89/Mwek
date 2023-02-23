@@ -2,85 +2,50 @@
   {
     "name": "blog",
     "path": "/blog",
-<<<<<<< HEAD
     "component": "/root/Mwek/frontend/pages/blog/index.vue",
     "chunkName": "pages/blog/index",
     "_name": "_60b4c31a"
-=======
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/index.vue",
-    "chunkName": "pages/blog/index"
->>>>>>> 204af44af6de73523faead7f629a6466f91a53c2
   },
   {
     "name": "blog-cat",
     "path": "/blog/:cat",
-<<<<<<< HEAD
     "component": "/root/Mwek/frontend/pages/blog/_cat/index.vue",
     "chunkName": "pages/blog/_cat/index",
     "_name": "_346432c2"
-=======
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_cat/index.vue",
-    "chunkName": "pages/blog/_cat/index"
->>>>>>> 204af44af6de73523faead7f629a6466f91a53c2
   },
   {
     "name": "blog-page",
     "path": "/blog/:page",
-<<<<<<< HEAD
     "component": "/root/Mwek/frontend/pages/blog/_page.vue",
     "chunkName": "pages/blog/_page",
     "_name": "_6d13f094"
-=======
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_page.vue",
-    "chunkName": "pages/blog/_page"
->>>>>>> 204af44af6de73523faead7f629a6466f91a53c2
   },
   {
     "name": "services-page",
     "path": "/services/:page?",
-<<<<<<< HEAD
     "component": "/root/Mwek/frontend/pages/services/_page.vue",
     "chunkName": "pages/services/_page",
     "_name": "_73a9121c"
-=======
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/services/_page.vue",
-    "chunkName": "pages/services/_page"
->>>>>>> 204af44af6de73523faead7f629a6466f91a53c2
   },
   {
     "name": "blog-cat-page",
     "path": "/blog/:cat/:page",
-<<<<<<< HEAD
     "component": "/root/Mwek/frontend/pages/blog/_cat/_page.vue",
     "chunkName": "pages/blog/_cat/_page",
     "_name": "_c5b51144"
-=======
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_cat/_page.vue",
-    "chunkName": "pages/blog/_cat/_page"
->>>>>>> 204af44af6de73523faead7f629a6466f91a53c2
   },
   {
     "name": "index",
     "path": "/",
-<<<<<<< HEAD
     "component": "/root/Mwek/frontend/pages/index.vue",
     "chunkName": "pages/index",
     "_name": "_6f113d6d"
-=======
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/index.vue",
-    "chunkName": "pages/index"
->>>>>>> 204af44af6de73523faead7f629a6466f91a53c2
   },
   {
     "name": "page",
     "path": "/:page",
-<<<<<<< HEAD
     "component": "/root/Mwek/frontend/pages/_page.vue",
     "chunkName": "pages/_page",
     "_name": "_505afbee"
-=======
-    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/_page.vue",
-    "chunkName": "pages/_page"
->>>>>>> 204af44af6de73523faead7f629a6466f91a53c2
   }
 ]

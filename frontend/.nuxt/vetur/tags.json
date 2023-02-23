@@ -98,11 +98,11 @@
   "ServicePageLinks": {
     "description": "Auto imported from components/services/ServicePageLinks.vue"
   },
-  "StatTabs": {
-    "description": "Auto imported from components/stats/StatTabs.vue"
-  },
   "TabbedContent": {
     "description": "Auto imported from components/tabs/TabbedContent.vue"
+  },
+  "StatTabs": {
+    "description": "Auto imported from components/stats/StatTabs.vue"
   },
   "ContentColumns": {
     "description": "Auto imported from components/text-content/ContentColumns.vue"

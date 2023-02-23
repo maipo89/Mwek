@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <p class="footer__reg">The M-Wek Company ® registered as a Company in England. Company Number: 09863183, Vat Number 234592794, <a style="color:#fff" target="blank" href="https://www.google.com/maps/place/30+Great+Guildford+St,+London+SE1+0HS/@51.5045827,-0.0992521,17z/data=!3m1!4b1!4m5!3m4!1s0x487604a881ae5091:0x6c718ceb46fef809!8m2!3d51.5045827!4d-0.0970634" > Registered Address </a></p>
+        <!-- <p class="footer__reg">The M-Wek Company ® registered as a Company in England. Company Number: 09863183, Vat Number 234592794, <a style="color:#fff" target="blank" href="https://www.google.com/maps/place/30+Great+Guildford+St,+London+SE1+0HS/@51.5045827,-0.0992521,17z/data=!3m1!4b1!4m5!3m4!1s0x487604a881ae5091:0x6c718ceb46fef809!8m2!3d51.5045827!4d-0.0970634" > Registered Address </a></p> -->
         <div class="footer__made-by">
             <p>Designed and built by <a href="https://onqor.co.uk/" target="blank" ><p>ONQOR.</p></a></p>
         </div>

@@ -11,10 +11,8 @@ You can directly use them in pages and other components without the need to impo
 - `<SiteIntro>` | `<site-intro>` (components/SiteIntro.vue)
 - `<Tutorial>` | `<tutorial>` (components/Tutorial.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)
-<<<<<<< HEAD
 - `<OnqorSEO>` | `<onqor-s-e-o>` (components/SEO/OnqorSEO.vue)
-=======
->>>>>>> 8ec138ba717ee83ebff99fc51827da6dd119912e
+- `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
 - `<BackButton>` | `<back-button>` (components/UI/BackButton.vue)
 - `<BlogCard>` | `<blog-card>` (components/UI/BlogCard.vue)
 - `<DropDown>` | `<drop-down>` (components/UI/DropDown.vue)
@@ -23,14 +21,6 @@ You can directly use them in pages and other components without the need to impo
 - `<OnqorCircleIcon>` | `<onqor-circle-icon>` (components/UI/OnqorCircleIcon.vue)
 - `<OnqorInput>` | `<onqor-input>` (components/UI/OnqorInput.vue)
 - `<TypeText>` | `<type-text>` (components/UI/TypeText.vue)
-<<<<<<< HEAD
-- `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
-- `<BlogPage>` | `<blog-page>` (components/blog/BlogPage.vue)
-- `<SubscriptionSection>` | `<subscription-section>` (components/blog/SubscriptionSection.vue)
-=======
-- `<OnqorSEO>` | `<onqor-s-e-o>` (components/SEO/OnqorSEO.vue)
-- `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
->>>>>>> 8ec138ba717ee83ebff99fc51827da6dd119912e
 - `<CityLights>` | `<city-lights>` (components/citymap/CityLights.vue)
 - `<CityMapCards>` | `<city-map-cards>` (components/citymap/CityMapCards.vue)
 - `<CityMapSVG>` | `<city-map-s-v-g>` (components/citymap/CityMapSVG.vue)
@@ -38,27 +28,16 @@ You can directly use them in pages and other components without the need to impo
 - `<CityRoadOne>` | `<city-road-one>` (components/citymap/CityRoadOne.vue)
 - `<CitySculptur>` | `<city-sculptur>` (components/citymap/CitySculptur.vue)
 - `<CityTurbines>` | `<city-turbines>` (components/citymap/CityTurbines.vue)
+- `<BlogPage>` | `<blog-page>` (components/blog/BlogPage.vue)
+- `<SubscriptionSection>` | `<subscription-section>` (components/blog/SubscriptionSection.vue)
 - `<ContactFooter>` | `<contact-footer>` (components/contact/ContactFooter.vue)
-<<<<<<< HEAD
-=======
 - `<Footer>` | `<footer>` (components/global/Footer.vue)
 - `<Header>` | `<header>` (components/global/Header.vue)
-- `<HeroSection>` | `<hero-section>` (components/image/HeroSection.vue)
->>>>>>> 8ec138ba717ee83ebff99fc51827da6dd119912e
 - `<MeetTheTeam>` | `<meet-the-team>` (components/explore/MeetTheTeam.vue)
 - `<OurApproach>` | `<our-approach>` (components/explore/OurApproach.vue)
 - `<OurApproachSection>` | `<our-approach-section>` (components/explore/OurApproachSection.vue)
 - `<TeamCube>` | `<team-cube>` (components/explore/TeamCube.vue)
-<<<<<<< HEAD
-- `<Footer>` | `<footer>` (components/global/Footer.vue)
-- `<Header>` | `<header>` (components/global/Header.vue)
 - `<HeroSection>` | `<hero-section>` (components/image/HeroSection.vue)
-=======
->>>>>>> 8ec138ba717ee83ebff99fc51827da6dd119912e
-- `<ServicePageLinks>` | `<service-page-links>` (components/services/ServicePageLinks.vue)
-- `<StatTabs>` | `<stat-tabs>` (components/stats/StatTabs.vue)
-- `<BlogPage>` | `<blog-page>` (components/blog/BlogPage.vue)
-- `<SubscriptionSection>` | `<subscription-section>` (components/blog/SubscriptionSection.vue)
 - `<ContentColumns>` | `<content-columns>` (components/text-content/ContentColumns.vue)
 - `<ContentWithImage>` | `<content-with-image>` (components/text-content/ContentWithImage.vue)
 - `<Quote>` | `<quote>` (components/text-content/Quote.vue)
@@ -66,4 +45,6 @@ You can directly use them in pages and other components without the need to impo
 - `<ThreeDObject>` | `<three-d-object>` (components/text-content/ThreeDObject.vue)
 - `<ThreeDObjectContent>` | `<three-d-object-content>` (components/text-content/ThreeDObjectContent.vue)
 - `<TickList>` | `<tick-list>` (components/text-content/TickList.vue)
+- `<StatTabs>` | `<stat-tabs>` (components/stats/StatTabs.vue)
 - `<TabbedContent>` | `<tabbed-content>` (components/tabs/TabbedContent.vue)
+- `<ServicePageLinks>` | `<service-page-links>` (components/services/ServicePageLinks.vue)

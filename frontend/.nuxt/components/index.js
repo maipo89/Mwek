@@ -23,13 +23,16 @@ export { default as CityTurbines } from '../../components/citymap/CityTurbines.v
 export { default as BlogPage } from '../../components/blog/BlogPage.vue'
 export { default as SubscriptionSection } from '../../components/blog/SubscriptionSection.vue'
 export { default as ContactFooter } from '../../components/contact/ContactFooter.vue'
-export { default as Footer } from '../../components/global/Footer.vue'
-export { default as Header } from '../../components/global/Header.vue'
 export { default as MeetTheTeam } from '../../components/explore/MeetTheTeam.vue'
 export { default as OurApproach } from '../../components/explore/OurApproach.vue'
 export { default as OurApproachSection } from '../../components/explore/OurApproachSection.vue'
 export { default as TeamCube } from '../../components/explore/TeamCube.vue'
+export { default as Footer } from '../../components/global/Footer.vue'
+export { default as Header } from '../../components/global/Header.vue'
 export { default as HeroSection } from '../../components/image/HeroSection.vue'
+export { default as TabbedContent } from '../../components/tabs/TabbedContent.vue'
+export { default as ServicePageLinks } from '../../components/services/ServicePageLinks.vue'
+export { default as StatTabs } from '../../components/stats/StatTabs.vue'
 export { default as ContentColumns } from '../../components/text-content/ContentColumns.vue'
 export { default as ContentWithImage } from '../../components/text-content/ContentWithImage.vue'
 export { default as Quote } from '../../components/text-content/Quote.vue'
@@ -37,9 +40,6 @@ export { default as TextSection } from '../../components/text-content/TextSectio
 export { default as ThreeDObject } from '../../components/text-content/ThreeDObject.vue'
 export { default as ThreeDObjectContent } from '../../components/text-content/ThreeDObjectContent.vue'
 export { default as TickList } from '../../components/text-content/TickList.vue'
-export { default as StatTabs } from '../../components/stats/StatTabs.vue'
-export { default as TabbedContent } from '../../components/tabs/TabbedContent.vue'
-export { default as ServicePageLinks } from '../../components/services/ServicePageLinks.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

@@ -24,6 +24,54 @@ export default {
       contactDetails: null,
     }
   },
+  async asyncData({ error, params, app: { store } }) {
+
+    const { apiroute } = store.state
+    const { page } = params 
+  try{
+    const thePageID = await fetch(
+      apiroute.url + '/api/pages?filters[slug]=' + page
+        // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
+    ).then((res) => {
+      // can set up 404 redirection here
+    return res.json();
+    });
+    
+    var pageID = thePageID.data[0].id;
+
+    const thePageData = await fetch(
+        apiroute.url + '/api/pages/' + pageID + '?populate=deep,4'
+      ).then((res) => {
+      // can set up 404 redirection here
+      return res.json();
+    });
+
+    console.log('thePageData 888', thePageData);
+    // if(thePageData.data.attributes.dynamic_content){
+    //   this.blocks = thePageData.data.attributes.dynamic_content
+    // }
+
+    // console.log(this.$router.params);
+    const contactData = await fetch(
+        apiroute.url + '/api/contact?populate=*'
+        ).then((res) => {
+        // can set up 404 redirection here
+        return res.json();
+    });
+
+    // if(contactData.data.attributes.ContactInfo){
+    //   // console.log(contactData);
+    //   this.contactDetails = contactData
+    // }
+    return {
+      pageContent: thePageData.data.attributes,
+      blocks: thePageData.data.attributes.dynamic_content,
+      contactDetails: contactData
+    }
+    }catch(e){
+       error({ statusCode: 404, message: "Page not found" });
+    }
+  },
   methods: {
     async asyncData() {
       const thePageID = await fetch(
@@ -65,7 +113,7 @@ export default {
     },
   },
   beforeMount(){
-     this.asyncData();
+    //  this.asyncData();
   },
 
   mounted(){

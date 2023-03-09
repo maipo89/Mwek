@@ -15,64 +15,115 @@
 
 <script>
 export default {
-    
-  data(){
-    return {
-      page: this.$route.params.page,
-      pageID:'',
-      renderPage: false,
-      blocks: '',
-      contactDetails: '',
-      post:'',
-    }
-  },
-  methods: {
-    async asyncData() {
-      const thePageID = await fetch(
-          this.$store.state.apiroute.url + '/api/blogs?filters[slug]=' + this.page 
-          // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
-      ).then((res) => {
-        // can set up 404 redirection here
-      return res.json();
-      });
-      var pageID = thePageID.data[0].id;
+    data(){
+      return {
+        page: this.$route.params.page,
+        pageID:'',
+        renderPage: false,
+        blocks: '',
+        contactDetails: '',
+        post:'',
+      }
+    },
+    async asyncData({ error, params, app: { store } }) {
 
-      
-      console.log('pageID', pageID);
+      const { apiroute } = store.state
+      const { page } = params
 
-      const thePageData = await fetch(
-          this.$store.state.apiroute.url + '/api/blogs/' + pageID + '?populate=deep,5'
+      try{ 
+        const thePageID = await fetch(
+          apiroute.url + '/api/blogs?filters[slug]=' + page 
+            // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
         ).then((res) => {
-        // can set up 404 redirection here
+          // can set up 404 redirection here
         return res.json();
-      });
+        });
+        var pageID = thePageID.data[0].id;
 
-      console.log('thePageDatasssssss', thePageData);
+        
+        console.log('pageID', pageID);
 
-      this.blocks = thePageData.data.attributes.dynamic_content
-      this.post = thePageData.data.attributes
-
-      // if(thePageData.data.attributes.dynamic_content){
-      //   this.blocks = thePageData.data.attributes.dynamic_content
-      // }
-      // console.log(this.$router.params);
-      const contactData = await fetch(
-          this.$store.state.apiroute.url + '/api/contact?populate=*'
+        const thePageData = await fetch(
+            apiroute.url + '/api/blogs/' + pageID + '?populate=deep,5'
           ).then((res) => {
           // can set up 404 redirection here
           return res.json();
-      });
+        });
 
-      if(contactData.data.attributes.ContactInfo){
-        // console.log(contactData);
-        this.contactDetails = contactData
+        // console.log('thePageDatasssssss', thePageData);
+        // if(thePageData.data.attributes.dynamic_content){
+        //   this.blocks = thePageData.data.attributes.dynamic_content
+        // }
+        // console.log(this.$router.params);
+        const contactData = await fetch(
+            apiroute.url + '/api/contact?populate=*'
+            ).then((res) => {
+            // can set up 404 redirection here
+            return res.json();
+        });
+
+        // if(contactData.data.attributes.ContactInfo){
+        //   // console.log(contactData);
+        //   this.contactDetails = contactData
+        // }
+
+        return {
+          contactDetails: contactData,
+          blocks: thePageData.data.attributes.dynamic_content,
+          post: thePageData.data.attributes
+        }
+
+      }catch(e){
+        error({ statusCode: 404, message: "Page not found" });
       }
-      this.renderPage = true;
-    }
-  },
+    },
+    methods: {
+      // async asyncData() {
+      //   const thePageID = await fetch(
+      //       this.$store.state.apiroute.url + '/api/blogs?filters[slug]=' + this.page 
+      //       // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
+      //   ).then((res) => {
+      //     // can set up 404 redirection here
+      //   return res.json();
+      //   });
+      //   var pageID = thePageID.data[0].id;
 
+        
+      //   console.log('pageID', pageID);
+
+      //   const thePageData = await fetch(
+      //       this.$store.state.apiroute.url + '/api/blogs/' + pageID + '?populate=deep,5'
+      //     ).then((res) => {
+      //     // can set up 404 redirection here
+      //     return res.json();
+      //   });
+
+      //   console.log('thePageDatasssssss', thePageData);
+
+      //   this.blocks = thePageData.data.attributes.dynamic_content
+      //   this.post = thePageData.data.attributes
+
+      //   // if(thePageData.data.attributes.dynamic_content){
+      //   //   this.blocks = thePageData.data.attributes.dynamic_content
+      //   // }
+      //   // console.log(this.$router.params);
+      //   const contactData = await fetch(
+      //       this.$store.state.apiroute.url + '/api/contact?populate=*'
+      //       ).then((res) => {
+      //       // can set up 404 redirection here
+      //       return res.json();
+      //   });
+
+      //   if(contactData.data.attributes.ContactInfo){
+      //     // console.log(contactData);
+      //     this.contactDetails = contactData
+      //   }
+      //   this.renderPage = true;
+      // }
+    },
   mounted(){
-    this.asyncData();
+    // this.asyncData();
+     this.renderPage = true;
   }, 
 }
 </script>

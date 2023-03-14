@@ -35,40 +35,58 @@ export default {
       amountToPaginate: 6
     }
   },
+  async asyncData({ error, params, props, app: { store } }) {
 
-  methods: {
-    async asyncData() {
-      console.log('this.theBlogsId', this.theBlogsId);
+    const { apiroute } = store.state;
+    const { page } = params;
+    const { theBlogsId } = props;
+
+    console.log('props', props);
+
+    try{
+
       const theBlogsID = await fetch(
-        this.$store.state.apiroute.url + '/api/blogs?filters[PrimaryCategory][category][slug]=' + this.theBlogsId
+        apiroute.url + '/api/blogs?filters[PrimaryCategory][category][slug]=' + theBlogsId
 
       ).then((res) => {
           // can set up 404 redirection here
           return res.json();
       });
 
+      console.log('theBlogsID', theBlogsID);
+
+      var blogIDs = [];
+
       theBlogsID.data.forEach(element => {
-          this.blogIDs.push(element.id);
+          blogIDs.push(element.id);
       });
 
       console.log('theBlogsID', theBlogsID)
       const theBlogs = await fetch(
-        this.$store.state.apiroute.url + '/api/blogs?populate=deep'
+        apiroute.url + '/api/blogs?populate=deep'
         ).then((res) => {
           // can set up 404 redirection here
           console.log('theblogs', res);
           return res.json();
       });
-
-      const idStore = this.blogIDs;
       
       var filterdArray = theBlogs.data.filter(function(e){
-          return idStore.includes(e.id)
+          return blogIDs.includes(e.id)
       });
-      console.log('filterdArray', filterdArray);
-      this.filterdBlogs = filterdArray; 
-    },
 
+      console.log('filterdArray', filterdArray);
+      // this.filterdBlogs = filterdArray; 
+    
+      return{ 
+        filterdBlogs: filterdArray
+      }
+
+    }catch(e){
+
+    }
+  },
+
+  methods: {
     async getCategories(){
       const theCats = await fetch(
           this.$store.state.apiroute.url + '/api/categories'
@@ -277,7 +295,7 @@ export default {
     // ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".blog-card", {y: 0}));
 
     if(this.theBlogsId){
-        this.asyncData();
+        // this.asyncData();
     }else{
         // this.allBlogs();
         this.allBlogs();

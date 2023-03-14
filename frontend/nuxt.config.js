@@ -28,6 +28,12 @@ export default {
             src: 'js/Jquery.js',
             body: true
         },
+        {
+          src: "https://cdn-eu.pagesense.io/js/onqor/321b1340911140abb82ae8d5e9e41d89.js",
+          defer: true,
+          async: true,
+          body: true
+        }
         // {
         //     type: 'text/javascript',
         //     src: 'js/gsap/minified/gsap.min.js',

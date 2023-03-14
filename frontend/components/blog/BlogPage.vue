@@ -102,7 +102,7 @@ export default {
 
       theCats.data.forEach(element => {
           this.cats.push( { option: element.attributes.name , value: element.attributes.slug } ) 
-      });;
+      });
 
      
 

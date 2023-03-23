@@ -39,13 +39,15 @@
 	
 </div>
 <div class="mc-field-group mail-chimp__select">
-	<select name="MMERGE3" class="" id="mce-MMERGE3">
+    <input name="MMERGE3" class="" id="mce-MMERGE3">
+    <DropDown @dropdownEvent="selectedCat($event)" :options="cats" />
+	<!-- <select name="MMERGE3" class="" id="mce-MMERGE3">
         <option disabled hidden>Subject</option>
         <option value="Candidate">Candidate</option>
         <option value="Client">Client</option>
         <option value="Work With Us">Work With Us</option>
 	</select>
-    <span class="chevron"></span>
+    <span class="chevron"></span> -->
 	<span id="mce-MMERGE3-HELPERTEXT" class="helper_text"></span>
 </div>
 	<!-- <div id="mce-responses" class="clear foot">
@@ -200,6 +202,9 @@
                     subject: this.formData.subject,
                     text: ' email: ' + this.formData.email + '  name: ' + this.formData.name + ' tel: ' +  this.formData.tel 
                 })
+            },
+            selectedCat(cat) {
+                document.getElementById("mce-MMERGE3").value = cat;
             },
             getValue(event, type){
                 console.log(event);

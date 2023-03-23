@@ -11,7 +11,6 @@
     <BlogPage />
     <!-- <Subscription /> -->
     <SubscriptionSection />
-    <BackButton />
   </div>
 </template>
 

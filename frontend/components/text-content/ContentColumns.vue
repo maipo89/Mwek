@@ -7,7 +7,7 @@
         <div class="content-columns">
             <div class="content-columns__block" v-for="(item, index) in this.blockData.content_and_columns" :key="index" :class="[{ contentImage: item.image.data }, item.columnWidth, item.centerImg ? 'center-img' : '']" >   
                 <vue-markdown v-if="item.image.data === null" :source="item.content" />
-                <img  :class="[
+                <img :class="[
                 item.animate ? 'anim-spin' : '',
                 item.imageWidth ? 'image-bleed' : '']"
                 v-if="item.image.data" :src="$store.state.apiroute.url + item.image.data.attributes.url" :style="{width: item.imageWidth + '%'}" />
@@ -42,6 +42,7 @@
             //     }
             // });
             console.log('ContentColumns', this.blockData);
+
         },
         beforeMount(){
             require('@/assets/scss/text-content/content-columns.scss');

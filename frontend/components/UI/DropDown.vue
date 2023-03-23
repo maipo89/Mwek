@@ -4,7 +4,7 @@
             <p>{{ this.activeOption }}</p>
             <Icon icon="chevronDown" />
         </div>
-        <div class="drop-down__options" :style="{height: this.dropDownHeight + 'px', top: this.activeTop + 'px' }">
+        <div class="drop-down__options" :class="active ? 'show' : null" :style="{height: this.dropDownHeight + 'px', top: this.activeTop + 'px' }">
             <div v-for="(item, index) in this.options" :key="index" class="drop-down__item" v-on:click="itemClick(item.value)" >
                 <p>{{ item.option }}</p>
             </div>

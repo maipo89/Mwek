@@ -52,14 +52,15 @@
             rotate(){
 
                 this.svgItem = this.$refs.svgRotate
-                this.svgContainer = this.$refs.ourApproach__section 
+                this.svgContainer = this.$refs.ourApproach__section
 
                 if(this.sectionIndex % 2 === 0){
                     gsap.to(this.svgItem, {
                         scrollTrigger: {
                             trigger: this.svgContainer,
                             // markers: true,
-                            scrub: 1
+                            scrub: 1,
+                            scroller: '#page-modal',
                         },
                         rotation: '-90deg',
                         autoAlpha: 1,
@@ -70,7 +71,8 @@
                         scrollTrigger: {
                             trigger: this.svgContainer,
                             // markers: true,
-                            scrub: 1
+                            scrub: 1,
+                            scroller: '#page-modal',
                         },
                         rotation: '90deg',
                         autoAlpha: 1,
@@ -84,7 +86,8 @@
                     scrollTrigger: {
                         trigger: '.our-approach',
                         // markers: true,
-                        scrub: 1
+                        scrub: 1,
+                        scroller: '#page-modal',
                     },
                     //autoRound:false,
                      ease: 'ease-in'
@@ -95,7 +98,8 @@
                     scrollTrigger: {
                         trigger: this.svgContainer,
                         start: 'top-=100 center',
-                        scrub: 1
+                        scrub: 1,
+                        scroller: '#page-modal',
                     },
                     //autoRound:false,
                     ease: 'ease-in'
@@ -104,6 +108,7 @@
                 gsap.to(this.$refs.content,{
                     scrollTrigger: {
                         trigger: this.$refs.content,
+                        scroller: '#page-modal',
                         start: "top center+=145",
                         end: "bottom top",
                         scrub: true,

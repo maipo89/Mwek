@@ -1,5 +1,5 @@
 <template>
-    <div class="contact-footer">
+    <div ref="contact" class="contact-footer">
         <h2> {{ this.contactItems.data.attributes.ContactInfo.title }} </h2>
         <!-- <p> {{ this.contactItems.data.attributes.ContactInfo.content }} </p> -->
         <vue-markdown> {{ this.contactItems.data.attributes.ContactInfo.content }} </vue-markdown>
@@ -170,6 +170,8 @@
 </template>
 
 <script>
+    import gsap from "gsap"
+    import ScrollTrigger from "gsap/ScrollTrigger";
     import VueMarkdown from 'vue-markdown'
     export default {
         name: 'ContactFooter',
@@ -193,6 +195,19 @@
         },
         mounted(){
             console.log('this.contactItems', this.contactItems);
+            
+            gsap.set(this.$refs.contact, {opacity:0, y: 50})
+            gsap.to(this.$refs.contact, {
+                scrollTrigger: {
+                    trigger: this.$refs.contact,
+                    start: "top-=200px 50%",
+                    end: "bottom-=-50px 50%",
+                    scroller: "#page-modal",
+                    onEnter: () => { gsap.to(this.$refs.contact, {opacity: 1, y: 0}) },
+                    onLeave: () => { gsap.to(this.$refs.contact, {opacity: 0, y: -50}) },
+                    onEnterBack: () => { gsap.to(this.$refs.contact, {opacity: 1, y: 0}) },
+                }
+            });
         },
         methods: {
             go() {

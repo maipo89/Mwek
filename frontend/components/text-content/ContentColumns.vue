@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div ref="contentColumn">
         <h2 v-if="this.blockData.title" class="content-columns__title">{{ this.blockData.title }}</h2>
         <div class="content-columns__tag-line" :class="this.blockData.tagLineWidth" >
             <h3 :class="this.blockData.tagLineWidth"> {{ this.blockData.contentTagLine }} </h3>
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+    import gsap from "gsap"
+    import ScrollTrigger from "gsap/ScrollTrigger";
     import VueMarkdown from 'vue-markdown';
     export default {
         name: 'ContentColumns',
@@ -42,6 +44,19 @@
             //     }
             // });
             console.log('ContentColumns', this.blockData);
+
+            gsap.set(this.$refs.contentColumn, {opacity:0, y: 50})
+            gsap.to(this.$refs.contentColumn, {
+                scrollTrigger: {
+                    trigger: this.$refs.contentColumn,
+                    start: "top-=200px 50%",
+                    end: "bottom-=-300px 50%",
+                    scroller: "#page-modal",
+                    onEnter: () => { gsap.to(this.$refs.contentColumn, {opacity: 1, y: 0}) },
+                    onLeave: () => { gsap.to(this.$refs.contentColumn, {opacity: 0, y: -50}) },
+                    onEnterBack: () => { gsap.to(this.$refs.contentColumn, {opacity: 1, y: 0}) },
+                }
+            });
 
         },
         beforeMount(){

@@ -52,7 +52,8 @@
         },
 
         mounted(){
-            if(this.teamIndex === this.activeCube + 1 || this.teamIndex === this.activeCube - 1){   
+            if(this.teamIndex === this.activeCube + 1 || this.teamIndex === this.activeCube - 1 ||
+               this.activeCube === this.totalTeam - 1 && this.teamIndex === this.activeCube - this.activeCube ) {   
                 this.onTheEdge = true;
             }
 
@@ -68,6 +69,12 @@
                 this.goingLeft = false
             }
 
+            if(this.activeCube === this.totalTeam - 1 && this.teamIndex === this.activeCube - this.activeCube) {
+                this.goingRight = true
+            }else{
+                this.goingRight = false
+            }
+
             // hover animation for heads
             // this.width = this.$refs.card.offsetWidth;
             // this.height = this.$refs.card.offsetHeight;
@@ -75,24 +82,33 @@
         watch: {
             activeCube: function (val) {
  
-                if(this.teamIndex === this.activeCube + 1 || this.teamIndex === this.activeCube - 1){   
+                if(this.teamIndex === this.activeCube + 1 || 
+                   this.teamIndex === this.activeCube - 1 ||
+                   this.activeCube === this.totalTeam - 1 && this.teamIndex === 0 ||
+                   this.activeCube === this.totalTeam - this.totalTeam && this.teamIndex === this.totalTeam - 1 ) {   
+                     
                     this.onTheEdge = true;
+
                 }else{
                     this.onTheEdge = false;
                 }
                 
-                if(this.teamIndex === this.activeCube + 1){
+                if(this.teamIndex === this.activeCube + 1 || 
+                   this.activeCube === this.totalTeam - 1 && this.teamIndex === 0){
                     this.goingRight = true
                 }else{
                     this.goingRight = false
                 }
 
-                if(this.teamIndex === this.activeCube - 1){
+                if(this.teamIndex === this.activeCube - 1 ||
+                   this.activeCube === this.totalTeam - this.totalTeam && this.teamIndex === this.totalTeam - 1){
                     this.goingLeft = true
                 }else{
                     this.goingLeft = false
                 }
 
+                console.log(this.teamIndex === this.activeCube - this.activeCube)
+                console.log('this.teamindex', this.teamIndex)
                 console.log('this.activeCube',this.activeCube);
                 console.log('this.totalTeam', this.totalTeam);
 

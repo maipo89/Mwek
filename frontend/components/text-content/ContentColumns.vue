@@ -11,7 +11,7 @@
                 <img :class="[
                 item.animate ? 'anim-spin' : '',
                 item.imageWidth ? 'image-bleed' : '']"
-                v-if="item.image.data" :src="$store.state.apiroute.url + item.image.data.attributes.url" :style="{width: item.imageWidth + '%'}" />
+                v-if="item.image.data && !item.animation3D" :src="$store.state.apiroute.url + item.image.data.attributes.url" :style="{width: item.imageWidth + '%'}" />
                 <!-- {{ item.content }} -->
                 <Earth v-if="item.animation3D"/>
             </div>

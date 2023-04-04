@@ -2,50 +2,43 @@
   {
     "name": "blog",
     "path": "/blog",
-    "component": "/Users/marcobrunetti/Mwek/frontend/pages/blog/index.vue",
-    "chunkName": "pages/blog/index",
-    "_name": "_2abdae5e"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/index.vue",
+    "chunkName": "pages/blog/index"
   },
   {
     "name": "blog-cat",
     "path": "/blog/:cat",
-    "component": "/Users/marcobrunetti/Mwek/frontend/pages/blog/_cat/index.vue",
-    "chunkName": "pages/blog/_cat/index",
-    "_name": "_33809c04"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_cat/index.vue",
+    "chunkName": "pages/blog/_cat/index"
   },
   {
     "name": "blog-page",
     "path": "/blog/:page",
-    "component": "/Users/marcobrunetti/Mwek/frontend/pages/blog/_page.vue",
-    "chunkName": "pages/blog/_page",
-    "_name": "_d9021a0c"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_page.vue",
+    "chunkName": "pages/blog/_page"
   },
   {
     "name": "services-page",
     "path": "/services/:page?",
-    "component": "/Users/marcobrunetti/Mwek/frontend/pages/services/_page.vue",
-    "chunkName": "pages/services/_page",
-    "_name": "_3f852036"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/services/_page.vue",
+    "chunkName": "pages/services/_page"
   },
   {
     "name": "blog-cat-page",
     "path": "/blog/:cat/:page",
-    "component": "/Users/marcobrunetti/Mwek/frontend/pages/blog/_cat/_page.vue",
-    "chunkName": "pages/blog/_cat/_page",
-    "_name": "_4f00f69a"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/blog/_cat/_page.vue",
+    "chunkName": "pages/blog/_cat/_page"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/marcobrunetti/Mwek/frontend/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_0ca950ae"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/index.vue",
+    "chunkName": "pages/index"
   },
   {
     "name": "page",
     "path": "/:page",
-    "component": "/Users/marcobrunetti/Mwek/frontend/pages/_page.vue",
-    "chunkName": "pages/_page",
-    "_name": "_626c9c45"
+    "component": "/Users/marleynicolson/Desktop/onqor/MwekRemote/frontend/pages/_page.vue",
+    "chunkName": "pages/_page"
   }
 ]

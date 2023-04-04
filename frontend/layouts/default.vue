@@ -10,7 +10,7 @@
             <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" />
           </div>
           <div class="page-modal__container" >
-            <div class="page-modal">
+            <div class="page-modal button-top">
               <div class="page-modal__back-to-map" v-on:click="backToMap()">
                 <div class="inside">
                   <Icon icon="arrowLeft" /> <p>MWEK City</p>
@@ -23,18 +23,23 @@
                   </div>
                 </NuxtLink>
               </div>
-              <!-- <div class="page-modal__back-to-map page-modal__back-to-map--services">
+              <div class="page-modal__back-to-map page-modal__back-to-map--services">
                 <NuxtLink to='/our-services'>
                   <div class="inside">
                     <Icon icon="arrowLeft" /> <p>Services</p>
                   </div>
                 </NuxtLink>
-              </div> -->
+              </div>
               <div v-if="this.scrolltos" class="scroll-toos">
                 <div v-for="(item, index) in this.scrolltos" class="scroll-toos__button" :key="index">
                   <p v-on:click='scrollTo("team")'>Our team</p>
                 </div>
               </div>
+            </div>
+            <div class="page-modal button-bottom">
+              <BackButton />
+            </div>
+            <div id="page-modal" class="page-modal">
               <div class="page_scroller"  :class="this.transitionClass">
                 <Nuxt />
               </div>
@@ -109,7 +114,7 @@ export default {
     },
 
     scrollTo(scrollId){
-      document.getElementById('team').scrollIntoView();
+      document.getElementById('team').scrollIntoView({ behavior: 'smooth' });
     },
 
     headerAction(index){

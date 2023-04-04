@@ -55,6 +55,7 @@ export default {
                     trigger: this.$refs.blogCard,
                     start: "top bottom",
                     end: "bottom top",
+                    scroller: '#page-modal',
                     scrub: true,
                     onEnter: enterFunction,
                     toggleClass: "active",

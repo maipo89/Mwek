@@ -33,7 +33,7 @@
     &__slide{
         display: flex !important;
         justify-content: center;
-        pointer-events: none;
+        // pointer-events: none;
     }
     &__slider-rail{
         display: flex;
@@ -44,7 +44,8 @@
         transform-style: preserve-3d;
         // background-color: red;
     }
-    .slick-current{
+    .slick-target, .slick-current{
+        pointer-events: visible;
         .meet-the-team__cube-holder{
             scale: 1;
             transform: translateY(0px);
@@ -55,15 +56,17 @@
         }
     }
     .slick-cloned{
-        opacity: 0.0;
+        opacity: 1;
     }
     .goingRight{
         margin: 0px 0px 0px 65px;
         transition: all 1s;
+        pointer-events: visible;
     }
     .goingLeft{
         margin: 0px 65px 0px 0px;
         transition: all 1s;
+        pointer-events: visible;
     }
     .slick-track{
         padding-top: 13px;
@@ -251,6 +254,7 @@
                 align-items: center;
                 justify-content: center;
                 margin-left: 10px;
+                margin-bottom: 3px;
                 .icon{
                     height: 18px;
                 }

@@ -41,7 +41,7 @@ h1.h2,h3,h4,h5{
 .page-modal__container{
     width: 100vw;
     min-height: 100vh;
-    height: auto;
+    height: 150px;
     position: relative;
     z-index: -2000;
     display: flex;
@@ -49,7 +49,7 @@ h1.h2,h3,h4,h5{
     justify-content: center;
     vertical-align: bottom;
     top: 0px;
-    margin-top: 115px;
+    margin-top: 70px;
     margin-bottom: 100px;
 }
 .page-modal{
@@ -59,8 +59,9 @@ h1.h2,h3,h4,h5{
     width: 95%;
     top: 0px;
     min-height: 100vh;
-    overflow: hidden;
-    height: auto;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 150px;
     transform: translateY(100%);
     border-radius: 20px 20px;
     padding: 50px 10px 200px;
@@ -71,6 +72,27 @@ h1.h2,h3,h4,h5{
     // transform-style: preserve-3d;
     @media (max-width: 550px) {
         padding: 50px 10px 100px;
+    }
+    &.button-top {
+        position: absolute;
+        z-index: 10;
+        padding: 0;
+        min-height: initial;
+        height: 56px;
+        border-radius: 20px 20px 0 0;
+        background-color: transparent;
+    }
+    &.button-bottom {
+        position: absolute;
+        z-index: 10;
+        z-index: 20;
+        padding: 0;
+        min-height: initial;
+        height: 56px;
+        border-radius: 0 0 20px 20px;
+        bottom: 0;
+        top: initial;
+        background-color: transparent;
     }
     &__back-to-map{
         height: 54px;
@@ -139,7 +161,7 @@ h1.h2,h3,h4,h5{
 }
 
 .blog-page-3{
-    .page-modal {
+    .page-modal, .page-modal.button-top, .page-modal.button-bottom {
         padding-bottom: 100px;
     }
     a {
@@ -160,7 +182,7 @@ h1.h2,h3,h4,h5{
 }
 
 .services-page-2{
-    .page-modal {
+    .page-modal, .page-modal.button-top, .page-modal.button-bottom {
         padding-bottom: 100px;
     }
     a {
@@ -194,10 +216,14 @@ h1.h2,h3,h4,h5{
     .page-modal__container{
         z-index: 2000;
     }
-    .page-modal{
+    .page-modal {
         transform: translateY(0%) translate3d(0px, 10px, 10px);
         transition: transform 0.7s;
         
+    }
+    .page-modal.button-top, .page-modal.button-bottom{
+        opacity: 1;
+        transition: opacity 5s ease-in-out;
     }
 }
 
@@ -214,10 +240,13 @@ html {
         transition: z-index 0s;
         transition-delay: 1s;
     }
-    .page-modal{
+    .page-modal {
         transform: translateY(100%);
         transition: transform 0.7s;
         transform-style: preserve-3d;
+    }
+    .page-modal.button-top, .page-modal.button-bottom{
+        opacity: 0;
     }
 }
 
@@ -262,6 +291,7 @@ html {
         font-size: 38px;
         margin-bottom: 99px;
         margin-top: 100px;
+        color: #07134D;
     }
     &__featured-img{
         height: 452px;
@@ -330,7 +360,7 @@ html {
     text-shadow: -5px 5px 16px rgba(0, 0, 0, 0.04);
     max-width: 969px;
     width: 95%;
-    margin: 100px auto 70px auto;
+    margin: 100px auto 50px auto;
 }
 .scroll-toos{
     top: 0px;
@@ -360,7 +390,7 @@ html {
         width: max-content;
         transition: box-shadow 0.3s, transform 0.3s;
         padding: 0px 10px;
-        box-shadow: -3px 4px 5px -1px rgb(0 0 0 / 16%), -10px 10px 12px 5px rgb(0 0 0 / 10%), inset -35px 35px 48px rgb(0 0 0 / 2%);
+        box-shadow: -3px 4px 5px -1px rgb(0 0 0 / 16%), -10px 0px 12px 5px rgb(0 0 0 / 10%), inset -35px 35px 48px rgb(0 0 0 / 2%);
         justify-content: center;
         display: flex;
         vertical-align: middle;

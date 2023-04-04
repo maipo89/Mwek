@@ -2,7 +2,7 @@
     <div class="meet-the-team">
         <div class="meet-the-team__container">
             <h2>MEET THE TEAM</h2>
-            <VueSlickCarousel @beforeChange="currentSlide" :waitForAnimate="true" :infinite="true" :speed="1000" :initialSlide="this.blockData.TeamCubesSlider.length / 2" :arrows="false" :dots="this.doWeHaveDots" :centerMode="true" centerPadding="0px" :slidesToShow="this.slideNumber" :slidesToScroll="1" :focusOnSelect="false" ref="carousel">
+            <VueSlickCarousel @afterChange="changeSlide" @beforeChange="currentSlide" :waitForAnimate="true" :infinite="true" :speed="1000" :initialSlide="this.blockData.TeamCubesSlider.length / 2" :arrows="false" :dots="this.doWeHaveDots" :centerMode="true" centerPadding="0px" :slidesToShow="this.slideNumber" :slidesToScroll="1" :focusOnSelect="true" ref="carousel">
                 <div v-for="(item, index) in this.blockData.TeamCubesSlider" :key="index" class="meet-the-team__slide">
                     <TeamCube :teamInfo="item" :activeCube="currentIndex" :teamIndex="index" :totalTeam="blockData.TeamCubesSlider.length"/>
                 </div>
@@ -42,39 +42,60 @@
         },
         methods: {
             nextItem(){
-                if(this.currentIndex < this.blockData.TeamCubesSlider.length - 1){
+                // if(this.currentIndex < this.blockData.TeamCubesSlider.length - 1){
                     
-                    if(this.canClick == true ){
-                        this.$refs.carousel.next();
-                    }
-                    this.canClick = false;
-                }
-                var thisContext = this;
-                setTimeout(function(){
-                    //code goes here
-                    thisContext.canClick = true;
-                }, 2000);//Time before execution
+                //     if(this.canClick == true ){
+                //         this.$refs.carousel.next();
+                //     }
+                //     this.canClick = false;
+                // }
+                // var thisContext = this;
+                // setTimeout(function(){
+                //     //code goes here
+                //     thisContext.canClick = true;
+                // }, 2000);//Time before execution
+                this.$refs.carousel.next();
             },
             prevItem(){
-                if(this.currentIndex > 0 ){
-                    if(this.canClick == true ){
-                        this.$refs.carousel.prev();
-                    }
-                    this.canClick = false;
-                }
+                // if(this.currentIndex > 0 ){
+                //     if(this.canClick == true ){
+                //         this.$refs.carousel.prev();
+                //     }
+                //     this.canClick = false;
+                // }
 
-                var thisContext = this;
+                // var thisContext = this;
                 
-                setTimeout(function(){
-                    //code goes here
-                    thisContext.canClick = true;
-                }, 2000); //Time before execution
+                // setTimeout(function(){
+                //     //code goes here
+                //     thisContext.canClick = true;
+                // }, 2000); //Time before execution
+                this.$refs.carousel.prev();
             },
-            currentSlide(slideIndex,nextIndex){
+            currentSlide(slideIndex, nextIndex){
                 console.log('slideIndex',slideIndex);
                 console.log('nextIndex', nextIndex)
                 this.currentIndex = nextIndex;
+                //     if (slideIndex !== nextIndex) {
+                //         document.querySelectorAll('.slick-current + .slick-cloned').forEach((next) => {
+                //             setTimeout(() => next.classList.add('slick-center', 'slick-current'));
+                //         });
+                //     }
+                let nextIndex2 = slideIndex + 1; // assume moving right
+                if(slideIndex-1 == nextIndex || (slideIndex == 0 && nextIndex == (this.blockData.TeamCubesSlider.length - 1) && slideIndex < nextIndex)) {
+                    nextIndex2 = slideIndex - 1; // nope, moving left
+                }
+                console.log(nextIndex2)
+                document.querySelectorAll(`[data-index="${nextIndex2}"]`).forEach((data) => {
+                    setTimeout(() => data.classList.add('slick-target'))
+                });
+            },
+            changeSlide() {
+                document.getElementsByClassName('slick-slide').forEach((data) => {
+                   setTimeout(() => data.classList.remove('slick-target'))
+                });
             }
+
         },
         beforeMount(){
             require('@/assets/scss/explore/meet-the-team.scss');

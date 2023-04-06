@@ -1,5 +1,5 @@
 <template>
-    <div class="contact-footer">
+    <div ref="contact" class="contact-footer">
         <h2> {{ this.contactItems.data.attributes.ContactInfo.title }} </h2>
         <!-- <p> {{ this.contactItems.data.attributes.ContactInfo.content }} </p> -->
         <vue-markdown> {{ this.contactItems.data.attributes.ContactInfo.content }} </vue-markdown>
@@ -39,13 +39,15 @@
 	
 </div>
 <div class="mc-field-group mail-chimp__select">
-	<select name="MMERGE3" class="" id="mce-MMERGE3">
+    <input name="MMERGE3" class="" id="mce-MMERGE3">
+    <DropDown @dropdownEvent="selectedCat($event)" :options="cats" />
+	<!-- <select name="MMERGE3" class="" id="mce-MMERGE3">
         <option disabled hidden>Subject</option>
         <option value="Candidate">Candidate</option>
         <option value="Client">Client</option>
         <option value="Work With Us">Work With Us</option>
 	</select>
-    <span class="chevron"></span>
+    <span class="chevron"></span> -->
 	<span id="mce-MMERGE3-HELPERTEXT" class="helper_text"></span>
 </div>
 	<!-- <div id="mce-responses" class="clear foot">
@@ -168,6 +170,8 @@
 </template>
 
 <script>
+    import gsap from "gsap"
+    import ScrollTrigger from "gsap/ScrollTrigger";
     import VueMarkdown from 'vue-markdown'
     export default {
         name: 'ContactFooter',
@@ -191,6 +195,19 @@
         },
         mounted(){
             console.log('this.contactItems', this.contactItems);
+            
+            gsap.set(this.$refs.contact, {opacity:0, y: 50})
+            gsap.to(this.$refs.contact, {
+                scrollTrigger: {
+                    trigger: this.$refs.contact,
+                    start: "top-=200px 50%",
+                    end: "bottom-=-50px 50%",
+                    scroller: "#page-modal",
+                    onEnter: () => { gsap.to(this.$refs.contact, {opacity: 1, y: 0}) },
+                    onLeave: () => { gsap.to(this.$refs.contact, {opacity: 0, y: -50}) },
+                    onEnterBack: () => { gsap.to(this.$refs.contact, {opacity: 1, y: 0}) },
+                }
+            });
         },
         methods: {
             go() {
@@ -200,6 +217,9 @@
                     subject: this.formData.subject,
                     text: ' email: ' + this.formData.email + '  name: ' + this.formData.name + ' tel: ' +  this.formData.tel 
                 })
+            },
+            selectedCat(cat) {
+                document.getElementById("mce-MMERGE3").value = cat;
             },
             getValue(event, type){
                 console.log(event);

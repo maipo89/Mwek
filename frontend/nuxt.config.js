@@ -5,7 +5,8 @@ export default {
      host: '0.0.0.0', // default: localhost
      port: 3000,
   },
-  target: 'static',
+  ssr: true,
+  mode: 'universal',
   head: {
     titleTemplate: 'Mwek',
     title: 'Mwek',
@@ -121,7 +122,7 @@ export default {
   // },
   // // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['gsap'],
+    transpile: ['gsap', 'three'],
     // standalone: true
   }
 }

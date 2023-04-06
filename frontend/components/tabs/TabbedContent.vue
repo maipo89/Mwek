@@ -1,5 +1,5 @@
 <template>
-    <div class="tabbed-content">
+    <div ref="tabbed" class="tabbed-content">
         <h2>{{ this.blockData.title }}</h2>
         <p class='tabbed-content__sub-title'>{{ this.blockData.subTitle }}</p>
         <div v-if="this.isDeskTop" class="tabbed-content__container">
@@ -114,6 +114,8 @@
 </template>
 
 <script>
+    import gsap from "gsap"
+    import ScrollTrigger from "gsap/ScrollTrigger";
     import VueSlickCarousel from 'vue-slick-carousel'
     import 'vue-slick-carousel/dist/vue-slick-carousel.css'
     // optional style for arrows & dots
@@ -159,6 +161,20 @@
             if(w < 800){
                 this.isDeskTop = false
             }
+
+            gsap.set(this.$refs.tabbed, {opacity:0, y: 50})
+            gsap.to(this.$refs.tabbed, {
+                scrollTrigger: {
+                    trigger: this.$refs.tabbed,
+                    start: "top-=250px 50%",
+                    end: "bottom-=-320px 50%",
+                    scroller: "#page-modal",
+                    onEnter: () => { gsap.to(this.$refs.tabbed, {opacity: 1, y: 0}) },
+                    onLeave: () => { gsap.to(this.$refs.tabbed, {opacity: 0, y: -50}) },
+                    onEnterBack: () => { gsap.to(this.$refs.tabbed, {opacity: 1, y: 0}) },
+                }
+            });
+
         }
 
     }

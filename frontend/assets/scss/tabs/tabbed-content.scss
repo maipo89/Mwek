@@ -95,7 +95,7 @@
             }
         }
         &.active{
-            box-shadow: -3px 4px 5px rgba(0, 0, 0, 0.16), -10px 10px 12px rgba(0, 0, 0, 0.1), inset -35px 35px 48px rgba(0, 0, 0, 0.02);
+            box-shadow: -3px 4px 5px rgba(0, 0, 0, 0.16), -10px 10px 12px rgba(0, 0, 0, 0.1), -30px -10px 0px -64px rgba(0, 0, 0, 0.02);
             .button{
                 transform: translateY(0px);
                 transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
@@ -170,7 +170,7 @@
         background-color: #fff;
         border-radius: 15px;
         overflow: hidden;
-        box-shadow: -3px 6px 5px rgba(0, 0, 0, 0.16), -10px 10px 12px rgba(0, 0, 0, 0.1), inset -35px 35px 48px rgba(0, 0, 0, 0.02);
+        box-shadow: -3px 6px 5px rgba(0, 0, 0, 0.16), -13px 19px 15px rgba(0, 0, 0, 0.1), 0px 0px 0px 0px rgba(0, 0, 0, 0);
     }
     &__content{
         height: 0%;

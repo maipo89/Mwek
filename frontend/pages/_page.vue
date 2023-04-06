@@ -3,7 +3,6 @@
     <h1 class="page-content__title">{{ this.pageContent.title }}</h1>
     <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
     <ContactFooter :contactItems="this.contactDetails"/>
-    <BackButton />
     <!-- <OnqorSEO :seoData="this.pageContent.seo" /> -->
   </div>
 </template>

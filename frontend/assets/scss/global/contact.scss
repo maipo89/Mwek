@@ -82,11 +82,11 @@
     }
     &__social{
         background: #FFFFFF;
-        max-width: 452px;
+        max-width: 455px;
         width: 100%;
         // min-height: 297px;
-        min-height: 478px;
-        height: auto;
+        // min-height: 478px;
+        height: 100%;
         box-shadow: -3px 4px 5px -1px rgb(0 0 0 / 16%), -10px 10px 12px 5px rgb(0 0 0 / 10%), inset -35px 35px 48px rgb(0 0 0 / 2%);
         border-radius: 15px;
         position: relative;
@@ -94,11 +94,16 @@
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
+        padding: 0px 57px;
         a {
             text-decoration: none;
+            @media (max-width: 550px) {
+                width: 62px;
+            }
         }
         @media (max-width: 550px) {
             box-shadow: none;
+            padding: 0px 30px;
         }
         h4{
             position: absolute;
@@ -114,17 +119,18 @@
             color: #07134D;
         }
         .social-item{
-            width: 50%;
-            height: 50%;
+            // width: 50%;
+            // height: 50%;
             
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            margin-bottom: 47px;
             @media (max-width: 550px) {
-                width: 100%;
+                // width: 100%;
                 height: fit-content;
-                margin-bottom: 25px;
+                margin-bottom: 36px;
                 display: flex;
                 flex-direction: row;
                 // justify-content: start;
@@ -150,7 +156,7 @@
                 vertical-align: middle;
                 box-shadow: -3px 4px 5px -1px rgba(0, 0, 0, 0.05), -7px 7px 12px 5px rgba(0, 0, 0, 0.04), inset -35px 35px 48px rgba(0, 0, 0, 0.02);
                 border-radius: 16px;
-                margin: 0 auto 10px auto;
+                // margin: 0 auto 10px auto;
                 transition: box-shadow 0.3s, transform 0.3s;
                 @media (max-width: 550px) {
                     // margin: 0 20px 15px 0;
@@ -160,6 +166,7 @@
                 color:#07134D;
                 font-weight: 400;
                 font-size: 16px;
+                display: none;
             }
         }
     }

@@ -62,12 +62,16 @@
             color:#07134D !important;
             text-decoration: none;
         }
+        
         &:hover{
             .header__item-dropdown{
                 opacity: 1;
                 transform: scale(1);
                 pointer-events: all;
                 transition: all 0.7s;
+            }
+            .header__underline {
+                opacity: 1;
             }
         }
     }

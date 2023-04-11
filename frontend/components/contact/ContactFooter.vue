@@ -56,7 +56,7 @@
 	</div>    real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3e8952cdbfd254ece0219f7f1_3ba2eb2185" tabindex="-1" value=""></div>
             <!-- <div class="clear foot"> -->
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                <input type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="button">
                 <p class="brandingLogo"><a href="http://eepurl.com/ifahbH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
             <!-- </div> -->
     </div>
@@ -201,7 +201,6 @@
                 scrollTrigger: {
                     trigger: this.$refs.contact,
                     start: "top-=200px 50%",
-                    end: "bottom-=-50px 50%",
                     scroller: "#page-modal",
                     onEnter: () => { gsap.to(this.$refs.contact, {opacity: 1, y: 0}) },
                     onLeave: () => { gsap.to(this.$refs.contact, {opacity: 0, y: -50}) },

@@ -24,7 +24,7 @@
                             <TypeText v-if="this.loadComplete" text="Complete" />
                             <TypeText v-if="this.loadInProcess && this.loadComplete != true" text="Loading..." />
                         </p>
-                        <p> <TypeText v-if="this.loadInProcess" text="please fasten your seat belt and prepare for landing" /></p>
+                        <!-- <p> <TypeText v-if="this.loadInProcess" text="please fasten your seat belt and prepare for landing" /></p> -->
                     </div>
 
                 </div>
@@ -54,8 +54,8 @@
                 </div>
             </div>
         </div>
-        <div class="clouds">
-        
+        <div alt="clouds" class="clouds">
+            <div alt="single cloud"></div>
         </div>
     </div>
 </template>
@@ -143,6 +143,9 @@
         },
 
         mounted(){
+            setTimeout(function () { 
+                this.animationStep = 'step-1'
+            }.bind(this), 50)
             setTimeout(function () { 
                 this.textStep = 2
                 this.welcome();

@@ -84,12 +84,12 @@
 
                 const clouds = setTimeout(function () { 
                     this.animationStep = 'step-2' 
-                }.bind(this), 1000, clearTimeout(clouds))
+                }.bind(this), 500, clearTimeout(clouds))
                 this.animationStep = 'step-2' 
                 const loader = setTimeout(function () { 
                     this.loadInProcess = true
                     this.loader();
-                }.bind(this), 2000, clearTimeout(loader))
+                }.bind(this), 1000, clearTimeout(loader))
             },
 
             async loader(){

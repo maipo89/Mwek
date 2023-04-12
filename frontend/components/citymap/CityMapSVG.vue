@@ -45,7 +45,7 @@
 
             
 
-            var grid = new PIXI.Sprite.from('/images/grid.png');
+            var grid = new PIXI.Sprite.from('/images/grid-extended.png');
             var road = new PIXI.Sprite.from('/images/Road.png');
             
 
@@ -146,21 +146,23 @@
 
             graphics.beginFill(0xFF3300);
             graphics.moveTo(-901.0654907226562, 17.634735107421875);
-            graphics.lineTo(-901.0654907226562, 17.634735107421875);
-            graphics.lineTo(-883.7482299804688, 25.636749267578125);
-            graphics.lineTo(-866.5794982910156, 18.238006591796875);
-            graphics.lineTo(-855.6791381835938, -81.5133056640625);
+            graphics.lineTo(-901.0654907226562, 16.634735107421875);
+            graphics.lineTo(-886.7482299804688, 24.636749267578125);
+            graphics.lineTo(-878.7482299804688, 24.636749267578125);
+            graphics.lineTo(-865.5794982910156, 17.238006591796875);
+            graphics.lineTo(-864.6791381835938, -90.5133056640625);
             graphics.lineTo(-960.2760314941406, -80.58369445800781);
             graphics.closePath();
             graphics.endFill();
 
 
             graphics.beginFill(0xFF3300);
-            graphics.moveTo(-818.852294921875,-13.5172119140625);
-            graphics.lineTo(-818.852294921875, -13.5172119140625);
-            graphics.lineTo(-798.6113586425781, -4.33544921875);
+            graphics.moveTo(-818.852294921875,-12.5272119140625);
+            graphics.lineTo(-818.6513586425781, -11.9172119140625);
+            graphics.lineTo(-795.6513586425781, -1.99004921875);
+            graphics.lineTo(-796.6113586425781, -1.99004921875);
             // -708.7968139648438/91.99664306640625
-            graphics.lineTo(-778.0056762695312,-13.44464111328125);
+            graphics.lineTo(-778.0056762695312,-12.525464111328125);
             // -673.2498779296875/-47.036376953125
             graphics.lineTo(-735.6103515625, -83.43841552734375);
             // -739.8705444335938/-39.6455078125
@@ -171,9 +173,9 @@
 
             graphics.beginFill(0xFF3300);
             graphics.moveTo(-859.4706420898438, 95.49444580078125);
-            graphics.lineTo(-859.4706420898438, 95.49444580078125);
-            graphics.lineTo(-839.7219543457031, 107.5313720703125);
-            graphics.lineTo(-822.0023803710938, 98.55548095703125);
+            graphics.lineTo(-864.4706420898438, 95.49444580078125);
+            graphics.lineTo(-840.9519543457031, 107.9293720703125);
+            graphics.lineTo(-821.0023803710938, 95.49444580078125);
             // graphics.lineTo(-829.491455078125, -130.9113006591797);
 
             graphics.lineTo(-827.9432983398438, -62.67083740234375);
@@ -593,13 +595,13 @@
             ThreeTowerTwo.anchor.set(0.5, 0.5);
             ThreeTowerThree.anchor.set(0.5, 0.5);
 
-            ThreeTowerOne.x = -883.4754333496094;
+            ThreeTowerOne.x = -882.4754333496094;
             ThreeTowerOne.y = 25.12579345703125;
 
-            ThreeTowerTwo.x = -839.5823669433594;
+            ThreeTowerTwo.x = -841.8823669433594;
             ThreeTowerTwo.y = 106.00119018554688;
 
-            ThreeTowerThree.x = -798.8314208984375;
+            ThreeTowerThree.x = -796.8314208984375;
             ThreeTowerThree.y = -3.14556884765625;
     
             var threeTowersUp = [ true, true, true ];

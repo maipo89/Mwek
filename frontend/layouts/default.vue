@@ -6,7 +6,8 @@
         <Header v-on:page-open="headerAction()" :theActiveHeader="this.activeHeader" v-on:goMap="backToMap()" v-on:customLink="customRoute($event)" />
         <div :class="[this.pageState, this.thePageClass]">
           <div class="drag-map" > 
-            <div class="drag-map__background"></div>
+            <div class="drag-map__background">
+            </div>
             <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" />
           </div>
           <div class="page-modal__container" >

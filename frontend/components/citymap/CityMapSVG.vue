@@ -1709,7 +1709,7 @@
             trainMask.closePath();
             trainMask.endFill();
 
-            var trainSprite = new PIXI.Sprite.from('/images/travel/Train.png'); 
+            var trainSprite = new PIXI.Sprite.from('/images/travel/TrainNew.png'); 
             mapCont.addChild(trainMask);
             mapCont.addChild(trainSprite);
 

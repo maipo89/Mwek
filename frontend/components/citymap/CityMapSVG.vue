@@ -39,7 +39,7 @@
             this.$refs.cityMap.appendChild(app.view);
             
             var mapCont = new PIXI.Container();
-            var map = new PIXI.Sprite.from('/images/LightCity.png');
+            var map = new PIXI.Sprite.from('/images/LightCityFinal.png');
             var carOne = new PIXI.Sprite.from('/images/travel/Car.png');
             var carTwo = new PIXI.Sprite.from('/images/travel/CarRight.png');
 
@@ -1667,30 +1667,24 @@
             const trainMask = new PIXI.Graphics();
 
             trainMask.beginFill(0xFF3300);
-            trainMask.moveTo(1046.7266540527344, 346.1871337890625);
-            trainMask.lineTo(1046.7266540527344, 346.1871337890625);
-            trainMask.lineTo(1049.8683776855469, 431.642578125);
-            trainMask.lineTo(1391.0827331542969,233.0439453125);
-            trainMask.lineTo(1380.5284118652344,150.95303344726562);
-            trainMask.lineTo(1379.2408142089844, 103.72048950195312);
-            trainMask.lineTo(1375.15380859375, 91.28890991210938);
-            trainMask.lineTo(1369.415771484375, 81.84686279296875);
-            trainMask.lineTo(1354.9913330078125, 70.374267578125);
-            trainMask.lineTo(1346.06396484375, 68.22171020507812);
-            trainMask.lineTo(1339.8720092773438, 68.5697021484375);
-            trainMask.lineTo(994.5461883544922, 146.2039794921875);
-            trainMask.lineTo(995.2911682128906, 205.07476806640625);
-            trainMask.lineTo(1004.5848388671875, 227.98284912109375);
-            trainMask.lineTo(1022.6422729492188, 247.77532958984375);
-            trainMask.lineTo(1043.3096923828125, 261.4684600830078)
+            trainMask.moveTo(1040.7266540527344, 156.1871337890625);
+            trainMask.lineTo(1040.7266540527344, 380.1871337890625);
+            trainMask.lineTo(1415.1871337890625, 150.1871337890625);
+            trainMask.lineTo(1415.1871337890625, 88.1871337890625);
+            trainMask.lineTo(1410.0827331542969,76.0439453125);
+            trainMask.lineTo(1400.0827331542969,66.0439453125);
+            trainMask.lineTo(1396.0827331542969,65.0439453125);
+            trainMask.lineTo(1391.0827331542969,63.0439453125);
             trainMask.closePath();
             trainMask.endFill();
             trainMask.alpha = 0.5;
 
             trainMask.beginFill(0xFF3300);
-            trainMask.moveTo(293.5160827636719, 776.6109008789062);
-            trainMask.lineTo(293.5160827636719, 776.6109008789062);
-            trainMask.lineTo(305.20233154296875, 862.6501159667969);
+            trainMask.moveTo(83.5160827636719, 776.6109008789062);
+            trainMask.lineTo(122.5160827636719, 780.6109008789062);
+            trainMask.lineTo(138.20233154296875, 802.6501159667969);
+            trainMask.lineTo(141.301494140625, 830.6501159667969);
+            trainMask.lineTo(141.301494140625, 890.6501159667969);
             trainMask.lineTo(997.68017578125, 463.7853088378906);
             trainMask.lineTo(992.8050689697266, 375.1382598876953);
             trainMask.lineTo(990.1568756103516, 343.4243927001953);
@@ -1700,12 +1694,6 @@
             trainMask.lineTo(963.3096313476562, 285.29217529296875);
             trainMask.lineTo(945.2364349365234, 283.92271423339844);
             trainMask.lineTo(896.7702026367188, 152.20428466796875);
-            trainMask.lineTo(234.44256591796875, 481.84521484375);
-            trainMask.lineTo(249.781494140625, 693.6345520019531);
-            trainMask.lineTo(260.9775390625, 693.7068481445312);
-            trainMask.lineTo(270.8173828125, 697.9822387695312);
-            trainMask.lineTo(280.01849365234375,705.011474609375);
-            trainMask.lineTo(289.058349609375, 717.2817993164062)
             trainMask.closePath();
             trainMask.endFill();
 

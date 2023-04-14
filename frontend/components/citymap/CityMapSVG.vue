@@ -1744,14 +1744,14 @@
             longRoadMiddle.lineTo(853.3160095214844, -498.83363342285156);
             longRoadMiddle.lineTo(820.48095703125, -501.2552490234375);
             longRoadMiddle.lineTo(789.2232055664062, -517.4708938598633);
-            longRoadMiddle.lineTo(-1394.6335525512695, 751.6460266113281);
-            longRoadMiddle.lineTo(-1378.745834350586, 775.7689208984375);
-            longRoadMiddle.lineTo(-1372.6831512451172, 781.3613891601562);
-            longRoadMiddle.lineTo(-1366.2870635986328, 792.6642303466797)
+            longRoadMiddle.lineTo(-1393.6335525512695, 752.6460266113281);
+            longRoadMiddle.lineTo(-1384.745834350586, 774.7689208984375);
+            longRoadMiddle.lineTo(-1382.6831512451172, 775.3613891601562);
+            longRoadMiddle.lineTo(-1370.2870635986328, 792.6642303466797)
             longRoadMiddle.closePath();
-            longRoadMiddle.endFill();
+            longRoadMiddle.endFill(); 
             longRoadMiddle.beginFill(0xDE3249);
-            longRoadMiddle.drawEllipse(849.2140808105469, -513.9751434326172, 37, 40);
+            longRoadMiddle.drawEllipse(857.2140808105469, -512.9751434326172, 37, 40);
             longRoadMiddle.endFill();
 
             longRoadMiddle.alpha = 0.5;
@@ -1797,12 +1797,12 @@
             shortRoadBottom.lineTo(-1394.302635192871, 359.9481964111328);
             shortRoadBottom.lineTo(-1045.843635559082, 579.9631500244141);
             shortRoadBottom.lineTo(-358.0672607421875, 961.3894653320312);
-            shortRoadBottom.lineTo(-330.32061767578125, 933.7210693359375);
-            shortRoadBottom.lineTo(-328.15240478515625, 922.892578125);
-            shortRoadBottom.lineTo(-324.99981689453125, 916.7632141113281);
+            shortRoadBottom.lineTo(-326.32061767578125, 933.7210693359375);
+            shortRoadBottom.lineTo(-324.15240478515625, 922.892578125);
+            shortRoadBottom.lineTo(-321.99981689453125, 916.7632141113281);
             shortRoadBottom.lineTo(-318.84393310546875, 908.7159423828125);
-            shortRoadBottom.lineTo(-308.822265625, 897.5801391601562);
-            shortRoadBottom.lineTo(-305.0225830078125, 893.5647277832031);
+            shortRoadBottom.lineTo(-312.822265625, 897.5801391601562);
+            shortRoadBottom.lineTo(-310.0225830078125, 893.5647277832031);
             shortRoadBottom.lineTo(-280.1514892578125, 868.9535369873047);
             shortRoadBottom.lineTo(-1272.419906616211, 273.8785095214844)
             shortRoadBottom.closePath();
@@ -1811,7 +1811,7 @@
             shortRoadBottom.alpha = 0.7;
 
             shortRoadBottom.beginFill(0xDE3249);
-            shortRoadBottom.drawEllipse(-1350, 287.82464599609375, 37, 40);
+            shortRoadBottom.drawEllipse(-1360, 296.82464599609375, 37, 40);
             shortRoadBottom.endFill();
 
             mapCont.addChild(shortRoadBottom);

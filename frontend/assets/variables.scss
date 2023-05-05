@@ -254,6 +254,7 @@ html {
 @import "./scss/UI/back-button.scss";
 
 @import "./scss/dragmap.scss";
+@import "./scss/popup.scss";
 @import "./scss/footer.scss";
 @import "./scss/header.scss";
 
@@ -376,6 +377,7 @@ html {
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
+    display: none;
     &__button{
         font-family: "Montserrat";
         font-style: normal;

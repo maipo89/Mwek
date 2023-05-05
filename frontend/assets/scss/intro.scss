@@ -152,6 +152,10 @@
            background-position: center center;
            background-size: contain;
         }
+
+        @media (max-width: 450px) {
+            height: 600vh;
+        }
     }
     .step-one{
         transform: translateY(0px);

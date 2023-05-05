@@ -1,21 +1,13 @@
 <template>
     <div class="city-map-svg" ref="cityMap">
-        <div :class="this.mapPrompt" class="city-map-svg__prompt">
-            <img src="/images/mapPrompt.png" />
-            <p>
-                Welcome to MWEK city, use your mouse to take a look around. Many of our buildings and scenery are interactive. Enjoy!
-            </p>
-            <div class="city-map-svg__prompt-close" v-on:click="closePrompt()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <rect x="15.6521" width="3.32033" height="22.1355" rx="1.66016" transform="rotate(45 15.6521 0)" fill="#07134D"/>
-                <rect y="2.34766" width="3.32033" height="22.1355" rx="1.66016" transform="rotate(-45 0 2.34766)" fill="#07134D"/>
-                </svg>
-            </div>
-        </div>
     </div>
 </template>
 
 <script>
+    import gsap from 'gsap';
+    import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
+
+    gsap.registerPlugin(MotionPathPlugin);
     // import { Sprite } from 'three';
     // import * as PIXI from 'pixi.js'
     export default {
@@ -23,14 +15,10 @@
 
         data(){ 
             return {
-                clickPosition: '',
-                mapPrompt: 'open'
+                clickPosition: ''
             }
         },  
         methods: {
-            closePrompt(){
-                this.mapPrompt = 'closed';
-            }
         },
         async mounted(){
             var thisContext = this;
@@ -42,30 +30,96 @@
             var map = new PIXI.Sprite.from('/images/LightCityFinal.png');
             var carOne = new PIXI.Sprite.from('/images/travel/Car.png');
             var carTwo = new PIXI.Sprite.from('/images/travel/CarRight.png');
+            var carThree = new PIXI.Sprite.from('/images/travel/CarRight.png');
 
             
 
             var grid = new PIXI.Sprite.from('/images/grid-extended.png');
             var road = new PIXI.Sprite.from('/images/Road.png');
-            
 
+
+            var carOnePath = new PIXI.Graphics()
+            // .lineStyle(2, 0xaaaaaa, 1)
+            .moveTo(1030.6671447753906, -590.2612762451172)
+            .lineTo(-1460.6444091796875, 852.155029296875)
+
+            var values = [{x: 1030.6671447753906, y: -590.2612762451172}, {x: -1460.6444091796875, y: 852.155029296875}]
+
+            carOne.x = 1030.6671447753906;
+            carOne.y = -590.2612762451172;
             carOne.width = 50;
             carOne.height = 50;
-            carOne.anchor.set(0.5,0.5);
-            carOne.x = 948.6671447753906;
-            carOne.y = -534.2612762451172;
+            carOne.anchor.set(0.5);
+            carOne.pivot.set(0.5);
+            carOne.scale.set(0.5);
 
+            const tween = gsap.timeline();
+
+            tween.to(carOne, 30, {
+                motionPath: { 
+                    path: values,
+                    curviness: 0
+                },
+                ease: 'none',
+                repeat: -1,
+                yoyo: false
+            });
+
+            var carTwoPath = new PIXI.Graphics()
+            // .lineStyle(2, 0xaaaaaa, 1)
+            .moveTo(-1453.7776641845703, 255.0702209472656)
+            .lineTo(-214.26077270507812, 976.0693359375)
+
+            var valuesCarTwo = [{x: -1453.7776641845703, y: 255.0702209472656}, {x: -214.26077270507812, y: 976.0693359375}]
 
             carTwo.x = -1453.7776641845703;
-            carTwo.y = 259.0702209472656
-            carTwo.anchor.set(0.5,0.5);
+            carTwo.y = 259.0702209472656;
+            carTwo.anchor.set(0.5);
+            carTwo.pivot.set(0.5);
+            carTwo.scale.set(0.5);
             carTwo.width = 50;
             carTwo.height = 50;
 
+            tween.to(carTwo, 20, {
+                motionPath: { 
+                    path: valuesCarTwo,
+                    curviness: 0
+                },
+                ease: 'none',
+                repeat: -1,
+                yoyo: false
+            }, 0);
+
+            var carThreePath = new PIXI.Graphics()
+            // .lineStyle(2, 0xaaaaaa, 1)
+            .moveTo(-190.26077270507812, -1025.0693359375)
+            .lineTo(1500.7776641845703, -47.0702209472656)
+
+            var valuesCarThree = [{x: -190.26077270507812, y: -1025.0693359375}, {x: 1500.7776641845703, y: -47.0702209472656}]
+
+            carThree.x = -190.26077270507812;
+            carThree.y = -1025.0693359375;
+            carThree.anchor.set(0.5);
+            carThree.pivot.set(0.5);
+            carThree.scale.set(0.5);
+            carThree.width = 50;
+            carThree.height = 50;
+
+            tween.to(carThree, 20, {
+                motionPath: { 
+                    path: valuesCarThree,
+                    curviness: 0
+                },
+                ease: 'none',
+                repeat: -1,
+                yoyo: false
+            }, 0);
+
             mapCont.addChild(grid);
             mapCont.addChild(road);
-            mapCont.addChild(carOne);
-            mapCont.addChild(carTwo);
+            mapCont.addChild(carOnePath, carOne);
+            mapCont.addChild(carTwoPath, carTwo);
+            mapCont.addChild(carThreePath, carThree);
             mapCont.addChild(map);
 
 
@@ -145,10 +199,11 @@
             // the three towers mask
 
             graphics.beginFill(0xFF3300);
-            graphics.moveTo(-901.0654907226562, 17.634735107421875);
-            graphics.lineTo(-901.0654907226562, 16.634735107421875);
-            graphics.lineTo(-886.7482299804688, 24.636749267578125);
-            graphics.lineTo(-878.7482299804688, 24.636749267578125);
+            graphics.moveTo(-899.0654907226562, 17.634735107421875);
+            // graphics.lineTo(-901.0654907226562, 16.634735107421875);
+            // graphics.lineTo(-886.7482299804688, 24.636749267578125);
+            graphics.lineTo(-887.5482299804688, 24.636749267578125);
+            graphics.lineTo(-878.9482299804688, 24.636749267578125);
             graphics.lineTo(-865.5794982910156, 17.238006591796875);
             graphics.lineTo(-864.6791381835938, -90.5133056640625);
             graphics.lineTo(-960.2760314941406, -80.58369445800781);
@@ -158,11 +213,12 @@
 
             graphics.beginFill(0xFF3300);
             graphics.moveTo(-818.852294921875,-12.5272119140625);
-            graphics.lineTo(-818.6513586425781, -11.9172119140625);
-            graphics.lineTo(-795.6513586425781, -1.99004921875);
-            graphics.lineTo(-796.6113586425781, -1.99004921875);
+            // graphics.lineTo(-818.6513586425781, -11.9172119140625);
+            // graphics.lineTo(-795.6513586425781, -1.99004921875);
+            graphics.lineTo(-802.6113586425781, -3.99004921875);
+            graphics.lineTo(-792.6113586425781, -3.99004921875);
             // -708.7968139648438/91.99664306640625
-            graphics.lineTo(-778.0056762695312,-12.525464111328125);
+            graphics.lineTo(-778.0056762695312,-11.525464111328125);
             // -673.2498779296875/-47.036376953125
             graphics.lineTo(-735.6103515625, -83.43841552734375);
             // -739.8705444335938/-39.6455078125
@@ -174,7 +230,8 @@
             graphics.beginFill(0xFF3300);
             graphics.moveTo(-859.4706420898438, 95.49444580078125);
             graphics.lineTo(-864.4706420898438, 95.49444580078125);
-            graphics.lineTo(-840.9519543457031, 107.9293720703125);
+            graphics.lineTo(-845.9519543457031, 105.9293720703125);
+            graphics.lineTo(-837.9519543457031, 105.9293720703125);
             graphics.lineTo(-821.0023803710938, 95.49444580078125);
             // graphics.lineTo(-829.491455078125, -130.9113006591797);
 
@@ -1669,12 +1726,12 @@
             trainMask.beginFill(0xFF3300);
             trainMask.moveTo(1040.7266540527344, 156.1871337890625);
             trainMask.lineTo(1040.7266540527344, 380.1871337890625);
-            trainMask.lineTo(1415.1871337890625, 150.1871337890625);
-            trainMask.lineTo(1415.1871337890625, 88.1871337890625);
-            trainMask.lineTo(1410.0827331542969,76.0439453125);
-            trainMask.lineTo(1400.0827331542969,66.0439453125);
-            trainMask.lineTo(1396.0827331542969,65.0439453125);
-            trainMask.lineTo(1391.0827331542969,63.0439453125);
+            trainMask.lineTo(1424.3871337890625, 126.1871337890625);
+            trainMask.lineTo(1424.3871337890625, 78.1871337890625);
+            trainMask.lineTo(1420.0827331542969, 65.5439453125);
+            trainMask.lineTo(1415.0827331542969, 58.0439453125);
+            trainMask.lineTo(1410.0827331542969, 53.0439453125);
+            trainMask.lineTo(1400.0827331542969, 50.0439453125);
             trainMask.closePath();
             trainMask.endFill();
             trainMask.alpha = 0.5;
@@ -1763,28 +1820,28 @@
             // carOne.x = 948.6671447753906;
             // carOne.y = -574.2612762451172
             
-            app.carOneMove = function(){
-                if(carOne.x > -1479.6444091796875){
-                    carOne.x = carOne.x - (1 * 3);
-                    carOne.alpha = 1;
-                }
+            // app.carOneMove = function(){
+            //     if(carOne.x > -1479.6444091796875){
+            //         carOne.x = carOne.x - (1 * 3);
+            //         carOne.alpha = 1;
+            //     }
 
-                if(carOne.y < 865.155029296875){
-                    carOne.y = carOne.y + (0.57 * 3);
-                }
+            //     if(carOne.y < 865.155029296875){
+            //         carOne.y = carOne.y + (0.57 * 3);
+            //     }
 
-                if(carOne.y > 865.155029296875 & carOne.x < -1479.6444091796875){
-                    // carOne.alpha = 0;
+            //     if(carOne.y > 865.155029296875 & carOne.x < -1479.6444091796875){
+            //         // carOne.alpha = 0;
 
-                    setTimeout(function(){
-                        //code goes here
-                        carOne.x = 948.6671447753906;
-                        carOne.y = -534.2612762451172
-                    }, 1000); 
-                }
-            }
+            //         setTimeout(function(){
+            //             //code goes here
+            //             carOne.x = 948.6671447753906;
+            //             carOne.y = -534.2612762451172
+            //         }, 1000); 
+            //     }
+            // }
 
-            app.ticker.add(app.carOneMove);
+            // app.ticker.add(app.carOneMove);
 
 
             // road short bottom
@@ -1818,30 +1875,56 @@
 
             carTwo.mask = shortRoadBottom;
 
+            
+            // road short top
 
-            app.carTwoMove = function(){
+            const shortRoadTop = new PIXI.Graphics();
 
-                if(carTwo.x < -214.26077270507812){
-                    carTwo.x = carTwo.x + (1 * 3);
-                    carTwo.alpha = 1;
-                }
+            shortRoadTop.beginFill(0xFF3300);
+            shortRoadTop.moveTo(-95.26077270507812, -1005.0693359375);
+            shortRoadTop.lineTo(-113.8577270507812, -955.3817596435547);
+            shortRoadTop.lineTo(1362.7776641845703, -102.0702209472656);
+            shortRoadTop.lineTo(1365.7776641845703, -110.0702209472656);
+            shortRoadTop.lineTo(1375.7776641845703, -126.0702209472656);
+            shortRoadTop.lineTo(1385.7776641845703, -135.0702209472656);
+            shortRoadTop.lineTo(1395.7776641845703, -140.0702209472656);
+            shortRoadTop.closePath();
+            shortRoadTop.endFill();
 
-                if(carTwo.y < 989.0693359375){
-                    carTwo.y = carTwo.y + (0.57 * 3);
-                }
-                // -214.26077270507812/989.0693359375
-                if(carTwo.y > 989.0693359375 & carTwo.x > -214.26077270507812){
-                    // carOne.alpha = 0;
+            shortRoadTop.alpha = 0.7;
 
-                    setTimeout(function(){
-                        //code goes here
-                        carTwo.x = -1453.7776641845703;
-                        carTwo.y = 259.0702209472656
-                    }, 1000); 
-                }
-            }
+            shortRoadTop.beginFill(0xDE3249);
+            shortRoadTop.drawEllipse(-77.86077270507812, -970.0693359375, 37, 40);
+            shortRoadTop.endFill();
 
-            app.ticker.add(app.carTwoMove);
+            mapCont.addChild(shortRoadTop);
+
+            carThree.mask = shortRoadTop;
+
+
+            // app.carTwoMove = function(){
+
+            //     if(carTwo.x < -214.26077270507812){
+            //         carTwo.x = carTwo.x + (1 * 3);
+            //         carTwo.alpha = 1;
+            //     }
+
+            //     if(carTwo.y < 989.0693359375){
+            //         carTwo.y = carTwo.y + (0.57 * 3);
+            //     }
+            //     // -214.26077270507812/989.0693359375
+            //     if(carTwo.y > 989.0693359375 & carTwo.x > -214.26077270507812){
+            //         // carOne.alpha = 0;
+
+            //         setTimeout(function(){
+            //             //code goes here
+            //             carTwo.x = -1453.7776641845703;
+            //             carTwo.y = 259.0702209472656
+            //         }, 1000); 
+            //     }
+            // }
+
+            // app.ticker.add(app.carTwoMove);
             // carTwo.x = -1453.7776641845703;
             // carTwo.y = 259.0702209472656
 

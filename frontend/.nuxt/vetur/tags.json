@@ -17,14 +17,41 @@
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
   },
+  "OnqorSEO": {
+    "description": "Auto imported from components/SEO/OnqorSEO.vue"
+  },
+  "CardsWithFilter": {
+    "description": "Auto imported from components/archives/CardsWithFilter.vue"
+  },
   "BlogPage": {
     "description": "Auto imported from components/blog/BlogPage.vue"
   },
   "SubscriptionSection": {
     "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
-  "CardsWithFilter": {
-    "description": "Auto imported from components/archives/CardsWithFilter.vue"
+  "BackButton": {
+    "description": "Auto imported from components/UI/BackButton.vue"
+  },
+  "BlogCard": {
+    "description": "Auto imported from components/UI/BlogCard.vue"
+  },
+  "DropDown": {
+    "description": "Auto imported from components/UI/DropDown.vue"
+  },
+  "Icon": {
+    "description": "Auto imported from components/UI/Icon.vue"
+  },
+  "OnqorButton": {
+    "description": "Auto imported from components/UI/OnqorButton.vue"
+  },
+  "OnqorCircleIcon": {
+    "description": "Auto imported from components/UI/OnqorCircleIcon.vue"
+  },
+  "OnqorInput": {
+    "description": "Auto imported from components/UI/OnqorInput.vue"
+  },
+  "TypeText": {
+    "description": "Auto imported from components/UI/TypeText.vue"
   },
   "BlimpMapSVG": {
     "description": "Auto imported from components/citymap/BlimpMapSVG.vue"
@@ -53,9 +80,6 @@
   "CityTurbines": {
     "description": "Auto imported from components/citymap/CityTurbines.vue"
   },
-  "ContactFooter": {
-    "description": "Auto imported from components/contact/ContactFooter.vue"
-  },
   "MeetTheTeam": {
     "description": "Auto imported from components/explore/MeetTheTeam.vue"
   },
@@ -74,38 +98,14 @@
   "Header": {
     "description": "Auto imported from components/global/Header.vue"
   },
+  "ContactFooter": {
+    "description": "Auto imported from components/contact/ContactFooter.vue"
+  },
   "HeroSection": {
     "description": "Auto imported from components/image/HeroSection.vue"
   },
-  "OnqorSEO": {
-    "description": "Auto imported from components/SEO/OnqorSEO.vue"
-  },
   "ServicePageLinks": {
     "description": "Auto imported from components/services/ServicePageLinks.vue"
-  },
-  "BackButton": {
-    "description": "Auto imported from components/UI/BackButton.vue"
-  },
-  "BlogCard": {
-    "description": "Auto imported from components/UI/BlogCard.vue"
-  },
-  "DropDown": {
-    "description": "Auto imported from components/UI/DropDown.vue"
-  },
-  "Icon": {
-    "description": "Auto imported from components/UI/Icon.vue"
-  },
-  "OnqorButton": {
-    "description": "Auto imported from components/UI/OnqorButton.vue"
-  },
-  "OnqorCircleIcon": {
-    "description": "Auto imported from components/UI/OnqorCircleIcon.vue"
-  },
-  "OnqorInput": {
-    "description": "Auto imported from components/UI/OnqorInput.vue"
-  },
-  "TypeText": {
-    "description": "Auto imported from components/UI/TypeText.vue"
   },
   "StatTabs": {
     "description": "Auto imported from components/stats/StatTabs.vue"

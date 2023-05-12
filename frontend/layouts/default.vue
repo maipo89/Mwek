@@ -10,7 +10,6 @@
             <div class="drag-map__background">
             </div>
             <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" />
-            <BlimpMapSVG />
           </div>
           <div class="page-modal__container" >
             <div class="page-modal button-top">

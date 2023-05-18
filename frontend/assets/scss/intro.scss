@@ -26,6 +26,16 @@
         // transition: width 1s;
         // transition-delay: 5s;
     }
+    &__white {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0px;
+        left: 0px;
+        background-color: white;
+        z-index: 1;
+        opacity: 0;
+    }
     &__logo{
         height: 100%;
         width: 100%;
@@ -114,8 +124,12 @@
 
     &__logo-content{
         position: absolute;
-        bottom: 0px;
+        top: calc(50% + 250px);
         opacity: 0;
+
+        @media (max-width: 375px) {
+            top: calc(50% + 200px);
+        }
         p{
             color:#fff;
         }
@@ -127,6 +141,7 @@
             justify-content: center;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
     }
     .clouds{
@@ -151,10 +166,62 @@
            background-image: url('static/images/clouds/clouds.png');
            background-position: center center;
            background-size: contain;
+
+           @media (max-width: 680px) {
+                bottom: 550px;
+                height: 120vh;
+            }
+
+            @media screen and (max-width: 1749px), screen and (max-height: 942px) {
+                bottom: 980px;
+            }
+
+            @media screen and (max-width: 1380px), screen and (max-height: 930px) {
+                bottom: 580px;
+            }
+
+            @media screen and (max-width: 1024px), screen and (max-height: 1024px) {
+                bottom: 100px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            height: 400vh;
+        }
+
+        @media (max-width: 680px) {
+            height: 150vh;
+            background-size: cover;
         }
 
         @media (max-width: 450px) {
-            height: 600vh;
+            height: 150vh;
+            background-size: cover;
+        }
+
+        @media screen and (max-width: 1024px), screen and (max-height: 1024px) {
+            height: 100vh;
+            background-size: cover;
+        }
+
+        @media screen and (max-width: 834px), screen and (max-height: 1124px) {
+            height: 100vh;
+            background-size: cover;
+        }
+
+        @media screen and (max-width: 1024px), screen and (max-height: 768px) {
+            height: 150vh;
+            background-size: cover;
+        }
+
+        @media screen and (max-width: 1749px), screen and (max-height: 942px) {
+            height: 500vh;
+            background-size: contain;
+        }
+
+        @media screen and (max-width: 1380px), screen and (max-height: 942px) {
+            height: 200vh;
+            background-size: contain;
         }
     }
     .step-one{
@@ -204,6 +271,10 @@
           //  opacity: 0.0;
             transition: opacity 0.5s;
             transition-delay: 1.6s;
+        }
+        .intro__white{
+            transition: ease-in opacity 2s;
+            opacity: 1;
         }
     }
 }

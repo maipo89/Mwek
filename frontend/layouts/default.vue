@@ -139,6 +139,7 @@ export default {
       this.$router.push('/'); 
       this.renderMap = true;
       this.activeHeader = 5
+      this.$store.commit('apiroute/underlineHeader', 5)
       // var headerItems = document.getElementsByClassName("header__item")
       // headerItems.forEach(function(item) {
       //     item.classList.remove("active");

@@ -59,7 +59,7 @@ h1.h2,h3,h4,h5{
     width: 95%;
     top: 0px;
     min-height: 100vh;
-    overflow: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
     height: 150px;
     transform: translateY(100%);
@@ -72,6 +72,13 @@ h1.h2,h3,h4,h5{
     // transform-style: preserve-3d;
     @media (max-width: 550px) {
         padding: 50px 10px 100px;
+    }
+    &::-webkit-scrollbar-track {         
+        margin-bottom: 131px;
+    }
+    &::-webkit-scrollbar {
+        width: 0px;
+        bottom: 131px;
     }
     &.button-top {
         position: absolute;

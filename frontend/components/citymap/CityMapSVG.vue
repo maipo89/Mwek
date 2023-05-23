@@ -203,8 +203,8 @@
 
             drone.x = 58.7776641845703;
             drone.y = 1030.0702209472656;
-            drone.width = 50;
-            drone.height = 50;
+            // drone.width = 50;
+            // drone.height = 50;
             drone.anchor.set(0.5);
             drone.pivot.set(0.5);
             drone.scale.set(0.5);
@@ -279,8 +279,8 @@
             
             blimp.x = -1510.7776641845703;
             blimp.y = -270.0693359375;
-            blimp.width = 50;
-            blimp.height = 50;
+            // blimp.width = 50;
+            // blimp.height = 50;
             blimp.anchor.set(0.5);
             blimp.pivot.set(0.5);
             blimp.scale.set(0.5);

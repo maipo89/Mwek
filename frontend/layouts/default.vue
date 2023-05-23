@@ -5,8 +5,10 @@
       <v-container>
         <Header v-on:page-open="headerAction()" :theActiveHeader="this.activeHeader" v-on:goMap="backToMap()" v-on:customLink="customRoute($event)" />
         <div :class="[this.pageState, this.thePageClass]">
+          <CityMapPopUp />
           <div class="drag-map" > 
-            <div class="drag-map__background"></div>
+            <div class="drag-map__background">
+            </div>
             <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" />
           </div>
           <div class="page-modal__container" >
@@ -136,6 +138,12 @@ export default {
       this.pageState = 'map-open';
       this.$router.push('/'); 
       this.renderMap = true;
+      this.activeHeader = 5
+      this.$store.commit('apiroute/underlineHeader', 5)
+      // var headerItems = document.getElementsByClassName("header__item")
+      // headerItems.forEach(function(item) {
+      //     item.classList.remove("active");
+      // });
     },
 
     pageClass(){

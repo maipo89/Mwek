@@ -1,21 +1,13 @@
 <template>
     <div class="city-map-svg" ref="cityMap">
-        <div :class="this.mapPrompt" class="city-map-svg__prompt">
-            <img src="/images/mapPrompt.png" />
-            <p>
-                Welcome to MWEK city, use your mouse to take a look around. Many of our buildings and scenery are interactive. Enjoy!
-            </p>
-            <div class="city-map-svg__prompt-close" v-on:click="closePrompt()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <rect x="15.6521" width="3.32033" height="22.1355" rx="1.66016" transform="rotate(45 15.6521 0)" fill="#07134D"/>
-                <rect y="2.34766" width="3.32033" height="22.1355" rx="1.66016" transform="rotate(-45 0 2.34766)" fill="#07134D"/>
-                </svg>
-            </div>
-        </div>
     </div>
 </template>
 
 <script>
+    import gsap from 'gsap';
+    import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
+
+    gsap.registerPlugin(MotionPathPlugin);
     // import { Sprite } from 'three';
     // import * as PIXI from 'pixi.js'
     export default {
@@ -23,14 +15,10 @@
 
         data(){ 
             return {
-                clickPosition: '',
-                mapPrompt: 'open'
+                clickPosition: ''
             }
         },  
         methods: {
-            closePrompt(){
-                this.mapPrompt = 'closed';
-            }
         },
         async mounted(){
             var thisContext = this;
@@ -39,34 +27,287 @@
             this.$refs.cityMap.appendChild(app.view);
             
             var mapCont = new PIXI.Container();
-            var map = new PIXI.Sprite.from('/images/LightCity.png');
+            var map = new PIXI.Sprite.from('/images/LightCityFinal.png');
+            var drone = new PIXI.Sprite.from('/images/travel/drone.png');
+            var blimp = new PIXI.Sprite.from('/images/travel/Blimp.png');
             var carOne = new PIXI.Sprite.from('/images/travel/Car.png');
             var carTwo = new PIXI.Sprite.from('/images/travel/CarRight.png');
+            var carThree = new PIXI.Sprite.from('/images/travel/CarRight.png');
 
             
 
-            var grid = new PIXI.Sprite.from('/images/grid.png');
+            var grid = new PIXI.Sprite.from('/images/grid-extended.png');
             var road = new PIXI.Sprite.from('/images/Road.png');
-            
 
+
+            var carOnePath = new PIXI.Graphics()
+            // .lineStyle(2, 0xaaaaaa, 1)
+            .moveTo(1030.6671447753906, -590.2612762451172)
+            .lineTo(-1460.6444091796875, 852.155029296875)
+
+            var values = [{x: 1030.6671447753906, y: -590.2612762451172}, {x: -1460.6444091796875, y: 852.155029296875}]
+
+            carOne.x = 1030.6671447753906;
+            carOne.y = -590.2612762451172;
             carOne.width = 50;
             carOne.height = 50;
-            carOne.anchor.set(0.5,0.5);
-            carOne.x = 948.6671447753906;
-            carOne.y = -534.2612762451172;
+            carOne.anchor.set(0.5);
+            carOne.pivot.set(0.5);
+            carOne.scale.set(0.5);
 
+            const tween = gsap.timeline();
+
+            tween.to(carOne, 30, {
+                motionPath: { 
+                    path: values,
+                    curviness: 0
+                },
+                ease: 'none',
+                repeat: -1,
+                yoyo: false
+            });
+
+            var carTwoPath = new PIXI.Graphics()
+            // .lineStyle(2, 0xaaaaaa, 1)
+            .moveTo(-1453.7776641845703, 255.0702209472656)
+            .lineTo(-214.26077270507812, 976.0693359375)
+
+            var valuesCarTwo = [{x: -1453.7776641845703, y: 255.0702209472656}, {x: -214.26077270507812, y: 976.0693359375}]
 
             carTwo.x = -1453.7776641845703;
-            carTwo.y = 259.0702209472656
-            carTwo.anchor.set(0.5,0.5);
+            carTwo.y = 259.0702209472656;
+            carTwo.anchor.set(0.5);
+            carTwo.pivot.set(0.5);
+            carTwo.scale.set(0.5);
             carTwo.width = 50;
             carTwo.height = 50;
 
+            tween.to(carTwo, 20, {
+                motionPath: { 
+                    path: valuesCarTwo,
+                    curviness: 0
+                },
+                ease: 'none',
+                repeat: -1,
+                yoyo: false
+            }, 0);
+
+            var carThreePath = new PIXI.Graphics()
+            // .lineStyle(2, 0xaaaaaa, 1)
+            .moveTo(-190.26077270507812, -1025.0693359375)
+            .lineTo(1500.7776641845703, -47.0702209472656)
+
+            var valuesCarThree = [{x: -190.26077270507812, y: -1025.0693359375}, {x: 1500.7776641845703, y: -47.0702209472656}]
+
+            carThree.x = -190.26077270507812;
+            carThree.y = -1025.0693359375;
+            carThree.anchor.set(0.5);
+            carThree.pivot.set(0.5);
+            carThree.scale.set(0.5);
+            carThree.width = 50;
+            carThree.height = 50;
+
+            tween.to(carThree, 20, {
+                motionPath: { 
+                    path: valuesCarThree,
+                    curviness: 0
+                },
+                ease: 'none',
+                repeat: -1,
+                yoyo: false
+            }, 0);
+
+            var dronePath = new PIXI.Graphics()
+            // .lineStyle(2, 0xaaaaaa, 1)
+            .moveTo(1505.7776641845703, -415.0693359375)
+            .lineTo(1480.7776641845703, -385.0702209472656)
+            .lineTo(1445.7776641845703, -350.0702209472656)
+            .lineTo(1420.7776641845703, -330.0702209472656)
+            .lineTo(1368.7776641845703, -295.0702209472656)
+            .lineTo(1320.7776641845703, -270.0702209472656)
+            .lineTo(1280.7776641845703, -256.0702209472656)
+            .lineTo(1200.7776641845703, -240.0702209472656)
+            .lineTo(1100.7776641845703, -230.0702209472656)
+            .lineTo(950.7776641845703, -230.0702209472656)
+            .lineTo(850.7776641845703, -235.0702209472656)
+            .lineTo(750.7776641845703, -242.0702209472656)
+            .lineTo(600.7776641845703, -245.0702209472656)
+            .lineTo(500.7776641845703, -242.0702209472656)
+            .lineTo(450.7776641845703, -240.0702209472656)
+            .lineTo(350.7776641845703, -227.0702209472656)
+            .lineTo(250.7776641845703, -206.0702209472656)
+            .lineTo(150.7776641845703, -178.0702209472656)
+            .lineTo(80.7776641845703, -148.0702209472656)
+            .lineTo(0.7776641845703, -110.0702209472656)
+            .lineTo(-50.7776641845703, -80.0702209472656)
+            .lineTo(-100.7776641845703, -45.0702209472656)
+            .lineTo(-150.7776641845703, 6.0702209472656)
+            .lineTo(-183.7776641845703, 50.0702209472656)
+            .lineTo(-215.7776641845703, 112.0702209472656)
+            .lineTo(-233.7776641845703, 170.0702209472656)
+            .lineTo(-242.7776641845703, 220.0702209472656)
+            .lineTo(-246.7776641845703, 280.0702209472656)
+            .lineTo(-242.7776641845703, 350.0702209472656)
+            .lineTo(-235.7776641845703, 400.0702209472656)
+            .lineTo(-225.7776641845703, 450.0702209472656)
+            .lineTo(-207.7776641845703, 520.0702209472656)
+            .lineTo(-181.7776641845703, 590.0702209472656)
+            .lineTo(-158.7776641845703, 650.0702209472656)
+            .lineTo(-140.7776641845703, 690.0702209472656)
+            .lineTo(-110.7776641845703, 750.0702209472656)
+            .lineTo(-84.7776641845703, 800.0702209472656)
+            .lineTo(-32.7776641845703, 890.0702209472656)
+            .lineTo(12.7776641845703, 960.0702209472656)
+            .lineTo(58.7776641845703, 1030.0702209472656)
+
+            var valuesDrone = [{x: 58.7776641845703, y: 1030.0702209472656}, 
+                               {x: 12.7776641845703, y: 960.0702209472656},
+                               {x: -32.7776641845703, y: 890.0702209472656},
+                               {x: -84.7776641845703, y: 800.0702209472656},
+                               {x: -110.7776641845703, y: 750.0702209472656},
+                               {x: -140.7776641845703, y: 690.0702209472656},
+                               {x: -158.7776641845703, y: 650.0702209472656},
+                               {x: -181.7776641845703, y: 590.0702209472656},
+                               {x: -207.7776641845703, y: 520.0702209472656},
+                               {x: -225.7776641845703, y: 450.0702209472656},
+                               {x: -235.7776641845703, y: 400.0702209472656},
+                               {x: -242.7776641845703, y: 350.0702209472656},
+                               {x: -246.7776641845703, y: 280.0702209472656},
+                               {x: -242.7776641845703, y: 220.0702209472656},
+                               {x: -233.7776641845703, y: 170.0702209472656},
+                               {x: -215.7776641845703, y: 112.0702209472656},
+                               {x: -183.7776641845703, y: 50.0702209472656},
+                               {x: -150.7776641845703, y: 6.0702209472656},
+                               {x: -100.7776641845703, y: -45.0702209472656},
+                               {x: -50.7776641845703, y: -80.0702209472656},
+                               {x: 0.7776641845703, y: -110.0702209472656},
+                               {x: 80.7776641845703, y: -148.0702209472656},
+                               {x: 150.7776641845703, y: -178.0702209472656},
+                               {x: 250.7776641845703, y: -206.0702209472656},
+                               {x: 350.7776641845703, y: -227.0702209472656},
+                               {x: 450.7776641845703, y: -240.0702209472656},
+                               {x: 500.7776641845703, y: -242.0702209472656},
+                               {x: 600.7776641845703, y: -245.0702209472656},
+                               {x: 750.7776641845703, y: -242.0702209472656},
+                               {x: 850.7776641845703, y: -235.0702209472656},
+                               {x: 950.7776641845703, y: -230.0702209472656},
+                               {x: 1100.7776641845703, y: -230.0702209472656},
+                               {x: 1200.7776641845703, y: -240.0702209472656},
+                               {x: 1320.7776641845703, y: -270.0702209472656},
+                               {x: 1368.7776641845703, y: -295.0702209472656},
+                               {x: 1420.7776641845703, y: -330.0702209472656},
+                               {x: 1445.7776641845703, y: -350.0702209472656},
+                               {x: 1480.7776641845703, y: -385.0702209472656},
+                               {x: 1505.7776641845703, y: -415.0693359375},
+                              ]
+
+            drone.x = 58.7776641845703;
+            drone.y = 1030.0702209472656;
+            // drone.width = 50;
+            // drone.height = 50;
+            drone.anchor.set(0.5);
+            drone.pivot.set(0.5);
+            drone.scale.set(0.5);
+
+            tween.to(drone, 30, {
+                motionPath: { 
+                    path: valuesDrone,
+                    curviness: 0
+                },
+                ease: 'none',
+                repeat: -1,
+                yoyo: false
+            }, 0);
+
+
+            var blimpPath = new PIXI.Graphics()
+            // .lineStyle(2, 0xaaaaaa, 1)
+            .moveTo(-1510.7776641845703, -270.0693359375)
+            .lineTo(-1000.7776641845703, -555.0702209472656)
+            .lineTo(-880.7776641845703, -620.0702209472656)
+            .lineTo(-840.7776641845703, -644.0702209472656)
+            .lineTo(-750.7776641845703, -679.0702209472656)
+            .lineTo(-700.7776641845703, -689.0702209472656)
+            .lineTo(-650.7776641845703, -695.0702209472656)
+            .lineTo(-600.7776641845703, -694.0702209472656)
+            .lineTo(-550.7776641845703, -690.0702209472656)
+            .lineTo(-500.7776641845703, -680.0702209472656)
+            .lineTo(-400.7776641845703, -652.0702209472656)
+            .lineTo(-300.7776641845703, -622.0702209472656)
+            .lineTo(-100.7776641845703, -532.0702209472656)
+            .lineTo(30.7776641845703, -460.0702209472656)
+            .lineTo(100.7776641845703, -435.0702209472656)
+            .lineTo(170.7776641845703, -425.0702209472656)
+            .lineTo(240.7776641845703, -423.0702209472656)
+            .lineTo(310.7776641845703, -430.0702209472656)
+            .lineTo(390.7776641845703, -445.0702209472656)
+            .lineTo(500.7776641845703, -475.0702209472656)
+            .lineTo(600.7776641845703, -515.0702209472656)
+            .lineTo(750.7776641845703, -586.0702209472656)
+            .lineTo(950.7776641845703, -700.0702209472656)
+            .lineTo(1100.7776641845703, -800.0702209472656)
+            .lineTo(1300.7776641845703, -947.0702209472656)
+            .lineTo(1420.7776641845703, -1045.0702209472656)
+
+            var valuesBlimp = [{x: -1510.7776641845703, y: -270.0693359375}, 
+                               {x: -1000.7776641845703, y: -555.0702209472656},
+                               {x: -880.7776641845703, y: -620.0702209472656},
+                               {x: -840.7776641845703, y: -644.0702209472656},
+                               {x: -750.7776641845703, y: -679.0702209472656},
+                               {x: -700.7776641845703, y: -689.0702209472656},
+                               {x: -650.7776641845703, y: -695.0702209472656},
+                               {x: -600.7776641845703, y: -694.0702209472656},
+                               {x: -550.7776641845703, y: -690.0702209472656},
+                               {x: -500.7776641845703, y: -680.0702209472656},
+                               {x: -400.7776641845703, y: -652.0702209472656},
+                               {x: -300.7776641845703, y: -622.0702209472656},
+                               {x: -100.7776641845703, y: -532.0702209472656},
+                               {x: 30.7776641845703, y: -460.0702209472656},
+                               {x: 100.7776641845703, y: -435.0702209472656},
+                               {x: 170.7776641845703, y: -425.0702209472656},
+                               {x: 240.7776641845703, y: -423.0702209472656},
+                               {x: 310.7776641845703, y: -430.0702209472656},
+                               {x: 390.7776641845703, y: -445.0702209472656},
+                               {x: 500.7776641845703, y: -475.0702209472656},
+                               {x: 600.7776641845703, y: -515.0702209472656},
+                               {x: 750.7776641845703, y: -586.0702209472656},
+                               {x: 950.7776641845703, y: -700.0702209472656},
+                               {x: 1100.7776641845703, y: -800.0702209472656},
+                               {x: 1300.7776641845703, y: -947.0702209472656},
+                               {x: 1420.7776641845703, y: -1045.0702209472656},
+                              ]
+            
+            blimp.x = -1510.7776641845703;
+            blimp.y = -270.0693359375;
+            // blimp.width = 50;
+            // blimp.height = 50;
+            blimp.anchor.set(0.5);
+            blimp.pivot.set(0.5);
+            blimp.scale.set(0.5);
+
+            
+            tween.to(blimp, 30, {
+                motionPath: { 
+                    path: valuesBlimp,
+                    align: valuesBlimp,
+                    curviness: 0,
+                    autoRotate: 120,
+                    useRadians: true,
+                },
+                ease: 'none',
+                repeat: -1,
+                yoyo: false,
+            }, 0);
+            
+
             mapCont.addChild(grid);
             mapCont.addChild(road);
-            mapCont.addChild(carOne);
-            mapCont.addChild(carTwo);
+            mapCont.addChild(carOnePath, carOne);
+            mapCont.addChild(carTwoPath, carTwo);
+            mapCont.addChild(carThreePath, carThree);
             mapCont.addChild(map);
+            mapCont.addChild(dronePath, drone);
+            mapCont.addChild(blimpPath, blimp);
 
 
             var ServiceButtonHover = new PIXI.Sprite.from('/images/light/hover.png');
@@ -145,22 +386,26 @@
             // the three towers mask
 
             graphics.beginFill(0xFF3300);
-            graphics.moveTo(-901.0654907226562, 17.634735107421875);
-            graphics.lineTo(-901.0654907226562, 17.634735107421875);
-            graphics.lineTo(-883.7482299804688, 25.636749267578125);
-            graphics.lineTo(-866.5794982910156, 18.238006591796875);
-            graphics.lineTo(-855.6791381835938, -81.5133056640625);
+            graphics.moveTo(-899.0654907226562, 17.634735107421875);
+            // graphics.lineTo(-901.0654907226562, 16.634735107421875);
+            // graphics.lineTo(-886.7482299804688, 24.636749267578125);
+            graphics.lineTo(-887.5482299804688, 24.636749267578125);
+            graphics.lineTo(-878.9482299804688, 24.636749267578125);
+            graphics.lineTo(-865.5794982910156, 17.238006591796875);
+            graphics.lineTo(-864.6791381835938, -90.5133056640625);
             graphics.lineTo(-960.2760314941406, -80.58369445800781);
             graphics.closePath();
             graphics.endFill();
 
 
             graphics.beginFill(0xFF3300);
-            graphics.moveTo(-818.852294921875,-13.5172119140625);
-            graphics.lineTo(-818.852294921875, -13.5172119140625);
-            graphics.lineTo(-798.6113586425781, -4.33544921875);
+            graphics.moveTo(-818.852294921875,-12.5272119140625);
+            // graphics.lineTo(-818.6513586425781, -11.9172119140625);
+            // graphics.lineTo(-795.6513586425781, -1.99004921875);
+            graphics.lineTo(-802.6113586425781, -3.99004921875);
+            graphics.lineTo(-792.6113586425781, -3.99004921875);
             // -708.7968139648438/91.99664306640625
-            graphics.lineTo(-778.0056762695312,-13.44464111328125);
+            graphics.lineTo(-778.0056762695312,-11.525464111328125);
             // -673.2498779296875/-47.036376953125
             graphics.lineTo(-735.6103515625, -83.43841552734375);
             // -739.8705444335938/-39.6455078125
@@ -171,9 +416,10 @@
 
             graphics.beginFill(0xFF3300);
             graphics.moveTo(-859.4706420898438, 95.49444580078125);
-            graphics.lineTo(-859.4706420898438, 95.49444580078125);
-            graphics.lineTo(-839.7219543457031, 107.5313720703125);
-            graphics.lineTo(-822.0023803710938, 98.55548095703125);
+            graphics.lineTo(-864.4706420898438, 95.49444580078125);
+            graphics.lineTo(-845.9519543457031, 105.9293720703125);
+            graphics.lineTo(-837.9519543457031, 105.9293720703125);
+            graphics.lineTo(-821.0023803710938, 95.49444580078125);
             // graphics.lineTo(-829.491455078125, -130.9113006591797);
 
             graphics.lineTo(-827.9432983398438, -62.67083740234375);
@@ -593,13 +839,13 @@
             ThreeTowerTwo.anchor.set(0.5, 0.5);
             ThreeTowerThree.anchor.set(0.5, 0.5);
 
-            ThreeTowerOne.x = -883.4754333496094;
+            ThreeTowerOne.x = -882.4754333496094;
             ThreeTowerOne.y = 25.12579345703125;
 
-            ThreeTowerTwo.x = -839.5823669433594;
+            ThreeTowerTwo.x = -841.8823669433594;
             ThreeTowerTwo.y = 106.00119018554688;
 
-            ThreeTowerThree.x = -798.8314208984375;
+            ThreeTowerThree.x = -796.8314208984375;
             ThreeTowerThree.y = -3.14556884765625;
     
             var threeTowersUp = [ true, true, true ];
@@ -1665,30 +1911,24 @@
             const trainMask = new PIXI.Graphics();
 
             trainMask.beginFill(0xFF3300);
-            trainMask.moveTo(1046.7266540527344, 346.1871337890625);
-            trainMask.lineTo(1046.7266540527344, 346.1871337890625);
-            trainMask.lineTo(1049.8683776855469, 431.642578125);
-            trainMask.lineTo(1391.0827331542969,233.0439453125);
-            trainMask.lineTo(1380.5284118652344,150.95303344726562);
-            trainMask.lineTo(1379.2408142089844, 103.72048950195312);
-            trainMask.lineTo(1375.15380859375, 91.28890991210938);
-            trainMask.lineTo(1369.415771484375, 81.84686279296875);
-            trainMask.lineTo(1354.9913330078125, 70.374267578125);
-            trainMask.lineTo(1346.06396484375, 68.22171020507812);
-            trainMask.lineTo(1339.8720092773438, 68.5697021484375);
-            trainMask.lineTo(994.5461883544922, 146.2039794921875);
-            trainMask.lineTo(995.2911682128906, 205.07476806640625);
-            trainMask.lineTo(1004.5848388671875, 227.98284912109375);
-            trainMask.lineTo(1022.6422729492188, 247.77532958984375);
-            trainMask.lineTo(1043.3096923828125, 261.4684600830078)
+            trainMask.moveTo(1040.7266540527344, 156.1871337890625);
+            trainMask.lineTo(1040.7266540527344, 380.1871337890625);
+            trainMask.lineTo(1424.3871337890625, 126.1871337890625);
+            trainMask.lineTo(1424.3871337890625, 78.1871337890625);
+            trainMask.lineTo(1420.0827331542969, 65.5439453125);
+            trainMask.lineTo(1415.0827331542969, 58.0439453125);
+            trainMask.lineTo(1410.0827331542969, 53.0439453125);
+            trainMask.lineTo(1400.0827331542969, 50.0439453125);
             trainMask.closePath();
             trainMask.endFill();
             trainMask.alpha = 0.5;
 
             trainMask.beginFill(0xFF3300);
-            trainMask.moveTo(293.5160827636719, 776.6109008789062);
-            trainMask.lineTo(293.5160827636719, 776.6109008789062);
-            trainMask.lineTo(305.20233154296875, 862.6501159667969);
+            trainMask.moveTo(83.5160827636719, 776.6109008789062);
+            trainMask.lineTo(122.5160827636719, 780.6109008789062);
+            trainMask.lineTo(138.20233154296875, 802.6501159667969);
+            trainMask.lineTo(141.301494140625, 830.6501159667969);
+            trainMask.lineTo(141.301494140625, 890.6501159667969);
             trainMask.lineTo(997.68017578125, 463.7853088378906);
             trainMask.lineTo(992.8050689697266, 375.1382598876953);
             trainMask.lineTo(990.1568756103516, 343.4243927001953);
@@ -1698,16 +1938,10 @@
             trainMask.lineTo(963.3096313476562, 285.29217529296875);
             trainMask.lineTo(945.2364349365234, 283.92271423339844);
             trainMask.lineTo(896.7702026367188, 152.20428466796875);
-            trainMask.lineTo(234.44256591796875, 481.84521484375);
-            trainMask.lineTo(249.781494140625, 693.6345520019531);
-            trainMask.lineTo(260.9775390625, 693.7068481445312);
-            trainMask.lineTo(270.8173828125, 697.9822387695312);
-            trainMask.lineTo(280.01849365234375,705.011474609375);
-            trainMask.lineTo(289.058349609375, 717.2817993164062)
             trainMask.closePath();
             trainMask.endFill();
 
-            var trainSprite = new PIXI.Sprite.from('/images/travel/Train.png'); 
+            var trainSprite = new PIXI.Sprite.from('/images/travel/TrainNew.png'); 
             mapCont.addChild(trainMask);
             mapCont.addChild(trainSprite);
 
@@ -1754,14 +1988,14 @@
             longRoadMiddle.lineTo(853.3160095214844, -498.83363342285156);
             longRoadMiddle.lineTo(820.48095703125, -501.2552490234375);
             longRoadMiddle.lineTo(789.2232055664062, -517.4708938598633);
-            longRoadMiddle.lineTo(-1394.6335525512695, 751.6460266113281);
-            longRoadMiddle.lineTo(-1378.745834350586, 775.7689208984375);
-            longRoadMiddle.lineTo(-1372.6831512451172, 781.3613891601562);
-            longRoadMiddle.lineTo(-1366.2870635986328, 792.6642303466797)
+            longRoadMiddle.lineTo(-1393.6335525512695, 752.6460266113281);
+            longRoadMiddle.lineTo(-1384.745834350586, 774.7689208984375);
+            longRoadMiddle.lineTo(-1382.6831512451172, 775.3613891601562);
+            longRoadMiddle.lineTo(-1370.2870635986328, 792.6642303466797)
             longRoadMiddle.closePath();
-            longRoadMiddle.endFill();
+            longRoadMiddle.endFill(); 
             longRoadMiddle.beginFill(0xDE3249);
-            longRoadMiddle.drawEllipse(849.2140808105469, -513.9751434326172, 37, 40);
+            longRoadMiddle.drawEllipse(857.2140808105469, -512.9751434326172, 37, 40);
             longRoadMiddle.endFill();
 
             longRoadMiddle.alpha = 0.5;
@@ -1773,28 +2007,28 @@
             // carOne.x = 948.6671447753906;
             // carOne.y = -574.2612762451172
             
-            app.carOneMove = function(){
-                if(carOne.x > -1479.6444091796875){
-                    carOne.x = carOne.x - (1 * 3);
-                    carOne.alpha = 1;
-                }
+            // app.carOneMove = function(){
+            //     if(carOne.x > -1479.6444091796875){
+            //         carOne.x = carOne.x - (1 * 3);
+            //         carOne.alpha = 1;
+            //     }
 
-                if(carOne.y < 865.155029296875){
-                    carOne.y = carOne.y + (0.57 * 3);
-                }
+            //     if(carOne.y < 865.155029296875){
+            //         carOne.y = carOne.y + (0.57 * 3);
+            //     }
 
-                if(carOne.y > 865.155029296875 & carOne.x < -1479.6444091796875){
-                    // carOne.alpha = 0;
+            //     if(carOne.y > 865.155029296875 & carOne.x < -1479.6444091796875){
+            //         // carOne.alpha = 0;
 
-                    setTimeout(function(){
-                        //code goes here
-                        carOne.x = 948.6671447753906;
-                        carOne.y = -534.2612762451172
-                    }, 1000); 
-                }
-            }
+            //         setTimeout(function(){
+            //             //code goes here
+            //             carOne.x = 948.6671447753906;
+            //             carOne.y = -534.2612762451172
+            //         }, 1000); 
+            //     }
+            // }
 
-            app.ticker.add(app.carOneMove);
+            // app.ticker.add(app.carOneMove);
 
 
             // road short bottom
@@ -1807,12 +2041,12 @@
             shortRoadBottom.lineTo(-1394.302635192871, 359.9481964111328);
             shortRoadBottom.lineTo(-1045.843635559082, 579.9631500244141);
             shortRoadBottom.lineTo(-358.0672607421875, 961.3894653320312);
-            shortRoadBottom.lineTo(-330.32061767578125, 933.7210693359375);
-            shortRoadBottom.lineTo(-328.15240478515625, 922.892578125);
-            shortRoadBottom.lineTo(-324.99981689453125, 916.7632141113281);
+            shortRoadBottom.lineTo(-326.32061767578125, 933.7210693359375);
+            shortRoadBottom.lineTo(-324.15240478515625, 922.892578125);
+            shortRoadBottom.lineTo(-321.99981689453125, 916.7632141113281);
             shortRoadBottom.lineTo(-318.84393310546875, 908.7159423828125);
-            shortRoadBottom.lineTo(-308.822265625, 897.5801391601562);
-            shortRoadBottom.lineTo(-305.0225830078125, 893.5647277832031);
+            shortRoadBottom.lineTo(-312.822265625, 897.5801391601562);
+            shortRoadBottom.lineTo(-310.0225830078125, 893.5647277832031);
             shortRoadBottom.lineTo(-280.1514892578125, 868.9535369873047);
             shortRoadBottom.lineTo(-1272.419906616211, 273.8785095214844)
             shortRoadBottom.closePath();
@@ -1821,37 +2055,63 @@
             shortRoadBottom.alpha = 0.7;
 
             shortRoadBottom.beginFill(0xDE3249);
-            shortRoadBottom.drawEllipse(-1350, 287.82464599609375, 37, 40);
+            shortRoadBottom.drawEllipse(-1360, 296.82464599609375, 37, 40);
             shortRoadBottom.endFill();
 
             mapCont.addChild(shortRoadBottom);
 
             carTwo.mask = shortRoadBottom;
 
+            
+            // road short top
 
-            app.carTwoMove = function(){
+            const shortRoadTop = new PIXI.Graphics();
 
-                if(carTwo.x < -214.26077270507812){
-                    carTwo.x = carTwo.x + (1 * 3);
-                    carTwo.alpha = 1;
-                }
+            shortRoadTop.beginFill(0xFF3300);
+            shortRoadTop.moveTo(-95.26077270507812, -1005.0693359375);
+            shortRoadTop.lineTo(-113.8577270507812, -955.3817596435547);
+            shortRoadTop.lineTo(1362.7776641845703, -102.0702209472656);
+            shortRoadTop.lineTo(1365.7776641845703, -110.0702209472656);
+            shortRoadTop.lineTo(1375.7776641845703, -126.0702209472656);
+            shortRoadTop.lineTo(1385.7776641845703, -135.0702209472656);
+            shortRoadTop.lineTo(1395.7776641845703, -140.0702209472656);
+            shortRoadTop.closePath();
+            shortRoadTop.endFill();
 
-                if(carTwo.y < 989.0693359375){
-                    carTwo.y = carTwo.y + (0.57 * 3);
-                }
-                // -214.26077270507812/989.0693359375
-                if(carTwo.y > 989.0693359375 & carTwo.x > -214.26077270507812){
-                    // carOne.alpha = 0;
+            shortRoadTop.alpha = 0.7;
 
-                    setTimeout(function(){
-                        //code goes here
-                        carTwo.x = -1453.7776641845703;
-                        carTwo.y = 259.0702209472656
-                    }, 1000); 
-                }
-            }
+            shortRoadTop.beginFill(0xDE3249);
+            shortRoadTop.drawEllipse(-77.86077270507812, -970.0693359375, 37, 40);
+            shortRoadTop.endFill();
 
-            app.ticker.add(app.carTwoMove);
+            mapCont.addChild(shortRoadTop);
+
+            carThree.mask = shortRoadTop;
+
+
+            // app.carTwoMove = function(){
+
+            //     if(carTwo.x < -214.26077270507812){
+            //         carTwo.x = carTwo.x + (1 * 3);
+            //         carTwo.alpha = 1;
+            //     }
+
+            //     if(carTwo.y < 989.0693359375){
+            //         carTwo.y = carTwo.y + (0.57 * 3);
+            //     }
+            //     // -214.26077270507812/989.0693359375
+            //     if(carTwo.y > 989.0693359375 & carTwo.x > -214.26077270507812){
+            //         // carOne.alpha = 0;
+
+            //         setTimeout(function(){
+            //             //code goes here
+            //             carTwo.x = -1453.7776641845703;
+            //             carTwo.y = 259.0702209472656
+            //         }, 1000); 
+            //     }
+            // }
+
+            // app.ticker.add(app.carTwoMove);
             // carTwo.x = -1453.7776641845703;
             // carTwo.y = 259.0702209472656
 

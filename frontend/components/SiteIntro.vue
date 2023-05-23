@@ -4,9 +4,18 @@
             <div class="intro__panel">
                 <div class="intro__logo">
                     <div class="intro__logo-bg"></div>
+                    <div class="intro__white"></div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="275" height="326" viewBox="0 0 275 326" fill="none">
                     <path d="M194.537 260.13L155.138 164.449L194.298 64.8965L233.458 160.577H274.619L209.266 0H179.591L137.429 103.251L95.0278 0H65.3534L0 160.577H40.9003L80.0601 64.8965L119.481 164.449L80.3211 260.13L41.1613 164.449H0L65.3534 325.027H95.0278L137.19 221.775L179.591 325.027H209.266L274.619 164.449H233.697L194.537 260.13Z" fill="white"/>
                     </svg>
+                    
+                    <div class="intro__logo-content">
+                        <p class="loading">
+                            <TypeText v-if="this.loadComplete" text="Complete" />
+                            <TypeText v-if="this.loadInProcess && this.loadComplete != true" text="Loading..." />
+                        </p>
+                        <!-- <p> <TypeText v-if="this.loadInProcess" text="please fasten your seat belt and prepare for landing" /></p> -->
+                    </div>
                     
                     <div class="loading-bar">
                         <v-progress-circular 
@@ -17,14 +26,6 @@
                             color="#fff"
                         >
                         </v-progress-circular>
-                    </div>
-
-                    <div class="intro__logo-content">
-                        <p class="loading">
-                            <TypeText v-if="this.loadComplete" text="Complete" />
-                            <TypeText v-if="this.loadInProcess && this.loadComplete != true" text="Loading..." />
-                        </p>
-                        <p> <TypeText v-if="this.loadInProcess" text="please fasten your seat belt and prepare for landing" /></p>
                     </div>
 
                 </div>
@@ -54,8 +55,8 @@
                 </div>
             </div>
         </div>
-        <div class="clouds">
-        
+        <div alt="clouds" class="clouds">
+            <div alt="single cloud"></div>
         </div>
     </div>
 </template>
@@ -84,12 +85,12 @@
 
                 const clouds = setTimeout(function () { 
                     this.animationStep = 'step-2' 
-                }.bind(this), 1000, clearTimeout(clouds))
+                }.bind(this), 500, clearTimeout(clouds))
                 this.animationStep = 'step-2' 
                 const loader = setTimeout(function () { 
                     this.loadInProcess = true
                     this.loader();
-                }.bind(this), 2000, clearTimeout(loader))
+                }.bind(this), 1000, clearTimeout(loader))
             },
 
             async loader(){
@@ -128,7 +129,7 @@
                             this.clouds();
                         }
 
-                    }.bind(this), 30)
+                    }.bind(this))
                 }
                 
 
@@ -143,6 +144,9 @@
         },
 
         mounted(){
+            setTimeout(function () { 
+                this.animationStep = 'step-1'
+            }.bind(this), 50)
             setTimeout(function () { 
                 this.textStep = 2
                 this.welcome();

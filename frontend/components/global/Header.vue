@@ -4,7 +4,7 @@
             <img v-on:click="retrunToMap()" :src="this.theHeaderLogo" />
 
             <div class="header__nav-container">
-                <div v-for="(item, index) in this.navItems" :key="index" :class="{ 'active' : index == activeItem }" class="header__item">
+                <div v-for="(item, index) in this.navItems" :key="index" :class="{ 'active' : index == $store.state.apiroute.underlineHeader }" class="header__item">
                     <div class="header__click-zone" v-on:click="navClick(index), customClick('/' + item.slug)">
                         <NuxtLink  style="position: absolute; opacity: 0.0; pointer-events: none;" v-if="item.slug" :to="'/' + item.slug"  >
                             {{ item.title }} 
@@ -141,7 +141,7 @@ export default {
         navClick(count){
             console.log('0 0 0 0 0 0 0 ');
             this.$emit('page-open');
-            this.activeItem = count
+            this.$store.commit('apiroute/underlineHeader', count)
             if(this.openMobileNav === 'mobileNavOpen'){
                 this.openMobileNav = ''
             }else{
@@ -170,11 +170,11 @@ export default {
     },  
     mounted(){
         this.asyncData();
-        this.activeItem = this.theActiveHeader;
+        this.$store.commit('apiroute/underlineHeader', this.theActiveHeader)
     },
     watch: {
         theActiveHeader(val, oldVal){
-            this.activeItem = val;
+            this.$store.commit('apiroute/underlineHeader', val)
         }
     }
 }

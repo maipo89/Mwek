@@ -17,6 +17,18 @@
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
   },
+  "OnqorSEO": {
+    "description": "Auto imported from components/SEO/OnqorSEO.vue"
+  },
+  "CardsWithFilter": {
+    "description": "Auto imported from components/archives/CardsWithFilter.vue"
+  },
+  "BlogPage": {
+    "description": "Auto imported from components/blog/BlogPage.vue"
+  },
+  "SubscriptionSection": {
+    "description": "Auto imported from components/blog/SubscriptionSection.vue"
+  },
   "BackButton": {
     "description": "Auto imported from components/UI/BackButton.vue"
   },
@@ -41,38 +53,20 @@
   "TypeText": {
     "description": "Auto imported from components/UI/TypeText.vue"
   },
-  "CardsWithFilter": {
-    "description": "Auto imported from components/archives/CardsWithFilter.vue"
-  },
-  "BlogPage": {
-    "description": "Auto imported from components/blog/BlogPage.vue"
-  },
-  "SubscriptionSection": {
-    "description": "Auto imported from components/blog/SubscriptionSection.vue"
-  },
-  "OnqorSEO": {
-    "description": "Auto imported from components/SEO/OnqorSEO.vue"
-  },
   "ContactFooter": {
     "description": "Auto imported from components/contact/ContactFooter.vue"
   },
-  "MeetTheTeam": {
-    "description": "Auto imported from components/explore/MeetTheTeam.vue"
-  },
-  "OurApproach": {
-    "description": "Auto imported from components/explore/OurApproach.vue"
-  },
-  "OurApproachSection": {
-    "description": "Auto imported from components/explore/OurApproachSection.vue"
-  },
-  "TeamCube": {
-    "description": "Auto imported from components/explore/TeamCube.vue"
+  "BlimpMapSVG": {
+    "description": "Auto imported from components/citymap/BlimpMapSVG.vue"
   },
   "CityLights": {
     "description": "Auto imported from components/citymap/CityLights.vue"
   },
   "CityMapCards": {
     "description": "Auto imported from components/citymap/CityMapCards.vue"
+  },
+  "CityMapPopUp": {
+    "description": "Auto imported from components/citymap/CityMapPopUp.vue"
   },
   "CityMapSVG": {
     "description": "Auto imported from components/citymap/CityMapSVG.vue"
@@ -88,6 +82,18 @@
   },
   "CityTurbines": {
     "description": "Auto imported from components/citymap/CityTurbines.vue"
+  },
+  "MeetTheTeam": {
+    "description": "Auto imported from components/explore/MeetTheTeam.vue"
+  },
+  "OurApproach": {
+    "description": "Auto imported from components/explore/OurApproach.vue"
+  },
+  "OurApproachSection": {
+    "description": "Auto imported from components/explore/OurApproachSection.vue"
+  },
+  "TeamCube": {
+    "description": "Auto imported from components/explore/TeamCube.vue"
   },
   "Footer": {
     "description": "Auto imported from components/global/Footer.vue"

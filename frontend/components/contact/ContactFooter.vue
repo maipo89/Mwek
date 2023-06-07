@@ -207,6 +207,14 @@
                     onEnterBack: () => { gsap.to(this.$refs.contact, {opacity: 1, y: 0}) },
                 }
             });
+
+            ScrollTrigger.create({
+                trigger: this.$refs.contact,
+                scroller: "#page-modal",
+                start: 'top center',
+                end: 'top-=50px center',
+                onLeaveBack: () => window.scrollTo({top: 0, behavior: 'smooth'}),
+            });
         },
         methods: {
             go() {

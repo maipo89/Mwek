@@ -55,7 +55,9 @@
 </template>
 
 <script>
+
 import gsap from 'gsap';
+
 export default {
   name: 'DefaultLayout',
   data () {
@@ -235,6 +237,20 @@ export default {
     this.getMapButtons();
     this.scrollButton();
     this.firstActive();
+
+    // const container = document.getElementById("page-modal");
+
+    // var lastScrollTop = 0;
+
+    // container.addEventListener("scroll", function(){ 
+    //   var st = window.pageYOffset || document.documentElement.scrollTop; 
+    //   if (st > lastScrollTop){
+    //     console.log('up')
+    //   } else {
+    //       window.scrollTo({top: 0, behavior: 'smooth'});
+    //   }
+    //   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    // }, false);
     
     if(this.$route.params.page){
       // alert('hello ofkrh');

@@ -297,7 +297,7 @@
                 motionPath: { 
                     path: valuesBlimp,
                     align: valuesBlimp,
-                    curviness: 2,
+                    curviness: 0,
                     autoRotate: 120,
                     type: "cubic",
                     useRadians: true,

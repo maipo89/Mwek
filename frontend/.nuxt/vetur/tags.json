@@ -20,15 +20,6 @@
   "OnqorSEO": {
     "description": "Auto imported from components/SEO/OnqorSEO.vue"
   },
-  "CardsWithFilter": {
-    "description": "Auto imported from components/archives/CardsWithFilter.vue"
-  },
-  "BlogPage": {
-    "description": "Auto imported from components/blog/BlogPage.vue"
-  },
-  "SubscriptionSection": {
-    "description": "Auto imported from components/blog/SubscriptionSection.vue"
-  },
   "BackButton": {
     "description": "Auto imported from components/UI/BackButton.vue"
   },
@@ -52,6 +43,18 @@
   },
   "TypeText": {
     "description": "Auto imported from components/UI/TypeText.vue"
+  },
+  "CardsWithFilter": {
+    "description": "Auto imported from components/archives/CardsWithFilter.vue"
+  },
+  "ContactFooter": {
+    "description": "Auto imported from components/contact/ContactFooter.vue"
+  },
+  "BlogPage": {
+    "description": "Auto imported from components/blog/BlogPage.vue"
+  },
+  "SubscriptionSection": {
+    "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
   "BlimpMapSVG": {
     "description": "Auto imported from components/citymap/BlimpMapSVG.vue"
@@ -100,9 +103,6 @@
   },
   "HeroSection": {
     "description": "Auto imported from components/image/HeroSection.vue"
-  },
-  "ContactFooter": {
-    "description": "Auto imported from components/contact/ContactFooter.vue"
   },
   "ServicePageLinks": {
     "description": "Auto imported from components/services/ServicePageLinks.vue"

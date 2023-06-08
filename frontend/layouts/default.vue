@@ -41,8 +41,8 @@
             <div class="page-modal button-bottom">
               <BackButton />
             </div>
-            <div id="page-modal" ref="pageModal" class="page-modal">
-              <div class="page_scroller"  :class="this.transitionClass">
+            <div @scroll="onScroll" id="page-modal" ref="pageModal" class="page-modal">
+              <div id="page-scroller" ref="pageScroller" class="page_scroller"  :class="this.transitionClass">
                 <Nuxt />
               </div>
             </div>
@@ -57,7 +57,7 @@
 <script>
 
 import gsap from 'gsap';
-
+import ScrollTrigger from "gsap/ScrollTrigger";
 export default {
   name: 'DefaultLayout',
   data () {
@@ -229,6 +229,12 @@ export default {
       
         default:
           break;
+      }
+    },
+
+    onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
+      if (scrollTop + clientHeight >= scrollHeight) {
+        this.$store.commit('apiroute/bottomScroll', true)
       }
     }
   },

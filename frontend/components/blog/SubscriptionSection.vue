@@ -48,19 +48,28 @@
             }
         },
         mounted() {
+            const pageModal = document.getElementById("page-modal");
 
             ScrollTrigger.create({
                 trigger: this.$refs.subscription,
                 scroller: "#page-modal",
-                start: 'top-=-3500px center',
-                end: 'top-=-3500px center',
-                onLeaveBack: () => {this.$refs.pageModal.classList.add('stop-scrolling');
-                                   window.scrollTo({top: 0, behavior: 'smooth'});
-                                   pageModal.scrollTo({top: 0, behavior: 'smooth'});
-                                   setTimeout(function () {
-                                       pageModal.classList.remove('stop-scrolling');
-                                   }, 1000);
-                                   this.$refs.pageModal.classList.remove('stop-scrolling')},
+                start: '4200px center',
+                end: '4200px center',
+                onEnter: () => {
+                    document.body.style.overflow = "initial";
+                    document.documentElement.style.overflow = "initial";
+                },
+                onLeaveBack: () => {
+                        pageModal.classList.add('stop-scrolling');
+                        window.scrollTo({top: 0, behavior: 'smooth'});
+                        pageModal.scrollTo({top: 0, behavior: 'smooth'});
+                        setTimeout(function () {
+                            pageModal.classList.remove('stop-scrolling');
+                        }, 1000);
+                        this.$store.commit('apiroute/bottomScroll', false);
+                        document.body.style.overflow = "hidden";
+                        document.documentElement.style.overflow = "hidden";
+                },
             });
         },
         beforeMount(){

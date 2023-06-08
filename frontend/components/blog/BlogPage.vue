@@ -1,5 +1,5 @@
 <template>
-  <div class="blog" :class="this.blogClass"> 
+  <div @scroll="onScroll" class="blog" :class="this.blogClass"> 
     <h1>Blog</h1>
     <div class="blog__filter-container">
       <DropDown v-if="this.theBlogsId" :options="this.cats" :placeHolder="this.theBlogsId" v-on:dropdownEvent="changeCat($event)" />
@@ -106,6 +106,13 @@ export default {
 
      
 
+    },
+    
+    onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
+        if (scrollTop + clientHeight >= scrollHeight) {
+            alert('scroll')
+            this.$store.commit('apiroute/bottomScroll', true)
+        }
     },
 
     // async firstTimePosts(id){

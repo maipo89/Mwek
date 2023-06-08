@@ -54,7 +54,13 @@
                 scroller: "#page-modal",
                 start: 'top-=-3500px center',
                 end: 'top-=-3500px center',
-                onLeaveBack: () => window.scrollTo({top: 0, behavior: 'smooth'}),
+                onLeaveBack: () => {this.$refs.pageModal.classList.add('stop-scrolling');
+                                   window.scrollTo({top: 0, behavior: 'smooth'});
+                                   pageModal.scrollTo({top: 0, behavior: 'smooth'});
+                                   setTimeout(function () {
+                                       pageModal.classList.remove('stop-scrolling');
+                                   }, 1000);
+                                   this.$refs.pageModal.classList.remove('stop-scrolling')},
             });
         },
         beforeMount(){

@@ -73,6 +73,9 @@ h1.h2,h3,h4,h5{
     @media (max-width: 550px) {
         padding: 50px 10px 100px;
     }
+    &.stop-scrolling {
+        overflow: hidden;
+    }
     &::-webkit-scrollbar-track {         
         margin-bottom: 131px;
     }

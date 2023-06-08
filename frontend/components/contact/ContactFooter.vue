@@ -195,6 +195,7 @@
         },
         mounted(){
             console.log('this.contactItems', this.contactItems);
+            const pageModal = document.getElementById("page-modal");
             
             gsap.set(this.$refs.contact, {opacity:0, y: 50})
             gsap.to(this.$refs.contact, {
@@ -213,7 +214,14 @@
                 scroller: "#page-modal",
                 start: 'top center',
                 end: 'top-=50px center',
-                onLeaveBack: () => window.scrollTo({top: 0, behavior: 'smooth'}),
+                onLeaveBack: () => {
+                                    pageModal.classList.add('stop-scrolling');
+                                    window.scrollTo({top: 0, behavior: 'smooth'});
+                                    pageModal.scrollTo({top: 0, behavior: 'smooth'});
+                                    setTimeout(function () {
+                                        pageModal.classList.remove('stop-scrolling');
+                                    }, 1000);
+                                    },
             });
         },
         methods: {

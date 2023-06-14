@@ -49,7 +49,7 @@ export default {
           return res.json();
         });
 
-        // console.log('thePageDatasssssss', thePageData);
+        console.log('thePageDatasssssss', thePageData);
         // if(thePageData.data.attributes.dynamic_content){
         //   this.blocks = thePageData.data.attributes.dynamic_content
         // }

@@ -2,7 +2,7 @@
   <div @scroll="onScroll" class="blog" :class="this.blogClass"> 
     <h1>Blog</h1>
     <div class="blog__filter-container">
-      <DropDown v-if="this.theBlogsId" :options="this.cats" :placeHolder="this.theBlogsId" v-on:dropdownEvent="changeCat($event)" />
+      <DropDown v-if="this.theBlogsName" :options="this.cats" :placeHolder="this.theBlogsName" v-on:dropdownEvent="changeCat($event)" />
       <DropDown v-else :options="this.cats" placeHolder="All Posts" v-on:dropdownEvent="changeCat($event)" />
       
     </div>
@@ -21,7 +21,7 @@ export default {
   name: 'BlogPage', 
 
   props: {
-      theBlogsId: Object
+      theBlogsName: Object
   },    
 
   data(){
@@ -35,57 +35,6 @@ export default {
       amountToPaginate: 6
     }
   },
-  async asyncData({ error, params, props, app: { store } }) {
-
-    const { apiroute } = store.state;
-    const { page } = params;
-    const { theBlogsId } = props;
-
-    console.log('props', props);
-
-    try{
-
-      const theBlogsID = await fetch(
-        apiroute.url + '/api/blogs?filters[PrimaryCategory][category][slug]=' + theBlogsId
-
-      ).then((res) => {
-          // can set up 404 redirection here
-          return res.json();
-      });
-
-      console.log('theBlogsID', theBlogsID);
-
-      var blogIDs = [];
-
-      theBlogsID.data.forEach(element => {
-          blogIDs.push(element.id);
-      });
-
-      console.log('theBlogsID', theBlogsID)
-      const theBlogs = await fetch(
-        apiroute.url + '/api/blogs?populate=deep'
-        ).then((res) => {
-          // can set up 404 redirection here
-          console.log('theblogs', res);
-          return res.json();
-      });
-      
-      var filterdArray = theBlogs.data.filter(function(e){
-          return blogIDs.includes(e.id)
-      });
-
-      console.log('filterdArray', filterdArray);
-      // this.filterdBlogs = filterdArray; 
-    
-      return{ 
-        filterdBlogs: filterdArray
-      }
-
-    }catch(e){
-
-    }
-  },
-
   methods: {
     async getCategories(){
       const theCats = await fetch(
@@ -103,10 +52,58 @@ export default {
       theCats.data.forEach(element => {
           this.cats.push( { option: element.attributes.name , value: element.attributes.slug } ) 
       });
-
-     
-
     },
+    // async categoryBlogs({ error, params, props, app: { store } }) {
+
+    //   const { apiroute } = store.state;
+    //   const { page } = params;
+    //   const { theBlogsName } = props;
+
+    //   console.log('props', props);
+
+    //   try{
+    //     const theBlogsNameReady = await fetch(
+    //       apiroute.url + '/api/blogs?filters[PrimaryCategory][category][slug]=' + this.theBlogsName
+
+    //     ).then((res) => {
+    //         // can set up 404 redirection here
+    //         return res.json();
+    //     });
+
+    //     console.log('theBlogsName', theBlogsNameReady);
+
+    //     var blogIDs = [];
+
+    //     theBlogsName.data.forEach(element => {
+    //         blogIDs.push(element.id);
+    //     });
+
+    //     console.log('theBlogsName', theBlogsName)
+    //     const theBlogs = await fetch(
+    //       apiroute.url + '/api/blogs?populate=deep'
+    //       ).then((res) => {
+    //         // can set up 404 redirection here
+    //         console.log('theblogs', res);
+    //         return res.json();
+    //     });
+        
+    //     console.log('theBlogs', theBlogs);
+        
+    //     alert('hello');
+
+    //     var filterdArray = theBlogs.data.filter(function(e){
+    //         return blogIDs.includes(e.id)
+    //     });
+      
+    //     console.log('gooba gooba', filterdArray );
+         
+    //     this.filterdBlogs = filterdArray
+        
+
+    //   }catch(e){
+    //     console.log('massive error');
+    //   }
+    // },
     
     onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
         if (scrollTop + clientHeight >= scrollHeight) {
@@ -187,12 +184,13 @@ export default {
 
   mounted() {
 
-    console.log('this.theBlogsId', this.theBlogsId);
+    // console.log('this.theBlogsName', this.theBlogsName);
 
     var thisContext = this;
     var apiStore = this.$store.state.apiroute.url
     
     this.getCategories();
+    //this.categoryBlogs();
 
     console.log('this.filterdBlogs', this.filterdBlogs);
     setTimeout(function () { this.animateIn() }.bind(this), 500);
@@ -301,7 +299,7 @@ export default {
     // });
     // ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".blog-card", {y: 0}));
 
-    if(this.theBlogsId){
+    if(this.theBlogsName){
         // this.asyncData();
     }else{
         // this.allBlogs();

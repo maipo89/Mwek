@@ -41,7 +41,7 @@
             <div class="page-modal button-bottom">
               <BackButton />
             </div>
-            <div @scroll="onScroll" id="page-modal" ref="pageModal" class="page-modal">
+            <div id="page-modal" ref="pageModal" class="page-modal">
               <div id="page-scroller" ref="pageScroller" class="page_scroller"  :class="this.transitionClass">
                 <Nuxt />
               </div>

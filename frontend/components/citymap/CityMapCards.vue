@@ -28,7 +28,7 @@ export default {
 
     },  
     mounted(){
-        console.log('this.cardData', this.cardData);
+        
     }
 }
 </script>

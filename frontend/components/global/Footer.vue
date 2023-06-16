@@ -53,7 +53,7 @@ export default {
                 
             return res.json();
             }); 
-            //console.log('image', footerImage);
+            //
 
             this.footerColumns.push({ logoImg: this.$store.state.apiroute.url + footerImage.data.attributes.footerLogo.data.attributes.url, tagline: footerImage.data.attributes.footerTagLine })
 
@@ -64,12 +64,12 @@ export default {
                 // can set up 404 redirection here
             return res.json();
             });   
-            console.log('footerLinks', footerLinks);
+            
             footerLinks.data.attributes.theFooterColumns.forEach(element => {
-                // console.log('elm', element);
+                // 
                 this.footerColumns.push(element);
             });
-            // console.log(this.$router.params);
+            // 
         },
         footerClick(index){
             // alert('click dsdf');
@@ -78,7 +78,7 @@ export default {
     },  
     mounted(){
         this.asyncData();
-        console.log('this.footerColumns', this.footerColumns);
+        
     }
 }
 </script>

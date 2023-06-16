@@ -149,7 +149,7 @@
             }
         },
         mounted(){
-            console.log('tab content',this.blockData);
+            
             for (let index = 0; index < this.blockData.tabbedContent.length; index++) {
                 if(index === 0){
                     this.activeTab.push(true);

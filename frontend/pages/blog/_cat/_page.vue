@@ -9,6 +9,9 @@
       </div>
       <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
       <!-- <ContactFooter :contactItems="this.contactDetails"/> -->
+      <div class="page-modal-buttons button-bottom">
+        <BackButton />
+      </div>
     </div>
 </template>
 
@@ -40,7 +43,7 @@ export default {
         var pageID = thePageID.data[0].id;
 
         
-        console.log('pageID', pageID);
+        
 
         const thePageData = await fetch(
             apiroute.url + '/api/blogs/' + pageID + '?populate=deep,5'
@@ -49,11 +52,11 @@ export default {
           return res.json();
         });
 
-        // console.log('thePageDatasssssss', thePageData);
+        // 
         // if(thePageData.data.attributes.dynamic_content){
         //   this.blocks = thePageData.data.attributes.dynamic_content
         // }
-        // console.log(this.$router.params);
+        // 
         const contactData = await fetch(
             apiroute.url + '/api/contact?populate=*'
             ).then((res) => {
@@ -62,7 +65,7 @@ export default {
         });
 
         // if(contactData.data.attributes.ContactInfo){
-        //   // console.log(contactData);
+        //   // 
         //   this.contactDetails = contactData
         // }
 
@@ -88,7 +91,7 @@ export default {
       //   var pageID = thePageID.data[0].id;
 
         
-      //   console.log('pageID', pageID);
+      //   
 
       //   const thePageData = await fetch(
       //       this.$store.state.apiroute.url + '/api/blogs/' + pageID + '?populate=deep,5'
@@ -97,7 +100,7 @@ export default {
       //     return res.json();
       //   });
 
-      //   console.log('thePageDatasssssss', thePageData);
+      //   
 
       //   this.blocks = thePageData.data.attributes.dynamic_content
       //   this.post = thePageData.data.attributes
@@ -105,7 +108,7 @@ export default {
       //   // if(thePageData.data.attributes.dynamic_content){
       //   //   this.blocks = thePageData.data.attributes.dynamic_content
       //   // }
-      //   // console.log(this.$router.params);
+      //   // 
       //   const contactData = await fetch(
       //       this.$store.state.apiroute.url + '/api/contact?populate=*'
       //       ).then((res) => {
@@ -114,7 +117,7 @@ export default {
       //   });
 
       //   if(contactData.data.attributes.ContactInfo){
-      //     // console.log(contactData);
+      //     // 
       //     this.contactDetails = contactData
       //   }
       //   this.renderPage = true;

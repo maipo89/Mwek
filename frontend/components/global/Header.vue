@@ -74,7 +74,7 @@ export default {
             return res.json();
             }); 
 
-            // console.log('headerLogo', headerLogo);
+            // 
 
             this.theHeaderLogo = this.$store.state.apiroute.url + headerLogo.data.attributes.headerLogo.data.attributes.url
 
@@ -98,7 +98,7 @@ export default {
             //     this.navItemIDs.push(element.id);
             // });
 
-            console.log('navItemIDs', navItemIDs);
+            
 
             // get all pages so we can filter them by nav id
             const navItems = await fetch(
@@ -114,8 +114,8 @@ export default {
             // filter pages by navID 
             var newArray = [];
             
-            console.log('navItemIDs', navItemIDs);
-            console.log('navSubItem', navSubItem);
+            
+            
 
             function theSubItems(count){
                 if(navSubItem.data.attributes.headerNavigation[count].NavigationDropDownItems != 0){
@@ -134,12 +134,12 @@ export default {
             });
 
 
-            console.log('newArray', newArray);
+            
             this.navItems = newArray;
-            // console.log('this.navItems', this.navItems);
+            // 
         },
         navClick(count){
-            console.log('0 0 0 0 0 0 0 ');
+            
             this.$emit('page-open');
             this.$store.commit('apiroute/underlineHeader', count)
             if(this.openMobileNav === 'mobileNavOpen'){
@@ -159,7 +159,7 @@ export default {
             }
         },
         customClick(link){
-            console.log('link', link);
+            
             this.$emit('customLink', link);
             if(this.openMobileNav === 'mobileNavOpen'){
                 this.openMobileNav = ''

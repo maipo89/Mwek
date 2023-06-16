@@ -24,7 +24,7 @@
             blockData: Array,
         },
         mounted(){
-            console.log('this.bockData',this.blockData);
+            
 
                 gsap.set(this.$refs.service, {opacity:0, y: 50})
                 gsap.to(this.$refs.service, {

@@ -33,7 +33,7 @@
             //         this.colours.push(this.blockData.approachSectionsRepeater[index + 1].colour);
             //     }
             // });
-            console.log('contentWithImage - f -f -f -f -f -f -', this.blockData);
+            
         },
         beforeMount(){
             require('@/assets/scss/text-content/content-with-image.scss');

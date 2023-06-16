@@ -73,8 +73,8 @@
                 this.$refs.carousel.prev();
             },
             currentSlide(slideIndex, nextIndex){
-                console.log('slideIndex',slideIndex);
-                console.log('nextIndex', nextIndex)
+                
+                
                 this.currentIndex = nextIndex;
                 //     if (slideIndex !== nextIndex) {
                 //         document.querySelectorAll('.slick-current + .slick-cloned').forEach((next) => {
@@ -85,7 +85,7 @@
                 if(slideIndex-1 == nextIndex || (slideIndex == 0 && nextIndex == (this.blockData.TeamCubesSlider.length - 1) && slideIndex < nextIndex)) {
                     nextIndex2 = slideIndex - 1; // nope, moving left
                 }
-                console.log(nextIndex2)
+                
                 document.querySelectorAll(`[data-index="${nextIndex2}"]`).forEach((data) => {
                     setTimeout(() => data.classList.add('slick-target'))
                 });
@@ -101,7 +101,7 @@
             require('@/assets/scss/explore/meet-the-team.scss');
         },
         mounted(){
-            console.log(window.innerWidth);
+            
             this.$refs.carousel.next();
             if(window.innerWidth < 900){
                 this.slideNumber = 3;

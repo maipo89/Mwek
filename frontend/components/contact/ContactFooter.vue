@@ -172,9 +172,7 @@
 <script>
     import gsap from "gsap"
     import ScrollTrigger from "gsap/ScrollTrigger";
-    import { ScrollToPlugin } from 'gsap/all';
     import VueMarkdown from 'vue-markdown'
-    gsap.registerPlugin(ScrollToPlugin);
     export default {
         name: 'ContactFooter',
         components: {
@@ -196,7 +194,7 @@
             }
         },
         mounted(){
-            console.log('this.contactItems', this.contactItems);
+            
             const pageModal = document.getElementById("page-modal");
             
             gsap.set(this.$refs.contact, {opacity:0, y: 50})
@@ -210,29 +208,40 @@
                     onEnterBack: () => { gsap.to(this.$refs.contact, {opacity: 1, y: 0}) },
                 }
             });
+            
+            // window.onscroll = function() {
+            //     if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
+            //         this.$store.commit('apiroute/bottomScroll', true)
+            //     }
+            // };
 
             // ScrollTrigger.create({
             //     trigger: this.$refs.contact,
             //     scroller: "#page-modal",
-            //     start: '400px center',
+            //     start: '320px center',
             //     end: 'top-=50px 200px',
             //     onEnter: () => {
             //         document.body.style.overflow = "initial";
             //         document.documentElement.style.overflow = "initial";
             //     },
             //     onLeaveBack: () => {
-            //              if (this.$store.state.apiroute.bottomScroll) {
-            //                  pageModal.classList.add('stop-scrolling');
-            //                  gsap.to(window, {duration: 1, scrollTo: 0});
-            //                  gsap.to(pageModal, {duration: 1, scrollTo: 0});
-            //                  this.$store.commit('apiroute/bottomScroll', false);
-            //              }
+            //             if (this.$store.state.apiroute.bottomScroll) {
+            //                 pageModal.classList.add('stop-scrolling');
+            //                 window.scrollTo({top: 0, behavior: 'smooth'});
+            //                 pageModal.scrollTo({top: 0, behavior: 'smooth'});
+            //                 setTimeout(function () {
+            //                     pageModal.classList.remove('stop-scrolling');
+            //                 }, 1000);
+            //                 this.$store.commit('apiroute/bottomScroll', false);
+            //                 document.body.style.overflow = "hidden";
+            //                 document.documentElement.style.overflow = "hidden";
+            //             }
             //     },
             // });
         },
         methods: {
             go() {
-                console.log("sen email")
+                
                 this.$mail.send({
                     from: this.formData.email,
                     subject: this.formData.subject,
@@ -243,7 +252,7 @@
                 document.getElementById("mce-MMERGE3").value = cat;
             },
             getValue(event, type){
-                console.log(event);
+                
                 switch(type) {
                     case 'name':
                             this.formData.name = event

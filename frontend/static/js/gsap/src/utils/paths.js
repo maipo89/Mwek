@@ -678,7 +678,7 @@ export function stringToRawPath(d) {
 			segment.push(sx + difX, sy + difY, ex - difX, ey - difY, ex, ey);
 		};
 	if (!d || !isNaN(a[0]) || isNaN(a[1])) {
-		console.log(errorMessage);
+		
 		return path;
 	}
 	for (i = 0; i < elements; i++) {
@@ -819,7 +819,7 @@ export function stringToRawPath(d) {
 			relativeY = segment[segment.length-1];
 
 		} else {
-			console.log(errorMessage);
+			
 		}
 	}
 	i = segment.length;

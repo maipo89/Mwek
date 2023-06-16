@@ -45,7 +45,7 @@
             //         this.colours.push(this.blockData.approachSectionsRepeater[index + 1].colour);
             //     }
             // });
-            console.log('ContentColumns', this.blockData);
+            
 
             gsap.set(this.$refs.contentColumn, {opacity:0, y: 50})
             gsap.to(this.$refs.contentColumn, {

@@ -54,7 +54,7 @@ export default {
         }
     },
     mounted(){
-        console.log(this.blockComponent);
+        
         // this.options.unshift({ option: 'All posts', value: 'all' })
         
         if(this.placeHolder){

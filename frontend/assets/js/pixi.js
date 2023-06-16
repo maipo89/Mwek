@@ -4616,7 +4616,7 @@ var PIXI = (function (exports) {
             (_a = globalThis.console).log.apply(_a, args);
         }
         else if (globalThis.console) {
-            globalThis.console.log("PixiJS " + VERSION$1 + " - " + type + " - http://www.pixijs.com/");
+            globalThis.
         }
         saidHello = true;
     }
@@ -32808,7 +32808,7 @@ var PIXI = (function (exports) {
      * ```js
      * const sheet = new PIXI.Spritesheet(texture, spritesheetData);
      * await sheet.parse();
-     * console.log('Spritesheet ready to use!');
+     * 
      * ```
      *
      * With the `sheet.textures` you can create Sprite objects,`sheet.animations` can be used to create an AnimatedSprite.

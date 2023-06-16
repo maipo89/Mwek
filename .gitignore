@@ -5,3 +5,4 @@ frontend/dist
 frontend/.nuxt
 frontend/.nuxt/*
 frontend/node_modules/*
+Earth.gltf

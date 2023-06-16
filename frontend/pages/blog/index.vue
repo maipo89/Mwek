@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-content">
     <!-- <div class="blog" :class="this.blogClass"> 
       <div class="blog__filter-container">
         <DropDown :options="this.cats" v-on:dropdownEvent="changeCat($event)"/>
@@ -11,6 +11,9 @@
     <BlogPage />
     <!-- <Subscription /> -->
     <SubscriptionSection />
+    <div class="page-modal-buttons button-bottom">
+      <BackButton />
+    </div>
   </div>
 </template>
 
@@ -40,7 +43,7 @@ export default {
 
   //     this.blogData = theBlogs
 
-  //     console.log('theBlogs', theBlogs);
+  //     
 
   //     const theCats = await fetch(
   //         this.$store.state.apiroute.url + '/api/categories'
@@ -50,11 +53,11 @@ export default {
   //       return res.json();
   //     });
 
-  //     console.log('theCats', theCats);
+  //     
   //     theCats.data.forEach(element => {
   //       this.cats.push( { option: element.attributes.name , value: element.attributes.slug } );
 
-  //       console.log('this.cats',this.cats);
+  //       
   //     });;
 
   //   },

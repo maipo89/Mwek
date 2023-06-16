@@ -215,29 +215,29 @@
             //     }
             // };
 
-            ScrollTrigger.create({
-                trigger: this.$refs.contact,
-                scroller: "#page-modal",
-                start: '320px center',
-                end: 'top-=50px 200px',
-                onEnter: () => {
-                    document.body.style.overflow = "initial";
-                    document.documentElement.style.overflow = "initial";
-                },
-                onLeaveBack: () => {
-                        if (this.$store.state.apiroute.bottomScroll) {
-                            pageModal.classList.add('stop-scrolling');
-                            window.scrollTo({top: 0, behavior: 'smooth'});
-                            pageModal.scrollTo({top: 0, behavior: 'smooth'});
-                            setTimeout(function () {
-                                pageModal.classList.remove('stop-scrolling');
-                            }, 1000);
-                            this.$store.commit('apiroute/bottomScroll', false);
-                            document.body.style.overflow = "hidden";
-                            document.documentElement.style.overflow = "hidden";
-                        }
-                },
-            });
+            // ScrollTrigger.create({
+            //     trigger: this.$refs.contact,
+            //     scroller: "#page-modal",
+            //     start: '320px center',
+            //     end: 'top-=50px 200px',
+            //     onEnter: () => {
+            //         document.body.style.overflow = "initial";
+            //         document.documentElement.style.overflow = "initial";
+            //     },
+            //     onLeaveBack: () => {
+            //             if (this.$store.state.apiroute.bottomScroll) {
+            //                 pageModal.classList.add('stop-scrolling');
+            //                 window.scrollTo({top: 0, behavior: 'smooth'});
+            //                 pageModal.scrollTo({top: 0, behavior: 'smooth'});
+            //                 setTimeout(function () {
+            //                     pageModal.classList.remove('stop-scrolling');
+            //                 }, 1000);
+            //                 this.$store.commit('apiroute/bottomScroll', false);
+            //                 document.body.style.overflow = "hidden";
+            //                 document.documentElement.style.overflow = "hidden";
+            //             }
+            //     },
+            // });
         },
         methods: {
             go() {

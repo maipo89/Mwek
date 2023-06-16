@@ -24,7 +24,8 @@ export default {
     name: 'BlogCard',
     props: {
         cardData: Object,
-        countIndex: Number 
+        countIndex: Number,
+        activeCategory: String,
     },
     
     data(){
@@ -65,12 +66,15 @@ export default {
         }.bind(this), 2000);
 
 
-       // console.log('this.cardData', this.cardData);
+        console.log('this.cardData', this.cardData);
+
+        console.log('this.activeCategory', this.activeCategory);
+
         if(this.cardData.attributes){
-            if(this.cardData.attributes.PrimaryCategory.category.data){
-                this.cardUrl = "/blog/" + this.cardData.attributes.PrimaryCategory.category.data.attributes.slug + "/" + this.cardData.attributes.slug
+            if(this.activeCategory){
+                this.cardUrl = "/blog/" + this.activeCategory + "/" + this.cardData.attributes.slug
             }else{
-                this.cardUrl = "/blog/" + this.cardData.attributes.slug
+                this.cardUrl = "/blog/" + this.cardData.attributes.PrimaryCategory.category.data.attributes.slug + '/' + this.cardData.attributes.slug
             }
         }
         

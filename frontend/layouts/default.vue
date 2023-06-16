@@ -13,6 +13,7 @@
           </div>
           <div class="page-modal__container" >
             <div class="page-modal button-top">
+              <div ref="myDiv">
               <div class="page-modal__back-to-map" v-on:click="backToMap()">
                 <div class="inside">
                   <Icon icon="arrowLeft" /> <p>MWEK City</p>
@@ -37,6 +38,7 @@
                   <p v-on:click='scrollTo("team")'>Our team</p>
                 </div>
               </div>
+              </div>
             </div>
             <div class="page-modal button-bottom">
               <BackButton />
@@ -58,6 +60,8 @@
 
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 export default {
   name: 'DefaultLayout',
   data () {
@@ -232,11 +236,11 @@ export default {
       }
     },
 
-    onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
-      if (scrollTop + clientHeight >= scrollHeight) {
-        this.$store.commit('apiroute/bottomScroll', true)
-      }
-    }
+    // onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
+    //   if (scrollTop + clientHeight >= scrollHeight) {
+    //     this.$store.commit('apiroute/bottomScroll', true)
+    //   }
+    // }
   },
 
   mounted(){
@@ -284,7 +288,18 @@ export default {
     // if(this.renderMap){
     //   this.draggableMapFunction()
     // }
-    
+        // Fetch the div
+    const myDiv = this.$refs.myDiv;
+    this.handleScroll = function(e) {
+      const delta = Math.sign(e.deltaY);
+      gsap.to(myDiv, {
+        duration: 0.5, // adjust duration as needed
+        scrollTo: { y: myDiv.scrollTop + delta * 30 },
+        ease: "power1.inOut"
+      });
+    };
+    window.addEventListener('wheel', this.handleScroll);
+
   },
   watch: {
     $route (to, from){

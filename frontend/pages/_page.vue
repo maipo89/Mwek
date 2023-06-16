@@ -12,7 +12,6 @@
 import gsap from 'gsap';
 
 export default {
-    
   data(){
     return {
       page: this.$route.params.page,
@@ -150,6 +149,8 @@ export default {
     //   wrapper: 'body', 
     //   content: '.page-content' 
     // })
+
+    
   },
 
 }

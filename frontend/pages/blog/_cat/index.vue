@@ -1,10 +1,12 @@
 <template>
-  <div>
+  <div class="page-content">
     <BlogPage
       :theBlogsName="this.$route.params.cat"
-      :categoryblogs="this.catBlogs"
     />
     <SubscriptionSection />
+    <div class="page-modal-buttons button-bottom">
+      <BackButton />
+    </div>
   </div>
 </template>
 

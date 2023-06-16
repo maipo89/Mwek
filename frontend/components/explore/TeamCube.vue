@@ -107,10 +107,10 @@
                     this.goingLeft = false
                 }
 
-                console.log(this.teamIndex === this.activeCube - this.activeCube)
-                console.log('this.teamindex', this.teamIndex)
-                console.log('this.activeCube',this.activeCube);
-                console.log('this.totalTeam', this.totalTeam);
+                
+                
+                
+                
 
                 if(this.activeCube === 0 && this.teamIndex === this.totalTeam - 1){
                     this.onTheEdge = true;
@@ -123,18 +123,18 @@
         //     // handleMouseMove(e) {
         //     //     this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width/2;
         //     //     this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height/2;
-        //     //     console.log('move')
+        //     //     
         //     // },
         //     // handleMouseEnter() {
         //     //     clearTimeout(this.mouseLeaveDelay);
-        //     //     console.log('enter')
+        //     //     
         //     // },
         //     // handleMouseLeave() {
         //     //     this.mouseLeaveDelay = setTimeout(()=>{
         //     //         this.mouseX = 0;
         //     //         this.mouseY = 0;
         //     //     }, 1000);
-        //     //     console.log('leave')
+        //     //     
         //     // }
         // },
         // hover animation for heads

@@ -84,7 +84,7 @@ export default {
     },
     methods: {
         iconClickEvent(){
-            console.log('icon click');
+            
             this.$emit('iconClick');
         }
     }

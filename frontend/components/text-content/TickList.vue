@@ -21,7 +21,7 @@
             blockData: Array,
         },
         mounted(){
-            console.log('this.blockData.listItems',this.blockData.listItems);
+            
             
             gsap.set(this.$refs.tick, {opacity:0, y: 50})
             gsap.to(this.$refs.tick, {

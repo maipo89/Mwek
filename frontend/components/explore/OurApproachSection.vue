@@ -129,7 +129,7 @@
       
                 this.rotate()
 
-                console.log('this.sectionData.icon', this.sectionData.icon);
+                
 
       
 

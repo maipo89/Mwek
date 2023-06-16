@@ -24,9 +24,9 @@ export default {
                 return res.json();
             });
 
-            console.log('cats', cats);
+            
 
-        // console.log(this.$router.params);
+        // 
         },
 
     },  

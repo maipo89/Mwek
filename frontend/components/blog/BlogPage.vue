@@ -47,7 +47,7 @@ export default {
           return res.json();
       });
 
-      console.log('theCats', theCats);
+      
 
       this.cats.push({ option: 'All posts', value: 'all' });
 
@@ -86,7 +86,7 @@ export default {
             // can set up 404 redirection here
             return res.json();
         });
-        console.log('theBlogs', theBlogs);
+        
 
         
 
@@ -102,7 +102,7 @@ export default {
           this.$store.state.apiroute.url + '/api/blogs?filters[PrimaryCategory][category][slug]=' + this.theBlogsName + '&populate=*'
         );
         const theBlogsNameReady = await response.json();
-        console.log( 'data data', theBlogsNameReady.data);
+        
         this.filterdBlogs = theBlogsNameReady.data;
        
       } catch (e) {
@@ -150,7 +150,7 @@ export default {
 
   mounted() {
 
-    // console.log('this.theBlogsName', this.theBlogsName);
+    // 
 
     var thisContext = this;
     var apiStore = this.$store.state.apiroute.url
@@ -158,10 +158,10 @@ export default {
     this.getCategories();
     //this.categoryBlogs();
 
-    console.log('this.filterdBlogs', this.filterdBlogs);
+    
     setTimeout(function () { this.animateIn() }.bind(this), 500);
 
-    console.log('cat blogs', this.categoryBlogs);
+    
     
     if(this.theBlogsName){
       this.blogCategory = this.theBlogsName;

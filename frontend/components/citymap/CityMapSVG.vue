@@ -726,7 +726,7 @@
                 }, 240);
                 
                 
-                // console.log(counttx);
+                // 
             }
 
 
@@ -787,13 +787,13 @@
             }
 
             function HqHover(state){
-               // console.log('hover', HQcont.y );
+               // 
                 app.ticker.remove(app.HQhoverAnimationLeave);
                 app.ticker.add(app.HQhoverAnimation);
             }
 
             function HqLeave(state){
-                // console.log('leave');
+                // 
                 app.ticker.remove(app.HQhoverAnimation);
                 app.ticker.add(app.HQhoverAnimationLeave);
             }
@@ -997,7 +997,7 @@
                 if(ServiceButton.alpha > 0){
                     ServiceButton.alpha = ServiceButton.alpha - 0.05;
                 }
-                // console.log(ThreeTowersCont.y);
+                // 
             }
 
             function ServiceHover(state){
@@ -1200,7 +1200,7 @@
                     }
                 }, "1000")
 
-                // console.log(singleTowerCenter.y);
+                // 
             }
             var singleHover = new PIXI.Sprite.from('/images/light/hover.png');
             mapCont.addChild(singleHover);
@@ -1231,7 +1231,7 @@
                     }
                     singleButton.y = singleButton.y + 0.3
                 }
-                // console.log('singleButton.y', singleButton.y);
+                // 
             }
 
             
@@ -1380,7 +1380,7 @@
                         }   
                     }
                 }, "1000");
-                // console.log(singleTowerCenter.y);
+                // 
             }
 
 
@@ -1578,7 +1578,7 @@
             .on('pointerout', removeTrainHover);
 
             app.trainHover = function(){
-                //console.log('trainHover.y', trainHover.y);
+                //
 
                 // if(trainTower.y < 150){
                 //     trainTower.y = trainTower.y + 5;
@@ -1654,18 +1654,18 @@
     //         map.buttonMode = true;
 
             app.animationUpdateXright = function(delta) {
-                // console.log('mapCont.x', mapCont.x )
+                // 
                 var checkCords = mapCont.getBounds();
                 if(checkCords.x > 0){
                      mapCont.x = mapCont.x - 15;
                 }
                
-                // console.log(mapCont.x);
+                // 
             }
 
 
             app.animationUpdateXleft = function(delta) {
-                // console.log('mapCont.x', mapCont.x )
+                // 
                 var checkCords = mapCont.getBounds();
                 var rightCheck = 0 - (mapCont._boundsRect.width - window.innerWidth )
                 if(checkCords.x < rightCheck){
@@ -1676,7 +1676,7 @@
 
 
             app.animationUpdateYtop = function(delta) {
-                // console.log('mapCont.x', mapCont.x )
+                // 
                 var checkCords = mapCont.getBounds();
                 if(checkCords.y > 0){
                     mapCont.y = mapCont.y - 15;
@@ -1686,7 +1686,7 @@
 
             
             app.animationUpdateYbottom = function(delta) {
-                // console.log('mapCont.x', mapCont.x )
+                // 
                 // mapCont.y += 0.1 * 10;
                 var checkCords = mapCont.getBounds();
                 var bottomCheck = 0 - ( mapCont._boundsRect.height - window.innerHeight);
@@ -1695,10 +1695,10 @@
                 }
             }
             
-            console.log('app',app.renderer.width);
+            
             
             // var checkCordsStart = mapCont.getBounds();
-            // console.log('checkCords.x ', checkCordsStart.x );
+            // 
 
             mapCont.on('pointerdown', onDragStart)
                 .on('pointerup', onDragEnd)
@@ -1714,7 +1714,7 @@
 
                 //store this variable for convenience           
                 let position = this.data.getLocalPosition(this);
-                console.log(position.x + '/' + position.y);
+                
                 // Set the pivot point to the new position
                 thisContext.clickPosition = position
                 this.pivot.set(position.x, position.y)
@@ -1773,7 +1773,7 @@
 
                 // right
                 var rightCheck = 0 - (mapCont._boundsRect.width - window.innerWidth );
-                console.log(checkCords.x + ' --  ' + rightCheck);
+                
                 if(checkCords.x < rightCheck){
                     app.ticker.add(app.animationUpdateXleft);
                     //alert('hello');
@@ -1814,7 +1814,7 @@
                 //     // app.ticker.remove(app.animationUpdateXleft);
                 //         // mapCont.interactive = true;
                 //         // mapCont.buttonMode = true;
-                //         // console.log('mapCont.x', mapCont.x);   
+                //         // 
                  
                 // }
 
@@ -1828,8 +1828,8 @@
                     // if(xCanMoveRight){
                     //     this.x = newPosition.x;
                     //     this.dragging = true
-                    //     // console.log('newPosition.x',newPosition.x);
-                    //     // console.log(map.x);
+                    //     // 
+                    //     // 
                     //     mapCont.interactive = true;
                     //     mapCont.buttonMode = true;
 
@@ -1841,7 +1841,7 @@
                     //         xCanMoveRight = true;
                     //         // mapCont.interactive = true;
                     //         // mapCont.buttonMode = true;
-                    //         // console.log('mapCont.x', mapCont.x);   
+                    //         // 
                     //     }, 400);
                     // }
                     this.x = newPosition.x;
@@ -1849,8 +1849,8 @@
                     // if(xCanMoveLeft){
                     //     this.x = newPosition.x;
                     //     this.dragging = true
-                    //     // console.log('newPosition.x',newPosition.x);
-                    //     // console.log(map.x);
+                    //     // 
+                    //     // 
                     //     mapCont.interactive = true;
                     //     mapCont.buttonMode = true;
 
@@ -1862,7 +1862,7 @@
                     //         xCanMoveLeft = true;
                     //         // mapCont.interactive = true;
                     //         // mapCont.buttonMode = true;
-                    //         // console.log('mapCont.x', mapCont.x);   
+                    //         // 
                     //     }, 400);
                     // }
                     
@@ -1891,11 +1891,11 @@
             // HQhoverZone.on('touchstart', goToPage);
 
             // function goToPage(whichOne){
-            //     console.log('looooga');
+            //     
             //     // this.$router.push({path: '/explore' });
             //     // router.push('/users/eduardo')
             //     // let clickPosition = mapCont.data.getLocalPosition(this);
-            //     console.log('mousePosition', thisContext.clickPosition);
+            //     
             //     if(thisContext.clickPosition.y < -361.56805419921875 && thisContext.clickPosition.y > -448.3217468261719 && thisContext.clickPosition.x > -239.74478149414062 && thisContext.clickPosition.x < -40.293060302734375 ){
             //         thisContext.$emit('explore');
             //     }
@@ -2147,7 +2147,7 @@
 
             }, true);
 
-            console.log('window.innerHeight', window.innerWidth);
+            
             if(window.innerWidth < 845){
                 HQExploreButton.alpha = 1;
                 trainButton.alpha = 1;

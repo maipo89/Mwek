@@ -194,7 +194,7 @@
             }
         },
         mounted(){
-            console.log('this.contactItems', this.contactItems);
+            
             const pageModal = document.getElementById("page-modal");
             
             gsap.set(this.$refs.contact, {opacity:0, y: 50})
@@ -241,7 +241,7 @@
         },
         methods: {
             go() {
-                console.log("sen email")
+                
                 this.$mail.send({
                     from: this.formData.email,
                     subject: this.formData.subject,
@@ -252,7 +252,7 @@
                 document.getElementById("mce-MMERGE3").value = cat;
             },
             getValue(event, type){
-                console.log(event);
+                
                 switch(type) {
                     case 'name':
                             this.formData.name = event

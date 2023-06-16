@@ -48,11 +48,11 @@ export default {
         return res.json();
       });
 
-      // console.log('thePageData 0000', thePageData);
+      // 
       if(thePageData.data.attributes.dynamic_content){
         this.blocks = thePageData.data.attributes.dynamic_content
       }
-      // console.log(this.$router.params);
+      // 
     },
 
     async getMapButtons() {
@@ -63,7 +63,7 @@ export default {
         // can set up 404 redirection here
       return res.json();
       });
-      console.log('mapButton', mapButton);
+      
     },
     
     // dragFunc(){
@@ -76,7 +76,7 @@ export default {
   },
 
   mounted(){
-    // console.log('this.dragElm', this.$refs.dragMap__container);
+    // 
 
     // window.addEventListener('load', () => {
     //    this.dragFunc();
@@ -84,7 +84,7 @@ export default {
 
     this.asyncData();
 
-    // console.log('this.$refs.dragMapCity', this.$refs.dragMapCity);
+    // 
 
     // this.$gsap.to(this.$refs.dragMap__container, {
     //   Draggable: {}

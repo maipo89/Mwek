@@ -37,7 +37,7 @@ export default {
         }
     },
     mounted(){  
-        // console.log('this.key', this.countIndex);  
+        // 
         if(this.countIndex < 3){
             this.isActive = 'active'
         }
@@ -66,9 +66,9 @@ export default {
         }.bind(this), 2000);
 
 
-        console.log('this.cardData', this.cardData);
+        
 
-        console.log('this.activeCategory', this.activeCategory);
+        
 
         if(this.cardData.attributes){
             if(this.activeCategory){

@@ -6,7 +6,7 @@
         <OurApproach v-if="this.blockComponent.__component == 'explore.our-approach'" :blockData="this.blockComponent" />
         <ContentColumns v-if="this.blockComponent.__component == 'text-content-blocks.content-block'" :blockData="this.blockComponent" />
         <ContentWithImage v-if="this.blockComponent.__component == 'text-content-blocks.content-with-image'" :blockData="this.blockComponent" />
-        <MeetTheTeam v-if="this.blockComponent.__component == 'explore.meet-the-team'" :blockData="this.blockComponent" />
+        <MeetTheTeam ref="team" v-if="this.blockComponent.__component == 'explore.meet-the-team'" :blockData="this.blockComponent" />
         <Quote v-if="this.blockComponent.__component ==  'text-content-blocks.quote'" :blockData="this.blockComponent" />
         <StatTabs v-if="this.blockComponent.__component ==  'stats.stat-tabs'" :blockData="this.blockComponent" />
         <TabbedContent  v-if="this.blockComponent.__component ==  'onqro-tabed-content.tabbed-content-container'" :blockData="this.blockComponent" />
@@ -24,7 +24,7 @@ export default {
     props: {
         ID: Number,
         blockComponent: Object
-    },
+    }
 }
 </script>
 

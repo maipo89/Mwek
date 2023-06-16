@@ -108,8 +108,8 @@
                 
                         // }
     
-                console.log('SEO', this.seoData.structuredData);
-                console.log('inside the seo', this.publishDate);
+                
+                
 
                 return [tempSocailArray, linkMeta]
             }
@@ -187,8 +187,8 @@
         //             // href: 'https://www.my-primary-domain.com' + this.$route.path
         //             // }
   
-        //     console.log('SEO', this.seoData.structuredData);
-        //     console.log('inside the seo', this.publishDate);
+        //     
+        //     
 
         // }
     }

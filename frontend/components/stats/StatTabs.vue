@@ -20,7 +20,7 @@
             blockData: Object,
         },
         mounted(){
-            console.log('statTabs', this.blockData);
+            
         },
         beforeMount(){
             require('@/assets/scss/stats/stat-tabs.scss');

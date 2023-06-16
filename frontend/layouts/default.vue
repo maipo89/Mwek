@@ -57,6 +57,8 @@
 <script>
 
 import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/all';
+gsap.registerPlugin(ScrollToPlugin);
 import ScrollTrigger from "gsap/ScrollTrigger";
 export default {
   name: 'DefaultLayout',
@@ -72,7 +74,8 @@ export default {
       transitionClass: '',
       pageReady: false,
       scrolltos: '',
-      activeHeader: 5
+      activeHeader: 5,
+      previousPosition: null
 
     }
   },
@@ -232,10 +235,34 @@ export default {
       }
     },
 
-    onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
-      if (scrollTop + clientHeight >= scrollHeight) {
-        this.$store.commit('apiroute/bottomScroll', true)
+    scroll () {
+      window.onscroll = () => {
+        if (document.documentElement.scrollTop == 0) {
+        }
       }
+    },
+
+    onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
+
+      const pageModal = document.getElementById("page-modal");
+
+      if (scrollTop + clientHeight >= scrollHeight) {
+        // this.$store.commit('apiroute/bottomScroll', true)
+        this.previousPosition = scrollTop;
+        document.body.style.overflow = "initial";
+        document.documentElement.style.overflow = "initial";
+      }
+
+      if (this.previousPosition - scrollTop == 100) {
+          window.scrollTo({top: 0, behavior: 'smooth'});
+          pageModal.scrollTo({top: 0, behavior: 'smooth'});
+      }
+
+      // if (this.previousPosition - scrollTop > 100) {
+      //     // window.scrollTo({top: 0, behavior: 'smooth'});
+      //     this.previousPosition = null
+      //     document.documentElement.style.overflow = "hidden";
+      // }
     }
   },
 
@@ -243,20 +270,7 @@ export default {
     this.getMapButtons();
     this.scrollButton();
     this.firstActive();
-
-    // const container = document.getElementById("page-modal");
-
-    // var lastScrollTop = 0;
-
-    // container.addEventListener("scroll", function(){ 
-    //   var st = window.pageYOffset || document.documentElement.scrollTop; 
-    //   if (st > lastScrollTop){
-    //     console.log('up')
-    //   } else {
-    //       window.scrollTo({top: 0, behavior: 'smooth'});
-    //   }
-    //   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-    // }, false);
+    this.scroll()
     
     if(this.$route.params.page){
       // alert('hello ofkrh');

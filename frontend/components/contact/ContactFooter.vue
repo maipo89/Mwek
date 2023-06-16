@@ -172,7 +172,9 @@
 <script>
     import gsap from "gsap"
     import ScrollTrigger from "gsap/ScrollTrigger";
+    import { ScrollToPlugin } from 'gsap/all';
     import VueMarkdown from 'vue-markdown'
+    gsap.registerPlugin(ScrollToPlugin);
     export default {
         name: 'ContactFooter',
         components: {
@@ -208,36 +210,25 @@
                     onEnterBack: () => { gsap.to(this.$refs.contact, {opacity: 1, y: 0}) },
                 }
             });
-            
-            // window.onscroll = function() {
-            //     if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
-            //         this.$store.commit('apiroute/bottomScroll', true)
-            //     }
-            // };
 
-            ScrollTrigger.create({
-                trigger: this.$refs.contact,
-                scroller: "#page-modal",
-                start: '320px center',
-                end: 'top-=50px 200px',
-                onEnter: () => {
-                    document.body.style.overflow = "initial";
-                    document.documentElement.style.overflow = "initial";
-                },
-                onLeaveBack: () => {
-                        if (this.$store.state.apiroute.bottomScroll) {
-                            pageModal.classList.add('stop-scrolling');
-                            window.scrollTo({top: 0, behavior: 'smooth'});
-                            pageModal.scrollTo({top: 0, behavior: 'smooth'});
-                            setTimeout(function () {
-                                pageModal.classList.remove('stop-scrolling');
-                            }, 1000);
-                            this.$store.commit('apiroute/bottomScroll', false);
-                            document.body.style.overflow = "hidden";
-                            document.documentElement.style.overflow = "hidden";
-                        }
-                },
-            });
+            // ScrollTrigger.create({
+            //     trigger: this.$refs.contact,
+            //     scroller: "#page-modal",
+            //     start: '400px center',
+            //     end: 'top-=50px 200px',
+            //     onEnter: () => {
+            //         document.body.style.overflow = "initial";
+            //         document.documentElement.style.overflow = "initial";
+            //     },
+            //     onLeaveBack: () => {
+            //              if (this.$store.state.apiroute.bottomScroll) {
+            //                  pageModal.classList.add('stop-scrolling');
+            //                  gsap.to(window, {duration: 1, scrollTo: 0});
+            //                  gsap.to(pageModal, {duration: 1, scrollTo: 0});
+            //                  this.$store.commit('apiroute/bottomScroll', false);
+            //              }
+            //     },
+            // });
         },
         methods: {
             go() {

@@ -13,5 +13,5 @@ export const mutations = {
     },
     bottomScroll(state, val) {
         state.bottomScroll = val
-    }
+    },
 }

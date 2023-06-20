@@ -63,7 +63,7 @@ h1.h2,h3,h4,h5{
     overflow-y: scroll;
     // overflow-x: hidden;
     // height: 150px;
-    transform: translateY(100%);
+    transform: translateY(100%), translate3d(1, 0, 0);
     // border-radius: 20px 20px;
     // padding: 50px 10px 200px;
     backface-visibility: visible;
@@ -114,6 +114,7 @@ h1.h2,h3,h4,h5{
     top:10px;
     z-index: 40;
     position: absolute;
+    transform: translate3d(0, 0, 200px);
     &__back-to-map{
         height: 54px;
         width: 169px;
@@ -266,19 +267,24 @@ h1.h2,h3,h4,h5{
     border-radius: 20px 20px;
     min-height: 100vh;
     height: auto;
-    padding: 50px 10px 200px;
+    padding: 50px 10px 55px;
     backface-visibility: visible;
     -webkit-backface-visibility: visible;
     -moz-backface-visibility: visible;
     -ms-backface-visibility: visible;
     margin-bottom: 100px;
-    overflow-x: hidden;
     position: relative;
+    overflow: hidden;
 }
-
+.page-modal__container{
+    transform: translate(0px, 100%);
+    transition: transform 0.3s;
+}
 .page-open{
     .page-modal__container{
         z-index: 2000;
+        transform: translate(0px, 0%);
+        transition: transform 0.3s;
     }
     .page-modal {
         transform: translateY(0%) translate3d(0px, 10px, 10px);

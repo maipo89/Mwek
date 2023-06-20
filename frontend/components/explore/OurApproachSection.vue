@@ -29,112 +29,82 @@
 </template>
 
 <script>
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-    import gsap from "gsap"
+gsap.registerPlugin(ScrollTrigger);
 
-    export default {
-        name: 'OurApproachSection',
-        props: {
-            sectionData: Object,
-            secondColour: String,
-            sectionIndex: Number
-        },
-        data(){
-            return {
-                rotateMe: 1,
-                turn: 0.5,
-                scrollMe: null,
-                svgItem: null,
-                svgContainer: null,
-            }
-        },
-        methods: {
-            rotate(){
-
-                this.svgItem = this.$refs.svgRotate
-                this.svgContainer = this.$refs.ourApproach__section
-
-                if(this.sectionIndex % 2 === 0){
-                    gsap.to(this.svgItem, {
-                        scrollTrigger: {
-                            trigger: this.svgContainer,
-                            // markers: true,
-                            scrub: 1,
-                            scroller: '#page-modal',
-                        },
-                        rotation: '-90deg',
-                        autoAlpha: 1,
-                        ease: 'none',
-                    })
-                }else{
-                    gsap.to( this.svgItem, {
-                        scrollTrigger: {
-                            trigger: this.svgContainer,
-                            // markers: true,
-                            scrub: 1,
-                            scroller: '#page-modal',
-                        },
-                        rotation: '90deg',
-                        autoAlpha: 1,
-                        ease: 'none',
-                    })
-                }
-
-
-                gsap.to(".line div", 30, {
-                    backgroundPosition: "200px 0px",
-                    scrollTrigger: {
-                        trigger: '.our-approach',
-                        // markers: true,
-                        scrub: 1,
-                        scroller: '#page-modal',
-                    },
-                    //autoRound:false,
-                     ease: 'ease-in'
-                });
-
-                gsap.to(this.$refs.ourApproachCover, 30, {
-                    width: "-60%",
-                    scrollTrigger: {
-                        trigger: this.svgContainer,
-                        start: 'top-=100 center',
-                        scrub: 1,
-                        scroller: '#page-modal',
-                    },
-                    //autoRound:false,
-                    ease: 'ease-in'
-                });
-
-                gsap.to(this.$refs.content,{
-                    scrollTrigger: {
-                        trigger: this.$refs.content,
-                        scroller: '#page-modal',
-                        start: "top center+=145",
-                        end: "bottom top",
-                        scrub: true,
-                        toggleClass: "active"
-                        // addName: 'active',
-                    },
-                });
-
-            },
-        },
-        mounted(){
-
-            // this.rotate();   
-            
-
-
-
-      
-                this.rotate()
-
-                
-
-      
-
-
-            // window.addEventListener('scroll', throttle(this.rotate(), 10));
-        },
+export default {
+  name: 'OurApproachSection',
+  props: {
+    sectionData: Object,
+    secondColour: String,
+    sectionIndex: Number
+  },
+  data() {
+    return {
+      svgItem: null,
+      svgContainer: null,
     }
+  },
+  methods: {
+    rotate() {
+      this.svgItem = this.$refs.svgRotate;
+      this.svgContainer = this.$refs.ourApproach__section;
+
+      const rotationValue = this.sectionIndex % 2 === 0 ? '-0.25' : '0.25';
+
+      gsap.to(this.svgItem, {
+        scrollTrigger: {
+          trigger: this.svgContainer,
+          scrub: 0.5,
+          scroller: '#page-modal',
+        },
+        rotation: rotationValue,
+        ease: 'none',
+      });
+
+      gsap.to(".line div", {
+        duration: 3,
+        backgroundPosition: "200px 0px",
+        scrollTrigger: {
+          trigger: '.our-approach',
+          scrub: 0.5,
+          scroller: '#page-modal',
+        },
+        ease: 'ease-in'
+      });
+
+      gsap.to(this.$refs.ourApproachCover, {
+        duration: 3,
+        width: "-60%",
+        scrollTrigger: {
+          trigger: this.svgContainer,
+          start: 'top-=100 center',
+          scrub: 0.5,
+          scroller: '#page-modal',
+        },
+        ease: 'ease-in'
+      });
+
+      gsap.to(this.$refs.content, {
+        scrollTrigger: {
+          trigger: this.$refs.content,
+          scroller: '#page-modal',
+          start: "top center+=145",
+          end: "bottom top",
+          scrub: 0.5,
+          toggleClass: "active"
+        },
+      });
+    },
+  },
+  mounted() {
+    this.rotate();
+  },
+  beforeDestroy() {
+    ScrollTrigger.getAll().forEach((ST) => ST.kill());
+    gsap.globalTimeline.clear();
+  },
+}
 </script>

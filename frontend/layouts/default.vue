@@ -9,7 +9,7 @@
           <div class="drag-map" > 
             <div class="drag-map__background">
             </div>
-            <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" />
+            <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" /> 
           </div>
           <div class="page-modal__container" >
             <div class="page-modal-buttons button-top">
@@ -38,9 +38,9 @@
                 </div>
               </div> -->
             </div>
-            
+            <div class="page-modal__backdrop" ></div>
             <div id="page-modal" ref="pageModal" class="page-modal">
-              <div id="page-scroller" ref="pageScroller" class="page_scroller"  :class="this.transitionClass">
+              <div id="page-scroller" ref="pageScroller" class="page_scroller"  >
                 <Nuxt />
               </div>
               <Footer v-on:footerClick="headerAction($event)" />
@@ -294,16 +294,16 @@ export default {
     //   this.draggableMapFunction()
     // }
         // Fetch the div
-    const myDiv = this.$refs.myDiv;
-    this.handleScroll = function(e) {
-      const delta = Math.sign(e.deltaY);
-      gsap.to(myDiv, {
-        duration: 0.5, // adjust duration as needed
-        scrollTo: { y: myDiv.scrollTop + delta * 30 },
-        ease: "power1.inOut"
-      });
-    };
-    window.addEventListener('wheel', this.handleScroll);
+    // const myDiv = this.$refs.myDiv;
+    // this.handleScroll = function(e) {
+    //   const delta = Math.sign(e.deltaY);
+    //   gsap.to(myDiv, {
+    //     duration: 0.5, // adjust duration as needed
+    //     scrollTo: { y: myDiv.scrollTop + delta * 30 },
+    //     ease: "power1.inOut"
+    //   });
+    // };
+    // window.addEventListener('wheel', this.handleScroll);
 
   },
   watch: {

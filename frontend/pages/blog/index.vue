@@ -1,18 +1,20 @@
 <template>
   <div class="page-content">
-    <!-- <div class="blog" :class="this.blogClass"> 
-      <div class="blog__filter-container">
-        <DropDown :options="this.cats" v-on:dropdownEvent="changeCat($event)"/>
+     <div class='page-animation'>
+      <!-- <div class="blog" :class="this.blogClass"> 
+        <div class="blog__filter-container">
+          <DropDown :options="this.cats" v-on:dropdownEvent="changeCat($event)"/>
+        </div>
+        <div class="blog__container">
+          <BlogCard v-for="(item, index) in this.blogData.data" :key="index" :countIndex="index" :cardData="item" />
+        </div>
+      </div> -->
+      <BlogPage />
+      <!-- <Subscription /> -->
+      <SubscriptionSection />
+      <div class="page-modal-buttons button-bottom">
+        <BackButton />
       </div>
-      <div class="blog__container">
-        <BlogCard v-for="(item, index) in this.blogData.data" :key="index" :countIndex="index" :cardData="item" />
-      </div>
-    </div> -->
-    <BlogPage />
-    <!-- <Subscription /> -->
-    <SubscriptionSection />
-    <div class="page-modal-buttons button-bottom">
-      <BackButton />
     </div>
   </div>
 </template>

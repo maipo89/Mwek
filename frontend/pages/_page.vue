@@ -1,16 +1,18 @@
 <template>
   <div class="page-content" v-if="this.renderPage">
-    <!-- <div class="scroll-toos">
-      <div class="scroll-toos__button">
-        <p v-on:click='scrollTo("team")'>Our team</p>
+    <div class='page-animation'>
+      <!-- <div class="scroll-toos">
+        <div class="scroll-toos__button">
+          <p v-on:click='scrollTo("team")'>Our team</p>
+        </div>
+      </div> -->
+      <h1 class="page-content__title">{{ this.pageContent.title }}</h1>
+      <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
+      <ContactFooter :contactItems="this.contactDetails"/>
+      <!-- <OnqorSEO :seoData="this.pageContent.seo" /> -->
+      <div class="page-modal-buttons button-bottom">
+        <BackButton />
       </div>
-    </div> -->
-    <h1 class="page-content__title">{{ this.pageContent.title }}</h1>
-    <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
-    <ContactFooter :contactItems="this.contactDetails"/>
-    <!-- <OnqorSEO :seoData="this.pageContent.seo" /> -->
-    <div class="page-modal-buttons button-bottom">
-      <BackButton />
     </div>
   </div>
 </template>

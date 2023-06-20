@@ -44,6 +44,42 @@
   "TypeText": {
     "description": "Auto imported from components/UI/TypeText.vue"
   },
+  "BlogPage": {
+    "description": "Auto imported from components/blog/BlogPage.vue"
+  },
+  "SubscriptionSection": {
+    "description": "Auto imported from components/blog/SubscriptionSection.vue"
+  },
+  "CardsWithFilter": {
+    "description": "Auto imported from components/archives/CardsWithFilter.vue"
+  },
+  "BlimpMapSVG": {
+    "description": "Auto imported from components/citymap/BlimpMapSVG.vue"
+  },
+  "CityLights": {
+    "description": "Auto imported from components/citymap/CityLights.vue"
+  },
+  "CityMapCards": {
+    "description": "Auto imported from components/citymap/CityMapCards.vue"
+  },
+  "CityMapPopUp": {
+    "description": "Auto imported from components/citymap/CityMapPopUp.vue"
+  },
+  "CityMapSVG": {
+    "description": "Auto imported from components/citymap/CityMapSVG.vue"
+  },
+  "CityParks": {
+    "description": "Auto imported from components/citymap/CityParks.vue"
+  },
+  "CityRoadOne": {
+    "description": "Auto imported from components/citymap/CityRoadOne.vue"
+  },
+  "CitySculptur": {
+    "description": "Auto imported from components/citymap/CitySculptur.vue"
+  },
+  "CityTurbines": {
+    "description": "Auto imported from components/citymap/CityTurbines.vue"
+  },
   "ContactFooter": {
     "description": "Auto imported from components/contact/ContactFooter.vue"
   },
@@ -77,15 +113,6 @@
   "TabbedContent": {
     "description": "Auto imported from components/tabs/TabbedContent.vue"
   },
-  "CardsWithFilter": {
-    "description": "Auto imported from components/archives/CardsWithFilter.vue"
-  },
-  "BlogPage": {
-    "description": "Auto imported from components/blog/BlogPage.vue"
-  },
-  "SubscriptionSection": {
-    "description": "Auto imported from components/blog/SubscriptionSection.vue"
-  },
   "ContentColumns": {
     "description": "Auto imported from components/text-content/ContentColumns.vue"
   },
@@ -106,32 +133,5 @@
   },
   "TickList": {
     "description": "Auto imported from components/text-content/TickList.vue"
-  },
-  "BlimpMapSVG": {
-    "description": "Auto imported from components/citymap/BlimpMapSVG.vue"
-  },
-  "CityLights": {
-    "description": "Auto imported from components/citymap/CityLights.vue"
-  },
-  "CityMapCards": {
-    "description": "Auto imported from components/citymap/CityMapCards.vue"
-  },
-  "CityMapPopUp": {
-    "description": "Auto imported from components/citymap/CityMapPopUp.vue"
-  },
-  "CityMapSVG": {
-    "description": "Auto imported from components/citymap/CityMapSVG.vue"
-  },
-  "CityParks": {
-    "description": "Auto imported from components/citymap/CityParks.vue"
-  },
-  "CityRoadOne": {
-    "description": "Auto imported from components/citymap/CityRoadOne.vue"
-  },
-  "CitySculptur": {
-    "description": "Auto imported from components/citymap/CitySculptur.vue"
-  },
-  "CityTurbines": {
-    "description": "Auto imported from components/citymap/CityTurbines.vue"
   }
 }

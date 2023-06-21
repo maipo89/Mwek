@@ -83,7 +83,7 @@ export default {
     // })
 
     this.asyncData();
-
+    document.getElementById('page-modal').scrollTop = 0;
     // 
 
     // this.$gsap.to(this.$refs.dragMap__container, {

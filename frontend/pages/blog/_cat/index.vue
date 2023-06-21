@@ -38,6 +38,9 @@ export default {
       return { catBlogs: null };
     }
   },
+  mounted(){
+    document.getElementById('page-modal').scrollTop = 0;
+  }
 
 };
 </script>

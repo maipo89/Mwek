@@ -117,6 +117,8 @@ export default {
       }.bind(this), 1000)
     }
     this.renderPage = true;
+
+    document.getElementById('page-modal').scrollTop = 0;
     // this.smoother = ScrollSmoother.create({ 
     //   wrapper: 'body', 
     //   content: '.page-content' 

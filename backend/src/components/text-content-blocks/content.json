@@ -34,6 +34,9 @@
     "imageWidth": {
       "type": "string",
       "default": "100"
+    },
+    "animation3D": {
+      "type": "boolean"
     }
   }
 }

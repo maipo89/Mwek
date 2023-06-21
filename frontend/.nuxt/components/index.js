@@ -13,9 +13,16 @@ export const OnqorButton = () => import('../../components/UI/OnqorButton.vue' /*
 export const OnqorCircleIcon = () => import('../../components/UI/OnqorCircleIcon.vue' /* webpackChunkName: "components/onqor-circle-icon" */).then(c => wrapFunctional(c.default || c))
 export const OnqorInput = () => import('../../components/UI/OnqorInput.vue' /* webpackChunkName: "components/onqor-input" */).then(c => wrapFunctional(c.default || c))
 export const TypeText = () => import('../../components/UI/TypeText.vue' /* webpackChunkName: "components/type-text" */).then(c => wrapFunctional(c.default || c))
+<<<<<<< HEAD
 export const CardsWithFilter = () => import('../../components/archives/CardsWithFilter.vue' /* webpackChunkName: "components/cards-with-filter" */).then(c => wrapFunctional(c.default || c))
 export const BlogPage = () => import('../../components/blog/BlogPage.vue' /* webpackChunkName: "components/blog-page" */).then(c => wrapFunctional(c.default || c))
 export const SubscriptionSection = () => import('../../components/blog/SubscriptionSection.vue' /* webpackChunkName: "components/subscription-section" */).then(c => wrapFunctional(c.default || c))
+=======
+export const BlogPage = () => import('../../components/blog/BlogPage.vue' /* webpackChunkName: "components/blog-page" */).then(c => wrapFunctional(c.default || c))
+export const SubscriptionSection = () => import('../../components/blog/SubscriptionSection.vue' /* webpackChunkName: "components/subscription-section" */).then(c => wrapFunctional(c.default || c))
+export const CardsWithFilter = () => import('../../components/archives/CardsWithFilter.vue' /* webpackChunkName: "components/cards-with-filter" */).then(c => wrapFunctional(c.default || c))
+export const ContactFooter = () => import('../../components/contact/ContactFooter.vue' /* webpackChunkName: "components/contact-footer" */).then(c => wrapFunctional(c.default || c))
+>>>>>>> 8a219b05f425bf592f9303a9aae23c82bd7df3ef
 export const BlimpMapSVG = () => import('../../components/citymap/BlimpMapSVG.vue' /* webpackChunkName: "components/blimp-map-s-v-g" */).then(c => wrapFunctional(c.default || c))
 export const CityLights = () => import('../../components/citymap/CityLights.vue' /* webpackChunkName: "components/city-lights" */).then(c => wrapFunctional(c.default || c))
 export const CityMapCards = () => import('../../components/citymap/CityMapCards.vue' /* webpackChunkName: "components/city-map-cards" */).then(c => wrapFunctional(c.default || c))

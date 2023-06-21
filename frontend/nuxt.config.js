@@ -33,7 +33,6 @@ export default {
           src: "https://cdn-eu.pagesense.io/js/onqor/321b1340911140abb82ae8d5e9e41d89.js",
           defer: true,
           async: true,
-          body: true
         }
         // {
         //     type: 'text/javascript',
@@ -101,30 +100,11 @@ export default {
       port: 587,
     },
   },
-
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
-  // vuetify: {
-  //   // customVariables: ['~/assets/variables.scss'],
-  //   theme: {
-  //     dark: true,
-  //     themes: {
-  //       dark: {
-  //         primary: colors.blue.darken2,
-  //         accent: colors.grey.darken3,
-  //         secondary: colors.amber.darken3,
-  //         info: colors.teal.lighten1,
-  //         warning: colors.amber.base,
-  //         error: colors.deepOrange.accent4,
-  //         success: colors.green.accent3
-  //       }
-  //     }
-  //   }
+  // router: {
+  //   middleware: ['redirects', 'zohoPageSenseTrigger']
   // },
-  // // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['gsap', 'three'],
     // standalone: true
   }
 }
-
-

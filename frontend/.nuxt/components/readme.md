@@ -21,9 +21,16 @@ You can directly use them in pages and other components without the need to impo
 - `<OnqorCircleIcon>` | `<onqor-circle-icon>` (components/UI/OnqorCircleIcon.vue)
 - `<OnqorInput>` | `<onqor-input>` (components/UI/OnqorInput.vue)
 - `<TypeText>` | `<type-text>` (components/UI/TypeText.vue)
+<<<<<<< HEAD
 - `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
 - `<BlogPage>` | `<blog-page>` (components/blog/BlogPage.vue)
 - `<SubscriptionSection>` | `<subscription-section>` (components/blog/SubscriptionSection.vue)
+=======
+- `<BlogPage>` | `<blog-page>` (components/blog/BlogPage.vue)
+- `<SubscriptionSection>` | `<subscription-section>` (components/blog/SubscriptionSection.vue)
+- `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
+- `<ContactFooter>` | `<contact-footer>` (components/contact/ContactFooter.vue)
+>>>>>>> 8a219b05f425bf592f9303a9aae23c82bd7df3ef
 - `<BlimpMapSVG>` | `<blimp-map-s-v-g>` (components/citymap/BlimpMapSVG.vue)
 - `<CityLights>` | `<city-lights>` (components/citymap/CityLights.vue)
 - `<CityMapCards>` | `<city-map-cards>` (components/citymap/CityMapCards.vue)

@@ -31,8 +31,6 @@ export default {
         },
         {
           src: "https://cdn-eu.pagesense.io/js/onqor/321b1340911140abb82ae8d5e9e41d89.js",
-          defer: true,
-          async: true,
         }
         // {
         //     type: 'text/javascript',
@@ -53,7 +51,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: "~/plugins/gsap", ssr: false}
+    { src: "~/plugins/gsap", ssr: false},
+    { src: '~/plugins/zoho-pagesense.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

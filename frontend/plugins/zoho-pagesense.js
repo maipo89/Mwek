@@ -4,7 +4,7 @@ export default ({ app }) => {
       var z=document.createElement("script");
       z.type="text/javascript";
       z.async=true;
-      z.src="https://cdn-eu.pagesense.io/js/onqor/321b1340911140abb82ae8d5e9e41d89.js";
+      z.src="https://cdn-eu.pagesense.io/js/onqor/23fd815eda9a4235aa61eae9b9b1f975.js";
       var s=document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(z,s);
     }

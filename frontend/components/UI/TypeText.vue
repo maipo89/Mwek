@@ -25,7 +25,7 @@
                 textArray.push(this.text.charAt(index));
             }
 
-            console.log('textArray',textArray)
+            
 
             
             var keepWhile = 0;

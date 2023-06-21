@@ -21,7 +21,7 @@ export default {
         blockData: Array,
     },
     mounted(){
-        console.log('quote',this.blockData);
+        
     },
     beforeMount(){
         require('@/assets/scss/text-content/quote.scss');

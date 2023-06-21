@@ -24,7 +24,8 @@ export default {
     name: 'BlogCard',
     props: {
         cardData: Object,
-        countIndex: Number 
+        countIndex: Number,
+        activeCategory: String,
     },
     
     data(){
@@ -36,7 +37,7 @@ export default {
         }
     },
     mounted(){  
-        // console.log('this.key', this.countIndex);  
+        // 
         if(this.countIndex < 3){
             this.isActive = 'active'
         }
@@ -55,6 +56,7 @@ export default {
                     trigger: this.$refs.blogCard,
                     start: "top bottom",
                     end: "bottom top",
+                    scroller: '#page-modal',
                     scrub: true,
                     onEnter: enterFunction,
                     toggleClass: "active",
@@ -64,12 +66,15 @@ export default {
         }.bind(this), 2000);
 
 
-       // console.log('this.cardData', this.cardData);
+        
+
+        
+
         if(this.cardData.attributes){
-            if(this.cardData.attributes.PrimaryCategory.category.data){
-                this.cardUrl = "/blog/" + this.cardData.attributes.PrimaryCategory.category.data.attributes.slug + "/" + this.cardData.attributes.slug
+            if(this.activeCategory){
+                this.cardUrl = "/blog/" + this.activeCategory + "/" + this.cardData.attributes.slug
             }else{
-                this.cardUrl = "/blog/" + this.cardData.attributes.slug
+                this.cardUrl = "/blog/" + this.cardData.attributes.PrimaryCategory.category.data.attributes.slug + '/' + this.cardData.attributes.slug
             }
         }
         

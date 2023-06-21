@@ -1,5 +1,5 @@
 .header{
-    position: fixed;
+    position: relative;
     // sticky nav
     // position: fixed;
     top:30px;
@@ -31,8 +31,8 @@
     &__underline{
         width: 50px;
         height: 2px;
-        // border: 2px solid;        
-        background: linear-gradient(72.44deg, #00CCD6 0%, #9E00FC 100%);
+        // border: 2px solid;
+        background: #F79386;
         position: absolute;
         margin-top: 3px;
         opacity: 0.0;
@@ -62,12 +62,16 @@
             color:#07134D !important;
             text-decoration: none;
         }
+        
         &:hover{
             .header__item-dropdown{
                 opacity: 1;
                 transform: scale(1);
                 pointer-events: all;
                 transition: all 0.7s;
+            }
+            .header__underline {
+                opacity: 1;
             }
         }
     }

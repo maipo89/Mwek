@@ -21,7 +21,7 @@
         },
         methods: {
             getValue(value) {
-                console.log(value);
+                
             }
         },
         watch: {

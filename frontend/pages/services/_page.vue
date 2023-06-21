@@ -1,9 +1,13 @@
 <template>
     <div class="page-content service-page">
+      <div class='page-animation'>
         <h1 class="page-content__title">{{ this.pageContent.title }}</h1>
         <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
         <ContactFooter v-if="this.contactDetails.data" :contactItems="this.contactDetails"/>
-        <BackButton />
+        <div class="page-modal-buttons button-bottom">
+          <BackButton />
+        </div>
+      </div>
     </div>
 </template>
 
@@ -31,7 +35,7 @@ export default {
         });
         var pageID = thePageID.data[0].id;
       
-        console.log('pageID', pageID);
+        
 
         const thePageData = await fetch(
           this.$store.state.apiroute.url + '/api/services/' + pageID + '?populate=deep,4'
@@ -41,8 +45,8 @@ export default {
         });
         this.pageContent = thePageData.data.attributes;
             this.blocks = thePageData.data.attributes.dynamic_content
-            console.log('thePageDatasssssss', thePageData);
-        // console.log(this.$router.params);
+            
+        // 
 
         const contactData = await fetch(
           this.$store.state.apiroute.url + '/api/contact?populate=*'
@@ -51,10 +55,10 @@ export default {
             return res.json();
         });
 
-        console.log(contactData);
+        
 
         if(contactData.data){
-            // console.log(contactData);
+            // 
             this.contactDetails = contactData
         }
     }
@@ -62,6 +66,7 @@ export default {
 
   mounted(){
     this.asyncData();
+    document.getElementById('page-modal').scrollTop = 0;
   },
 
 //   updated(){

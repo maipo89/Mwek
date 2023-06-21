@@ -11,7 +11,7 @@ var pageArray = [];
 
 // const response = await this.$axios.get('https://api.mwek.com/api/pages');
 // const pages = response.data.pages;
-// console.log(pages)
+// 
 
 async function fetchData() {
 
@@ -73,7 +73,7 @@ fetchData();
 //     .doc();
 
 // urls.forEach(url => {
-//     // console.log(url.loc)
+//     // 
 //     // const urlElement = root.ele('url');
 //     root.ele('root', { att: 'val' })
 //     .ele('foo')

@@ -5,50 +5,60 @@
       <v-container>
         <Header v-on:page-open="headerAction()" :theActiveHeader="this.activeHeader" v-on:goMap="backToMap()" v-on:customLink="customRoute($event)" />
         <div :class="[this.pageState, this.thePageClass]">
+          <CityMapPopUp />
           <div class="drag-map" > 
-            <div class="drag-map__background"></div>
-            <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" />
+            <div class="drag-map__background">
+            </div>
+            <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" /> 
           </div>
           <div class="page-modal__container" >
-            <div class="page-modal">
-              <div class="page-modal__back-to-map" v-on:click="backToMap()">
+            <div class="page-modal-buttons button-top">
+              <div class="page-modal-buttons__back-to-map" v-on:click="backToMap()">
                 <div class="inside">
                   <Icon icon="arrowLeft" /> <p>MWEK City</p>
                 </div>
               </div>
-              <div class="page-modal__back-to-map page-modal__back-to-map--blog">
+              <div class="page-modal-buttons__back-to-map page-modal-buttons__back-to-map--blog">
                 <NuxtLink to='/blog'>
                   <div class="inside">
                     <Icon icon="arrowLeft" /> <p>Blog</p>
                   </div>
                 </NuxtLink>
               </div>
-              <!-- <div class="page-modal__back-to-map page-modal__back-to-map--services">
+              <div class="page-modal-buttons__back-to-map page-modal-buttons__back-to-map--services">
                 <NuxtLink to='/our-services'>
                   <div class="inside">
                     <Icon icon="arrowLeft" /> <p>Services</p>
                   </div>
                 </NuxtLink>
-              </div> -->
-              <div v-if="this.scrolltos" class="scroll-toos">
+              </div>
+              <!-- <div v-if="this.scrolltos" class="scroll-toos">
                 <div v-for="(item, index) in this.scrolltos" class="scroll-toos__button" :key="index">
                   <p v-on:click='scrollTo("team")'>Our team</p>
                 </div>
-              </div>
-              <div class="page_scroller"  :class="this.transitionClass">
+              </div> -->
+            </div>
+            <div class="page-modal__backdrop" ></div>
+            <div id="page-modal" ref="pageModal" class="page-modal">
+              <div id="page-scroller" ref="pageScroller" class="page_scroller"  >
                 <Nuxt />
               </div>
+              <Footer v-on:footerClick="headerAction($event)" />
             </div>
           </div>
         </div>
-        <Footer v-on:footerClick="headerAction($event)" />
       </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import gsap from 'gsap';
+
+// import gsap from 'gsap';
+// import { ScrollToPlugin } from 'gsap/all';
+// gsap.registerPlugin(ScrollToPlugin);
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
 export default {
   name: 'DefaultLayout',
   data () {
@@ -63,7 +73,8 @@ export default {
       transitionClass: '',
       pageReady: false,
       scrolltos: '',
-      activeHeader: 5
+      activeHeader: 5,
+      previousPosition: null
 
     }
   },
@@ -101,21 +112,30 @@ export default {
           // can set up 404 redirection here
           return res.json();
         });
-       // console.log('theScrollTo', theScrollTo);
+       // 
         this.scrolltos = theScrollTo.data.attributes.sectionSrollTo;
       }else{
         this.scrolltos = false;
       }
     },
+    scrollTo(scrollClass) {
+      const pageModal = this.$refs.pageModal;
+      const teamElements = pageModal.getElementsByClassName(scrollClass);
 
-    scrollTo(scrollId){
-      document.getElementById('team').scrollIntoView();
+
+      console.log('teamElements',pageModal);
+
+      // const teamElement = teamElements[0];
+      // teamElement.scrollIntoView({ behavior: 'smooth' });
+      // var myElement = document.getElementById('element_within_div');
+      // var topPos = myElement.offsetTop
+
+
     },
-
     headerAction(index){
       this.pageState = 'page-open';
       //  alert('hello');
-    //  console.log('event', index);
+    //  
       // alert(index);
       if(index){
         this.activeHeader = index;
@@ -131,11 +151,17 @@ export default {
       this.pageState = 'map-open';
       this.$router.push('/'); 
       this.renderMap = true;
+      this.activeHeader = 5
+      this.$store.commit('apiroute/underlineHeader', 5)
+      // var headerItems = document.getElementsByClassName("header__item")
+      // headerItems.forEach(function(item) {
+      //     item.classList.remove("active");
+      // });
     },
 
     pageClass(){
         const firstPath = location.pathname.split('/')[1];
-        console.log('siteUrl', location);
+        
         this.thePageClass = firstPath + '-page-' + location.pathname.replace(/[^/]/g, "").length;
     },
 
@@ -185,7 +211,7 @@ export default {
     },
     firstActive(){
 
-      console.log('this.$route.query', this.$route, this.$route.path);    
+      
 
       switch (this.$route.path) {
 
@@ -207,7 +233,7 @@ export default {
 
         case '/contact':
           this.activeHeader = 3;
-          console.log('this.activeHeader', this.activeHeader);
+          
           // alert('contact');
 
           break;
@@ -215,14 +241,22 @@ export default {
         default:
           break;
       }
-    }
+    },
+    // onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
+    //   if (scrollTop + clientHeight >= scrollHeight) {
+    //     this.$store.commit('apiroute/bottomScroll', true)
+    //   }
+    // }
+
   },
 
   mounted(){
     this.getMapButtons();
     this.scrollButton();
     this.firstActive();
-    
+
+    // this.scroll();
+
     if(this.$route.params.page){
       // alert('hello ofkrh');
       
@@ -249,13 +283,24 @@ export default {
     // if(this.renderMap){
     //   this.draggableMapFunction()
     // }
-    
+        // Fetch the div
+    // const myDiv = this.$refs.myDiv;
+    // this.handleScroll = function(e) {
+    //   const delta = Math.sign(e.deltaY);
+    //   gsap.to(myDiv, {
+    //     duration: 0.5, // adjust duration as needed
+    //     scrollTo: { y: myDiv.scrollTop + delta * 30 },
+    //     ease: "power1.inOut"
+    //   });
+    // };
+    // window.addEventListener('wheel', this.handleScroll);
+
   },
   watch: {
     $route (to, from){
         this.pageClass();
         this.scrollButton();
-     //   console.log('i am the to', to);
+     //   
         var thisContext = this;
       setTimeout(function(){
         thisContext.transitionClass = '';

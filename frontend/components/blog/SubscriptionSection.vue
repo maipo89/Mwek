@@ -1,5 +1,5 @@
 <template>
-    <div class="subscription">
+    <div ref="subscription" class="subscription">
         <p class="subscription__sub">Keep up to date with what is going on in Crypto, FinTech and Emerging Technology by subscribing to The MWek Blog below.</p>
         <div class="subscription__row">
             <!-- <OnqorInput inputPlaceHolder="Email"/>  <OnqorButton text="Subscribe" /> -->
@@ -37,6 +37,8 @@
 </template>
 
 <script>
+    import gsap from "gsap"
+    import ScrollTrigger from "gsap/ScrollTrigger";
     export default {
         name: 'SubscriptionSection',
         
@@ -44,6 +46,31 @@
             return {
 
             }
+        },
+        mounted() {
+            // const pageModal = document.getElementById("page-modal");
+
+            // ScrollTrigger.create({
+            //     trigger: this.$refs.subscription,
+            //     scroller: "#page-modal",
+            //     start: '4200px center',
+            //     end: '4200px center',
+            //     onEnter: () => {
+            //         document.body.style.overflow = "initial";
+            //         document.documentElement.style.overflow = "initial";
+            //     },
+            //     onLeaveBack: () => {
+            //             pageModal.classList.add('stop-scrolling');
+            //             window.scrollTo({top: 0, behavior: 'smooth'});
+            //             pageModal.scrollTo({top: 0, behavior: 'smooth'});
+            //             setTimeout(function () {
+            //                 pageModal.classList.remove('stop-scrolling');
+            //             }, 1000);
+            //             this.$store.commit('apiroute/bottomScroll', false);
+            //             document.body.style.overflow = "hidden";
+            //             document.documentElement.style.overflow = "hidden";
+            //     },
+            // });
         },
         beforeMount(){
             require('@/assets/scss/global/subscription-section.scss');

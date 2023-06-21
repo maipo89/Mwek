@@ -1,5 +1,5 @@
 <template>
-    <div class="contact-footer">
+    <div ref="contact" class="contact-footer">
         <h2> {{ this.contactItems.data.attributes.ContactInfo.title }} </h2>
         <!-- <p> {{ this.contactItems.data.attributes.ContactInfo.content }} </p> -->
         <vue-markdown> {{ this.contactItems.data.attributes.ContactInfo.content }} </vue-markdown>
@@ -39,13 +39,15 @@
 	
 </div>
 <div class="mc-field-group mail-chimp__select">
-	<select name="MMERGE3" class="" id="mce-MMERGE3">
+    <input name="MMERGE3" class="" id="mce-MMERGE3">
+    <DropDown @dropdownEvent="selectedCat($event)" :options="cats" />
+	<!-- <select name="MMERGE3" class="" id="mce-MMERGE3">
         <option disabled hidden>Subject</option>
         <option value="Candidate">Candidate</option>
         <option value="Client">Client</option>
         <option value="Work With Us">Work With Us</option>
 	</select>
-    <span class="chevron"></span>
+    <span class="chevron"></span> -->
 	<span id="mce-MMERGE3-HELPERTEXT" class="helper_text"></span>
 </div>
 	<!-- <div id="mce-responses" class="clear foot">
@@ -54,7 +56,7 @@
 	</div>    real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3e8952cdbfd254ece0219f7f1_3ba2eb2185" tabindex="-1" value=""></div>
             <!-- <div class="clear foot"> -->
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                <input type="submit" value="Send" name="subscribe" id="mc-embedded-subscribe" class="button">
                 <p class="brandingLogo"><a href="http://eepurl.com/ifahbH" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
             <!-- </div> -->
     </div>
@@ -168,6 +170,8 @@
 </template>
 
 <script>
+    import gsap from "gsap"
+    import ScrollTrigger from "gsap/ScrollTrigger";
     import VueMarkdown from 'vue-markdown'
     export default {
         name: 'ContactFooter',
@@ -190,19 +194,65 @@
             }
         },
         mounted(){
-            console.log('this.contactItems', this.contactItems);
+            
+            const pageModal = document.getElementById("page-modal");
+            
+            gsap.set(this.$refs.contact, {opacity:0, y: 50})
+            gsap.to(this.$refs.contact, {
+                scrollTrigger: {
+                    trigger: this.$refs.contact,
+                    start: "top-=200px 50%",
+                    scroller: "#page-modal",
+                    onEnter: () => { gsap.to(this.$refs.contact, {opacity: 1, y: 0}) },
+                    onLeave: () => { gsap.to(this.$refs.contact, {opacity: 0, y: -50}) },
+                    onEnterBack: () => { gsap.to(this.$refs.contact, {opacity: 1, y: 0}) },
+                }
+            });
+            
+            // window.onscroll = function() {
+            //     if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
+            //         this.$store.commit('apiroute/bottomScroll', true)
+            //     }
+            // };
+
+            // ScrollTrigger.create({
+            //     trigger: this.$refs.contact,
+            //     scroller: "#page-modal",
+            //     start: '320px center',
+            //     end: 'top-=50px 200px',
+            //     onEnter: () => {
+            //         document.body.style.overflow = "initial";
+            //         document.documentElement.style.overflow = "initial";
+            //     },
+            //     onLeaveBack: () => {
+            //             if (this.$store.state.apiroute.bottomScroll) {
+            //                 pageModal.classList.add('stop-scrolling');
+            //                 window.scrollTo({top: 0, behavior: 'smooth'});
+            //                 pageModal.scrollTo({top: 0, behavior: 'smooth'});
+            //                 setTimeout(function () {
+            //                     pageModal.classList.remove('stop-scrolling');
+            //                 }, 1000);
+            //                 this.$store.commit('apiroute/bottomScroll', false);
+            //                 document.body.style.overflow = "hidden";
+            //                 document.documentElement.style.overflow = "hidden";
+            //             }
+            //     },
+            // });
         },
         methods: {
             go() {
-                console.log("sen email")
+                
                 this.$mail.send({
                     from: this.formData.email,
                     subject: this.formData.subject,
                     text: ' email: ' + this.formData.email + '  name: ' + this.formData.name + ' tel: ' +  this.formData.tel 
                 })
             },
+            selectedCat(cat) {
+                document.getElementById("mce-MMERGE3").value = cat;
+            },
             getValue(event, type){
-                console.log(event);
+                
                 switch(type) {
                     case 'name':
                             this.formData.name = event

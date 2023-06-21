@@ -12,6 +12,8 @@
         },
         methods: {
             goTop() {
+                var pageModal = document.getElementById('page-modal');
+                pageModal.scrollTo({top: 0, behavior: 'smooth'});
                 window.scrollTo({top: 0, behavior: 'smooth'});
             },
         }

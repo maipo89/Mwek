@@ -3,6 +3,9 @@
     width: 95%;
     margin: 0 auto;
     margin-top: 75px;
+    &.stop-scrolling {
+        overflow: hidden;
+    }
     &__row{
         display: flex;
         flex-direction: row;

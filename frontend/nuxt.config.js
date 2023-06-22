@@ -29,9 +29,9 @@ export default {
             src: 'js/Jquery.js',
             body: true
         },
-        {
-          src: "https://cdn-eu.pagesense.io/js/onqor/23fd815eda9a4235aa61eae9b9b1f975.js",
-        }
+        // {
+        //   src: "https://cdn-eu.pagesense.io/js/onqor/23fd815eda9a4235aa61eae9b9b1f975.js",
+        // }
         // {
         //     type: 'text/javascript',
         //     src: 'js/gsap/minified/gsap.min.js',

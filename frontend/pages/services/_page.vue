@@ -1,10 +1,12 @@
 <template>
     <div class="page-content service-page">
-      <h1 class="page-content__title">{{ this.pageContent.title }}</h1>
-      <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
-      <ContactFooter v-if="this.contactDetails.data" :contactItems="this.contactDetails"/>
-      <div class="page-modal-buttons button-bottom">
-        <BackButton />
+      <div class='page-animation'>
+        <h1 class="page-content__title">{{ this.pageContent.title }}</h1>
+        <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
+        <ContactFooter v-if="this.contactDetails.data" :contactItems="this.contactDetails"/>
+        <div class="page-modal-buttons button-bottom">
+          <BackButton />
+        </div>
       </div>
     </div>
 </template>
@@ -64,6 +66,7 @@ export default {
 
   mounted(){
     this.asyncData();
+    document.getElementById('page-modal').scrollTop = 0;
   },
 
 //   updated(){

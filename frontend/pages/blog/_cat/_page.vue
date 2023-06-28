@@ -1,16 +1,18 @@
 <template>
     <div class="page-content blog-post" v-if="this.renderPage">
-      <div class="post-hero">
-        <h1>{{ this.post.Title }}</h1>
-        <!-- <p>{{ this.post.subTitle }}</p> -->
-        <div class="post-hero__featured-img">
-          <img :alt="this.post.featured_image.data.attributes.alternativeText" :src="this.$store.state.apiroute.url + this.post.featured_image.data.attributes.url " />
+      <div class='page-animation'>
+        <div class="post-hero">
+          <h1>{{ this.post.Title }}</h1>
+          <!-- <p>{{ this.post.subTitle }}</p> -->
+          <div class="post-hero__featured-img">
+            <img :alt="this.post.featured_image.data.attributes.alternativeText" :src="this.$store.state.apiroute.url + this.post.featured_image.data.attributes.url " />
+          </div>
         </div>
-      </div>
-      <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
-      <!-- <ContactFooter :contactItems="this.contactDetails"/> -->
-      <div class="page-modal-buttons button-bottom">
-        <BackButton />
+        <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
+        <!-- <ContactFooter :contactItems="this.contactDetails"/> -->
+        <div class="page-modal-buttons button-bottom">
+          <BackButton />
+        </div>
       </div>
     </div>
 </template>

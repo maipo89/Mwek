@@ -54,6 +54,8 @@ export default {
 
   mounted(){
     this.asyncData();
+    document.getElementById('page-modal').scrollTop = 0;
+    // myDiv.scrollTop = 0;
   },
 
   updated(){

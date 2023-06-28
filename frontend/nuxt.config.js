@@ -29,12 +29,9 @@ export default {
             src: 'js/Jquery.js',
             body: true
         },
-        {
-          src: "https://cdn-eu.pagesense.io/js/onqor/321b1340911140abb82ae8d5e9e41d89.js",
-          defer: true,
-          async: true,
-          body: true
-        }
+        // {
+        //   src: "https://cdn-eu.pagesense.io/js/onqor/23fd815eda9a4235aa61eae9b9b1f975.js",
+        // }
         // {
         //     type: 'text/javascript',
         //     src: 'js/gsap/minified/gsap.min.js',
@@ -54,7 +51,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: "~/plugins/gsap", ssr: false}
+    { src: "~/plugins/gsap", ssr: false},
+    { src: '~/plugins/zoho-pagesense.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -101,30 +99,11 @@ export default {
       port: 587,
     },
   },
-
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
-  // vuetify: {
-  //   // customVariables: ['~/assets/variables.scss'],
-  //   theme: {
-  //     dark: true,
-  //     themes: {
-  //       dark: {
-  //         primary: colors.blue.darken2,
-  //         accent: colors.grey.darken3,
-  //         secondary: colors.amber.darken3,
-  //         info: colors.teal.lighten1,
-  //         warning: colors.amber.base,
-  //         error: colors.deepOrange.accent4,
-  //         success: colors.green.accent3
-  //       }
-  //     }
-  //   }
+  // router: {
+  //   middleware: ['redirects', 'zohoPageSenseTrigger']
   // },
-  // // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['gsap', 'three'],
     // standalone: true
   }
 }
-
-

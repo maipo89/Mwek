@@ -9,7 +9,7 @@
           <div class="drag-map" > 
             <div class="drag-map__background">
             </div>
-            <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" />
+            <CityMapSVG v-on:explore="mapRouts('explore')" v-on:clientService="mapRouts('clientService')" v-on:candidateService="mapRouts('candidateService')" v-on:blog="mapRouts('blog')" v-on:contact="mapRouts('contact')" /> 
           </div>
           <div class="page-modal__container" >
             <div class="page-modal-buttons button-top">
@@ -38,9 +38,9 @@
                 </div>
               </div> -->
             </div>
-            
+            <div class="page-modal__backdrop" ></div>
             <div id="page-modal" ref="pageModal" class="page-modal">
-              <div id="page-scroller" ref="pageScroller" class="page_scroller"  :class="this.transitionClass">
+              <div id="page-scroller" ref="pageScroller" class="page_scroller"  >
                 <Nuxt />
               </div>
               <Footer v-on:footerClick="headerAction($event)" />
@@ -54,12 +54,11 @@
 
 <script>
 
-import gsap from 'gsap';
-import { ScrollToPlugin } from 'gsap/all';
-gsap.registerPlugin(ScrollToPlugin);
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-gsap.registerPlugin(ScrollToPlugin);
+// import gsap from 'gsap';
+// import { ScrollToPlugin } from 'gsap/all';
+// gsap.registerPlugin(ScrollToPlugin);
+// import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
 export default {
   name: 'DefaultLayout',
   data () {
@@ -243,69 +242,21 @@ export default {
           break;
       }
     },
-
-<<<<<<< HEAD
-    scroll () {
-      window.onscroll = () => {
-        if (document.documentElement.scrollTop == 0) {
-        }
-      }
-    },
-
-    onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
-
-      const pageModal = document.getElementById("page-modal");
-
-      if (scrollTop + clientHeight >= scrollHeight) {
-        // this.$store.commit('apiroute/bottomScroll', true)
-        this.previousPosition = scrollTop;
-        document.body.style.overflow = "initial";
-        document.documentElement.style.overflow = "initial";
-      }
-
-      if (this.previousPosition - scrollTop == 100) {
-          window.scrollTo({top: 0, behavior: 'smooth'});
-          pageModal.scrollTo({top: 0, behavior: 'smooth'});
-      }
-
-      // if (this.previousPosition - scrollTop > 100) {
-      //     // window.scrollTo({top: 0, behavior: 'smooth'});
-      //     this.previousPosition = null
-      //     document.documentElement.style.overflow = "hidden";
-      // }
-    }
-=======
     // onScroll ({ target: { scrollTop, clientHeight, scrollHeight }}) {
     //   if (scrollTop + clientHeight >= scrollHeight) {
     //     this.$store.commit('apiroute/bottomScroll', true)
     //   }
     // }
->>>>>>> ba1fe7b58a0cef175446de85698e355caeda5655
+
   },
 
   mounted(){
     this.getMapButtons();
     this.scrollButton();
     this.firstActive();
-<<<<<<< HEAD
-    this.scroll()
-=======
 
-    // const container = document.getElementById("page-modal");
+    // this.scroll();
 
-    // var lastScrollTop = 0;
-
-    // container.addEventListener("scroll", function(){ 
-    //   var st = window.pageYOffset || document.documentElement.scrollTop; 
-    //   if (st > lastScrollTop){
-    //     
-    //   } else {
-    //       window.scrollTo({top: 0, behavior: 'smooth'});
-    //   }
-    //   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-    // }, false);
->>>>>>> ba1fe7b58a0cef175446de85698e355caeda5655
-    
     if(this.$route.params.page){
       // alert('hello ofkrh');
       
@@ -333,16 +284,16 @@ export default {
     //   this.draggableMapFunction()
     // }
         // Fetch the div
-    const myDiv = this.$refs.myDiv;
-    this.handleScroll = function(e) {
-      const delta = Math.sign(e.deltaY);
-      gsap.to(myDiv, {
-        duration: 0.5, // adjust duration as needed
-        scrollTo: { y: myDiv.scrollTop + delta * 30 },
-        ease: "power1.inOut"
-      });
-    };
-    window.addEventListener('wheel', this.handleScroll);
+    // const myDiv = this.$refs.myDiv;
+    // this.handleScroll = function(e) {
+    //   const delta = Math.sign(e.deltaY);
+    //   gsap.to(myDiv, {
+    //     duration: 0.5, // adjust duration as needed
+    //     scrollTo: { y: myDiv.scrollTop + delta * 30 },
+    //     ease: "power1.inOut"
+    //   });
+    // };
+    // window.addEventListener('wheel', this.handleScroll);
 
   },
   watch: {

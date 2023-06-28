@@ -39,8 +39,6 @@
 <script>
     import gsap from "gsap"
     import ScrollTrigger from "gsap/ScrollTrigger";
-    import { ScrollToPlugin } from 'gsap/all';
-    gsap.registerPlugin(ScrollToPlugin);
     export default {
         name: 'SubscriptionSection',
         
@@ -63,9 +61,14 @@
             //     },
             //     onLeaveBack: () => {
             //             pageModal.classList.add('stop-scrolling');
-            //             gsap.to(window, {duration: 1, scrollTo: 0});
-            //             gsap.to(pageModal, {duration: 1, scrollTo: 0});
+            //             window.scrollTo({top: 0, behavior: 'smooth'});
+            //             pageModal.scrollTo({top: 0, behavior: 'smooth'});
+            //             setTimeout(function () {
+            //                 pageModal.classList.remove('stop-scrolling');
+            //             }, 1000);
             //             this.$store.commit('apiroute/bottomScroll', false);
+            //             document.body.style.overflow = "hidden";
+            //             document.documentElement.style.overflow = "hidden";
             //     },
             // });
         },

@@ -31,16 +31,16 @@
                 </div>
                 <div class="intro__side-panal">
                     <div class="intro__side-panel-content" :class="{ 'active' : textStep === 1  }">
-                        <h2>
-                            <TypeText v-if="this.firstTitle" text="Hello!" />
+                        <h2 v-if="firstTitle">
+                            <TypeText text="Hello!" />
                         </h2>
-                        <p>
-                            <TypeText  v-if="this.firstText" text="Welcome to MWEK, let’s start off by asking you a quick question" />
+                        <p v-if="this.firstText">
+                            <TypeText text="Welcome to MWEK, let’s start off by asking you a quick question" />
                         </p>
                     </div>
                     <div class="intro__side-panel-content" :class="{ 'active' : textStep === 2  }">
-                        <p>
-                            <TypeText v-if="this.textStep === 2" text="Are you a client or candidate?" />
+                        <p v-if="this.textStep === 2">
+                            <TypeText text="Are you a client or candidate?" />
                         </p>
                         <div class="buttons">
                             <OnqorButton v-on:btnClick="welcome()" text="Client" />
@@ -48,8 +48,8 @@
                         </div>
                     </div>
                     <div class="intro__side-panel-content" :class="{ 'active' : textStep === 3  }">
-                        <p>
-                            <TypeText v-if="this.textStep === 3" text="Thank you for your response" />
+                        <p v-if="this.textStep === 3">
+                            <TypeText text="Thank you for your response" />
                         </p>
                     </div>
                 </div>

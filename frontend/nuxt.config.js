@@ -7,6 +7,9 @@ export default {
   },
   ssr: true,
   mode: 'universal',
+  router: {
+    middleware: ['redirects'],
+  },
   head: {
     titleTemplate: 'Mwek',
     title: 'Mwek',
@@ -44,7 +47,6 @@ export default {
         // },
     ]
   },
-  middleware: ['redirects'],
   styleResources: {
     scss: ['./assets/scss/*.scss']
   },

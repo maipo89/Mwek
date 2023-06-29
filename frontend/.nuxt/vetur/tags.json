@@ -23,12 +23,6 @@
   "CardsWithFilter": {
     "description": "Auto imported from components/archives/CardsWithFilter.vue"
   },
-  "BlogPage": {
-    "description": "Auto imported from components/blog/BlogPage.vue"
-  },
-  "SubscriptionSection": {
-    "description": "Auto imported from components/blog/SubscriptionSection.vue"
-  },
   "BackButton": {
     "description": "Auto imported from components/UI/BackButton.vue"
   },
@@ -103,6 +97,12 @@
   },
   "TeamCube": {
     "description": "Auto imported from components/explore/TeamCube.vue"
+  },
+  "BlogPage": {
+    "description": "Auto imported from components/blog/BlogPage.vue"
+  },
+  "SubscriptionSection": {
+    "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
   "ServicePageLinks": {
     "description": "Auto imported from components/services/ServicePageLinks.vue"

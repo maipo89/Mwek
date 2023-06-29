@@ -1,21 +1,43 @@
-export default async function ({ app, redirect }) {
-    console.log('Before the asynchronous operation');
+export default async function ({ req, route, redirect }) {
+
     try {
+
+      // Handle Redirections from Redirections Single Type in Strapi
+      //Api Call
       const response = await fetch(
-        this.$store.state.apiroute.url + '/api/redirects?populate=*'
+        'https://api.mwek.com/api/redirect?populate=*'
       ).then((res) => {
         return res.json();
       });
-  
-      // Loop through the redirection rules
-      response.forEach((rule) => {
-        // Apply the redirection rule
-        app.router.addRoute({
-          path: rule.from,
-          redirect: rule.to,
-          statusCode: rule.statusCode || 301, // Default to 301 redirect if statusCode is not provided
-        });
+
+      const redirections = response.data.attributes.OnqorRedirects
+
+      //Redirections
+      redirections.forEach((rule) => {
+
+        if (route.path === rule.from) {
+            redirect(Number(rule.statusCode), rule.to)
+        }
       });
+      
+      //Redirect upperCase URL to lowerCase version
+      const lowercaseUrl = route.path.toLowerCase();
+
+      if (lowercaseUrl !== route.path) {
+        return redirect(301, lowercaseUrl);
+      }
+
+      const host = req.headers.host;
+      console.log(host)
+      const isWWW = /^www\./i.test(host);
+    
+      if (isWWW) {
+        // Remove the "www" prefix from the host
+        const newHost = host.replace(/^www\./i, '');
+        
+        // Redirect to the non-www version
+        redirect(301, `https://${newHost}${req.url}`);
+      }
     } catch (error) {
       // Handle error if fetching redirection rules fails
       console.error('Failed to fetch redirection rules:', error);

@@ -17,11 +17,17 @@
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
   },
-  "CardsWithFilter": {
-    "description": "Auto imported from components/archives/CardsWithFilter.vue"
-  },
   "OnqorSEO": {
     "description": "Auto imported from components/SEO/OnqorSEO.vue"
+  },
+  "BlogPage": {
+    "description": "Auto imported from components/blog/BlogPage.vue"
+  },
+  "SubscriptionSection": {
+    "description": "Auto imported from components/blog/SubscriptionSection.vue"
+  },
+  "CardsWithFilter": {
+    "description": "Auto imported from components/archives/CardsWithFilter.vue"
   },
   "BackButton": {
     "description": "Auto imported from components/UI/BackButton.vue"
@@ -88,12 +94,6 @@
   },
   "CityTurbines": {
     "description": "Auto imported from components/citymap/CityTurbines.vue"
-  },
-  "BlogPage": {
-    "description": "Auto imported from components/blog/BlogPage.vue"
-  },
-  "SubscriptionSection": {
-    "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
   "Footer": {
     "description": "Auto imported from components/global/Footer.vue"

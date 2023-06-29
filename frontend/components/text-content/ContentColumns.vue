@@ -2,7 +2,7 @@
     <div ref="contentColumn">
         <h2 v-if="this.blockData.title" class="content-columns__title">{{ this.blockData.title }}</h2>
         <div class="content-columns__tag-line" :class="this.blockData.tagLineWidth" >
-            <h3 :class="this.blockData.tagLineWidth"> {{ this.blockData.contentTagLine }} </h3>
+            <h3 v-if="this.blockData.contentTagLine" :class="this.blockData.tagLineWidth"> {{ this.blockData.contentTagLine }} </h3>
         </div>
         <div class="content-columns" >
             <div class="content-columns__block" 

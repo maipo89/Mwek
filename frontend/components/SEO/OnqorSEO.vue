@@ -76,9 +76,14 @@
                     let objDescription = new seoObject('', 'description', '', this.seoData.metaDescription);
                     let objPublish = new seoObject('', 'publish_time', '', this.publishDate);
                     let objTitle = new seoObject('', '', 'title', this.seoData.metaTitle );
-                    let objImage = new seoObject('', '', 'image ', this.$store.state.apiroute.url + this.seoData.metaImage.data.attributes.url );
+                    
 
-                    tempSocailArray.push(objDescription, objTitle, objImage);
+                    tempSocailArray.push(objDescription, objTitle);
+
+                    if(this.seoData.metaImage.data) {
+                        let objImage = new seoObject('', '', 'image ', this.$store.state.apiroute.url + this.seoData.metaImage.data.attributes.url );
+                        tempSocailArray.push(objImage);
+                    }
                     
                     if(this.seoData.keywords){
                         let objKeywords = new seoObject('', 'keywords', 'keywords', this.seoData.keywords );
@@ -97,7 +102,8 @@
                     if(this.seoData.canonicalURL){
                         linkMeta.push({ rel: 'canonical', href: this.seoData.canonicalURL })
                     } else {
-                        linkMeta.push({ rel: 'canonical', href: this.$route })
+                        const link = 'https://mwek.com' + this.$route.path
+                        linkMeta.push({ rel: 'canonical', href: link })
                     }
                 }
 

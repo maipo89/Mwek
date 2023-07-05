@@ -13,6 +13,10 @@ You can directly use them in pages and other components without the need to impo
 - `<Tutorial>` | `<tutorial>` (components/Tutorial.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)
 - `<OnqorSEO>` | `<onqor-s-e-o>` (components/SEO/OnqorSEO.vue)
+<<<<<<< HEAD
+=======
+- `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
+>>>>>>> a4951d8f22ea3a759a8fac1268f4f62a7d803138
 - `<BackButton>` | `<back-button>` (components/UI/BackButton.vue)
 - `<BlogCard>` | `<blog-card>` (components/UI/BlogCard.vue)
 - `<DropDown>` | `<drop-down>` (components/UI/DropDown.vue)
@@ -21,7 +25,10 @@ You can directly use them in pages and other components without the need to impo
 - `<OnqorCircleIcon>` | `<onqor-circle-icon>` (components/UI/OnqorCircleIcon.vue)
 - `<OnqorInput>` | `<onqor-input>` (components/UI/OnqorInput.vue)
 - `<TypeText>` | `<type-text>` (components/UI/TypeText.vue)
+<<<<<<< HEAD
 - `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
+=======
+>>>>>>> a4951d8f22ea3a759a8fac1268f4f62a7d803138
 - `<BlogPage>` | `<blog-page>` (components/blog/BlogPage.vue)
 - `<SubscriptionSection>` | `<subscription-section>` (components/blog/SubscriptionSection.vue)
 - `<BlimpMapSVG>` | `<blimp-map-s-v-g>` (components/citymap/BlimpMapSVG.vue)

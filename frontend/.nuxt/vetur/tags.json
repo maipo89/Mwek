@@ -20,6 +20,12 @@
   "OnqorSEO": {
     "description": "Auto imported from components/SEO/OnqorSEO.vue"
   },
+<<<<<<< HEAD
+=======
+  "CardsWithFilter": {
+    "description": "Auto imported from components/archives/CardsWithFilter.vue"
+  },
+>>>>>>> a4951d8f22ea3a759a8fac1268f4f62a7d803138
   "BackButton": {
     "description": "Auto imported from components/UI/BackButton.vue"
   },
@@ -44,9 +50,12 @@
   "TypeText": {
     "description": "Auto imported from components/UI/TypeText.vue"
   },
+<<<<<<< HEAD
   "CardsWithFilter": {
     "description": "Auto imported from components/archives/CardsWithFilter.vue"
   },
+=======
+>>>>>>> a4951d8f22ea3a759a8fac1268f4f62a7d803138
   "BlogPage": {
     "description": "Auto imported from components/blog/BlogPage.vue"
   },

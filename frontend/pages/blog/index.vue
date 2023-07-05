@@ -114,8 +114,8 @@ export default {
 
   mounted(){
     this.asyncData();
-    document.getElementById('page-modal').scrollTop = 0;
-    console.log(this.$route.name)
+    // document.getElementById('page-modal').scrollTop = 0;
+    // console.log(this.$route.name)
   },
 }
 </script>

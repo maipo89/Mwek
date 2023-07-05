@@ -8,6 +8,7 @@
             <img :alt="this.post.featured_image.data.attributes.alternativeText" :src="this.$store.state.apiroute.url + this.post.featured_image.data.attributes.url " />
           </div>
         </div>
+        <OnqorSEO v-if="seo" :seoData="seo" />
         <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
         <!-- <ContactFooter :contactItems="this.contactDetails"/> -->
         <div class="page-modal-buttons button-bottom">
@@ -27,6 +28,7 @@ export default {
         blocks: '',
         contactDetails: '',
         post:'',
+        seo: null
       }
     },
     async asyncData({ error, params, app: { store } }) {
@@ -54,6 +56,7 @@ export default {
           return res.json();
         });
 
+
         // 
         // if(thePageData.data.attributes.dynamic_content){
         //   this.blocks = thePageData.data.attributes.dynamic_content
@@ -74,7 +77,8 @@ export default {
         return {
           contactDetails: contactData,
           blocks: thePageData.data.attributes.dynamic_content,
-          post: thePageData.data.attributes
+          post: thePageData.data.attributes,
+          seo: thePageData.data.attributes.seo
         }
 
       }catch(e){

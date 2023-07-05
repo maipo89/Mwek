@@ -4,6 +4,7 @@
         <h1 class="page-content__title">{{ this.pageContent.title }}</h1>
         <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
         <ContactFooter v-if="this.contactDetails.data" :contactItems="this.contactDetails"/>
+        <OnqorSEO v-if="this.pageContent.seo" :seoData="this.pageContent.seo" />
         <div class="page-modal-buttons button-bottom">
           <BackButton />
         </div>
@@ -44,8 +45,7 @@ export default {
             return res.json();
         });
         this.pageContent = thePageData.data.attributes;
-            this.blocks = thePageData.data.attributes.dynamic_content
-            
+            this.blocks = thePageData.data.attributes.dynamic_content 
         // 
 
         const contactData = await fetch(

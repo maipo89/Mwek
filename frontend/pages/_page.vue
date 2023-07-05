@@ -9,7 +9,7 @@
       <h1 class="page-content__title">{{ this.pageContent.title }}</h1>
       <BlockBuilder v-for="(item, index) in this.blocks" :key="index" :blockComponent="item" />
       <ContactFooter :contactItems="this.contactDetails"/>
-      <!-- <OnqorSEO :seoData="this.pageContent.seo" /> -->
+      <OnqorSEO :seoData="this.pageContent.seo" />
       <div class="page-modal-buttons button-bottom">
         <BackButton />
       </div>
@@ -36,7 +36,8 @@ export default {
   async asyncData({ error, params, app: { store } }) {
 
     const { apiroute } = store.state
-    const { page } = params 
+    const { page } = params
+
   try{
     const thePageID = await fetch(
       apiroute.url + '/api/pages?filters[slug]=' + page
@@ -45,6 +46,8 @@ export default {
       // can set up 404 redirection here
     return res.json();
     });
+
+    console.log(thePageID, 'the page idddddddddd')
     
     var pageID = thePageID.data[0].id;
 

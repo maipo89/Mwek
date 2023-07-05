@@ -10,6 +10,7 @@
         </div>
       </div> -->
       <BlogPage />
+      <OnqorSEO v-if="seoData" :seoData="seoData" />
       <!-- <Subscription /> -->
       <SubscriptionSection />
       <div class="page-modal-buttons button-bottom">
@@ -23,7 +24,39 @@
 // import axios from 'axios';
 // import gsap from 'gsap';
 export default {
-  name: 'blog', 
+  name: 'blog',
+
+  data(){
+    return {
+      page: this.$route.name,
+      seoData: null
+    }
+  },
+
+  methods: {
+    async asyncData() {
+      const thePageID = await fetch(
+          this.$store.state.apiroute.url + '/api/pages?filters[slug]=' + 'blog'
+          // 'http://localhost:1337/api/pages/1?populate=dynamic_content'
+      ).then((res) => {
+        // can set up 404 redirection here
+      return res.json();
+      });
+      
+      const pageID = thePageID.data[0].id
+      
+      const thePageData = await fetch(
+          this.$store.state.apiroute.url + '/api/pages/' + pageID + '?populate=deep,4'
+      ).then((res) => {
+        // can set up 404 redirection here
+        return res.json();
+      });
+
+      this.seoData = thePageData.data.attributes.seo
+    }
+
+
+  },
 
   // data(){
   //   return {
@@ -79,10 +112,10 @@ export default {
 
   // },
 
-  // mounted() {
-  //   this.asyncData();
-  //   setTimeout(function () { this.animateIn() }.bind(this), 500)
-  // },
-  
+  mounted(){
+    this.asyncData();
+    document.getElementById('page-modal').scrollTop = 0;
+    console.log(this.$route.name)
+  },
 }
 </script>

@@ -20,6 +20,7 @@
                 title: this.seoData.metaTitle,
                 meta: this.seoMetaData[0],
                 link: this.seoMetaData[1],
+                image: this.seoMetaData[2],
                 script: [{
                     type: 'application/ld+json',
                     innerHTML: JSON.stringify(this.seoData.structuredData) 
@@ -75,9 +76,9 @@
                     let objDescription = new seoObject('', 'description', '', this.seoData.metaDescription);
                     let objPublish = new seoObject('', 'publish_time', '', this.publishDate);
                     let objTitle = new seoObject('', '', 'title', this.seoData.metaTitle );
-                    let objImage = new seoObject('', '', 'image ', this.seoData.metaImage );
+                    let objImage = new seoObject('', '', 'image ', this.$store.state.apiroute.url + this.seoData.metaImage.data.attributes.url );
 
-                    tempSocailArray.push(objDescription, objTitle);
+                    tempSocailArray.push(objDescription, objTitle, objImage);
                     
                     if(this.seoData.keywords){
                         let objKeywords = new seoObject('', 'keywords', 'keywords', this.seoData.keywords );
@@ -114,7 +115,9 @@
                 return [tempSocailArray, linkMeta]
             }
         },
-        // mounted(){
+        mounted(){
+            console.log(this.seoData, 'seoData')
+        }
         //     var tempSocailArray = []
         //     class seoObject {
         //         constructor(hid, name, property, content) {

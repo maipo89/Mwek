@@ -13,6 +13,10 @@ You can directly use them in pages and other components without the need to impo
 - `<Tutorial>` | `<tutorial>` (components/Tutorial.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)
 - `<OnqorSEO>` | `<onqor-s-e-o>` (components/SEO/OnqorSEO.vue)
+<<<<<<< HEAD
+=======
+- `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
+>>>>>>> 20bed53714f3c5af08a10bb8671720bf5b806110
 - `<BackButton>` | `<back-button>` (components/UI/BackButton.vue)
 - `<BlogCard>` | `<blog-card>` (components/UI/BlogCard.vue)
 - `<DropDown>` | `<drop-down>` (components/UI/DropDown.vue)
@@ -21,9 +25,12 @@ You can directly use them in pages and other components without the need to impo
 - `<OnqorCircleIcon>` | `<onqor-circle-icon>` (components/UI/OnqorCircleIcon.vue)
 - `<OnqorInput>` | `<onqor-input>` (components/UI/OnqorInput.vue)
 - `<TypeText>` | `<type-text>` (components/UI/TypeText.vue)
+<<<<<<< HEAD
 - `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
 - `<BlogPage>` | `<blog-page>` (components/blog/BlogPage.vue)
 - `<SubscriptionSection>` | `<subscription-section>` (components/blog/SubscriptionSection.vue)
+=======
+>>>>>>> 20bed53714f3c5af08a10bb8671720bf5b806110
 - `<BlimpMapSVG>` | `<blimp-map-s-v-g>` (components/citymap/BlimpMapSVG.vue)
 - `<CityLights>` | `<city-lights>` (components/citymap/CityLights.vue)
 - `<CityMapCards>` | `<city-map-cards>` (components/citymap/CityMapCards.vue)
@@ -33,6 +40,11 @@ You can directly use them in pages and other components without the need to impo
 - `<CityRoadOne>` | `<city-road-one>` (components/citymap/CityRoadOne.vue)
 - `<CitySculptur>` | `<city-sculptur>` (components/citymap/CitySculptur.vue)
 - `<CityTurbines>` | `<city-turbines>` (components/citymap/CityTurbines.vue)
+<<<<<<< HEAD
+=======
+- `<BlogPage>` | `<blog-page>` (components/blog/BlogPage.vue)
+- `<SubscriptionSection>` | `<subscription-section>` (components/blog/SubscriptionSection.vue)
+>>>>>>> 20bed53714f3c5af08a10bb8671720bf5b806110
 - `<ContactFooter>` | `<contact-footer>` (components/contact/ContactFooter.vue)
 - `<MeetTheTeam>` | `<meet-the-team>` (components/explore/MeetTheTeam.vue)
 - `<OurApproach>` | `<our-approach>` (components/explore/OurApproach.vue)

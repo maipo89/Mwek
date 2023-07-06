@@ -20,6 +20,7 @@
                 title: this.seoData.metaTitle,
                 meta: this.seoMetaData[0],
                 link: this.seoMetaData[1],
+                image: this.seoMetaData[2],
                 script: [{
                     type: 'application/ld+json',
                     innerHTML: JSON.stringify(this.seoData.structuredData) 
@@ -75,9 +76,14 @@
                     let objDescription = new seoObject('', 'description', '', this.seoData.metaDescription);
                     let objPublish = new seoObject('', 'publish_time', '', this.publishDate);
                     let objTitle = new seoObject('', '', 'title', this.seoData.metaTitle );
-                    let objImage = new seoObject('', '', 'image ', this.seoData.metaImage );
+                    
 
                     tempSocailArray.push(objDescription, objTitle);
+
+                    if(this.seoData.metaImage.data) {
+                        let objImage = new seoObject('', '', 'image ', this.$store.state.apiroute.url + this.seoData.metaImage.data.attributes.url );
+                        tempSocailArray.push(objImage);
+                    }
                     
                     if(this.seoData.keywords){
                         let objKeywords = new seoObject('', 'keywords', 'keywords', this.seoData.keywords );
@@ -96,7 +102,8 @@
                     if(this.seoData.canonicalURL){
                         linkMeta.push({ rel: 'canonical', href: this.seoData.canonicalURL })
                     } else {
-                        linkMeta.push({ rel: 'canonical', href: this.$route })
+                        const link = 'https://mwek.com' + this.$route.path
+                        linkMeta.push({ rel: 'canonical', href: link })
                     }
                 }
 
@@ -114,7 +121,9 @@
                 return [tempSocailArray, linkMeta]
             }
         },
-        // mounted(){
+        mounted(){
+            console.log(this.seoData, 'seoData')
+        }
         //     var tempSocailArray = []
         //     class seoObject {
         //         constructor(hid, name, property, content) {

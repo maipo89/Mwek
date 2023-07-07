@@ -14,23 +14,23 @@ export default {
     titleTemplate: 'Mwek',
     title: 'Mwek',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: "https://use.typekit.net/vls5puz.css" },
-      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Orbitron&display=swap" }
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Orbitron&display=swap" },
     ],
     script: [
         {
             type: 'text/javascript',
             src: 'js/Jquery.js',
-            body: true
+            body: true,
         },
         // {
         //   src: "https://cdn-eu.pagesense.io/js/onqor/23fd815eda9a4235aa61eae9b9b1f975.js",
@@ -45,10 +45,10 @@ export default {
         //     src: 'js/gsap/minified/Draggable.min.js',
         //     body: true
         // },
-    ]
+    ],
   },
   styleResources: {
-    scss: ['./assets/scss/*.scss']
+    scss: ['./assets/scss/*.scss'],
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -71,12 +71,13 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     // 'nuxt-gsap-module',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
+    // require('./sitemap.js'),
     ['nuxt-mail', {
       message: {
         to: 'talk2us@mwek.co.uk',
@@ -107,5 +108,5 @@ export default {
   build: {
     transpile: ['gsap', 'three'],
     // standalone: true
-  }
+  },
 }

@@ -30,7 +30,7 @@ export default {
         {
             type: 'text/javascript',
             src: 'js/Jquery.js',
-            body: true,
+            body: false,
         },
         // {
         //   src: "https://cdn-eu.pagesense.io/js/onqor/23fd815eda9a4235aa61eae9b9b1f975.js",
@@ -77,7 +77,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    // require('./sitemap.js'),
+    require('./sitemap.js'),
     ['nuxt-mail', {
       message: {
         to: 'talk2us@mwek.co.uk',
@@ -108,5 +108,5 @@ export default {
   build: {
     transpile: ['gsap', 'three'],
     // standalone: true
-  },
+  }
 }

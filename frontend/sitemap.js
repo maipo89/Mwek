@@ -15,6 +15,12 @@ var pageArray = [];
 
 async function fetchData() {
 
+    root.ele('url')
+        .ele('loc').txt(rootUrl + '/').up()
+        .ele('priority').txt('1.0').up()
+    .up()
+    .doc();
+
     // main pages
     const page = await fetch('https://api.mwek.com/api/pages').then((res) => {
         return res.json();
@@ -23,6 +29,7 @@ async function fetchData() {
     pageArray.forEach(url => {
         root.ele('url')
           .ele('loc').txt(rootUrl + '/' + url.attributes.slug).up()
+          .ele('priority').txt('0.9').up()
         .up()
         .doc();
     });
@@ -35,6 +42,7 @@ async function fetchData() {
     servicesArray.forEach(url => {
         root.ele('url')
           .ele('loc').txt(rootUrl + '/services/' + url.attributes.slug).up()
+          .ele('priority').txt('0.85').up()
         .up()
         .doc();
     });
@@ -47,6 +55,7 @@ async function fetchData() {
     blogArray.forEach(url => {
         root.ele('url')
           .ele('loc').txt(rootUrl + '/blog/' + url.attributes.PrimaryCategory.category.data.attributes.slug + '/' + url.attributes.slug).up()
+          .ele('priority').txt('0.8').up()
         .up()
         .doc();
     });

@@ -27,11 +27,11 @@ export default {
       { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Orbitron&display=swap" },
     ],
     script: [
-        {
-            type: 'text/javascript',
-            src: 'js/Jquery.js',
-            body: false,
-        },
+        // {
+        //     type: 'text/javascript',
+        //     src: 'js/Jquery.js',
+        //     body: false,
+        // },
         // {
         //   src: "https://cdn-eu.pagesense.io/js/onqor/23fd815eda9a4235aa61eae9b9b1f975.js",
         // }

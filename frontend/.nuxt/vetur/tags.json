@@ -20,12 +20,15 @@
   "OnqorSEO": {
     "description": "Auto imported from components/SEO/OnqorSEO.vue"
   },
-<<<<<<< HEAD
-=======
   "CardsWithFilter": {
     "description": "Auto imported from components/archives/CardsWithFilter.vue"
   },
->>>>>>> a4951d8f22ea3a759a8fac1268f4f62a7d803138
+  "BlogPage": {
+    "description": "Auto imported from components/blog/BlogPage.vue"
+  },
+  "SubscriptionSection": {
+    "description": "Auto imported from components/blog/SubscriptionSection.vue"
+  },
   "BackButton": {
     "description": "Auto imported from components/UI/BackButton.vue"
   },
@@ -49,18 +52,6 @@
   },
   "TypeText": {
     "description": "Auto imported from components/UI/TypeText.vue"
-  },
-<<<<<<< HEAD
-  "CardsWithFilter": {
-    "description": "Auto imported from components/archives/CardsWithFilter.vue"
-  },
-=======
->>>>>>> a4951d8f22ea3a759a8fac1268f4f62a7d803138
-  "BlogPage": {
-    "description": "Auto imported from components/blog/BlogPage.vue"
-  },
-  "SubscriptionSection": {
-    "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
   "BlimpMapSVG": {
     "description": "Auto imported from components/citymap/BlimpMapSVG.vue"
@@ -89,9 +80,6 @@
   "CityTurbines": {
     "description": "Auto imported from components/citymap/CityTurbines.vue"
   },
-  "ContactFooter": {
-    "description": "Auto imported from components/contact/ContactFooter.vue"
-  },
   "MeetTheTeam": {
     "description": "Auto imported from components/explore/MeetTheTeam.vue"
   },
@@ -109,6 +97,9 @@
   },
   "Header": {
     "description": "Auto imported from components/global/Header.vue"
+  },
+  "ContactFooter": {
+    "description": "Auto imported from components/contact/ContactFooter.vue"
   },
   "HeroSection": {
     "description": "Auto imported from components/image/HeroSection.vue"

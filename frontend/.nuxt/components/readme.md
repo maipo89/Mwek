@@ -33,14 +33,24 @@ You can directly use them in pages and other components without the need to impo
 - `<CityRoadOne>` | `<city-road-one>` (components/citymap/CityRoadOne.vue)
 - `<CitySculptur>` | `<city-sculptur>` (components/citymap/CitySculptur.vue)
 - `<CityTurbines>` | `<city-turbines>` (components/citymap/CityTurbines.vue)
+<<<<<<< HEAD
 - `<ContactFooter>` | `<contact-footer>` (components/contact/ContactFooter.vue)
+=======
+>>>>>>> aa23886944d104862a11e76393587a4878068551
 - `<MeetTheTeam>` | `<meet-the-team>` (components/explore/MeetTheTeam.vue)
 - `<OurApproach>` | `<our-approach>` (components/explore/OurApproach.vue)
 - `<OurApproachSection>` | `<our-approach-section>` (components/explore/OurApproachSection.vue)
 - `<TeamCube>` | `<team-cube>` (components/explore/TeamCube.vue)
+<<<<<<< HEAD
 - `<Footer>` | `<footer>` (components/global/Footer.vue)
 - `<Header>` | `<header>` (components/global/Header.vue)
 - `<HeroSection>` | `<hero-section>` (components/image/HeroSection.vue)
+=======
+- `<HeroSection>` | `<hero-section>` (components/image/HeroSection.vue)
+- `<Footer>` | `<footer>` (components/global/Footer.vue)
+- `<Header>` | `<header>` (components/global/Header.vue)
+- `<ContactFooter>` | `<contact-footer>` (components/contact/ContactFooter.vue)
+>>>>>>> aa23886944d104862a11e76393587a4878068551
 - `<ServicePageLinks>` | `<service-page-links>` (components/services/ServicePageLinks.vue)
 - `<StatTabs>` | `<stat-tabs>` (components/stats/StatTabs.vue)
 - `<TabbedContent>` | `<tabbed-content>` (components/tabs/TabbedContent.vue)

@@ -25,14 +25,24 @@ export const CityParks = () => import('../../components/citymap/CityParks.vue' /
 export const CityRoadOne = () => import('../../components/citymap/CityRoadOne.vue' /* webpackChunkName: "components/city-road-one" */).then(c => wrapFunctional(c.default || c))
 export const CitySculptur = () => import('../../components/citymap/CitySculptur.vue' /* webpackChunkName: "components/city-sculptur" */).then(c => wrapFunctional(c.default || c))
 export const CityTurbines = () => import('../../components/citymap/CityTurbines.vue' /* webpackChunkName: "components/city-turbines" */).then(c => wrapFunctional(c.default || c))
+<<<<<<< HEAD
 export const ContactFooter = () => import('../../components/contact/ContactFooter.vue' /* webpackChunkName: "components/contact-footer" */).then(c => wrapFunctional(c.default || c))
+=======
+>>>>>>> aa23886944d104862a11e76393587a4878068551
 export const MeetTheTeam = () => import('../../components/explore/MeetTheTeam.vue' /* webpackChunkName: "components/meet-the-team" */).then(c => wrapFunctional(c.default || c))
 export const OurApproach = () => import('../../components/explore/OurApproach.vue' /* webpackChunkName: "components/our-approach" */).then(c => wrapFunctional(c.default || c))
 export const OurApproachSection = () => import('../../components/explore/OurApproachSection.vue' /* webpackChunkName: "components/our-approach-section" */).then(c => wrapFunctional(c.default || c))
 export const TeamCube = () => import('../../components/explore/TeamCube.vue' /* webpackChunkName: "components/team-cube" */).then(c => wrapFunctional(c.default || c))
+<<<<<<< HEAD
 export const Footer = () => import('../../components/global/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c))
 export const Header = () => import('../../components/global/Header.vue' /* webpackChunkName: "components/header" */).then(c => wrapFunctional(c.default || c))
 export const HeroSection = () => import('../../components/image/HeroSection.vue' /* webpackChunkName: "components/hero-section" */).then(c => wrapFunctional(c.default || c))
+=======
+export const HeroSection = () => import('../../components/image/HeroSection.vue' /* webpackChunkName: "components/hero-section" */).then(c => wrapFunctional(c.default || c))
+export const Footer = () => import('../../components/global/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c))
+export const Header = () => import('../../components/global/Header.vue' /* webpackChunkName: "components/header" */).then(c => wrapFunctional(c.default || c))
+export const ContactFooter = () => import('../../components/contact/ContactFooter.vue' /* webpackChunkName: "components/contact-footer" */).then(c => wrapFunctional(c.default || c))
+>>>>>>> aa23886944d104862a11e76393587a4878068551
 export const ServicePageLinks = () => import('../../components/services/ServicePageLinks.vue' /* webpackChunkName: "components/service-page-links" */).then(c => wrapFunctional(c.default || c))
 export const StatTabs = () => import('../../components/stats/StatTabs.vue' /* webpackChunkName: "components/stat-tabs" */).then(c => wrapFunctional(c.default || c))
 export const TabbedContent = () => import('../../components/tabs/TabbedContent.vue' /* webpackChunkName: "components/tabbed-content" */).then(c => wrapFunctional(c.default || c))

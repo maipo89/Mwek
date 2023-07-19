@@ -11,8 +11,8 @@ export default {
     middleware: ['redirects'],
   },
   head: {
-    titleTemplate: 'Mwek',
-    title: 'Mwek',
+    titleTemplate: 'MWek',
+    title: 'MWek',
     htmlAttrs: {
       lang: 'en',
     },

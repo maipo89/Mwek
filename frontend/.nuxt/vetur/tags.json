@@ -53,6 +53,9 @@
   "SubscriptionSection": {
     "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
+  "ContactFooter": {
+    "description": "Auto imported from components/contact/ContactFooter.vue"
+  },
   "BlimpMapSVG": {
     "description": "Auto imported from components/citymap/BlimpMapSVG.vue"
   },
@@ -100,9 +103,6 @@
   },
   "Header": {
     "description": "Auto imported from components/global/Header.vue"
-  },
-  "ContactFooter": {
-    "description": "Auto imported from components/contact/ContactFooter.vue"
   },
   "ServicePageLinks": {
     "description": "Auto imported from components/services/ServicePageLinks.vue"

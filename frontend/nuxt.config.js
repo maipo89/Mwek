@@ -11,8 +11,8 @@ export default {
     middleware: ['redirects'],
   },
   head: {
-    titleTemplate: 'Mwek',
-    title: 'Mwek',
+    titleTemplate: 'MWek',
+    title: 'MWek',
     htmlAttrs: {
       lang: 'en',
     },
@@ -27,11 +27,11 @@ export default {
       { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Orbitron&display=swap" },
     ],
     script: [
-        {
-            type: 'text/javascript',
-            src: 'js/Jquery.js',
-            body: true,
-        },
+        // {
+        //     type: 'text/javascript',
+        //     src: 'js/Jquery.js',
+        //     body: false,
+        // },
         // {
         //   src: "https://cdn-eu.pagesense.io/js/onqor/23fd815eda9a4235aa61eae9b9b1f975.js",
         // }
@@ -77,7 +77,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/sitemap',
+    require('./sitemap.js'),
     ['nuxt-mail', {
       message: {
         to: 'talk2us@mwek.co.uk',
@@ -108,5 +108,5 @@ export default {
   build: {
     transpile: ['gsap', 'three'],
     // standalone: true
-  },
+  }
 }

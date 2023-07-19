@@ -16,7 +16,6 @@ export const TypeText = () => import('../../components/UI/TypeText.vue' /* webpa
 export const CardsWithFilter = () => import('../../components/archives/CardsWithFilter.vue' /* webpackChunkName: "components/cards-with-filter" */).then(c => wrapFunctional(c.default || c))
 export const BlogPage = () => import('../../components/blog/BlogPage.vue' /* webpackChunkName: "components/blog-page" */).then(c => wrapFunctional(c.default || c))
 export const SubscriptionSection = () => import('../../components/blog/SubscriptionSection.vue' /* webpackChunkName: "components/subscription-section" */).then(c => wrapFunctional(c.default || c))
-export const ContactFooter = () => import('../../components/contact/ContactFooter.vue' /* webpackChunkName: "components/contact-footer" */).then(c => wrapFunctional(c.default || c))
 export const BlimpMapSVG = () => import('../../components/citymap/BlimpMapSVG.vue' /* webpackChunkName: "components/blimp-map-s-v-g" */).then(c => wrapFunctional(c.default || c))
 export const CityLights = () => import('../../components/citymap/CityLights.vue' /* webpackChunkName: "components/city-lights" */).then(c => wrapFunctional(c.default || c))
 export const CityMapCards = () => import('../../components/citymap/CityMapCards.vue' /* webpackChunkName: "components/city-map-cards" */).then(c => wrapFunctional(c.default || c))
@@ -26,23 +25,14 @@ export const CityParks = () => import('../../components/citymap/CityParks.vue' /
 export const CityRoadOne = () => import('../../components/citymap/CityRoadOne.vue' /* webpackChunkName: "components/city-road-one" */).then(c => wrapFunctional(c.default || c))
 export const CitySculptur = () => import('../../components/citymap/CitySculptur.vue' /* webpackChunkName: "components/city-sculptur" */).then(c => wrapFunctional(c.default || c))
 export const CityTurbines = () => import('../../components/citymap/CityTurbines.vue' /* webpackChunkName: "components/city-turbines" */).then(c => wrapFunctional(c.default || c))
-<<<<<<< HEAD
 export const ContactFooter = () => import('../../components/contact/ContactFooter.vue' /* webpackChunkName: "components/contact-footer" */).then(c => wrapFunctional(c.default || c))
-=======
->>>>>>> b96defec167f0fff3d3ab14617c44cd09b215271
 export const MeetTheTeam = () => import('../../components/explore/MeetTheTeam.vue' /* webpackChunkName: "components/meet-the-team" */).then(c => wrapFunctional(c.default || c))
 export const OurApproach = () => import('../../components/explore/OurApproach.vue' /* webpackChunkName: "components/our-approach" */).then(c => wrapFunctional(c.default || c))
 export const OurApproachSection = () => import('../../components/explore/OurApproachSection.vue' /* webpackChunkName: "components/our-approach-section" */).then(c => wrapFunctional(c.default || c))
 export const TeamCube = () => import('../../components/explore/TeamCube.vue' /* webpackChunkName: "components/team-cube" */).then(c => wrapFunctional(c.default || c))
-<<<<<<< HEAD
 export const Footer = () => import('../../components/global/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c))
 export const Header = () => import('../../components/global/Header.vue' /* webpackChunkName: "components/header" */).then(c => wrapFunctional(c.default || c))
 export const HeroSection = () => import('../../components/image/HeroSection.vue' /* webpackChunkName: "components/hero-section" */).then(c => wrapFunctional(c.default || c))
-=======
-export const HeroSection = () => import('../../components/image/HeroSection.vue' /* webpackChunkName: "components/hero-section" */).then(c => wrapFunctional(c.default || c))
-export const Footer = () => import('../../components/global/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c))
-export const Header = () => import('../../components/global/Header.vue' /* webpackChunkName: "components/header" */).then(c => wrapFunctional(c.default || c))
->>>>>>> b96defec167f0fff3d3ab14617c44cd09b215271
 export const ServicePageLinks = () => import('../../components/services/ServicePageLinks.vue' /* webpackChunkName: "components/service-page-links" */).then(c => wrapFunctional(c.default || c))
 export const StatTabs = () => import('../../components/stats/StatTabs.vue' /* webpackChunkName: "components/stat-tabs" */).then(c => wrapFunctional(c.default || c))
 export const TabbedContent = () => import('../../components/tabs/TabbedContent.vue' /* webpackChunkName: "components/tabbed-content" */).then(c => wrapFunctional(c.default || c))

@@ -80,12 +80,9 @@
   "CityTurbines": {
     "description": "Auto imported from components/citymap/CityTurbines.vue"
   },
-<<<<<<< HEAD
   "ContactFooter": {
     "description": "Auto imported from components/contact/ContactFooter.vue"
   },
-=======
->>>>>>> aa23886944d104862a11e76393587a4878068551
   "MeetTheTeam": {
     "description": "Auto imported from components/explore/MeetTheTeam.vue"
   },
@@ -98,25 +95,14 @@
   "TeamCube": {
     "description": "Auto imported from components/explore/TeamCube.vue"
   },
-<<<<<<< HEAD
-=======
-  "HeroSection": {
-    "description": "Auto imported from components/image/HeroSection.vue"
-  },
->>>>>>> aa23886944d104862a11e76393587a4878068551
   "Footer": {
     "description": "Auto imported from components/global/Footer.vue"
   },
   "Header": {
     "description": "Auto imported from components/global/Header.vue"
   },
-<<<<<<< HEAD
   "HeroSection": {
     "description": "Auto imported from components/image/HeroSection.vue"
-=======
-  "ContactFooter": {
-    "description": "Auto imported from components/contact/ContactFooter.vue"
->>>>>>> aa23886944d104862a11e76393587a4878068551
   },
   "ServicePageLinks": {
     "description": "Auto imported from components/services/ServicePageLinks.vue"

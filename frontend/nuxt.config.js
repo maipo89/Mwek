@@ -77,7 +77,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    // require('./sitemap.js'),
+    '@nuxtjs/sitemap',
     ['nuxt-mail', {
       message: {
         to: 'talk2us@mwek.co.uk',

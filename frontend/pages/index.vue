@@ -24,9 +24,9 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Mwek Homepage city map'
+          content: 'MWek Homepage city map'
         },
-        { hid: 'og-title', property: 'og:title', content: 'MwekCity' }
+        { hid: 'og-title', property: 'og:title', content: 'MWekCity' }
       ]
     }
   },

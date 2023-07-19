@@ -24,6 +24,7 @@ You can directly use them in pages and other components without the need to impo
 - `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
 - `<BlogPage>` | `<blog-page>` (components/blog/BlogPage.vue)
 - `<SubscriptionSection>` | `<subscription-section>` (components/blog/SubscriptionSection.vue)
+- `<ContactFooter>` | `<contact-footer>` (components/contact/ContactFooter.vue)
 - `<BlimpMapSVG>` | `<blimp-map-s-v-g>` (components/citymap/BlimpMapSVG.vue)
 - `<CityLights>` | `<city-lights>` (components/citymap/CityLights.vue)
 - `<CityMapCards>` | `<city-map-cards>` (components/citymap/CityMapCards.vue)
@@ -33,14 +34,23 @@ You can directly use them in pages and other components without the need to impo
 - `<CityRoadOne>` | `<city-road-one>` (components/citymap/CityRoadOne.vue)
 - `<CitySculptur>` | `<city-sculptur>` (components/citymap/CitySculptur.vue)
 - `<CityTurbines>` | `<city-turbines>` (components/citymap/CityTurbines.vue)
+<<<<<<< HEAD
 - `<ContactFooter>` | `<contact-footer>` (components/contact/ContactFooter.vue)
+=======
+>>>>>>> b96defec167f0fff3d3ab14617c44cd09b215271
 - `<MeetTheTeam>` | `<meet-the-team>` (components/explore/MeetTheTeam.vue)
 - `<OurApproach>` | `<our-approach>` (components/explore/OurApproach.vue)
 - `<OurApproachSection>` | `<our-approach-section>` (components/explore/OurApproachSection.vue)
 - `<TeamCube>` | `<team-cube>` (components/explore/TeamCube.vue)
+<<<<<<< HEAD
 - `<Footer>` | `<footer>` (components/global/Footer.vue)
 - `<Header>` | `<header>` (components/global/Header.vue)
 - `<HeroSection>` | `<hero-section>` (components/image/HeroSection.vue)
+=======
+- `<HeroSection>` | `<hero-section>` (components/image/HeroSection.vue)
+- `<Footer>` | `<footer>` (components/global/Footer.vue)
+- `<Header>` | `<header>` (components/global/Header.vue)
+>>>>>>> b96defec167f0fff3d3ab14617c44cd09b215271
 - `<ServicePageLinks>` | `<service-page-links>` (components/services/ServicePageLinks.vue)
 - `<StatTabs>` | `<stat-tabs>` (components/stats/StatTabs.vue)
 - `<TabbedContent>` | `<tabbed-content>` (components/tabs/TabbedContent.vue)

@@ -20,6 +20,12 @@
   "OnqorSEO": {
     "description": "Auto imported from components/SEO/OnqorSEO.vue"
   },
+  "BlogPage": {
+    "description": "Auto imported from components/blog/BlogPage.vue"
+  },
+  "SubscriptionSection": {
+    "description": "Auto imported from components/blog/SubscriptionSection.vue"
+  },
   "BackButton": {
     "description": "Auto imported from components/UI/BackButton.vue"
   },
@@ -46,12 +52,6 @@
   },
   "CardsWithFilter": {
     "description": "Auto imported from components/archives/CardsWithFilter.vue"
-  },
-  "BlogPage": {
-    "description": "Auto imported from components/blog/BlogPage.vue"
-  },
-  "SubscriptionSection": {
-    "description": "Auto imported from components/blog/SubscriptionSection.vue"
   },
   "ContactFooter": {
     "description": "Auto imported from components/contact/ContactFooter.vue"
@@ -95,14 +95,14 @@
   "TeamCube": {
     "description": "Auto imported from components/explore/TeamCube.vue"
   },
-  "HeroSection": {
-    "description": "Auto imported from components/image/HeroSection.vue"
-  },
   "Footer": {
     "description": "Auto imported from components/global/Footer.vue"
   },
   "Header": {
     "description": "Auto imported from components/global/Header.vue"
+  },
+  "HeroSection": {
+    "description": "Auto imported from components/image/HeroSection.vue"
   },
   "ServicePageLinks": {
     "description": "Auto imported from components/services/ServicePageLinks.vue"

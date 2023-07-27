@@ -148,4 +148,8 @@
     <loc>https://mwek.com/blog/crypto/how-to-kickstart-your-career-in-crypto</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://mwek.com/blog/fintech/saas-or-traditional-software-for-your-business</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>

@@ -47,6 +47,12 @@
   "CardsWithFilter": {
     "description": "Auto imported from components/archives/CardsWithFilter.vue"
   },
+<<<<<<< HEAD
+=======
+  "ContactFooter": {
+    "description": "Auto imported from components/contact/ContactFooter.vue"
+  },
+>>>>>>> 6a7beb26e31249d10c46fa9d8701ccaf37a86206
   "BlogPage": {
     "description": "Auto imported from components/blog/BlogPage.vue"
   },
@@ -80,9 +86,12 @@
   "CityTurbines": {
     "description": "Auto imported from components/citymap/CityTurbines.vue"
   },
+<<<<<<< HEAD
   "ContactFooter": {
     "description": "Auto imported from components/contact/ContactFooter.vue"
   },
+=======
+>>>>>>> 6a7beb26e31249d10c46fa9d8701ccaf37a86206
   "MeetTheTeam": {
     "description": "Auto imported from components/explore/MeetTheTeam.vue"
   },

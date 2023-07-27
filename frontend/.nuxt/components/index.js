@@ -14,6 +14,10 @@ export const OnqorCircleIcon = () => import('../../components/UI/OnqorCircleIcon
 export const OnqorInput = () => import('../../components/UI/OnqorInput.vue' /* webpackChunkName: "components/onqor-input" */).then(c => wrapFunctional(c.default || c))
 export const TypeText = () => import('../../components/UI/TypeText.vue' /* webpackChunkName: "components/type-text" */).then(c => wrapFunctional(c.default || c))
 export const CardsWithFilter = () => import('../../components/archives/CardsWithFilter.vue' /* webpackChunkName: "components/cards-with-filter" */).then(c => wrapFunctional(c.default || c))
+<<<<<<< HEAD
+=======
+export const ContactFooter = () => import('../../components/contact/ContactFooter.vue' /* webpackChunkName: "components/contact-footer" */).then(c => wrapFunctional(c.default || c))
+>>>>>>> 6a7beb26e31249d10c46fa9d8701ccaf37a86206
 export const BlogPage = () => import('../../components/blog/BlogPage.vue' /* webpackChunkName: "components/blog-page" */).then(c => wrapFunctional(c.default || c))
 export const SubscriptionSection = () => import('../../components/blog/SubscriptionSection.vue' /* webpackChunkName: "components/subscription-section" */).then(c => wrapFunctional(c.default || c))
 export const BlimpMapSVG = () => import('../../components/citymap/BlimpMapSVG.vue' /* webpackChunkName: "components/blimp-map-s-v-g" */).then(c => wrapFunctional(c.default || c))
@@ -25,7 +29,10 @@ export const CityParks = () => import('../../components/citymap/CityParks.vue' /
 export const CityRoadOne = () => import('../../components/citymap/CityRoadOne.vue' /* webpackChunkName: "components/city-road-one" */).then(c => wrapFunctional(c.default || c))
 export const CitySculptur = () => import('../../components/citymap/CitySculptur.vue' /* webpackChunkName: "components/city-sculptur" */).then(c => wrapFunctional(c.default || c))
 export const CityTurbines = () => import('../../components/citymap/CityTurbines.vue' /* webpackChunkName: "components/city-turbines" */).then(c => wrapFunctional(c.default || c))
+<<<<<<< HEAD
 export const ContactFooter = () => import('../../components/contact/ContactFooter.vue' /* webpackChunkName: "components/contact-footer" */).then(c => wrapFunctional(c.default || c))
+=======
+>>>>>>> 6a7beb26e31249d10c46fa9d8701ccaf37a86206
 export const MeetTheTeam = () => import('../../components/explore/MeetTheTeam.vue' /* webpackChunkName: "components/meet-the-team" */).then(c => wrapFunctional(c.default || c))
 export const OurApproach = () => import('../../components/explore/OurApproach.vue' /* webpackChunkName: "components/our-approach" */).then(c => wrapFunctional(c.default || c))
 export const OurApproachSection = () => import('../../components/explore/OurApproachSection.vue' /* webpackChunkName: "components/our-approach-section" */).then(c => wrapFunctional(c.default || c))

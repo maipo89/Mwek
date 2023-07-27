@@ -27,6 +27,23 @@ export default {
       { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Orbitron&display=swap" },
     ],
     script: [
+      {
+        hid: 'gtm-script',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-GWF9EE9GP9',
+        async: true
+      },
+      {
+        hid: 'gtm-script2',
+        innerHTML: `
+        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-GWF9EE9GP9');
+        `
+      },
+      {
+        hid: 'g-analytics',
+        type: 'text/javascript',
+        src: 'https://www.google-analytics.com/analytics.js',
+        async: true,
+      }
         // {
         //     type: 'text/javascript',
         //     src: 'js/Jquery.js',

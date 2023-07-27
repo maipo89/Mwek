@@ -22,6 +22,10 @@ You can directly use them in pages and other components without the need to impo
 - `<OnqorInput>` | `<onqor-input>` (components/UI/OnqorInput.vue)
 - `<TypeText>` | `<type-text>` (components/UI/TypeText.vue)
 - `<CardsWithFilter>` | `<cards-with-filter>` (components/archives/CardsWithFilter.vue)
+<<<<<<< HEAD
+=======
+- `<ContactFooter>` | `<contact-footer>` (components/contact/ContactFooter.vue)
+>>>>>>> 6a7beb26e31249d10c46fa9d8701ccaf37a86206
 - `<BlogPage>` | `<blog-page>` (components/blog/BlogPage.vue)
 - `<SubscriptionSection>` | `<subscription-section>` (components/blog/SubscriptionSection.vue)
 - `<BlimpMapSVG>` | `<blimp-map-s-v-g>` (components/citymap/BlimpMapSVG.vue)
@@ -33,7 +37,10 @@ You can directly use them in pages and other components without the need to impo
 - `<CityRoadOne>` | `<city-road-one>` (components/citymap/CityRoadOne.vue)
 - `<CitySculptur>` | `<city-sculptur>` (components/citymap/CitySculptur.vue)
 - `<CityTurbines>` | `<city-turbines>` (components/citymap/CityTurbines.vue)
+<<<<<<< HEAD
 - `<ContactFooter>` | `<contact-footer>` (components/contact/ContactFooter.vue)
+=======
+>>>>>>> 6a7beb26e31249d10c46fa9d8701ccaf37a86206
 - `<MeetTheTeam>` | `<meet-the-team>` (components/explore/MeetTheTeam.vue)
 - `<OurApproach>` | `<our-approach>` (components/explore/OurApproach.vue)
 - `<OurApproachSection>` | `<our-approach-section>` (components/explore/OurApproachSection.vue)
